@@ -1,0 +1,13 @@
+$default-footer-color: #555 !default;
+$default-footer-height: 30px !default;
+$default-footer-tabbar: 50px !default;
+
+@mixin setFooter($_color: $default-footer-color, $_height: $default-footer-height) {
+	@include fixedPosition(bottom);
+	height: $_height;
+	background-color: $_color;
+	bottom: 0;
+	&[data-type="tabbar"] {
+		height: $default-footer-tabbar;
+	}
+}

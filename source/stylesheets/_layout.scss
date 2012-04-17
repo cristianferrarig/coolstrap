@@ -1,0 +1,34 @@
+@import "coolstrap";
+html,
+body,
+section {
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+}
+
+header {
+	@include setHeader();
+}
+
+footer {
+	@include setFooter();
+}
+
+section {
+
+}
+section:not([data-type="global"]) {
+	@include setHeight();
+}
+
+article {
+	@include setHeight();
+}
+
+/*
+header:not(.extended) ~ article {top: @header_footer_height; }	
+header.extended ~ article { top: @header_extended_height; }
+footer:not(.toolbar) ~ article { bottom: @header_footer_height; }
+*/

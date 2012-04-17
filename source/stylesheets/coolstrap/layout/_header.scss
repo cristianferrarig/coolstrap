@@ -1,0 +1,14 @@
+$default-header-height: 44px !default;
+$default-header-extended: 74px !default;
+$default-header-color: #555 !default;
+$default-header-padding: 7px !default;
+
+@mixin setHeader($_height: $default-header-height, $_padding: $default-header-padding, $_color: $default-header-color) {
+	@include fixedPosition(top);
+	height: $_height;
+	padding: $_padding;
+	background-color: $_color;
+	&[data-type="extended"] {
+		height: $default-header-extended;
+	}
+}
