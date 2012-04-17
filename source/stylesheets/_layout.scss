@@ -1,34 +1,59 @@
 @import "coolstrap";
+
+$default-header-height: 44px;
+$default-footer-height: 30px;
+$default-button-type: full;
+
 html,
 body,
+section[data-type="global"] {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+
+.onleft   { float: left; }
+.onright  { float: right; }
+
 section {
-	height: 100%;
-	padding: 0px;
-	margin: 0px;
-	position: relative;
+  &.aside {
+    .transform(translate3d(256px, 0, 0));
+    &.onright { .transform(translate3d(-256px, 0, 0)); }
+  }
+  &[data-type="global"] {
+  	z-index: 2;
+  }
+  &:not([data-type="global"]) {
+  	@include setHeight();
+    z-index: 1;
+  }
+}
+
+aside {
+  z-index: 0;
 }
 
 header {
-	@include setHeader();
+  z-index: 2;
+  background-color: rgba(0,0,0,.1);
+  &[data-type="extended"] {
+    @include setHeader();
+  }
+  &:not([data-type="extended"]) {
+    @include setHeader();
+  }
+  a {
+    background-color: rgba(0,0,0,.1);
+    @include button();
+  }
 }
 
-footer {
-	@include setFooter();
+footer {  
+  background-color: rgba(0,0,0,.1);
+  @include setFooter();
 }
 
-section {
-
+article {  
+  @include setHeight();
 }
-section:not([data-type="global"]) {
-	@include setHeight();
-}
-
-article {
-	@include setHeight();
-}
-
-/*
-header:not(.extended) ~ article {top: @header_footer_height; }	
-header.extended ~ article { top: @header_extended_height; }
-footer:not(.toolbar) ~ article { bottom: @header_footer_height; }
-*/

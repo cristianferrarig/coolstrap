@@ -3,35 +3,32 @@
 	%section{"data-type" => "global"}
 		
 		%header
-		
+			%a{:href => "#", :class => "onleft", "data-target" => "aside", "data-icon" => "items"} asd
+			%a{:href => "#", :class => "onright", "data-target" => "aside", "data-article" => "welcome"} Profiles
+			
 		%footer
 
 		%section{:id => "home"}
-			%header{"data-title" => "LungoJS Kitchen Sink"}
-				%a{:href => "#kitchen-sink-scroll", :class => "button onleft", "data-target" => "aside", "data-icon" => "items"}
-				%a{:href => "#profiles", "data-target" => "aside", "data-article" => "welcome", :class => "button onright"} Profiles
-
-			%footer{"data-type" => "tabbar"}
-				Footer
-				
+			
 			%article.current
-				Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur
+				.scroller
+					Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur
 
 
-	%aside{"data-type" => "onleft"}
+	%aside{:class => "onleft"}
 		%section
 			%header
 			%article
-		
+			
 		%section
 			%header
 			%article
-		
+			
 		%section
 			%header
 			%article
 
-	%aside{"data-type" => "onright"}
+	%aside{:class => "onright"}
 		%section
 			%header
 			%article
