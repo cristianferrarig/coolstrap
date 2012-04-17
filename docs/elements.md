@@ -1,9 +1,12 @@
 .layout
-	-dos versiones con header dentro y fuera del secion.
+	#There are two headers, one out of the section and other in.
+
 	-header	
 		-center title
 		-left title
 	-nav
+		-add to header
+		-out header
 	-article
 	-footer
 
@@ -21,11 +24,11 @@
 	-h6
 	-p
 	-strong
+	-cite
+	-small
 	-link
 		-active
 		-hover
-	-cite
-	-small
 .lists
 	-search list
 	-aside list
@@ -38,17 +41,17 @@
 
 .buttons
 	-text
-		-sizes
+		-shapes
 		-disable
 		-active
 		-hover
 	-segmented
-		-sizes
+		-shapes
 		-disable
 		-active
 		-hover
 	-icon
-		-sizes
+		-shapes
 		-disable
 		-active
 		-hover	
@@ -57,16 +60,26 @@
 	-togle switch on and off
 	-slider
 	-select menu
-	-input text
-	-input password
-	-input submit
 	-check box
 	-radio
+	-input text
+	-input password
+	-textarea
+	-input submit
+
+	#thinking in the diferent kind o keyboards consider to use html5 input tags with type:
+		"tel"
+		"search"
+		"url"
+		"email"
+		"number"
+
 	-date picker
 		-embedded
 		-pup up
 	-progres bar
 	-indeterminate progres bar
+	-loading dialog
 	-dialogs
 		-pop unp men[u (numbers items?)
 		-date
