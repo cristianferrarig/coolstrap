@@ -12,7 +12,126 @@
 			
 			%article.current
 				.scroller
-					Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur
+
+					-# Text tags
+					%h1 Title h1
+					%h2 Title h2
+					%h3 Title h3
+					%h4 Title h4
+					%h5 Title h5
+					%h6 Title h6
+					%p
+					Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					%p
+					Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+	
+					%strong Strong text
+					%cite Cite text
+					%small Small text
+					%a.link Link
+					-# Includ active and hover
+
+					%ul
+						%li.simple
+							.content
+								%a{:href => "#"}
+									%h3 Simple item
+								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+						%li.selected-item
+							.content
+								%a{:href => "#"}
+									%h3 Selected item
+								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+						%li.checked-item
+							.content
+								%a{:href => "#"}
+									%h3 Checked item
+								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+								%a{:href => "#"}
+									%i
+						%li.drilldown-item
+							.content
+								%a{:href => "#"}
+									%h3 Drilldown item
+								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+								%a
+									%i
+
+						%li.thumbnail-simple
+							.image
+								%a{:href => "#"}
+									%img
+							.content
+								%a{:href => "#"}
+									%h3 Drilldown item
+								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+						%li.thumbnail-selected
+							.image
+								%a
+									%img
+							.content
+								%a{:href => "#"}	
+									%h3 Drilldown item
+								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+								%i	
+						%li.thumbnail-checked
+							.image
+								%a{:href => "#"}
+									%img
+							.content
+								%a{:href => "#"}
+									%h3 Drilldown item
+								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+								%i	
+						%li.thumbnail-drilldown
+							.image
+								%a{:href => "#"}
+									%img
+							.content
+								%a{:href => "#"}
+									%h3 Drilldown item
+								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+								%i	
+
+					
+					.search
+						%form{:action => "", :method => "text"}
+							%i
+							%input{:type => "text"}	
+						.search-result
+							%ul
+								%li.simple
+									.content
+										%a{:href => "#"}
+											%h3 Simple item
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+								%li.simple
+									.content
+										%a{:href => "#"}
+											%h3 Simple item
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+								%li.simple
+									.content
+										%a{:href => "#"}
+											%h3 Simple item
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+								%li.simple
+									.content
+										%a{:href => "#"}
+											%h3 Simple item
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+							
+					%h2 Buttons 
+					%ul.buttons
+						%li
+							%a{:href => "#"} ioi button
+						%li
+							%a{:href => "#"} android button
+						%li
+							%a{:href => "#"} android button
+					-# Incluir active y hover
+
+					%h2 Form elements
 
 
 	%aside{:class => "onleft"}
