@@ -9,6 +9,7 @@
 *.vi
 *~
 *.sass-cache
+.rvmrc
 
 # OS or Editor folders
 .DS_Store
