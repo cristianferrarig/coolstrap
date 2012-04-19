@@ -1,0 +1,190 @@
+@import "coolstrap";
+
+$debugBgColor: rgba(0,0,0,.1);
+$aDebugColor: rgba(0,0,0,.7);
+
+$avatarSize: 40px;
+$imageArrow: image-url('arrow-right.png');
+$avatarList: url(https://si0.twimg.com/profile_images/1864119365/busty_office_milfs_3_front_twit_normal.jpg);
+
+$searchIcon: image-url('search-icon.png');
+
+// Text
+h1, h2, h3, h4, h5, h6, p {
+  padding: 10px;
+}
+h1{
+  font-size: 23px;
+}
+
+a {
+  text-decoration: none;
+  color: $aDebugColor;
+  &:visited {
+    color: $aDebugColor;
+  }
+}
+
+
+
+// Gender ul and li
+ul {
+  background-color: $debugBgColor;
+  list-style-type: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+    h1, h2, h3, h4, h5, h6, p {
+      padding: 0 0 8px 0;
+      margin: 0;
+    }
+    li {
+      border-bottom: 1px solid $debugBgColor;
+      position: relative;
+      padding: 10px;
+    }
+    a {
+      @include display-box;
+      @include box-orient(horizontal);
+      @include box-align(stretch);
+        .image {
+          display: inline;
+          i {
+            background-color: $debugBgColor;
+            background-image: $avatarList;
+            display: block;
+            width: $avatarSize;
+            height: $avatarSize;
+            margin-right: 10px;
+          }
+        }
+        .content {
+          @include box-flex(1);
+          .top {
+            @include clearfix;
+            h3 {
+              width: 65%;
+              float: left;
+            }
+            span {
+              width: 30%;
+              padding-bottom: 8px;
+              float: right;
+              text-align: right;
+              font-size: 12px;
+              margin-right: 3px;
+            }
+          }  
+        }
+        .down {
+          @include display-box;
+          @include box-orient(horizontal);
+          @include box-align(stretch);
+          .text {
+            @include box-flex(1);
+          }
+          .arrow {
+            vertical-align: middle;
+            width: 30px;
+            i {
+              background: transparent $imageArrow no-repeat center center;
+              display: block;
+              height: 34px;
+              width: 34px;
+              position: absolute;
+              top: 50%;
+              right: 0;
+              margin: -17px 3px 0 0;
+            }
+          }
+        }  
+    }
+    li.separator-list {
+      background-color: $debugBgColor;
+      border: 0;
+      padding: 0 0 0 10px;
+      h3 {
+        line-height: 1.8em;
+        color: #fff;
+        padding: 0;
+      }
+    }
+}
+.margin-zone {
+  border: 1px solid $debugBgColor;
+  margin: 10px;
+  ul {
+    margin: 0;
+  }
+  li:last-child {
+    border-bottom: 0;
+  }
+}
+.simple-items {
+  h3 {
+    padding: 0;
+  }
+}
+
+
+.searchbar {
+  background-color: $debugBgColor;
+  padding: 10px;
+  border-bottom: 1px solid $debugBgColor;
+  position: relative;
+    input {
+      width: 100%;
+      border: 0;
+      padding: 3px 3px 3px 25px;
+    }
+    i {
+      background: transparent $searchIcon no-repeat center center;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 14px;
+      left: 16px;
+    }
+}
+
+ul li:active {
+    color: #fff;
+    background-color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

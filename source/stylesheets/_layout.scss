@@ -18,8 +18,8 @@ section[data-type="global"] {
 
 section {
   &.aside {
-    .transform(translate3d(256px, 0, 0));
-    &.onright { .transform(translate3d(-256px, 0, 0)); }
+    .transform: (translate3d(256px, 0, 0));
+    &.onright { .transform: (translate3d(-256px, 0, 0)); }
   }
   &[data-type="global"] {
   	z-index: 2;

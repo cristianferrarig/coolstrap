@@ -6,7 +6,6 @@
 			%a{:href => "#", :class => "onleft", "data-target" => "aside", "data-icon" => "items"} asd
 			%a{:href => "#", :class => "onright", "data-target" => "aside", "data-article" => "welcome"} Profiles
 			
-		%footer
 
 		%section{:id => "home"}
 			
@@ -21,117 +20,512 @@
 					%h5 Title h5
 					%h6 Title h6
 					%p
-					Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-					%p
-					Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-	
-					%strong Strong text
-					%cite Cite text
-					%small Small text
-					%a.link Link
-					-# Includ active and hover
+						p
+						Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					
+					%ul
+						%li
+							%strong Strong text
+						%li
+							%cite Cite text
+						%li	
+							%small Small text
+						%li	
+							%a{:href => "#", :class => "link"} Link
+							-# Includ active and hover
 
 					%ul
-						%li.simple
-							.content
-								%a{:href => "#"}
-									%h3 Simple item
-								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-						%li.selected-item
-							.content
-								%a{:href => "#"}
-									%h3 Selected item
-								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-						%li.checked-item
-							.content
-								%a{:href => "#"}
-									%h3 Checked item
-								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-								%a{:href => "#"}
-									%i
-						%li.drilldown-item
-							.content
-								%a{:href => "#"}
-									%h3 Drilldown item
-								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-								%a
-									%i
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Simple item
+									.down
+										.arrow
+											%i
+						%li.selected-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Selected item
+										%span
+									.down
+										.text
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+								
+									
+						%li.nested-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Nested item
+										%span 4:45pm
+									.down
+										.text	
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+										.arrow
+											%i
+						%li.drilldown-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Drilldown item
+										%span Jun 21st
+									.down
+										.text
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+										.arrow
+											%i
+						%li.separator-list
+							.title
+								%h3 Separator List			
 
-						%li.thumbnail-simple
-							.image
-								%a{:href => "#"}
-									%img
-							.content
-								%a{:href => "#"}
-									%h3 Drilldown item
-								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-						%li.thumbnail-selected
-							.image
-								%a
-									%img
-							.content
-								%a{:href => "#"}	
-									%h3 Drilldown item
-								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-								%i	
-						%li.thumbnail-checked
-							.image
-								%a{:href => "#"}
-									%img
-							.content
-								%a{:href => "#"}
-									%h3 Drilldown item
-								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-								%i	
-						%li.thumbnail-drilldown
-							.image
-								%a{:href => "#"}
-									%img
-							.content
-								%a{:href => "#"}
-									%h3 Drilldown item
-								%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-								%i	
+						%li.simple-items
+							%a{:href => "#"}
+								.image
+									%i
+								.content
+									%h3 Thumbnail item
+								.arrow
+									%i	
+								
+						%li.selected-items
+							%a{:href => "#"}
+								.image
+									%i
+								.content
+									.top
+										%h3 Thumbnail selected item
+									.down
+										.text		
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+									
+						%li.nested-items
+							%a{:href => "#"}
+								.image
+									%i
+								.content
+									.top
+										%h3 Thumbnail checked item
+										%span
+									.down
+										.text		
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. 
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. 
+										.arrow	
+											%i
+						%li.drilldown-items
+							%a{:href => "#"}
+								.image
+									%i
+								.content
+									.top
+										%h3 Thumbnail drilldown item
+										%span
+									.down
+										.text	
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+										.arrow
+											%i
+						%li.separator-list
+							.title
+								%h3 A
+							%i	
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Andorra
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Albania
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Argentina
+						%li.separator-list
+							.title
+								%h3 B
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Bolivia
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Brasil
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Bulgaria
+						%li.separator-list
+							.title
+								%h3 C
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Canada
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Colombia
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									.top
+										%h3 Curacavi
+
+
+
+
+					%ul.margin-zone
+						%li.separator-list
+							.title
+								%h3 Margin List
+							%i	
+						%li.simple-items
+							%a{:href => "#"}
+								.image
+									%i
+								.content
+									.top
+										%h3 Simple item
+										%span
+						%li.selected-items
+							%a{:href => "#"}
+								.image
+									%i
+								.content
+									.top
+										%h3 Selected item 
+										%span Tellus Nullam 
+									.down
+										.text
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. 
+								
+						%li.nested-items
+							%a{:href => "#"}
+								.image
+									%i
+								.content
+									.top
+										%h3 Nested item
+										%span You have 1.000 new messages
+									.down
+										.text
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+										.arrow
+											%i
+						%li.drilldown-items
+							%a{:href => "#"}
+								.image
+									%i
+								.content
+									.top
+										%h3 Drilldown item
+										%span
+									.down
+										.text	
+											%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+										.arrow
+											%i
+						%li.separator-list
+							.title
+								%h3 Separator List			
+
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Simple item
+								.arrow
+									%i
+								
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Simple item
+								.arrow
+									%i
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Simple item
+								.arrow
+									%i
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Simple item
+								.arrow
+									%i
+						%li.separator-list
+							.title
+								%h3 A
+							%i	
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Andorra
+								%i
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Albania
+								%i
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Argentina
+								%i
+						%li.separator-list
+							.title
+								%h3 B
+							%i	
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Bolivia
+								%i
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Brasil
+								%i
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Bulgaria
+								%i
+						%li.separator-list
+							.title
+								%h3 C
+							%i	
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Canada
+								%i
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Colombia
+								%i
+						%li.simple-items
+							%a{:href => "#"}
+								.content
+									%h3 Curacavi
+								%i						
 
 					
-					.search
-						%form{:action => "", :method => "text"}
+					.searchbar
+						%input{:type => "search"}
+						%i
+
+					.search-result
+						%ul
+							%li.selected-items
+								%a{:href => "#"}
+									.content
+										%h3 Selected item
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+									%i
+							%li.selected-items
+								%a{:href => "#"}
+									.content
+										%h3 Selected item
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+									%i
+							%li.selected-items
+								%a{:href => "#"}
+									.content
+										%h3 Selected item
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+									%i
+							%li.selected-items
+								%a{:href => "#"}
+									.content
+										%h3 Selected item
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+									%i
+					.margin-zone	
+						.searchbar
+							%input{:type => "search"}
 							%i
-							%input{:type => "text"}	
+
 						.search-result
-							%ul
-								%li.simple
-									.content
-										%a{:href => "#"}
+							%ul	
+								%li.simple-items
+									%a{:href => "#"}
+										.content
 											%h3 Simple item
-										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-								%li.simple
-									.content
-										%a{:href => "#"}
+										.arrow
+											%i
+								%li.simple-items
+									%a{:href => "#"}
+										.content
 											%h3 Simple item
-										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-								%li.simple
-									.content
-										%a{:href => "#"}
+										.arrow
+											%i
+								%li.simple-items
+									%a{:href => "#"}
+										.content
 											%h3 Simple item
-										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-								%li.simple
-									.content
-										%a{:href => "#"}
-											%h3 Simple item
-										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-							
+										.arrow
+											%i			
+								
 					%h2 Buttons 
 					%ul.buttons
 						%li
-							%a{:href => "#"} ioi button
+							%a{:class => "button", :href => "#"} ioi button
 						%li
-							%a{:href => "#"} android button
+							%a{:class => "button", :href => "#"} android button
 						%li
-							%a{:href => "#"} android button
-					-# Incluir active y hover
+							%a{:class => "button", :href => "#"} windows mobile
+						%li
+							.segmented-buttons
+								%a{:href => "#"} Left
+								%a{:href => "#"} Center
+								%a{:href => "#"} Right
+								-#Determinar first y last child
+								-#Sepecify device for that							
+					-# Includ active and hover
 
 					%h2 Form elements
+					%form{:action => "", :method => ""}
+						
+						%input
+						-# Build on-off togle switch here
+
+						%input
+						-# Build slider here
+
+						%h2 Inputs
+						%h3 Text, default keyboard
+						%input{:type => "text", :name => "txt"}
+
+						%h3 Search
+						%input{:type => "search", :name => "txt"}
+
+						%h3 Password
+						%input{:type => "password", :name => "pwd"}
+
+						%h3 To url keyboard
+						%input{:type => "url", :name => "url"}
+
+						%h3 To email keyboard
+						%input{:type => "email", :name => "email"}
+
+						%h3 To number keyboard
+						%input{:type => "number", :name => "number"}
+
+						%h3 To phone keyboard
+						%input{:type => "tel", :name => "number"}
+
+						%h3 Radio buttons.
+						%input{:type => "radio", :name => "options", :value => "1"} Option 1 
+						%br  
+						%input{:type => "radio", :name => "options", :value => "2"} Option 2
+
+						%h3 Checkbox buttons.
+						%input{:type => "checkbox", :name => "items", :value => "checkbox1"} Checkbox A
+						%br
+						%input{:type => "checkbox", :name => "items", :value => "checkbox2"} Checkbox B
+
+						%h3 Select 
+						-# Must be a pop up?
+						%select
+							%option{:value => "ios"} iOS
+							%option{:value => "android"} Android
+							%option{:value => "windows"}  Windows Mobile
+
+						%h3 Textarea
+						%textarea{:rows => "3", :cols => "10"}
+
+						%h3 Calendar
+						%table{:cellpadding => "2", :cellspacing => "2"}
+							%tr{:colspan => "7"}
+								%i
+									%a{:href => "#"}
+								%h3 Janury
+								%i
+									%a{:href => "#"}
+							%tr
+								%td
+								%td
+								%td
+								%td 1
+								%td 2
+								%td 3
+								%td 4
+							%tr
+								%td 5
+								%td 6
+								%td 7
+								%td 8
+								%td 9
+								%td 10
+								%td 11
+							%tr
+								%td 12
+								%td 13
+								%td 14
+								%td 15
+								%td 16
+								%td 17
+								%td 18
+							%tr
+								%td 19
+								%td 20
+								%td 21
+								%td 22
+								%td 23
+								%td 24
+								%td 25
+							%tr
+								%td 26
+								%td 27
+								%td 28
+								%td 29
+								%td 30
+								%td 31
+								%td
+						%h3 Pop up menu
+						%ul.menu-vertical
+							%li 
+								%a{:href => "#"} Item A
+							%li 
+								%a{:href => "#"} Item B
+							%li 
+								%a{:href => "#"} Item C
+							%li 
+								%a{:href => "#"} Item D
+						%h3 Dialog menu
+						.dialog-menu
+							.title
+								%h2 Do you wanna know Coolstrap?
+							.mesagge
+								%p If you prove this framework can get superpowers
+							.action-zone
+								%a{:class => "button", :href => "#"} Prove
+								%a{:class => "button", :href => "#"} Cancel
+						%h3 Submit
+						%input{:type => "submit", :value => "submit"}
+
+
+						
+
+
 
 
 	%aside{:class => "onleft"}

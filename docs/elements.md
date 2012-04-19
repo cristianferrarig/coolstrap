@@ -59,20 +59,19 @@
 .forms and elements
 	-togle switch on and off
 	-slider
-	-select menu
+
+	-input text
+	-input search
+	-input password
+	-input url
+	-input email
+	-input number
+	-select
+	
+	-textarea
+
 	-check box
 	-radio
-	-input text
-	-input password
-	-textarea
-	-input submit
-
-	#thinking in the diferent kind o keyboards consider to use html5 input tags with type:
-		"tel"
-		"search"
-		"url"
-		"email"
-		"number"
 
 	-date picker
 		-embedded
@@ -81,10 +80,12 @@
 	-indeterminate progres bar
 	-loading dialog
 	-dialogs
-		-pop unp men[u (numbers items?)
+		-pop unp menu (numbers of items?)
 		-date
 		-message
 	-search bar   	
+
+	-input submit
 
 
 
