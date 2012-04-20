@@ -1,9 +1,0 @@
-
-@mixin fixedPosition($_position) {
-	position: absolute;
-	left: 0;
-	#{$_position}: 0px;
-	display: block;
-	width: 100%;
-	z-index: 2;
-}

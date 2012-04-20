@@ -1,0 +1,45 @@
+
+
+// Positions
+
+$default-fixed-position: false !default;
+$default-fixed-size: 100% !default;
+
+
+// Header and navbar
+
+$default-header-size: 44px !default;
+$default-navbar-size: 30px !default;
+$default-header-spacing: 7px !default;
+$default-header-extended: $default-header-size + $default-navbar-size !default;
+
+$default-footer-size: 30px;
+$default-footer-spacing: 7px !default;
+
+$default-tabbar-size: 30px;
+$default-tabbar-spacing: 7px !default;
+
+
+// Aside and Backface
+
+$default-aside-size: 276px !default;
+$default-backface-size: 300px !default;
+
+
+// Buttons
+
+$default-button-type: spacing !default;
+
+
+// Transition for aside and backface
+
+$default-transition-type: false !default;
+$default-transform-distance: 0 !default;
+
+
+
+// Positions
+
+$default-position-front: 2 !default;
+$default-position-back: 0 !default;
+$default-position-current: 1 !default;

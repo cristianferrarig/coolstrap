@@ -1,0 +1,23 @@
+@import "variables";
+
+@mixin button($type: $default-button-type) {
+	@if $type == spacing {
+		$margin: $default-header-spacing;
+		$height: $default-header-size - ($margin * 2);
+		height: $height;
+		margin: $margin;
+		line-height: $height;
+		padding: 0 10px;
+	}
+	@if $type == full {
+		$height: $default-header-size;
+		height: $height;
+		line-height: $height;
+		padding: 0 20px;
+	}
+	@include inline-block;
+	outline: none;
+	color: #fff;
+	text-align: center; 
+	text-decoration: none;
+}

@@ -1,0 +1,132 @@
+@import "variables";
+
+
+@mixin initTransition {
+  div[data-type="main"],
+  section[data-type="global"] {
+    @include setTransition();
+  }
+  [data-move="left"] {
+    @include setTransition(left,$default-aside-size);
+  }
+  [data-move="right"] {
+    @include setTransition(right,$default-aside-size);
+  }
+  [data-move="top"] {
+    @include setTransition(top,$default-backface-size);
+  }
+  [data-move="bottom"] {
+    @include setTransition(bottom,$default-backface-size);
+  }
+}
+
+
+
+@mixin initLayers {
+  aside,
+  section:not([data-type="global"]),
+  article {
+    z-index: $default-position-back;
+    &.current {
+      z-index: $default-position-current;
+    }
+  }
+  header, footer,
+  div[data-type="main"],
+  section[data-type="global"] {
+    z-index: $default-position-front;
+  }
+}
+
+
+
+@mixin initVisibility {
+  aside,
+  section:not([data-type="global"]),
+  article {
+    visibility: hidden;
+    &.current {
+      visibility: visible;
+    }
+  }
+}
+
+
+
+@mixin initUtilities {
+  .onleft   { float: left; }
+  .onright  { float: right; }
+}
+
+
+
+@mixin initLayout {
+  div[data-type="main"] {
+    @include setHeight();
+    //background-color: red;
+  }
+}
+
+
+@mixin initContainers {
+  section,
+  article {
+    @include setHeight();
+    &:not([data-type="global"]) {
+      header:not([data-type="extended"]) ~ & {
+        top: $default-header-size;
+      }
+      header[data-type="extended"] ~ & {
+        top: $default-header-extended;
+      }
+      footer:not([data-type="tabbar"]) ~ & {
+        bottom: $default-footer-size;
+      }
+      footer[data-type="tabbar"] ~ & {
+        bottom: $default-tabbar-size;
+      }
+    }
+  }
+}
+
+
+@mixin initPositions {
+  header {
+    &[data-type="extended"] {
+      @include fixedPosition(top,$default-header-size);
+    }
+    &:not([data-type="extended"]) {
+      @include fixedPosition(top,$default-header-size);
+    }
+  }
+  footer {
+    &:not([data-type="tabbar"]) {
+      @include fixedPosition(bottom, $default-footer-size);
+    }
+    &[data-type="tabbar"] {
+      @include fixedPosition(bottom, $default-tabbar-size);
+    }
+  }
+  aside {
+    &[data-position="top"] {
+      @include fixedPosition(top,$default-backface-size);
+    }
+    &[data-position="bottom"] {
+      @include fixedPosition(bottom,$default-backface-size);
+    }
+
+    &[data-position="left"] {
+      @include fixedPosition(left,$default-aside-size);
+    }
+    &[data-position="right"] {
+      @include fixedPosition(right,$default-aside-size);
+    }
+  }
+}
+
+
+
+
+
+
+

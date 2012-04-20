@@ -1,7 +1,1 @@
-$default-footer-height: 30px !default;
-$default-footer-tabbar: 50px !default;
-
-@mixin setFooter($height: $default-footer-height) {
-	@include fixedPosition(bottom);
-	height: $height;
-}
+@import "variables";

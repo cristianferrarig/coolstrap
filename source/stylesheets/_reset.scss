@@ -28,8 +28,25 @@ audio:not([controls]) { display: none; }
 // 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
 // 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
 
-html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html {
+	height: 100%;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
 
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px; 
+	line-height: 1.231;
+	-webkit-touch-callout: none;
+}
 body { margin: 0; font-size: 13px; line-height: 1.231; }
 
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
@@ -40,7 +57,11 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 //   Links
 // =============================================================================
 
-a { color: #00e; }
+a {
+	color: #00e;
+	text-decoration: none;	
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 a:visited { color: #551a8b; }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
@@ -100,7 +121,7 @@ nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0
 // 1. Improve image quality when scaled in IE7: h5bp.com/d
 // 2. Remove the gap between images and borders on image containers: h5bp.com/e
 
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; font-size: 0; }
 
 // Correct overflow not hidden in IE9
 
@@ -179,4 +200,15 @@ td { vertical-align: top; }
 
 * {
 	@include box-sizing(border-box);
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
 }
+
+

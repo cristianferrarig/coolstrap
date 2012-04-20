@@ -1,0 +1,36 @@
+@import "variables";
+
+$default-transition-property : transform;
+$default-transition-duration : 250ms;
+$default-transition-function : false;
+$default-transition-delay    : false;
+@mixin setTransition($type: $default-transition-type, $distance: $default-transform-distance) {
+	@if $type == false {
+		$default-translate-x : 0;
+		$default-translate-y : 0;
+	}
+	@else if $type == left {
+		$default-translate-x : $distance;
+		$default-translate-y : 0;
+	}
+	@else if $type == right {
+		$default-translate-x : -($distance);
+		$default-translate-y : 0;
+	}
+	@else if $type == top {
+		$default-translate-x : 0;
+		$default-translate-y : $distance;
+	}
+	@else if $type == bottom {
+		$default-translate-x : 0;
+		$default-translate-y : -($distance);
+	}
+	$default-translate-z : 0;
+	@include translate3d();
+	@include single-transition();
+}
+
+
+
+
+
