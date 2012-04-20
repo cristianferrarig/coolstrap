@@ -8,20 +8,36 @@
 			
 
 		%section{:id => "home"}
+
 			
 			%article.current
 				.scroller
 
-					-# Text tags
-					%h1 Title h1
-					%h2 Title h2
-					%h3 Title h3
-					%h4 Title h4
-					%h5 Title h5
-					%h6 Title h6
-					%p
-						p
-						Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					%nav
+						%ul
+							%li
+								%h3 1
+							%li
+								%h3 2
+							%li
+								%h3 3
+							%li
+								%h3 4
+							%li
+								%h3 5
+
+					.margin-zone.padding
+						%h2 COOLSTRAP
+						-# Text tags
+						%h1 Title h1
+						%h2 Title h2
+						%h3 Title h3
+						%h4 Title h4
+						%h5 Title h5
+						%h6 Title h6
+						%p
+							p
+							Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 					
 					%ul
 						%li
@@ -338,25 +354,25 @@
 								%a{:href => "#"}
 									.content
 										%h3 Selected item
-										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+										%p Fusce dapibus, tellus ac cursus commodo.dolor auctor.
 									%i
 							%li.selected-items
 								%a{:href => "#"}
 									.content
 										%h3 Selected item
-										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 									%i
 							%li.selected-items
 								%a{:href => "#"}
 									.content
 										%h3 Selected item
-										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 									%i
 							%li.selected-items
 								%a{:href => "#"}
 									.content
 										%h3 Selected item
-										%p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+										%p Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 									%i
 					.margin-zone	
 						.searchbar
@@ -383,31 +399,25 @@
 											%h3 Simple item
 										.arrow
 											%i			
-								
-					%h2 Buttons 
-					%ul.buttons
-						%li
-							%a{:class => "button", :href => "#"} ioi button
-						%li
-							%a{:class => "button", :href => "#"} android button
-						%li
-							%a{:class => "button", :href => "#"} windows mobile
-						%li
-							.segmented-buttons
-								%a{:href => "#"} Left
-								%a{:href => "#"} Center
-								%a{:href => "#"} Right
-								-#Determinar first y last child
-								-#Sepecify device for that							
-					-# Includ active and hover
+					
+					.margin-zone.padding			
+						%h2 Buttons 
+						%a{:class => "button", :href => "#"} ioi button
+						%a{:class => "button", :href => "#"} android button
+						%a{:class => "button", :href => "#"} windows mobile
+						%a{:class => "button", :href => "#"} Left
+						%a{:class => "button", :href => "#"} Center
+						%a{:class => "button", :href => "#"} Right
+						-#Determinar first y last child
+						-#Sepecify device for that							
+						-# Includ active and hover
 
-					%h2 Form elements
-					%form{:action => "", :method => ""}
-						
-						%input
+					
+					%form.margin-zone
+						%h2 Form elements
+
 						-# Build on-off togle switch here
 
-						%input
 						-# Build slider here
 
 						%h2 Inputs
@@ -453,13 +463,10 @@
 						%textarea{:rows => "3", :cols => "10"}
 
 						%h3 Calendar
-						%table{:cellpadding => "2", :cellspacing => "2"}
-							%tr{:colspan => "7"}
-								%i
-									%a{:href => "#"}
-								%h3 Janury
-								%i
-									%a{:href => "#"}
+						%table{:class => "calendar", :cellpadding => "2", :cellspacing => "2"}
+							%tr
+								%td{:class => "month", :colspan => "7"}
+									Janury
 							%tr
 								%td
 								%td
@@ -500,10 +507,12 @@
 								%td 30
 								%td 31
 								%td
-						%h3 Pop up menu
-						%ul.menu-vertical
+						%ul.vertical-menu
+							%li.separator-list 
+								%h3 Pop up menu
 							%li 
-								%a{:href => "#"} Item A
+								%span
+									%a{:href => "#"} Item A
 							%li 
 								%a{:href => "#"} Item B
 							%li 

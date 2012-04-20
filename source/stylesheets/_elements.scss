@@ -1,17 +1,18 @@
 @import "coolstrap";
 
-$debugBgColor: rgba(0,0,0,.1);
-$aDebugColor: rgba(0,0,0,.7);
+$debugBgColor:  rgba(0,0,0,.1);
+$aDebugColor:   rgba(0,0,0,.7);
 
-$avatarSize: 40px;
-$imageArrow: image-url('arrow-right.png');
-$avatarList: url(https://si0.twimg.com/profile_images/1864119365/busty_office_milfs_3_front_twit_normal.jpg);
+$avatarSize:    40px;
+$avatarList:    url(https://si0.twimg.com/profile_images/1864119365/busty_office_milfs_3_front_twit_normal.jpg);
+$imageArrow:    image-url('arrow-right.png');
+$arrowSize:     34px;
 
 $searchIcon: image-url('search-icon.png');
 
 // Text
 h1, h2, h3, h4, h5, h6, p {
-  padding: 10px;
+  color: #555;
 }
 h1{
   font-size: 23px;
@@ -88,8 +89,8 @@ ul {
             i {
               background: transparent $imageArrow no-repeat center center;
               display: block;
-              height: 34px;
-              width: 34px;
+              height: $arrowSize;
+              width: $arrowSize;
               position: absolute;
               top: 50%;
               right: 0;
@@ -110,6 +111,7 @@ ul {
     }
 }
 .margin-zone {
+  background-color: $debugBgColor;
   border: 1px solid $debugBgColor;
   margin: 10px;
   ul {
@@ -153,17 +155,67 @@ ul li:active {
 
 
 
+//form elements
+form {
+  padding: 10px;
+  input, textarea {
+    border: 0;
+    padding: 5px;
+  }
+  input[type="text"], input[type="search"], input[type="password"], input[type="url"], input[type="email"], input[type="number"], input[type="tel"], textarea, select {
+    width: 100%;
+  }
+  input[type="checkbox"], input[type="radio"] {
+    margin: 10px 10px 0 0;
+    font-size: 18px;
+  }
+  select{
+    font-size: 22px;
+  }
+}
+
+//Pop ups
+
+table.calendar {
+  tr.month {
+    text-align: center;
+  }
+}
+
+ul.vertical-menu {
+  margin: 10px;
+  li {
+    text-align: center;
+  }
+}
+
+.dialog-menu {
+  background-color: $debugBgColor;
+  margin: 10px;
+  padding: 10px 10px 25px 10px;
+  text-align: center;
+}
+
+//Buttos
+.button {
+  background-color: $debugBgColor;
+  display: inline-block;
+  margin: 2px 0;
+  padding: 10px 15px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+//Provisional
+
+.padding {
+  padding: 10px;
+}
 
 
 
 
-
-
-
-
-
-
-
+            
 
 
 
