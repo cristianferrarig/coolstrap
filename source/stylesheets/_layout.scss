@@ -11,66 +11,14 @@
 
 $debugBgColor:  rgba(0,0,0,.1);
 
-$default-header-height: 44px;
-$default-footer-height: 30px;
-$default-button-type: full;
-
-html,
-body,
-section[data-type="global"] {
-  height: 100%;
-  padding: 0px;
-  margin: 0px;
-  position: relative;
-}
-
 .onleft   { float: left; }
 .onright  { float: right; }
 
-section {
-  &.aside {
-    .transform: (translate3d(256px, 0, 0));
-    &.onright { .transform: (translate3d(-256px, 0, 0)); }
-  }
-  &[data-type="global"] {
-  	z-index: 2;
-  }
-  &:not([data-type="global"]) {
-  	@include setHeight();
-    z-index: 1;
-  }
-}
 
-aside {
-  z-index: 0;
-}
 
-header {
-  z-index: 2;
-  background-color: rgba(0,0,0,.1);
-  &[data-type="extended"] {
-    @include setHeader();
-  }
-  &:not([data-type="extended"]) {
-    @include setHeader();
-  }
-  a {
-    background-color: rgba(0,0,0,.1);
-    @include button();
-  }
-}
-
-footer {  
-  background-color: rgba(0,0,0,.1);
-  @include setFooter();
-}
-
-article {  
-  @include setHeight();
-}
 
 nav {
-   @include clearfix;
+  @include clearfix;
   ul {
     @include horizontal-list-container();
     @include display-box;
@@ -78,12 +26,12 @@ nav {
     @include box-align(stretch);
     background-color: $debugBgColor;
 
-    height: $default-header-height;
-
+    height: 44px;
+  
     li {
       @include box-flex(1);
       text-align: center;
     }
   }
 }
->>>>>>> lists and form elements waiting for review. Plus a posible fluid navbar
+
