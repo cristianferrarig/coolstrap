@@ -31,7 +31,7 @@
       z-index: $default-position-current;
     }
   }
-  header, footer,
+  header, footer, nav,
   div[data-type="main"],
   section[data-type="global"] {
     z-index: $default-position-front;
@@ -79,6 +79,12 @@
       header[data-type="extended"] ~ & {
         top: $default-header-extended;
       }
+      nav:not([data-type="extended"]) ~ & {
+        top: $default-nav-size;
+      }
+      nav[data-type="extended"] ~ & {
+        top: $default-tabs-size;
+      }
       footer:not([data-type="tabbar"]) ~ & {
         bottom: $default-footer-size;
       }
@@ -97,6 +103,14 @@
     }
     &:not([data-type="extended"]) {
       @include fixedPosition(top,$default-header-size);
+    }
+  }
+  nav {
+    &[data-type="tabs"] {
+      @include fixedPosition(top,$default-tabs-size);
+    }
+    &:not([data-type="tabs"]) {
+      @include fixedPosition(top,$default-nav-size);
     }
   }
   footer {

@@ -7,54 +7,66 @@
 			%a{:href => "#", :class => "onright", "data-target" => "aside", "data-article" => "welcome"} Profiles
 			
 
-		%section{:id => "home"}
+		%section{:id => "home", :class => "current"}
 
-			
-			%article.current{:id => "demo"}
+			%nav
+				%ul
+					%li
+						%a{:href => "#"} Opcion 1
+					%li
+						%a{:href => "#"} Opcion 2
+					%li
+						%a{:href => "#"} Opcion 3
+					%li
+						%a{:href => "#"} Opcion 4
+					%li
+						%a{:href => "#"} Opcion 5
+
+
+			%article{:id => "demo", :class => "current"}
 				.scroller
 
-					%nav
-						%ul
-							%li
-								%h3 1
-							%li
-								%h3 2
-							%li
-								%h3 3
-							%li
-								%h3 4
-							%li
-								%h3 5
-					%ul
+					%ul{"data-type" => "listview"}
 						%li
 							.content
 								.title
-									Aenean lacinia bibendum nulla sed consectetur.
+									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
 								.desc
 									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
 							.aside-right
 								aside right
+
 						%li
 							.content
-								.title
+								.title.nested
 									.content
-										Maecenas faucibus mollis interdum
+										Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
 									.aside-right
-										aside right
+										you have 100000000 new coments in your dashboard
 								.desc
 									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
+
 						%li
 							.content
 								.title
-									.content
-										Maecenas faucibus mollis interdum
-									.aside-right
-										aside right
-								.desc
+									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
+								.desc.nested
 									.content
 										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
 									.aside-right
 										aside right
+
+						%li
+							.content
+								Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
+
+						%li
+							.content
+								.title
+									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
+								.desc
+									Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+
 
 					.margin-zone.padding
 						%h2 COOLSTRAP

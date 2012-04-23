@@ -8,10 +8,13 @@ $default-fixed-size: 100% !default;
 
 // Header and navbar
 
+$default-nav-size: 35px !default;
+$default-tabs-size: 35px !default;
+
 $default-header-size: 44px !default;
-$default-navbar-size: 30px !default;
 $default-header-spacing: 7px !default;
-$default-header-extended: $default-header-size + $default-navbar-size !default;
+
+$default-header-extended: $default-header-size + $default-nav-size !default;
 
 $default-footer-size: 30px;
 $default-footer-spacing: 7px !default;

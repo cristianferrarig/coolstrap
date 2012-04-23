@@ -44,6 +44,12 @@
 	header[data-type="extended"] ~ & {
 		top: $default-header-extended;
 	}
+	nav:not([data-type="tabs"]) ~ & {
+		top: $default-nav-size;
+	}
+	nav[data-type="tabs"] ~ & {
+		top: $default-tabs-size;
+	}
 	footer:not([data-type="tabbar"]) ~ & {
 		bottom: $default-footer-size;
 	}
