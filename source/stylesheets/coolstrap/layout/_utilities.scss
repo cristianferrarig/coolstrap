@@ -51,3 +51,10 @@
 		bottom: $default-tabbar-size;
 	}
 }
+
+@mixin setFlexiblebox {
+	@include display-box;
+  @include box-orient(horizontal);
+  @include box-align(stretch);
+  @include box-direction(normal);
+}
