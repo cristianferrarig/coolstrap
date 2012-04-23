@@ -11,6 +11,16 @@ $arrowSize:     34px;
 $searchIcon: image-url('search-icon.png');
 
 
+// Text
+h1, h2, h3, h4, h5, h6, p {
+  color: #555;
+  margin-bottom: 1.4em      ;
+}
+h1{
+  font-size: 23px;
+}
+
+
 
 
 
@@ -199,7 +209,7 @@ form {
     font-size: 18px;
   }
   select{
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
