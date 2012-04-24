@@ -3,7 +3,9 @@
 - https://github.com/h5bp/html5-boilerplate
 - https://github.com/h5bp/mobile-boilerplate
 - https://github.com/TapQuo/Lungo.js
+- http://flexiejs.com/ - flexbox polyfill https://github.com/doctyper/flexie
 
+- http://www.quirksmode.org/css/contents.html#t10
 
 
 # Research

@@ -11,9 +11,13 @@ $(document).ready(function(){
 	*/
 
 
-	myScroll = new iScroll('demo');
-
-	
+	//myScroll = new iScroll('demo');
 
 
 });
+/*
+Modernizr.load({
+  test: Modernizr.flexbox,
+  nope: 'libs/flexie-1.0.3.js'
+});
+*/

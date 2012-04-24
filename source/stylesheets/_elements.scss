@@ -30,8 +30,6 @@ ul[data-type="listview"] {
     @include setFlexiblebox;
     > .content {
       padding: 10px;
-      > .title {
-      }
     }
   }
   li {
@@ -53,12 +51,10 @@ ul[data-type="listview"] {
 
 nav {
   ul {
-    @include setFlexiblebox;
     background-color: $debugBgColor;
     height: $default-nav-size;
     li {
-      @include box-flex(1);
-      @include ellipsis;
+      //@include ellipsis;
       text-align: center;
       border-right: 1px solid $debugBgColor;
       &:last-child {
@@ -66,10 +62,34 @@ nav {
       }
     }
     a {
+      @include ellipsis;
       line-height: $default-nav-size;
+      padding: 0 10px;
+      display: block;
+    }
+  }
+  .flexbox & {
+    ul {
+      @include setFlexiblebox;
+      li {
+        @include box-flex(1);
+      }
+    }
+  }
+  .no-flexbox & {
+    width: 100%;
+    display: table;
+    ul {
+      width: 100%;
+      display: table-row;
+      li {
+        display: table-cell;
+      }
     }
   }
 }
+
+
 
 
 
