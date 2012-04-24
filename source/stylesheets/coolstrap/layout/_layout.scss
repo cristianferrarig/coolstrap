@@ -92,6 +92,7 @@
         bottom: $default-tabbar-size;
       }
     }
+    .csstransforms3d &,
     .no-csstransforms3d & {
       overflow-y: auto;
     }

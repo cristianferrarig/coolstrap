@@ -23,9 +23,6 @@ ul[data-type="listview"] {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  * {
-    background-color: $debugBgColor;
-  }
   li, li > a {
     @include setFlexiblebox;
     > .content {
@@ -52,6 +49,7 @@ ul[data-type="listview"] {
 nav {
   ul {
     background-color: $debugBgColor;
+    border-bottom: 1px solid $debugBgColor;
     height: $default-nav-size;
     li {
       //@include ellipsis;
@@ -179,14 +177,24 @@ a {
 //form elements
 form {
   padding: 10px;
-  input, textarea {
+  input,
+  textarea {
     border: 0;
     padding: 5px;
   }
-  input[type="text"], input[type="search"], input[type="password"], input[type="url"], input[type="email"], input[type="number"], input[type="tel"], textarea, select {
+  input[type="text"],
+  input[type="search"],
+  input[type="password"],
+  input[type="url"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  textarea,
+  select {
     width: 100%;
   }
-  input[type="checkbox"], input[type="radio"] {
+  input[type="checkbox"],
+  input[type="radio"] {
     margin: 10px 10px 0 0;
     font-size: 18px;
   }
