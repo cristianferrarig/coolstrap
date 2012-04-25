@@ -76,15 +76,8 @@ nav {
       display: block;
     }
   }
-  .flexbox & {
-    ul {
-      @include setFlexiblebox;
-      li {
-        @include box-flex(1);
-      }
-    }
-  }
-  .no-flexbox & {
+  
+  .no-flexbox:not([class*="flexbox"]) & {
     width: 100%;
     display: table;
     ul {
@@ -92,6 +85,15 @@ nav {
       display: table-row;
       li {
         display: table-cell;
+      }
+    }
+  }
+  .flexbox-legacy &,
+  .flexbox & {
+    ul {
+      @include setFlexiblebox;
+      li {
+        @include box-flex(1);
       }
     }
   }
@@ -235,15 +237,7 @@ ul.vertical-menu {
   text-align: center;
 }
 
-//Buttos
-.button {
-  background-color: $debugBgColor;
-  display: inline-block;
-  margin: 2px 0;
-  padding: 10px 15px;
-  vertical-align: middle;
-  text-align: center;
-}
+
 
 //Provisional
 
@@ -253,16 +247,62 @@ ul.vertical-menu {
 
 
 
+footer[data-type="tabbar"] {
+  background-color: #555;
+  
+  ul {
+    height: $default-tabbar-size;
+  }
+  a {
+    height: $default-tabbar-size;
+    .icon {
+      margin-top: 3px;
+      height: 30px;
+    }
+    .text {
+      line-height: 17px;
+    }
+  }
+}           
 
-            
 
 
+//Buttos
+.button {
+  background-color: $debugBgColor;
+  display: inline-block;
+  padding: 0 15px;
+  vertical-align: middle;
+  text-align: center;
+}
 
+//Button group
 
+.button-group {
+  display: inline-block;
+  .button {
+    float: left;
+    border-right: 1px solid #888;
+    &:hover {
+      background-color: #333;
+    }
+    &:first-child {
+    }
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
 
-
-
-
+//icono de prueba
+    .icono {
+      @include border-radius(100%);
+      background-color: #000;
+      display: block;
+      height: 30px;
+      width: 30px;
+      margin: 0 auto;
+    }
 
 
 

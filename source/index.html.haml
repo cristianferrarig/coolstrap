@@ -4,12 +4,13 @@
 		
 		%header
 			%a{:href => "#", :class => "onleft", "data-target" => "aside", "data-icon" => "items"} asd
+			%span holi
 			%a{:href => "#", :class => "onright", "data-target" => "aside", "data-article" => "welcome"} Profiles
 			
 
 		%section{:id => "home", :class => "current"}
 
-			%nav
+			%nav{"data-type" => "tabs"}
 				%ul
 					%li
 						%a{:href => "#"} Opcion 1
@@ -23,6 +24,18 @@
 
 			%article{:id => "demo", :class => "current"}
 				.scroller
+					%nav
+						%ul
+							%li
+								%a{:href => "#"} 	
+							%li
+								.button-group
+									%a{:class => "button", :href => "#"} Left
+									%a{:class => "button", :href => "#"} Center
+									%a{:class => "button", :href => "#"} Right
+							%li
+								%a{:href => "#"} 
+						
 
 					.searchbar
 						%input{:type => "search", :value => ""}
@@ -106,12 +119,16 @@
 						%a{:class => "button", :href => "#"} ioi button
 						%a{:class => "button", :href => "#"} android button
 						%a{:class => "button", :href => "#"} windows mobile
-						%a{:class => "button", :href => "#"} Left
-						%a{:class => "button", :href => "#"} Center
-						%a{:class => "button", :href => "#"} Right
-						-#Determinar first y last child
-						-#Sepecify device for that							
-						-# Includ active and hover
+						%a{:class => "button", :href => "#"}
+							%span.icono
+						%a{:class => "button", :href => "#"}
+							%span.icono
+						.button-group
+							%a{:class => "button", :href => "#"} Left
+							%a{:class => "button", :href => "#"} Center
+							%a{:class => "button", :href => "#"} Right
+						
+						
 
 					
 					%form.margin-zone
@@ -231,6 +248,35 @@
 								%a{:class => "button", :href => "#"} Cancel
 						%h3 Submit
 						%input{:type => "submit", :value => "submit"}
+
+		%footer{"data-type" => "tabbar"}
+			%nav{"data-type" => "tabs"}
+				%ul
+					%li
+						%a{:href => "#"}
+							.icon
+								.icono 
+							.text tab1
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab2
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab13
+					%li		
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab4
+					%li		
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab5		
 
 
 						
