@@ -1,0 +1,71 @@
+= content_for :principal do
+
+	%section{"data-type" => "global"}
+		
+		%header
+			%a{:href => "#", :class => "onleft", "data-target" => "aside", "data-icon" => "items"} asd
+			%a{:href => "#", :class => "onright", "data-target" => "aside", "data-article" => "welcome"} Profiles
+			
+		%section{:id => "home", :class => "current"}
+
+			%nav{"data-type" => "tabs"}
+				%ul
+					%li
+						%a{:href => "#"}
+							.icon
+								.icono
+							.text tab1
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono
+							.text tab2
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono
+							.text tab13
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono
+							.text tab4
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono
+							.text tab5
+
+			%article{:id => "demo", :class => "current"}
+				
+				.scroller
+
+		%footer{"data-type" => "tabbar"}
+			%nav{"data-type" => "tabs"}
+				%ul
+					%li
+						%a{:href => "#"}
+							.icon
+								.icono 
+							.text tab1
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab2
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab13
+					%li		
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab4
+					%li		
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab5		
+

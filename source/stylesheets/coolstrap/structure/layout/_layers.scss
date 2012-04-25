@@ -1,0 +1,30 @@
+@import "../utilities/variables";
+
+
+// Layers
+aside,
+section:not([data-type="global"]),
+article {
+  z-index: $default-position-back;
+  &.current {
+    z-index: $default-position-current;
+  }
+}
+header, 
+footer,
+section > nav,
+div[data-type="main"],
+section[data-type="global"] {
+  z-index: $default-position-front;
+}
+
+
+// Visibility
+aside,
+section:not([data-type="global"]),
+article {
+  visibility: hidden;
+  &.current {
+    visibility: visible;
+  }
+}

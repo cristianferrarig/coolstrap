@@ -1,0 +1,48 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+
+.onleft   { float: left; }
+.onright  { float: right; }
+
+div[data-type="main"] {
+  @include setHeight();
+}
+section,
+article {
+  @include setHeight();
+  &:not([data-type="global"]) {
+    header:not([data-type="extended"]) ~ & {
+      top: $default-header-size;
+    }
+    header[data-type="extended"] ~ & {
+      top: $default-header-extended;
+    }
+    nav:not([data-type="extended"]) ~ & {
+      top: $default-nav-size;
+    }
+    nav[data-type="extended"] ~ & {
+      top: $default-tabs-size;
+    }
+    footer:not([data-type="tabbar"]) ~ & {
+      bottom: $default-footer-size;
+    }
+    footer[data-type="tabbar"] ~ & {
+      bottom: $default-tabbar-size;
+    }
+  }
+  /*
+  .csstransforms3d &,
+  .no-csstransforms3d & {
+    overflow-y: auto;
+  }
+  */
+}
+
+header {
+  background-color: $debugBgColor;
+	a {
+		@include button;
+    background-color: $debugBgColor
+	}
+}

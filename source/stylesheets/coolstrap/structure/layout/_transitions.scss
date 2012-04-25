@@ -1,0 +1,19 @@
+@import "../utilities/variables";
+@import "../utilities/animate";
+
+div[data-type="main"],
+section[data-type="global"] {
+  @include setTransition();
+  &[data-move="left"] {
+    @include setTransition(left,$default-aside-size);
+  }
+  &[data-move="right"] {
+    @include setTransition(right,$default-aside-size);
+  }
+  &[data-move="top"] {
+    @include setTransition(top,$default-backface-size);
+  }
+  &[data-move="bottom"] {
+    @include setTransition(bottom,$default-backface-size);
+  }
+}

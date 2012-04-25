@@ -56,48 +56,7 @@ ul[data-type="listview"] {
 }
 
 
-nav {
-  ul {
-    background-color: $debugBgColor;
-    border-bottom: 1px solid $debugBgColor;
-    height: $default-nav-size;
-    li {
-      //@include ellipsis;
-      text-align: center;
-      border-right: 1px solid $debugBgColor;
-      &:last-child {
-        border-right: 0;
-      }
-    }
-    a {
-      @include ellipsis;
-      line-height: $default-nav-size;
-      padding: 0 10px;
-      display: block;
-    }
-  }
-  
-  .no-flexbox:not([class*="flexbox"]) & {
-    width: 100%;
-    display: table;
-    ul {
-      width: 100%;
-      display: table-row;
-      li {
-        display: table-cell;
-      }
-    }
-  }
-  .flexbox-legacy &,
-  .flexbox & {
-    ul {
-      @include setFlexiblebox;
-      li {
-        @include box-flex(1);
-      }
-    }
-  }
-}
+
 
 
 

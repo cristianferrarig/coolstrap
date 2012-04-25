@@ -1,0 +1,44 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+
+header {
+  &[data-type="extended"] {
+    @include fixedPosition(top,$default-header-size);
+  }
+  &:not([data-type="extended"]) {
+    @include fixedPosition(top,$default-header-size);
+  }
+}
+section > nav {
+  &[data-type="tabs"] {
+    @include fixedPosition(top,$default-tabs-size);
+  }
+  &:not([data-type="tabs"]) {
+    @include fixedPosition(top,$default-nav-size);
+  }
+}
+footer {
+  &:not([data-type="tabbar"]) {
+    @include fixedPosition(bottom, $default-footer-size);
+  }
+  &[data-type="tabbar"] {
+    @include fixedPosition(bottom, $default-tabbar-size);
+  }
+}
+aside {
+  &[data-position="top"] {
+    @include fixedPosition(top,$default-backface-size);
+  }
+  &[data-position="bottom"] {
+    @include fixedPosition(bottom,$default-backface-size);
+  }
+
+  &[data-position="left"] {
+    @include fixedPosition(left,$default-aside-size);
+  }
+  &[data-position="right"] {
+    @include fixedPosition(right,$default-aside-size);
+  }
+}
+
