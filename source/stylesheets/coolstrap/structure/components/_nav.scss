@@ -2,13 +2,9 @@
 
 nav {
   ul {
-    background-color: $debugBgColor;
-    border-bottom: 1px solid $debugBgColor;
     height: $default-nav-size;
     li {
-      //@include ellipsis;
       text-align: center;
-      border-right: 1px solid $debugBgColor;
       &:last-child {
         border-right: 0;
       }
@@ -42,7 +38,6 @@ nav {
   }
 }
 nav[data-type="tabs"] {
-  background-color: #555;
   ul {
     height: $default-tabbar-size;
   }
@@ -56,9 +51,8 @@ nav[data-type="tabs"] {
       line-height: 17px;
     }
   }
-}           
+}
 nav[data-type="tabs-icon"] {
-  background-color: #555;
   ul {
     height: 44px;
   }

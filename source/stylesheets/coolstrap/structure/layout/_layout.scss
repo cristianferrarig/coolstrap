@@ -38,11 +38,8 @@ article {
   }
   */
 }
-
 header {
-  background-color: $debugBgColor;
-	a {
-		@include button;
-    background-color: $debugBgColor
-	}
+  a {
+    @include setHeaderButton();
+  }
 }

@@ -66,7 +66,7 @@
 }
 
 
-@mixin button($type: $default-button-type) {
+@mixin setHeaderButton($type: $default-button-type) {
 	@if $type == spacing {
 		$margin: $default-header-spacing;
 		$height: $default-header-size - ($margin * 2);
