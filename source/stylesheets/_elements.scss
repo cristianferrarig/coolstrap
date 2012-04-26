@@ -14,89 +14,16 @@ $searchIcon: image-url('search-icon.png');
 // Text
 h1, h2, h3, h4, h5, h6, p {
   color: #555;
-  margin-bottom: 1.4em      ;
 }
 h1{
   font-size: 23px;
 }
 
-
-
-
-
-
-
-
-
-
-ul[data-type="listview"] {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  li, li > a {
-    @include setFlexiblebox;
-    > .content {
-      padding: 10px;
-    }
-  }
-  li {
-    border-bottom: 1px solid $debugBgColor;
-  }
-  .content {
-    @include box-flex(1);
-  }
-  .nested {
-    @include setFlexiblebox;
-  }
-  .title:not(.nested),
-  .title.nested .content {
-    @include ellipsis;
-    font-size: 20px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Text
 h1, h2, h3, h4, h5, h6, p {
   color: #555;
   margin: 0;
   margin-bottom: 10px;
 }
-h1{
-  font-size: 23px;
-}
-
-
-
-
-
-
-
-
-
-
 
 a {
   text-decoration: none;
@@ -214,7 +141,7 @@ ul.vertical-menu {
 .button {
   background-color: $debugBgColor;
   display: inline-block;
-  padding: 0 15px;
+  padding: 8px 15px;
   vertical-align: middle;
   text-align: center;
 }
@@ -223,6 +150,8 @@ ul.vertical-menu {
 
 .button-group {
   display: inline-block;
+  vertical-align: bottom;
+  line-height: 30px;
   .button {
     float: left;
     border-right: 1px solid #888;

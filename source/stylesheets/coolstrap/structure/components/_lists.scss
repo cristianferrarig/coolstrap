@@ -1,10 +1,10 @@
 @import "../utilities";
 
 * {
-  background-color: $debugBgColor;
+  @include box-shadow(0 0 0 1px $debugBgColor)
 }
 
-
+//Navs
 nav {
   line-height: $default-nav-size;
   ul {
@@ -43,13 +43,13 @@ nav {
   }
 }
 nav[data-type="tabs"] {
-  line-height: 14px;
+  line-height: 17px;
   ul {
     height: $default-tabbar-size;
   }
   a {
-    padding-top: 3px;
     .icon {
+      margin-top: 3px;
       height: 30px;
     }
   }
@@ -59,14 +59,14 @@ nav[data-type="tabs-icon"] {
     height: 35px;
   }
   a {
-    padding-top: 3px;
     .icon {
+      margin-top: 3px;
       height: 30px;
     }
   }
 }           
 nav[data-type="mixed"] {
-  line-height: 32px;
+  line-height: 35px;
   ul {
     height: 35px;
     li {
@@ -76,37 +76,39 @@ nav[data-type="mixed"] {
       &:last-child {
         @include box-flex();
       }
-      a {
-        padding-top: 3px;
-        .icon {
-          height: 30px;
-        }
-      }
     }
   }
 }
 
-$default-header-color: #383C47 !default;
-$default-header-style: linear !default; 
+//Lists
 
-@mixin header($color: $default-header-color, $style: $default-header-color) {
-  @if $style == linear {
-    @include background-image(linear-gradient(top, #eee, #ccc));
+ul[data-type="listview"] {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li, li > a {
+    @include setFlexiblebox;
+    > .content {
+      padding: 10px;
+    }
   }
-  @else if $style == shiny {
-    @include background-image(linear-gradient(top, #eee, #ccc));
+  li {
+    border-bottom: 1px solid $debugBgColor;
   }
-  @else if $style == radial {
-    @include background-image(radiar-gradient(#eee, #333 100px));
+  .content {
+    @include box-flex(1);
+  }
+  .nested {
+    @include setFlexiblebox;
+  }
+  .title:not(.nested),
+  .title.nested .content {
+    @include ellipsis;
+    font-size: 20px;
   }
 }
 
-header {
-  @include header($default-header-color, linear);
-}
-footer {
-  @include header($default-header-color, linear);
-}
+
 
 
 

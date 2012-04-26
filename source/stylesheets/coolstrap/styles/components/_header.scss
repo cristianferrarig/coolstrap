@@ -2,5 +2,13 @@
 
 
 @mixin header($color: $default-header-color, $style: $default-header-color) {
-
+	@if $style == linear {
+		@include background-image(linear-gradient(top, #eee, #ccc));
+	}
+	@else if $style == shiny {
+		@include background-image(linear-gradient(top, #eee, #ccc));
+	}
+	@else if $style == radial {
+		@include background-image(radiar-gradient(#eee, #333 100px));
+	}
 }
