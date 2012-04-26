@@ -41,3 +41,45 @@ nav {
     }
   }
 }
+nav[data-type="tabs"] {
+  background-color: #555;
+  ul {
+    height: $default-tabbar-size;
+  }
+  a {
+    height: $default-tabbar-size;
+    .icon {
+      margin-top: 3px;
+      height: 30px;
+    }
+    .text {
+      line-height: 17px;
+    }
+  }
+}           
+nav[data-type="tabs-icon"] {
+  background-color: #555;
+  ul {
+    height: 44px;
+  }
+  a {
+    height: 44px;
+    .icon {
+      margin-top: 3px;
+      height: 30px;
+    }
+    .text {
+      line-height: 17px;
+    }
+  }
+}           
+
+
+
+
+
+
+
+
+
+

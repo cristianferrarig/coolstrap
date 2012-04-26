@@ -206,23 +206,7 @@ ul.vertical-menu {
 
 
 
-footer[data-type="tabbar"] {
-  background-color: #555;
-  
-  ul {
-    height: $default-tabbar-size;
-  }
-  a {
-    height: $default-tabbar-size;
-    .icon {
-      margin-top: 3px;
-      height: 30px;
-    }
-    .text {
-      line-height: 17px;
-    }
-  }
-}           
+
 
 
 
@@ -254,15 +238,22 @@ footer[data-type="tabbar"] {
 }
 
 //icono de prueba
-    .icono {
+  .icono {
+    @include border-radius(100%);
+    background-color: #ccc;
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin: 0 auto;
+  }
+.icon {
       @include border-radius(100%);
-      background-color: #000;
+      background-color: #ccc;
       display: block;
       height: 30px;
       width: 30px;
       margin: 0 auto;
     }
-
 
 
 
