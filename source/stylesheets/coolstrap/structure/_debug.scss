@@ -1,7 +1,10 @@
 @import "utilities/variables";
 
 // DEBUG ////////////////////////////////////////////////////////////////
-
+* {
+    background-color: $debugBgColor;
+}
+	
 [role="main"] > header {
 	background-color: #ccc;
 }

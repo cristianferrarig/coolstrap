@@ -1,8 +1,5 @@
 @import "../utilities";
 
-* {
-    background-color: $debugBgColor;
-}
 
 nav {
   
@@ -85,15 +82,15 @@ nav[data-type="mixed"] {
 
 .button-group {
   font-size: 0px;
-  line-height: 16px;
   text-align: center;
-  .button {
-    display: inline-block;
-    padding: 4px 30px;
+  a {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     font-size: 12px;
     &:first-child {
     }
     &:last-child {
+      margin-right: 7px !important;
     }
   }
 }

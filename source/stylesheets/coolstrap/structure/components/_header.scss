@@ -1,0 +1,27 @@
+@import "../utilities";
+
+header:not([data-type]) {
+  @include setFlexiblebox;
+  font-size: 0;
+  h1 {
+    line-height: $default-header-size - 10px;
+    font-size: 16px;
+    @include box-flex(1);
+    text-align: center;
+    span {
+      font-size: 13px;
+      display: block;
+      line-height: 0px;
+      margin-top: -5px;
+    }
+  }
+  a {
+    font-size: 12px;
+    background-color: $debugBgColor;
+    @include setHeaderButton();
+  }
+  a + a {
+    background-color: red;
+    margin-left: 0px;
+  }
+}
