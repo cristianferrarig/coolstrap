@@ -1,33 +1,43 @@
 = content_for :principal do
 
-	%section{"data-type" => "global"}
+	%div{"role" => "main"}
 		
-		%header{"data-position" => "left"}
+		%header{"data-type" => "vertical"}
 			%ul
 				%li
 					%a{:href => "#"}
-						.icon
+						option1
 				%li
 					%a{:href => "#"}
-						.icon
+						option2
 				%li
 					%a{:href => "#"}
-						.icon
+						option3
 				%li
 					%a{:href => "#"}
-						.icon
+						option4
 				%li
 					%a{:href => "#"}
-						.icon
+						option5
 			
-		%section{:id => "home", :class => "current"}
-			
-			
+		%footer
 
-			%article{:id => "demo", :class => "current"}
-				
-				.scroller
-					
+		%section.current
 
-				
+			%header
+				%a{:href => "#"} Global header
+				%a{:href => "#"} Aside
+
+			%footer
+
+			%article.current
+
+
+	%aside{"data-position" => "left"}
+
+	%aside{"data-position" => "right"}
+
+	%aside{"data-position" => "top"}
+
+	%aside{"data-position" => "bottom"}
 

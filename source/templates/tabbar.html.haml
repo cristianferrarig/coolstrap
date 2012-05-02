@@ -1,6 +1,6 @@
 = content_for :principal do
 
-	%section{"data-type" => "global"}
+	%div{"role" => "main"}
 		
 		%header
 			%a{:href => "#", :class => "onleft", "data-target" => "aside", "data-icon" => "items"} asd
@@ -84,17 +84,12 @@
 							%li
 								%a{:href => "#"} 
 									.icon
-					%nav{"data-type" => "tabs-mixed"}
-						%ul
-							%li
-								
-							%li
-								.button-group
-									%a{:class => "button", :href => "#"} Left
-									%a{:class => "button", :href => "#"} Center
-									%a{:class => "button", :href => "#"} Right	
-								
-							%li
+					
+					%nav{"data-type" => "tabs-mixed"}	
+						.button-group
+							%a{:class => "button", :href => "#"} Left
+							%a{:class => "button", :href => "#"} Center
+							%a{:class => "button", :href => "#"} Right		
 								
 
 					

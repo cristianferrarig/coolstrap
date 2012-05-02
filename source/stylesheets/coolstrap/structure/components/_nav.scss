@@ -1,6 +1,11 @@
 @import "../utilities";
 
+* {
+    background-color: $debugBgColor;
+}
+
 nav {
+  
   line-height: $default-nav-size;
   ul {
     height: $default-nav-size;
@@ -71,38 +76,55 @@ nav[data-type="mixed"] {
       &:last-child {
         @include box-flex();
       }
-      a {
-        padding-top: 3px;
-        .icon {
-          height: 30px;
-        }
-      }
     }
   }
 }
 
-/*
-$default-header-color: #383C47 !default;
-$default-header-style: linear !default; 
 
-@mixin header($color: $default-header-color, $style: $default-header-color) {
-  @if $style == linear {
-    @include background-image(linear-gradient(top, #eee, #ccc));
-  }
-  @else if $style == shiny {
-    @include background-image(linear-gradient(top, #eee, #ccc));
-  }
-  @else if $style == radial {
-    @include background-image(radiar-gradient(#eee, #333 100px));
+//Buttons group
+
+.button-group {
+  font-size: 0px;
+  line-height: 16px;
+  text-align: center;
+  .button {
+    display: inline-block;
+    padding: 4px 30px;
+    font-size: 12px;
+    &:first-child {
+    }
+    &:last-child {
+    }
   }
 }
 
-header {
-  @include header($default-header-color, linear);
-}
-footer {
-  @include header($default-header-color, linear);
-}
-*/
+
+// Vertical Nav
+
+header[data-type="vertical"] {
+  ul {
+    @include display-box;
+    @include box-orient(vertical);
+    @include box-align(baseline);
+    @include box-direction(reverse);
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      @include box-flex(1);
+      margin: 0;
+      padding: 0;
+      a {
+       margin: 0;
+       padding: 0;
+      }
+    }
+  }
+} 
+
+
+
+
 
 
