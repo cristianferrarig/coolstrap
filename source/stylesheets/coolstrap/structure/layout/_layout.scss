@@ -32,45 +32,6 @@ article {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*
-@mixin setHeight() {
-  position: absolute;
-  width: 100% !important;
-  height: auto;
-  top: 0px;
-  bottom: 0px;
-  header:not([data-type="extended"]) ~ & {
-    top: $default-header-size;
-  }
-  header[data-type="extended"] ~ & {
-    top: $default-header-extended;
-  }
-  nav:not([data-type="tabs"]) ~ & {
-    top: $default-nav-size;
-  }
-  nav[data-type="tabs"] ~ & {
-    top: $default-tabs-size;
-  }
-  footer:not([data-type="tabbar"]) ~ & {
-    bottom: $default-footer-size;
-  }
-  footer[data-type="tabbar"] ~ & {
-    bottom: $default-tabbar-size;
-  }
-}
-*/
-
-
 header {
   a {
     background-color: $debugBgColor;
