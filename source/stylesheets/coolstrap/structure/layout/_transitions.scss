@@ -1,7 +1,7 @@
 @import "../utilities/variables";
 @import "../utilities/animate";
 
-div[data-type="main"],
+div[role="main"],
 section[data-type="global"] {
   @include setTransition();
   &[data-move="left"] {

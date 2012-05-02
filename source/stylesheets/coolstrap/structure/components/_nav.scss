@@ -1,10 +1,5 @@
 @import "../utilities";
 
-* {
-  background-color: $debugBgColor;
-}
-
-
 nav {
   line-height: $default-nav-size;
   ul {
@@ -86,6 +81,7 @@ nav[data-type="mixed"] {
   }
 }
 
+/*
 $default-header-color: #383C47 !default;
 $default-header-style: linear !default; 
 
@@ -107,7 +103,7 @@ header {
 footer {
   @include header($default-header-color, linear);
 }
-
+*/
 
 
 

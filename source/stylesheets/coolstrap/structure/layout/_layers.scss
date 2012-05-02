@@ -13,7 +13,7 @@ article {
 header, 
 footer,
 section > nav,
-div[data-type="main"],
+div[role="main"],
 section[data-type="global"] {
   z-index: $default-position-front;
 }

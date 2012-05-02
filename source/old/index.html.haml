@@ -1,0 +1,204 @@
+
+= content_for :principal do
+
+	%section{"data-type" => "global"}
+		
+		%header
+			%a{:href => "#", :class => "onleft", "data-target" => "aside", "data-icon" => "items"} asd
+			%a{:href => "#", :class => "onright", "data-target" => "aside", "data-article" => "welcome"} Profiles
+			
+
+		%section{:id => "home", :class => "current"}
+
+			%article{:id => "demo", :class => "current"}
+				.scroller
+
+					
+
+					.margin-zone.padding
+						%h2 COOLSTRAP
+						-# Text tags
+						%h1 Title h1
+						%h2 Title h2
+						%h3 Title h3
+						%h4 Title h4
+						%h5 Title h5
+						%h6 Title h6
+						%p
+							p
+							Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					
+
+					
+					
+					
+					.margin-zone.padding			
+						%h2 Buttons 
+						%a{:class => "button", :href => "#"} ioi button
+						%a{:class => "button", :href => "#"} android button
+						%a{:class => "button", :href => "#"} windows mobile
+						%a{:class => "button", :href => "#"}
+							%span.icono
+						%a{:class => "button", :href => "#"}
+							%span.icono
+						.button-group
+							%a{:class => "button", :href => "#"} Left
+							%a{:class => "button", :href => "#"} Center
+							%a{:class => "button", :href => "#"} Right
+						
+						
+
+					
+					%form.margin-zone
+						%h2 Form elements
+
+						-# Build on-off togle switch here
+
+						-# Build slider here
+
+						%h2 Inputs
+						%h3 Text, default keyboard
+						%input{:type => "text", :name => "txt"}
+
+						%h3 Search
+						%input{:type => "search", :name => "txt"}
+
+						%h3 Password
+						%input{:type => "password", :name => "pwd"}
+
+						%h3 To url keyboard
+						%input{:type => "url", :name => "url"}
+
+						%h3 To email keyboard
+						%input{:type => "email", :name => "email"}
+
+						%h3 To number keyboard
+						%input{:type => "number", :name => "number"}
+
+						%h3 To phone keyboard
+						%input{:type => "tel", :name => "number"}
+
+						%h3 Radio buttons.
+						%input{:type => "radio", :name => "options", :value => "1"} Option 1 
+						%br  
+						%input{:type => "radio", :name => "options", :value => "2"} Option 2
+
+						%h3 Checkbox buttons.
+						%input{:type => "checkbox", :name => "items", :value => "checkbox1"} Checkbox A
+						%br
+						%input{:type => "checkbox", :name => "items", :value => "checkbox2"} Checkbox B
+
+						%h3 Select 
+						-# Must be a pop up?
+						%select
+							%option{:value => "ios"} iOS
+							%option{:value => "android"} Android
+							%option{:value => "windows"}  Windows Mobile
+
+						%h3 Textarea
+						%textarea{:rows => "3", :cols => "10"}
+
+						%h3 Calendar
+						%table{:class => "calendar", :cellpadding => "2", :cellspacing => "2"}
+							%tr
+								%td{:class => "month", :colspan => "7"}
+									Janury
+							%tr
+								%td
+								%td
+								%td
+								%td 1
+								%td 2
+								%td 3
+								%td 4
+							%tr
+								%td 5
+								%td 6
+								%td 7
+								%td 8
+								%td 9
+								%td 10
+								%td 11
+							%tr
+								%td 12
+								%td 13
+								%td 14
+								%td 15
+								%td 16
+								%td 17
+								%td 18
+							%tr
+								%td 19
+								%td 20
+								%td 21
+								%td 22
+								%td 23
+								%td 24
+								%td 25
+							%tr
+								%td 26
+								%td 27
+								%td 28
+								%td 29
+								%td 30
+								%td 31
+								%td
+						%ul.vertical-menu
+							%li.separator-list 
+								%h3 Pop up menu
+							%li 
+								%span
+									%a{:href => "#"} Item A
+							%li 
+								%a{:href => "#"} Item B
+							%li 
+								%a{:href => "#"} Item C
+							%li 
+								%a{:href => "#"} Item D
+						%h3 Dialog menu
+						.dialog-menu
+							.title
+								%h2 Do you wanna know Coolstrap?
+							.mesagge
+								%p If you prove this framework can get superpowers
+							.action-zone
+								%a{:class => "button", :href => "#"} Prove
+								%a{:class => "button", :href => "#"} Cancel
+						%h3 Submit
+						%input{:type => "submit", :value => "submit"}
+
+		%footer{"data-type" => "tabbar"}
+			%nav{"data-type" => "tabs"}
+				%ul
+					%li
+						%a{:href => "#"}
+							.icon
+								.icono 
+							.text tab1
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab2
+					%li
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab13
+					%li		
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab4
+					%li		
+						%a{:href => "#"} 
+							.icon
+								.icono 
+							.text tab5		
+
+
+						
+
+	%aside{"data-type" => "backface", "data-position" => "top", :class => "current"}
+
+	%aside{"data-type" => "backface", "data-position" => "bottom"}

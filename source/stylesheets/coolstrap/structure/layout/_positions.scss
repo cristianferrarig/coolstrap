@@ -3,29 +3,30 @@
 
 
 header {
+  &[data-type="vertical"] {
+    @include fixedPosition(left,$default-header-size);
+  }
   &[data-type="extended"] {
     @include fixedPosition(top,$default-header-size);
   }
-  &:not([data-type="extended"]) {
+  &:not([data-type]) {
     @include fixedPosition(top,$default-header-size);
   }
 }
-section > nav {
-  &[data-type="tabs"] {
-    @include fixedPosition(top,$default-tabs-size);
-  }
-  &:not([data-type="tabs"]) {
-    @include fixedPosition(top,$default-nav-size);
-  }
-}
+
 footer {
-  &:not([data-type="tabbar"]) {
+  &:not([data-type]) {
     @include fixedPosition(bottom, $default-footer-size);
   }
   &[data-type="tabbar"] {
     @include fixedPosition(bottom, $default-tabbar-size);
   }
 }
+
+header[data-type="vertical"] ~ footer {
+  display: none;
+}
+
 aside {
   &[data-position="top"] {
     @include fixedPosition(top,$default-backface-size);
@@ -42,3 +43,18 @@ aside {
   }
 }
 
+
+
+
+
+
+/*
+section > nav {
+  &[data-type="tabs"] {
+    @include fixedPosition(top,$default-tabs-size);
+  }
+  &:not([data-type="tabs"]) {
+    @include fixedPosition(top,$default-nav-size);
+  }
+}
+*/

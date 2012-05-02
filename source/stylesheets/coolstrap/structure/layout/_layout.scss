@@ -1,45 +1,79 @@
 @import "../utilities/variables";
 @import "../utilities/mixins";
 
-
 .onleft   { float: left; }
 .onright  { float: right; }
 
-div[data-type="main"] {
+div[role="main"] {
   @include setHeight();
 }
+
 section,
 article {
   @include setHeight();
-  &:not([data-type="global"]) {
-    header:not([data-type="extended"]) ~ & {
-      top: $default-header-size;
-    }
-    header[data-type="extended"] ~ & {
-      top: $default-header-extended;
-    }
-    nav:not([data-type="extended"]) ~ & {
-      top: $default-nav-size;
-    }
-    nav[data-type="extended"] ~ & {
-      top: $default-tabs-size;
-    }
-    footer:not([data-type="tabbar"]) ~ & {
-      bottom: $default-footer-size;
-    }
-    footer[data-type="tabbar"] ~ & {
-      bottom: $default-tabbar-size;
-    }
+
+  footer[data-type="tabbar"] ~ & {
+    bottom: $default-tabbar-size;
   }
-  /*
-  .csstransforms3d &,
-  .no-csstransforms3d & {
-    overflow-y: auto;
+  footer:not([data-type]) ~ & {
+    bottom: $default-footer-size;
   }
-  */
+  header[data-type="vertical"] ~ & {
+    left: $default-header-size;
+    bottom: 0;
+  }
+  header[data-type="extended"] ~ & {
+    top: $default-header-extended-size;
+  }
+  header:not([data-type]) ~ & {
+    top: $default-header-size;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@mixin setHeight() {
+  position: absolute;
+  width: 100% !important;
+  height: auto;
+  top: 0px;
+  bottom: 0px;
+  header:not([data-type="extended"]) ~ & {
+    top: $default-header-size;
+  }
+  header[data-type="extended"] ~ & {
+    top: $default-header-extended;
+  }
+  nav:not([data-type="tabs"]) ~ & {
+    top: $default-nav-size;
+  }
+  nav[data-type="tabs"] ~ & {
+    top: $default-tabs-size;
+  }
+  footer:not([data-type="tabbar"]) ~ & {
+    bottom: $default-footer-size;
+  }
+  footer[data-type="tabbar"] ~ & {
+    bottom: $default-tabbar-size;
+  }
+}
+*/
+
+
 header {
   a {
+    background-color: $debugBgColor;
     @include setHeaderButton();
   }
 }
