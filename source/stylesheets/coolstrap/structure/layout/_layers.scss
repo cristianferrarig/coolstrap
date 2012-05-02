@@ -3,7 +3,7 @@
 
 // Layers
 aside,
-section:not([data-type="global"]),
+section,
 article {
   z-index: $default-position-back;
   &.current {
@@ -13,15 +13,14 @@ article {
 header, 
 footer,
 section > nav,
-div[role="main"],
-section[data-type="global"] {
+div[role="main"] {
   z-index: $default-position-front;
 }
 
 
 // Visibility
 aside,
-section:not([data-type="global"]),
+section,
 article {
   visibility: hidden;
   &.current {

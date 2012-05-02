@@ -9,7 +9,7 @@ $default-fixed-size: 100% !default;
 
 // Header and navbar
 
-$default-nav-size: 35px !default;
+$default-nav-size: 44px !default;
 $default-tabs-size: 50px !default;
 
 $default-header-size: 44px !default;
@@ -17,17 +17,19 @@ $default-header-spacing: 7px !default;
 
 $default-header-extended-size: $default-header-size + $default-nav-size !default;
 
-$default-footer-size: 30px;
+$default-footer-size: 44px;
 $default-footer-spacing: 7px !default;
 
 $default-tabbar-size: 50px;
 $default-tabbar-spacing: 7px !default;
 
 
-// Aside and Backface
+// Aside
 
-$default-aside-size: 276px !default;
-$default-backface-size: 300px !default;
+$default-aside-left-size: 276px !default;
+$default-aside-right-size: 276px !default;
+$default-aside-top-size: 300px !default;
+$default-aside-bottom-size: 300px !default;
 
 
 // Buttons

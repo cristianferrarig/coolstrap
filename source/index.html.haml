@@ -1,8 +1,10 @@
 = content_for :principal do
 
-	%div{"role" => "main"}
+	%div.a{"role" => "main"}
 
-		%header{"data-type" => "extended"}
+		-#%header{"data-type" => "extended"}
+		-#%header{"data-type" => "vertical"}
+		%header
 			%a{:href => "#", :class => "onleft"} Global header
 			%a{:href => "#", :class => "onright"} Aside
 
@@ -19,10 +21,10 @@
 			%article.current
 
 
-	%aside{"data-position" => "left"}
+	%aside{"data-type" => "onLeft"}
 
-	%aside{"data-position" => "right"}
+	%aside{"data-type" => "onRight"}
 
-	%aside{"data-position" => "top"}
+	%aside{"data-type" => "onTop"}
 
-	%aside{"data-position" => "bottom"}
+	%aside{"data-type" => "onBottom"}

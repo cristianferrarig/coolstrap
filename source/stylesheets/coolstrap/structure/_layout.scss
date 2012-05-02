@@ -2,22 +2,3 @@
 @import "layout/layers";
 @import "layout/layout";
 @import "layout/positions";
-
-
-
-[role="main"] > header {
-	background-color: #ccc;
-}
-section > header {
-	background-color: #EEE;
-}
-article {
-	background-color: #ddd;
-}
-footer {
-	background-color: #aaa;
-}
-header,
-article {
-	box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset;
-}

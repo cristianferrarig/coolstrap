@@ -1,0 +1,30 @@
+@import "utilities/variables";
+
+// DEBUG ////////////////////////////////////////////////////////////////
+
+[role="main"] > header {
+	background-color: #ccc;
+}
+section > header {
+	background-color: #EEE;
+}
+article {
+	background-color: #ddd;
+}
+footer {
+	background-color: #aaa;
+}
+header,
+article,
+footer {
+	box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset;
+}
+
+header[data-type="vertical"] a {
+	-webkit-transform: rotate(-90deg);
+	float: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+// DEBUG ////////////////////////////////////////////////////////////////

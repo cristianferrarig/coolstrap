@@ -28,26 +28,22 @@ header[data-type="vertical"] ~ footer {
 }
 
 aside {
-  &[data-position="top"] {
-    @include fixedPosition(top,$default-backface-size);
+  &[data-type="onTop"] {
+    @include fixedPosition(top,$default-aside-top-size);
   }
-  &[data-position="bottom"] {
-    @include fixedPosition(bottom,$default-backface-size);
+  &[data-type="onBottom"] {
+    @include fixedPosition(bottom,$default-aside-bottom-size);
   }
-
-  &[data-position="left"] {
-    @include fixedPosition(left,$default-aside-size);
+  &[data-type="onLeft"] {
+    @include fixedPosition(left,$default-aside-left-size);
   }
-  &[data-position="right"] {
-    @include fixedPosition(right,$default-aside-size);
+  &[data-type="onRight"] {
+    @include fixedPosition(right,$default-aside-right-size);
   }
 }
 
 
-
-
-
-
+// TODO: terminar estructura para NAV
 /*
 section > nav {
   &[data-type="tabs"] {

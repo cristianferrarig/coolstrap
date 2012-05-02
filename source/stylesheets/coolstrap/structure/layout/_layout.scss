@@ -8,6 +8,7 @@ div[role="main"] {
   @include setHeight();
 }
 
+
 section,
 article {
   @include setHeight();
@@ -29,7 +30,6 @@ article {
     top: $default-header-size;
   }
 }
-
 
 
 header {
