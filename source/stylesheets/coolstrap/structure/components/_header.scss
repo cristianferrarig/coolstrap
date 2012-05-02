@@ -3,17 +3,26 @@
 header:not([data-type]) {
   @include setFlexiblebox;
   font-size: 0;
-  h1 {
-    line-height: $default-header-size - 10px;
-    font-size: 16px;
+  > h1,
+  > hgroup, a {
     @include box-flex(1);
     text-align: center;
-    span {
-      font-size: 13px;
-      display: block;
-      line-height: 0px;
-      margin-top: -5px;
-    }
+  }
+  h1 {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 13px;
+  }
+  h1,
+  h2 {
+    @include ellipsis;
+  }
+  > h1 {
+    line-height: $default-header-size;
+  }
+  > hgroup {
+    padding: (($default-header-size - 32px) / 2) 0;
   }
   a {
     font-size: 12px;
