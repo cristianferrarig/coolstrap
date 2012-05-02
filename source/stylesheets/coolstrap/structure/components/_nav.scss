@@ -2,20 +2,29 @@
 
 
 nav {
-  
+  @include clearfix;
   line-height: $default-nav-size;
+  a {
+      @include ellipsis;
+      padding: 0 10px;
+      span {
+        line-height: 14px;
+        display: block;
+        margin-top: 5px;
+      }
+      i {
+        margin: 0 auto;
+        display: block;
+        height: 30px;
+        width: 30px;
+        background-color: $debugBgColor;
+      }
+    }
   ul {
-    height: $default-nav-size;
     li {
       text-align: center;
       &:last-child {
-        border-right: 0;
       }
-    }
-    a {
-      @include ellipsis;
-      padding: 0 10px;
-      display: block;
     }
   }
   .no-flexbox:not([class*="flexbox"]) & {
@@ -39,62 +48,41 @@ nav {
     }
   }
 }
-nav[data-type="tabs"] {
-  line-height: 14px;
-  ul {
-    height: $default-tabbar-size;
+
+           
+nav[data-type="tabs-mixed"] {
+  @include setFlexiblebox;
+  font-size: 0;
+  > h1,
+  > hgroup, a, nav {
+    @include box-flex(1);
+    text-align: center;
+  }
+  h1 {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 13px;
+  }
+  h1,
+  h2 {
+    @include ellipsis;
+  }
+  > h1 {
+    line-height: $default-nav-size;
+  }
+  > hgroup {
+    padding: (($default-nav-size - 32px) / 2) 0;
   }
   a {
-    padding-top: 3px;
-    .icon {
-      height: 30px;
-    }
-  }
-}
-nav[data-type="tabs-icon"] {
-  ul {
-    height: 35px;
-  }
-  a {
-    padding-top: 3px;
-    .icon {
-      height: 30px;
-    }
-  }
-}           
-nav[data-type="mixed"] {
-  line-height: 32px;
-  ul {
-    height: 35px;
-    li {
-      &:first-child {
-        @include box-flex();
-      }
-      &:last-child {
-        @include box-flex();
-      }
-    }
-  }
-}
-
-
-//Buttons group
-
-.button-group {
-  font-size: 0px;
-  text-align: center;
-  a {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
     font-size: 12px;
-    &:first-child {
-    }
-    &:last-child {
-      margin-right: 7px !important;
-    }
+    background-color: $debugBgColor;
+    @include setHeaderButton();
+  }
+  a + a {
+    margin-left: 0px;
   }
 }
-
 
 // Vertical Nav
 
@@ -119,6 +107,33 @@ header[data-type="vertical"] {
     }
   }
 } 
+
+//Buttons group
+
+.button-group {
+  max-height: $default-nav-size;
+  font-size: 0px;
+  text-align: center;
+  a {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    font-size: 12px;
+    &:first-child {
+      margin-left: 7px !important;
+    }
+    &:last-child {
+      margin-right: 7px !important;
+    }
+  }
+  & + .button-group {
+    a:first-child {
+      margin-left: 0px !important;
+    }
+  }
+}
+
+
+
 
 
 

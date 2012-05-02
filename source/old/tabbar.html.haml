@@ -27,71 +27,40 @@
 								%a{:href => "#"} nombre 4
 							%li
 								%a{:href => "#"} nombre 5
-					%nav{"data-type" => "tabs-icon"}
-						%ul
-							%li
-								%a{:href => "#"}
-									.icon
-							%li
-								%a{:href => "#"} 
-									.icon
-							%li
-								%a{:href => "#"} 
-									.icon
+
 					%nav{"data-type" => "tabs-mixed"}
-						%ul
-							%li
-								%a{:href => "#"} nombre 1
-							%li
-								Title Coolstrap 4 u
-							%li
-								%nav{"data-type" => "tabs-icon"}
-									%ul
-										%li
-											%a{:href => "#"}
-												.icon
-										%li
-											%a{:href => "#"} 
-												.icon
-										%li
-											%a{:href => "#"} 
-												.icon
-					%nav{"data-type" => "tabs-mixed"}
-						%ul
-							%li
-								%nav{"data-type" => "tabs-icon"}
-									%ul
-										%li
-											%a{:href => "#"}
-												.icon
-										%li
-											%a{:href => "#"} 
-												.icon
-										%li
-											%a{:href => "#"} 
-												.icon			
-							%li
-								Title Coolstrap 4 u
-							%li
-								%a{:href => "#"} nombre 1
-												
-					%nav{"data-type" => "tabs-mixed"}
-						%ul
-							%li
-								%a{:href => "#"} 
-									.icon
-							%li
-								Title Coolstrap 4 u
-							%li
-								%a{:href => "#"} 
-									.icon
-					
-					%nav{"data-type" => "tabs-mixed"}	
+						%a left
+						%h1 Title
 						.button-group
-							%a{:class => "button", :href => "#"} Left
-							%a{:class => "button", :href => "#"} Center
-							%a{:class => "button", :href => "#"} Right		
-								
+							%a Left
+							%a Center
+							%a Right
+					%nav
+						%a.onleft left
+						%a.onright right	 	
+					%nav
+						%a.onleft left
+						%a.onright right
+						.button-group
+							%a Left
+							%a Center
+							%a Right
+					%nav
+						%a.onleft left
+						%a.onright right
+						%nav
+							%ul
+								%li
+									%a 1
+								%li
+									%a 2
+								%li
+									%a 3
+								%li
+									%a 4
+								%li
+									%a 5		
+
 
 					
 												
@@ -99,31 +68,26 @@
 
 
 		%footer{"data-type" => "tabbar"}
-			%nav{"data-type" => "tabs"}
+			%nav
 				%ul
 					%li
 						%a{:href => "#"}
-							.icon
-								.icono 
-							.text tab1
+							%i
+							%span tab1
 					%li
 						%a{:href => "#"} 
-							.icon
-								.icono 
-							.text tab2
+							%i
+							%span tab2
 					%li
 						%a{:href => "#"} 
-							.icon
-								.icono 
-							.text tab13
+							%i
+							%span tab13
 					%li		
 						%a{:href => "#"} 
-							.icon
-								.icono 
-							.text tab4
+							%i
+							%span tab4
 					%li		
 						%a{:href => "#"} 
-							.icon
-								.icono 
-							.text tab5		
+							%i
+							%span tab5		
 
