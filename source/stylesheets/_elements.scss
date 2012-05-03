@@ -1,8 +1,40 @@
-@import "coolstrap";
+@import "coolstrap/structure/utilities/variables";
+@import "coolstrap/structure/utilities/mixins";
+@import "coolstrap/structure/utilities/animate";
 
 
 
+//Lists
+/*
+ul[data-type="listview"] {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li, li > a {
+    @include setFlexiblebox;
+    > .content {
+      padding: 10px;
+    }
+  }
+  li {
+    border-bottom: 1px solid $debugBgColor;
+  }
+  .content {
+    @include box-flex(1);
+  }
+  .nested {
+    @include setFlexiblebox;
+  }
+  .title:not(.nested),
+  .title.nested .content {
+    @include ellipsis;
+    font-size: 20px;
+  }
+}
+*/
 
+
+//Buttons group
 
 
 

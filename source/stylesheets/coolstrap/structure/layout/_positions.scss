@@ -42,15 +42,13 @@ aside {
   }
 }
 
-
-// TODO: terminar estructura para NAV
-/*
-section > nav {
-  &[data-type="tabs"] {
-    @include fixedPosition(top,$default-tabs-size);
-  }
-  &:not([data-type="tabs"]) {
+nav {
+  &:not([data-type="tabbar"]) {
     @include fixedPosition(top,$default-nav-size);
   }
+  &[data-type="tabbar"] {
+    @include fixedPosition(top,$default-tabbar-size);
+  }
 }
-*/
+
+

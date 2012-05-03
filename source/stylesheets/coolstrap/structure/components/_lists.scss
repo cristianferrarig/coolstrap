@@ -1,38 +1,8 @@
 @import "../utilities";
 
-* {
-  @include box-shadow(0 0 0 1px $debugBgColor)
-}
 
 
 
-//Lists
-
-ul[data-type="listview"] {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  li, li > a {
-    @include setFlexiblebox;
-    > .content {
-      padding: 10px;
-    }
-  }
-  li {
-    border-bottom: 1px solid $debugBgColor;
-  }
-  .content {
-    @include box-flex(1);
-  }
-  .nested {
-    @include setFlexiblebox;
-  }
-  .title:not(.nested),
-  .title.nested .content {
-    @include ellipsis;
-    font-size: 20px;
-  }
-}
 
 
 

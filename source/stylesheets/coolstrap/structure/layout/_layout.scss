@@ -8,10 +8,10 @@ div[role="main"] {
   @include setHeight();
 }
 
-
 section,
 article {
   @include setHeight();
+  overflow: hidden;
 
   footer[data-type="tabbar"] ~ & {
     bottom: $default-tabbar-size;
@@ -29,13 +29,10 @@ article {
   header:not([data-type]) ~ & {
     top: $default-header-size;
   }
-}
-
-/*
-header {
-  a {
-    background-color: $debugBgColor;
-    @include setHeaderButton();
+  // TODO: terminar estructura para NAV
+  nav ~ & {
+    top: $default-nav-size;
   }
 }
-*/
+
+

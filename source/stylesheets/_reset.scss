@@ -299,8 +299,9 @@ input[type="radio"] {
 	padding: 0;
 }
 input[type="search"] {
+//	-webkit-appearance: none;
 	-webkit-appearance: textfield;
-	-webkit-appearance: searchfield;
+//	-webkit-appearance: searchfield;
 }
 input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;

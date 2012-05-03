@@ -2,9 +2,6 @@
 
 
 @mixin fixedPosition($position: $default-fixed-position, $size: $default-fixed-size) {
-	position: absolute;
-	display: block;
-	#{$position}: 0;
 	@if $position == top {
 		width: 100%;
 		height: $size;
@@ -29,6 +26,12 @@
 		width: 100%;
 		height: 100%;
 	}
+	div[role="main"] > &,
+	section > & {
+		position: absolute;
+		#{$position}: 0;
+	}
+	//display: block;
 }
 
 @mixin setHeight() {
@@ -49,7 +52,7 @@
 
 @mixin setHeaderButton($type: $default-button-type) {
 	@if $type == spacing {
-		$margin: $default-header-spacing;
+		$margin: $default-spacing-size;
 		$height: $default-header-size - ($margin * 2);
 		height: $height;
 		margin: $margin;
@@ -67,4 +70,10 @@
 	color: #fff;
 	text-align: center;
 	text-decoration: none;
+}
+
+@mixin setInput($size: $default-spacing-size) {
+	$height: $default-header-size - ($size * 2);
+	height: $height;
+	margin: $size;
 }

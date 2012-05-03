@@ -1,0 +1,152 @@
+= content_for :principal do
+
+	%div.a{"role" => "main"}
+
+		-#%header
+			%a d
+			.content
+				.controlgroup
+					%a g
+					%a h
+			%a d
+			
+
+		%header
+			%a d
+			%h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			%a g
+
+		%footer{"data-type" => "tabbar"}
+			%ul
+				%li
+					%a{:href => "#"} nombre 1
+				%li
+					%a{:href => "#"} nombre 2
+				%li
+					%a{:href => "#"} nombre 3
+				%li
+					%a{:href => "#"} nombre 4
+				%li
+					%a{:href => "#"} nombre 5
+
+		%section.current
+			%nav{"data-type" => "toolbar"}
+				%input{:type => "search", :name => "txt"}
+				%a search
+	
+			%article.current{:id => "demo"}
+
+				.scroller
+					-#Navigation bar only < a >
+					%nav
+						%a{:href => "#"} nombre 1
+						%a{:href => "#"} nombre 2
+						%a{:href => "#"} nombre 3
+						%a{:href => "#"} nombre 4
+						%a{:href => "#"} nombre 5
+
+					-#Navigation bar with < li >
+					%nav
+						%ul
+							%li
+								%a{:href => "#"} nombre 1
+							%li
+								%a{:href => "#"} nombre 2
+							%li
+								%a{:href => "#"} nombre 3
+							%li
+								%a{:href => "#"} nombre 4
+							%li
+								%a{:href => "#"} nombre 5
+					
+					-#Tabs bar
+					%nav{"data-type" => "tabbar"}
+						%a d
+						%a h
+						%a h
+						%a h
+
+					-#Tool bar with controlgroup
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						.content
+							.controlgroup
+								%a{:href => "#"} nombre 1
+								%a{:href => "#"} nombre 2
+						.flex
+						%a h
+
+					-#Tool bar with flex
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						.content
+							%h1 Texto
+						.flex
+						%a h
+
+					-#Tool bar with flex
+					%nav{"data-type" => "toolbar"}
+						%a d
+						%h1 Texto
+						%a h
+
+					-#Tool bar with 
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.content
+							%ul
+								%li
+									%a{:href => "#"} 1
+								%li
+									%a{:href => "#"} 2
+								%li
+									%a{:href => "#"} 3
+						%a h
+
+					-#Tool bar with 
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						%a{:href => "#"} 1
+						.flex
+						%a{:href => "#"} 2
+						.flex
+						%a{:href => "#"} 3
+						.flex
+						%a h
+
+					-#Tool bar with 
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						.message
+							Actualizado 03-05-12 16:58
+						.flex
+						%a h
+
+					-#Tool bar with 
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						.message
+							%i
+							Comprobando correo...
+						.flex
+						%a h
+
+					-#Search bar
+					%nav{"data-type" => "toolbar"}
+						%input{:type => "search", :name => "txt"}
+					
+
+				
+
+	%aside{"data-type" => "onLeft"}
+
+	%aside{"data-type" => "onRight"}
+
+	%aside{"data-type" => "onTop"}
+
+	%aside{"data-type" => "onBottom"}
