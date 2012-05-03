@@ -4,7 +4,10 @@
 nav {
   @include clearfix;
   line-height: $default-nav-size;
-  a {
+  .content {
+    @include box-flex(1);
+  }
+    a {
       @include ellipsis;
       padding: 0 10px;
       span {
@@ -76,7 +79,7 @@ nav[data-type="tabs-mixed"] {
   }
   a {
     font-size: 12px;
-    background-color: $debugBgColor;
+    background-color: $debugBgColor ;
     @include setHeaderButton();
   }
   a + a {

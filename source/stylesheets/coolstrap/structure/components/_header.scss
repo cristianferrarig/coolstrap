@@ -27,7 +27,7 @@ header:not([data-type]) {
   a {
     font-size: 12px;
     background-color: $debugBgColor;
-    @include setHeaderButton();
+    @include setHeaderButton(full);
   }
   a + a {
     background-color: red;
