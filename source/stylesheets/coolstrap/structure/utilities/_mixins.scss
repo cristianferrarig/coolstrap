@@ -44,10 +44,40 @@
 
 @mixin setFlexiblebox($orient: $default-box-orient) {
 	@include display-box;
-  @include box-orient($orient);
-  @include box-align(stretch);
-  @include box-direction(normal);
+	@include box-orient($orient);
+	@include box-align(stretch);
+	@include box-direction(normal);
 }
+
+//Set Icons
+@mixin navIcon($size: $default-navicon-size) {
+	margin: 0 auto;
+	display: block;
+	height: $size;
+	width: $size;
+}
+@mixin tabIcon($size: $default-tabicon-size) {
+	margin: 0 auto;
+	display: block;
+	height: $size;
+	width: $size;
+}
+@mixin toolIcon($size: $default-toolicon-size) {
+	margin: $default-toolbar-size/2 - $size/2 - $default-spacing-size - 1;
+	display: block;
+	height: $size;
+	width: $size;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
