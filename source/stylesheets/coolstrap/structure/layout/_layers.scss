@@ -5,16 +5,16 @@
 aside,
 section,
 article {
-  z-index: $default-position-back;
+  z-index: $default-layer-back;
   &.current {
-    z-index: $default-position-current;
+    z-index: $default-layer-current;
   }
 }
 header, 
 footer,
 section > nav,
 div[role="main"] {
-  z-index: $default-position-front;
+  z-index: $default-layer-front;
 }
 
 

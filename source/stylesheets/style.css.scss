@@ -1,7 +1,13 @@
 @import "compass";
+
+$experimental-support-for-mozilla: false;
+$experimental-support-for-opera: false;
+$experimental-support-for-microsoft: false;
+$experimental-support-for-khtml: false;
+
 @import "reset";
 @import "coolstrap";
-@import "coolstrap/structure/debug";
+//@import "coolstrap/structure/debug";
 
 @import "elements";
 

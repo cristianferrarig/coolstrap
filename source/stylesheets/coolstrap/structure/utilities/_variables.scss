@@ -1,60 +1,67 @@
 $debugBgColor:  rgba(0,0,0,.1);
 
 
-// Positions
-
+// Fixed positions
 $default-fixed-position: false !default;
 $default-fixed-size: 100% !default;
 
+// Layers positions
+$default-layer-front: 3 !default;
+$default-layer-overalay: 2 !default;
+$default-layer-current: 1 !default;
+$default-layer-back: 0 !default;
 
-// Header and navbar
+// Transition for aside and backface
+$default-transition-type: false !default;
+$default-transform-distance: 0 !default;
 
+// Header
+$default-header-size: 44px !default;
+$default-header-spacing: 6px !default;
+
+// Nav
 $default-nav-size: 44px !default;
 $default-nav-spacing: 7px !default;
 
-$default-toolbar-size: 44px !default;
-$default-toolbar-spacing: 7px !default;
-
-$default-header-size: 44px !default;
-$default-header-spacing: 10px !default;
-
-$default-header-extended-size: $default-header-size + $default-nav-size !default;
-
+// Footer
 $default-footer-size: 44px;
 $default-footer-spacing: 7px !default;
 
+// Toolbar
+$default-toolbar-size: 44px !default;
+$default-toolbar-spacing: 6px !default;
+
+// Tabbar
 $default-tabbar-size: 60px !default;
 $default-tabbar-spacing: 5px !default;
 
-$default-spacing-size: 7px !default;
+
+
+$default-spacing-size: 6px !default;
+
+
+$default-header-extended-size: $default-header-size + $default-nav-size !default;
+$default-header-vertical-size: 50px !default;
+$default-header-landscape-size: 50px !default;
 
 $default-tabicon-size: 30px !default;
 $default-navicon-size: 10px !default;
 
 
 // Aside
-
 $default-aside-left-size: 276px !default;
 $default-aside-right-size: 276px !default;
 $default-aside-top-size: 300px !default;
 $default-aside-bottom-size: 300px !default;
 
 
-// Buttons
+$default-box-orient: horizontal !default;
 
+
+// Buttons
 $default-button-type: spacing !default;
 
 
-// Transition for aside and backface
-
-$default-transition-type: false !default;
-$default-transform-distance: 0 !default;
 
 
 
-// Positions
-
-$default-position-front: 3 !default;
-$default-position-overalay: 2 !default;
-$default-position-current: 1 !default;
-$default-position-back: 0 !default;

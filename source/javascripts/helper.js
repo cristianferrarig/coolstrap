@@ -1,4 +1,5 @@
-﻿/*
+﻿
+/*
  * MBP - Mobile boilerplate helper functions
  */
 

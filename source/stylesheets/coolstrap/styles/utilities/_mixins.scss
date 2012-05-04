@@ -2,3 +2,34 @@
 
 
 
+@mixin linear-gradient($first-color, $last-color: false) {
+	@if $last-color == false {
+		$light-color: $first-color;
+		$dark-color: darken($first-color, 10%);
+		@include background(linear-gradient(
+			$light-color,
+			$dark-color
+		));
+	}
+	@else {
+		$light-color: $first-color;
+		$dark-color: $last-color;
+		@include background(linear-gradient(
+			$light-color,
+			$dark-color
+		));
+	}
+}
+
+@mixin button($color: $default-header-button-color, $style: $default-button-style) {
+
+}
+
+@mixin botton-shine($color: #FFF) {
+	$dark-color: rgba(darken($color, 100%),.8);
+	$light-color: rgba($color,.1);
+	@include box-shadow(
+    0 -1px 0 0 $dark-color inset,
+    0 -2px 0 0 $light-color inset
+  );
+}

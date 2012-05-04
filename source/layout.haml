@@ -79,6 +79,7 @@
 
 	-# Javascript
 	= javascript_include_tag "libs/modernizr-2.5.3"
+	= javascript_include_tag "init"
 
 %body
 
@@ -92,7 +93,7 @@
 	-# JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom
 	-# scripts concatenated and minified via build script
 	= javascript_include_tag "plugins"
-	= javascript_include_tag "helper"
+	-#= javascript_include_tag "helper"
 	= javascript_include_tag "script"
 	
 

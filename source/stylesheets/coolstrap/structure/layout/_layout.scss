@@ -4,23 +4,17 @@
 .onleft   { float: left; }
 .onright  { float: right; }
 
-div[role="main"] {
-  @include setHeight();
-}
-
+div[role="main"],
 section,
 article {
   @include setHeight();
   overflow: hidden;
+}
 
-  footer[data-type="tabbar"] ~ & {
-    bottom: $default-tabbar-size;
-  }
-  footer:not([data-type]) ~ & {
-    bottom: $default-footer-size;
-  }
+section,
+article {
   header[data-type="vertical"] ~ & {
-    left: $default-header-size;
+    left: $default-header-vertical-size;
     bottom: 0;
   }
   header[data-type="extended"] ~ & {
@@ -29,10 +23,31 @@ article {
   header:not([data-type]) ~ & {
     top: $default-header-size;
   }
-  // TODO: terminar estructura para NAV
-  nav ~ & {
+
+  nav:not([data-type]) ~ & {
     top: $default-nav-size;
+  }
+
+  footer:not([data-type]) ~ & {
+    bottom: $default-footer-size;
+  }
+
+  nav[data-type="toolbar"] ~ &,
+  footer[data-type="toolbar"] ~ & {
+    bottom: $default-toolbar-size;
+  }
+
+  nav[data-type="tabbar"] ~ &,
+  footer[data-type="tabbar"] ~ & {
+    bottom: $default-tabbar-size;
   }
 }
 
-
+div[role="main"],
+section,
+article,
+header,
+footer,
+nav {
+  @include box-sizing(content-box);
+}

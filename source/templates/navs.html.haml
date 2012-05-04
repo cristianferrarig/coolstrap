@@ -2,18 +2,11 @@
 
 	%div.a{"role" => "main"}
 
-		-#%header
-			%a d
-			.content
-				.controlgroup
-					%a g
-					%a h
-			%a d
-			
-
 		%header
 			%a d
-			%h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			%hgroup
+				%h1 Rhyboo
+				%h2 The social TV
 			%a g
 
 		%footer{"data-type" => "tabbar"}
@@ -39,6 +32,7 @@
 						%i
 						%span footer5
 
+
 		%section.current
 			%nav{"data-type" => "toolbar"}
 				%input{:type => "search", :name => "txt"}
@@ -49,25 +43,25 @@
 				.scroller
 					-#Navigation bar only < a >
 					%nav
-						%a{:href => "#"} nombre 1
-						%a{:href => "#"} nombre 2
-						%a{:href => "#"} nombre 3
-						%a{:href => "#"} nombre 4
-						%a{:href => "#"} nombre 5
+						%a nombre 1
+						%a nombre 2
+						%a nombre 3
+						%a nombre 4
+						%a nombre 5
 
 					-#Navigation bar with < li >
 					%nav
 						%ul
 							%li
-								%a{:href => "#"} nombre 1
+								%a nombre 1
 							%li
-								%a{:href => "#"} nombre 2
+								%a nombre 2
 							%li
-								%a{:href => "#"} nombre 3
+								%a nombre 3
 							%li
-								%a{:href => "#"} nombre 4
+								%a nombre 4
 							%li
-								%a{:href => "#"} nombre 5
+								%a nombre 5
 					
 					-#Tabs bar
 					%nav{"data-type" => "tabbar"}
@@ -112,8 +106,8 @@
 						.flex
 						.content
 							.controlgroup
-								%a{:href => "#"} nombre 1
-								%a{:href => "#"} nombre 2
+								%a nombre 1
+								%a nombre 2
 						.flex
 						%a h
 
@@ -153,22 +147,22 @@
 						.content
 							%ul
 								%li
-									%a{:href => "#"} 1
+									%a 1
 								%li
-									%a{:href => "#"} 2
+									%a 2
 								%li
-									%a{:href => "#"} 3
+									%a 3
 						%a h
 
 					-#Tool bar with 
 					%nav{"data-type" => "toolbar"}
 						%a d
 						.flex
-						%a{:href => "#"} 1
+						%a 1
 						.flex
-						%a{:href => "#"} 2
+						%a 2
 						.flex
-						%a{:href => "#"} 3
+						%a 3
 						.flex
 						%a h
 

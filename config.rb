@@ -13,8 +13,8 @@ set :js_dir, "javascripts"
 
 set :markdown, :layout_engine => :haml
 
-
 set :default_encoding, 'utf-8'
+
 
 # Build-specific configuration
 
@@ -38,6 +38,7 @@ configure :build do
   # Or use a different image path
   #set :http_path, "./"
   
+
 end
 
 

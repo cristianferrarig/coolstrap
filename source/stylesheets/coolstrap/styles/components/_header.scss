@@ -1,14 +1,18 @@
 @import "../utilities";
 
 
-@mixin header($color: $default-header-color, $style: $default-header-color) {
+@mixin header($color: $default-header-color, $style: $default-header-style) {
+	$light-color: $color;
+	$dark-color: darken($color, 10%);
+
 	@if $style == linear {
-		@include background-image(linear-gradient(top, #eee, #ccc));
+		@include background-image(linear-gradient(top, $light-color, $dark-color));
 	}
 	@else if $style == shiny {
-		@include background-image(linear-gradient(top, #eee, #ccc));
+		@include background-image(linear-gradient(top, $light-color, $dark-color));
 	}
 	@else if $style == radial {
-		@include background-image(radiar-gradient(#eee, #333 100px));
+		@include background-image(radiar-gradient($light-color, $dark-color 100px));
 	}
+
 }
