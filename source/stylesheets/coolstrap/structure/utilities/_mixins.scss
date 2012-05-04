@@ -26,11 +26,8 @@
 		width: 100%;
 		height: 100%;
 	}
-	div[role="main"] > &,
-	section > & {
-		position: absolute;
-		#{$position}: 0;
-	}
+	position: absolute;
+	#{$position}: 0;
 	//display: block;
 }
 
@@ -63,7 +60,7 @@
 	width: $size;
 }
 @mixin toolIcon($size: $default-toolicon-size) {
-	margin: $default-toolbar-size/2 - $size/2 - $default-spacing-size - 1;
+	margin: $default-nav-size/2 - $size/2 - $default-spacing-size - 1;
 	display: block;
 	height: $size;
 	width: $size;

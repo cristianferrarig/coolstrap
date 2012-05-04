@@ -24,17 +24,9 @@ article {
     top: $default-header-size;
   }
 
-  nav:not([data-type]) ~ & {
+  nav:not([data-type="tabbar"]) ~ &,
+  footer:not([data-type="tabbar"]) ~ & {
     top: $default-nav-size;
-  }
-
-  footer:not([data-type]) ~ & {
-    bottom: $default-footer-size;
-  }
-
-  nav[data-type="toolbar"] ~ &,
-  footer[data-type="toolbar"] ~ & {
-    bottom: $default-toolbar-size;
   }
 
   nav[data-type="tabbar"] ~ &,
@@ -50,4 +42,8 @@ header,
 footer,
 nav {
   @include box-sizing(content-box);
+}
+
+article nav {
+  position: relative !important;
 }

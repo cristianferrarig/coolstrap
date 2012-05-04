@@ -1,4 +1,4 @@
-$debugBgColor:  rgba(0,0,0,.1);
+$debugBgColor:  rgba(0,0,0,.05);
 
 
 // Fixed positions
@@ -19,17 +19,9 @@ $default-transform-distance: 0 !default;
 $default-header-size: 44px !default;
 $default-header-spacing: 6px !default;
 
-// Nav
+// Nav, Footer and Toolbar
 $default-nav-size: 44px !default;
 $default-nav-spacing: 7px !default;
-
-// Footer
-$default-footer-size: 44px;
-$default-footer-spacing: 7px !default;
-
-// Toolbar
-$default-toolbar-size: 44px !default;
-$default-toolbar-spacing: 6px !default;
 
 // Tabbar
 $default-tabbar-size: 60px !default;

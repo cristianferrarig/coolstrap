@@ -3,16 +3,8 @@
 
 div[role="main"] {
   @include setTransition();
-  &.moveLeft {
-    @include setTransition(left,$default-aside-left-size);
-  }
-  &.moveRight {
-    @include setTransition(right,$default-aside-right-size);
-  }
-  &.moveTop {
-    @include setTransition(top,$default-aside-top-size);
-  }
-  &.moveBottom {
-    @include setTransition(bottom,$default-aside-bottom-size);
-  }
+  .showAsideLeft &   { @include setTransition(left, $default-aside-left-size); }
+  .showAsideRight &  { @include setTransition(right, $default-aside-right-size); }
+  .showAsideTop &    { @include setTransition(top, $default-aside-top-size); }
+  .showAsideBottom & { @include setTransition(bottom, $default-aside-bottom-size); }
 }

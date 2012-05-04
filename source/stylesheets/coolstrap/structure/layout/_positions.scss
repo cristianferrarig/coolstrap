@@ -3,70 +3,36 @@
 
 
 header {
-  &[data-type="vertical"] {
-    @include fixedPosition(left,$default-header-vertical-size);
-  }
-  &[data-type="extended"] {
-    @include fixedPosition(top,$default-header-size);
-    line-height: $default-header-size;
-  }
-  &:not([data-type]) {
-    @include fixedPosition(top,$default-header-size);
-    line-height: $default-header-size;
-  }
+  &[data-type="vertical"]     { @include fixedPosition(left, $default-header-vertical-size); }
+  &[data-type="extended"]     { @include fixedPosition(top, $default-header-size); }
+  &:not([data-type])          { @include fixedPosition(top, $default-header-size); }
 }
 
 
 nav {
-  &:not([data-type]) {
-    @include fixedPosition(top,$default-nav-size);
-    line-height: $default-nav-size;
-  }
-  &[data-type="toolbar"] {
-    @include fixedPosition(top,$default-toolbar-size);
-    line-height: $default-toolbar-size;
-  }
-  &[data-type="tabbar"] {
-    @include fixedPosition(top,$default-tabbar-size);
-    line-height: $default-tabbar-size;
-  }
+  &:not([data-type="tabbar"]) { @include fixedPosition(top, $default-nav-size); }
+  &[data-type="tabbar"]       { @include fixedPosition(top, $default-tabbar-size); }
 }
 
 
 footer {
-  &:not([data-type]) {
-    @include fixedPosition(bottom, $default-footer-size);
-    line-height: $default-footer-size;
-  }
-  &[data-type="toolbar"] {
-    @include fixedPosition(bottom,$default-toolbar-size);
-    line-height: $default-toolbar-size;
-  }
-  &[data-type="tabbar"] {
-    @include fixedPosition(bottom, $default-tabbar-size);
-    line-height: $default-tabbar-size;
-  }
+  &:not([data-type="tabbar"]) { @include fixedPosition(bottom, $default-nav-size); }
+  &[data-type="tabbar"]       { @include fixedPosition(bottom, $default-tabbar-size); }
 }
-
 
 header[data-type="vertical"] ~ footer {
   display: none;
 }
 
-
 aside {
-  &[data-type="onTop"] {
-    @include fixedPosition(top,$default-aside-top-size);
-  }
-  &[data-type="onBottom"] {
-    @include fixedPosition(bottom,$default-aside-bottom-size);
-  }
-  &[data-type="onLeft"] {
-    @include fixedPosition(left,$default-aside-left-size);
-  }
-  &[data-type="onRight"] {
-    @include fixedPosition(right,$default-aside-right-size);
-  }
+  &[data-type="onTop"]      { @include fixedPosition(top, $default-aside-top-size); }
+  &[data-type="onBottom"]   { @include fixedPosition(bottom, $default-aside-bottom-size); }
+  &[data-type="onLeft"]     { @include fixedPosition(left, $default-aside-left-size); }
+  &[data-type="onRight"]    { @include fixedPosition(right, $default-aside-right-size); }
 }
+
+
+
+
 
 

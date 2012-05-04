@@ -146,10 +146,10 @@ nav[data-type="toolbar"],
 footer[data-type="toolbar"] {
   //@include setNavigationHeight($default-toolbar-size);
   input[type="search"] {
-    @include setInput($default-toolbar-size, $default-toolbar-spacing);
+    @include setInput($default-nav-size, $default-nav-spacing);
   }
   a {
-    @include setButton($default-toolbar-size, $default-toolbar-spacing);
+    @include setButton($default-nav-size, $default-nav-spacing);
   }
 }
 header:not([data-type="vertical"]) {
