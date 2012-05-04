@@ -34,7 +34,116 @@ ul[data-type="listview"] {
 */
 
 
-//Buttons group
+//Buttons Icons
+
+
+.flex {
+  @include box-flex(1);
+}
+
+header,
+nav,
+footer {
+  ul,
+  .content {
+  }
+  ul,
+  .content,
+  > hgroup,
+  > h1,
+  li {
+  }
+  h1,
+  h2,
+  li,
+  a {
+  }
+  h1 {
+  }
+  h2 {
+  }
+  > h1,
+  .message {
+  }
+  .message {
+    i {
+      @include border-radius(100%);
+      border: 3px solid #666;
+      width: 16px;
+      height: 16px;
+      margin: -2px 5px 0 0;
+    }
+  }
+  
+  > hgroup {
+  }
+  ul {
+  }
+
+}
+
+
+
+header:not([data-type="vertical"]),
+[data-type="toolbar"] {
+  a {
+  }
+  > a + a {
+  }
+
+  input[type="search"] {
+  }
+  input[type="search"] + a {
+  }
+}
+ 
+
+
+nav,
+footer {
+  &:not([data-type]),
+  &[data-type="tabbar"] {
+    a {
+    }
+  }
+  footer,
+  header,
+  &:not([data-type]),
+  &[data-type="toolbar"] {
+    a>i {
+      margin: ($default-toolbar-size/2 - $default-navicon-size/2 - $default-spacing-sizeT);
+      display: block;
+      //Debug atributes 
+      height: $default-navicon-size;
+      width: $default-navicon-size;
+      border: 2px solid #888;
+    }
+  }
+  &:not([data-type]) {
+    a {
+      line-height: $default-nav-size;
+    }
+  }
+  &[data-type="tabbar"] {
+    a {
+      padding: $default-tabbar-spacing;
+    }
+    a>i {
+      margin: 0 auto;
+      display: block;
+      //Debug atributes 
+      height: $default-tabicon-size;
+      width: $default-tabicon-size;
+      border: 2px solid #888;
+    }
+  }
+//TODO: Llevar al default theme
+  span {
+    font-size: 11px;
+  }
+}
+
+
 
 
 

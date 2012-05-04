@@ -89,9 +89,8 @@ header:not([data-type="vertical"]),
   input[type="search"] + a {
     margin-left: 0 !important;
   }
-  
 }
-
+ 
 
 
 nav,
@@ -103,10 +102,25 @@ footer {
       display: block;
     }
   }
+  footer,
+  header,
+  &:not([data-type]),
+  &[data-type="toolbar"] {
+    
+  }
   &:not([data-type]) {
     a {
       line-height: $default-nav-size;
     }
+  }
+  &[data-type="tabbar"] {
+    a {
+      padding: $default-tabbar-spacing;
+    }
+  }
+
+  span {
+    font-size: 11px;
   }
 }
 

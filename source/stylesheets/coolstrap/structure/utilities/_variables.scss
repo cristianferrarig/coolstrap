@@ -23,10 +23,13 @@ $default-header-extended-size: $default-header-size + $default-nav-size !default
 $default-footer-size: 44px;
 $default-footer-spacing: 7px !default;
 
-$default-tabbar-size: 64px !default;
-$default-tabbar-spacing: 7px !default;
+$default-tabbar-size: 60px !default;
+$default-tabbar-spacing: 5px !default;
 
 $default-spacing-size: 7px !default;
+
+$default-tabicon-size: 30px !default;
+$default-navicon-size: 10px !default;
 
 
 // Aside
