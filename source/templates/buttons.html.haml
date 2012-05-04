@@ -1,0 +1,68 @@
+= content_for :principal do
+
+	%div.a{"role" => "main"}
+
+		%header
+			%a.btn d
+			%hgroup
+				%h1 Rhyboo
+				%h2 The social TV
+			%a.btn g
+
+		%footer{"data-type" => "tabbar"}
+			%ul
+				%li
+					%a{:href => "#"} 
+						%span footer1
+				%li
+					%a{:href => "#"} 
+						%span footer2
+				%li
+					%a{:href => "#"} 
+						%span footer3
+				%li
+					%a{:href => "#"} 
+						%span footer4
+				%li
+					%a{:href => "#"} 
+						%span footer5
+
+
+		%section.current
+			
+	
+			%article.current{:id => "demo"}
+
+				.scroller
+					-#Navigation bar only < a >
+					
+
+					-#Navigation bar with < li >
+					%nav
+						%ul
+							%li
+								%a.btn Button
+							%li
+								%a.btn Butto
+							%li
+								%a.btn Butt
+							%li
+								%a.btn But
+					%nav
+						.content
+							.controlgroup
+								%a.btn Left
+								%a.btn Center
+								%a.btn Right		
+					
+					
+
+				
+
+	%aside{"data-type" => "onLeft"}
+
+	%aside{"data-type" => "onRight"}
+
+	%aside{"data-type" => "onTop"}
+
+	%aside{"data-type" => "onBottom"}

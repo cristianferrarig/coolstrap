@@ -21,9 +21,8 @@
 	}
 }
 
-@mixin button($color: $default-header-button-color, $style: $default-button-style) {
 
-}
+//Buttons
 
 @mixin botton-shine($color: #FFF) {
 	$dark-color: rgba(darken($color, 100%),.8);
@@ -33,3 +32,38 @@
     0 -2px 0 0 $light-color inset
   );
 }
+
+@mixin button($color: $default-button-color, $style: linear, $type: radius) {
+	padding: 10px;
+	@include inline-block;
+	text-align: center;
+	vertical-align: middle; 
+  	color: #FFF;
+  	display: inline-block;
+
+	@if $style == linear {
+		@include linear-gradient(#B72A19);
+	}
+	@else if $style == shiny {
+		@include linear-gradient(#B72A19);
+		@include botton-shine;
+	}
+	@if $type == radius {
+		@include border-radius(3px);
+  		line-height: 8px;
+	}
+	@else if $type == full {
+  		line-height: 24px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

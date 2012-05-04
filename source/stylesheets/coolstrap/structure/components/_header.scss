@@ -193,7 +193,7 @@ nav,
 footer {
   &:not([data-type]),
   &[data-type="tabbar"] {
-    a {
+    >a {
       @include box-flex(1);
       display: block;
     }
