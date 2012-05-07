@@ -5,79 +5,6 @@
 		%header
 			%a{:href => "#", :class => "onleft", "data-target" => "aside", "data-icon" => "items"} asd
 			%a{:href => "#", :class => "onright", "data-target" => "aside", "data-article" => "welcome"} Profiles
-			
-		%section{:id => "home", :class => "current"}
-
-			
-			
-
-			%article{:id => "demo", :class => "current"}
-				
-				.scroller
-					.searchbar
-						%input{:type => "search", :value => ""}
-						%i
-					.mixin-test
-						
-					%ul{"data-type" => "listview"}
-						%li
-							.content
-								.title
-									Maecenas faucibus mollis interdum.
-								.desc
-									Maecenas faucibus mollis interdum maecenas sed diam eget.
-							.aside-right
-								aside right
-					
-					.searchbar
-						%input{:type => "text", :value => "texto default"}
-						%i
-
-					%ul{"data-type" => "listview"}
-						%li
-							.content
-								.title
-									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-								.desc
-									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-							.aside-right
-								aside right
-
-						%li
-							.content
-								.title.nested
-									.content
-										Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-									.aside-right
-										you have 100000000 new coments in your dashboard
-								.desc
-									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-						%li
-							.content
-								.title
-									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-								.desc.nested
-									.content
-										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-									.aside-right
-										aside right
-
-						%li
-							.content
-								Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-						%li
-							.content
-								.title
-									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-								.desc
-									Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-
-					
-							
-
-
 		%footer{"data-type" => "tabbar"}
 			%nav
 				%ul
@@ -100,5 +27,68 @@
 					%li		
 						%a{:href => "#"} 
 							%i
-							%span tab5		
+							%span tab5			
+			
+		%section{:id => "home", :class => "current"}
+
+			
+			
+
+			%article{:id => "demo", :class => "current"}
+				
+				.scroller
+						
+					%ul{"data-type" => "listview"}
+						%li
+							.content
+								.title
+									Maecenas faucibus mollis interdum.
+								.desc
+									Maecenas faucibus mollis interdum maecenas sed diam eget.
+							.aside-right
+								right
+						%li
+							.content
+								.title
+									Maecenas faucibus mollis interdum. 
+								.desc
+									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Vel eu leo.
+							.aside-right
+								right
+
+						%li
+							.content
+								.title.nested
+									.content
+										Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. 
+									.aside-right
+										you have 100000000 new coments in your dashboard
+								.desc
+									Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. 
+
+						%li
+							.content
+								.title
+									Maecenas faucibus mollis interdum. 
+								.desc.nested
+									.content
+										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
+									.aside-right
+									right
+
+						%li
+							.content
+								Nullam quis risus eget urna mollis ornare vel eu leo.
+
+						%li
+							.content
+								.title
+									Maecenas faucibus 
+								.desc
+									Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. 
+					
+							
+
+
+		
 

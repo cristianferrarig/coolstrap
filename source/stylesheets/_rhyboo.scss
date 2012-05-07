@@ -33,7 +33,7 @@ header:not([data-type="vertical"]) {
 nav {
   @include linear-gradient(#333);
   //@include botton-shine;
-  a, li {
+    a, li {
     border-right: 1px solid #000;
     &:last-child {
       border-right: 0;
