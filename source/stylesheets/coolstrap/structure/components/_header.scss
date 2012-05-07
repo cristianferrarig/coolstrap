@@ -1,21 +1,5 @@
 @import "../utilities";
 
-.flex {
-  @include box-flex(1);
-}
-
-
-.message {
-  i {
-    @include inline-block;
-    width: 16px;
-    height: 16px;
-    margin: -2px 5px 0 0;
-    // TOTO: delete, it's only for debug
-    @include border-radius(100%);
-    border: 3px solid #666;
-  }
-}
 
 
 header,
@@ -69,65 +53,15 @@ footer[data-type="toolbar"] {
 }
 
 
-@mixin setNavigationHeight($navigation-size) {
-  > h1,
-  .message {
-    line-height: $navigation-size;
-  }
-  > hgroup {
-    padding: (($navigation-size - 32px) / 2) 0;
-  }
-  .controlgroup {
-    max-height: $navigation-size;
-  }
-}
-
-@mixin setInput($size, $spacing) {
-  $height: $size - ($spacing * 2);
-  height: $height;
-  margin: $spacing;
-}
-
-@mixin setButton($size, $spacing, $type: $default-button-type) {
-  @if $type == spacing {
-    $height: $size - ($spacing * 2);
-    height: $height;
-    margin: $spacing;
-    line-height: $height;
-    padding: 0 10px;
-  }
-  @if $type == full {
-    height: $size;
-    line-height: $size;
-    padding: 0 20px;
-  }
-  @include inline-block;
-  outline: none;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-}
 
 
 
-header {
-  //@include setNavigationHeight($default-header-size);
-  input[type="search"] {
-    @include setInput($default-header-size, $default-header-spacing);
-  }
-}
-nav {
-  //@include setNavigationHeight($default-nav-size);
-}
-footer {
-  //@include setNavigationHeight($default-footer-size);
-}
+
+
+
+
 nav[data-type="toolbar"],
 footer[data-type="toolbar"] {
-  //@include setNavigationHeight($default-toolbar-size);
-  input[type="search"] {
-    @include setInput($default-nav-size, $default-nav-spacing);
-  }
   a {
     @include setButton($default-nav-size, $default-nav-spacing);
   }
@@ -137,10 +71,7 @@ header:not([data-type="vertical"]) {
     @include setButton($default-header-size, $default-header-spacing);
   }
 }
-nav[data-type="tabbar"],
-footer[data-type="tabbar"] {
-  //@include setNavigationHeight($default-tabbar-size);
-}
+
 
 
 
@@ -158,15 +89,16 @@ footer[data-type="toolbar"] {
 
   input[type="search"] {
     @include box-flex(1);
-    //@include setInput;
     display: block;
+    margin: 7px;
+    //@include setInput;
     //margin: $default-header-spacing;
   }
   input[type="search"] + a {
     margin-left: 0 !important;
   }
 }
- 
+
 
 
 nav,
@@ -200,6 +132,61 @@ footer {
   }
 }
 
+
+
+nav {
+  .overlay {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    .showSearchOptions & {
+      display: none;
+    }
+  }
+}
+
+
+
+.flex {
+  @include box-flex(1);
+}
+
+
+.message {
+  i {
+    @include inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -2px 5px 0 0;
+    // TOTO: delete, it's only for debug
+    @include border-radius(100%);
+    border: 3px solid #666;
+  }
+}
+
+
+.controlgroup {
+  font-size: 0px;
+  text-align: center;
+  a {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    font-size: 12px;
+    border: 0;
+    &:first-child {
+    margin-left: 7px !important;
+    }
+    &:last-child {
+    margin-right: 7px !important;
+    }
+  }
+  .content & {
+    width: 100%;
+  }
+}
 
 
 

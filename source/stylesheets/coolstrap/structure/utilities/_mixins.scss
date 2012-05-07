@@ -69,6 +69,39 @@
 
 
 
+@mixin setNavigationHeight($navigation-size) {
+  > h1,
+  .message {
+    line-height: $navigation-size;
+  }
+  > hgroup {
+    padding: (($navigation-size - 32px) / 2) 0;
+  }
+  .controlgroup {
+    max-height: $navigation-size;
+  }
+}
+
+@mixin setInput($size, $spacing) {
+  $height: $size - ($spacing * 2);
+  height: $height;
+  margin: $spacing;
+}
+
+@mixin setButton($size, $spacing) {
+  $height: $size - ($spacing * 2);
+  height: $height;
+  margin: $spacing;
+  line-height: $height;
+  padding: 0 10px;
+  @include inline-block;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+
 
 
 

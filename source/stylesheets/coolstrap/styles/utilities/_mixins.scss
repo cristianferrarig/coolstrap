@@ -38,7 +38,6 @@
 	padding: 10px;
 	text-align: center;
 	vertical-align: middle; 
-  	color: #FFF;
 
 	@if $style == linear {
 		@include linear-gradient(#B72A19);
@@ -49,15 +48,15 @@
 	}
 	@if $type == innav {
 		@include border-radius(3px);
-  		line-height: 7px;
-  		margin: 8px;
+		line-height: 7px;
+		margin: 8px;
 	}
 	@else if $type == full {
-  		line-height: 24px;
+		line-height: 24px;
 	}
 	@else if $type == dialog {
 		height: 44px;
-  		line-height: 27px;
+		line-height: 27px;
 	}
 }
 

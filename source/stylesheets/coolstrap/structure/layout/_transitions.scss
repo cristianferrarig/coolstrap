@@ -8,3 +8,8 @@ div[role="main"] {
   .showAsideTop &    { @include setTransition(top, $default-aside-top-size); }
   .showAsideBottom & { @include setTransition(bottom, $default-aside-bottom-size); }
 }
+
+.moveOnTop {
+	@include setTransition();
+	.showSearchOptions & { @include setTransition(top, -($default-header-size)); }
+}

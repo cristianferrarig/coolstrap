@@ -1,7 +1,69 @@
+$basecolor: #F8F8F8;
+
 div[role="main"] {
   //background-color: ;
 }
 
+a {
+  color: darken($basecolor,0);
+  background-color: darken($basecolor,30);
+  border: 1px solid darken($basecolor,40);
+  font-weight: bold;
+}
+
+
+
+
+article {
+  background-color: white;
+}
+header,
+nav {
+  border-bottom: 1px solid darken($basecolor,30);
+}
+
+
+header {
+  > a {
+
+  }
+}
+
+[data-type="toolbar"] {
+  > a {
+
+  }
+}
+
+[data-type="tabbar"] {
+  > a {
+
+  }
+}
+
+nav:not([data-type]) {
+  > a {
+
+  }
+}
+
+footer:not([data-type]) {
+  > a {
+
+  }
+}
+
+
+  
+
+/*
+> a {
+  color: darken($basecolor,0);
+  background-color: darken($basecolor,30);
+  border: 1px solid darken($basecolor,40);
+  font-weight: bold;
+}
+*/
 
 
 

@@ -3,11 +3,13 @@
 	%div.a{"role" => "main"}
 
 		%header
-			%a.btn back
+			%a back
 			%hgroup
 				%h1 Rhyboo
 				%h2 The social TV
-			%a.btn menu principal
+			.controlgroup
+				%a nombre 1
+				%a nombre 2
 
 		%footer{"data-type" => "tabbar"}
 			%ul
@@ -25,14 +27,13 @@
 						%span footer4
 				%li
 					%a{:href => "#"} 
-						%i
 						%span footer5
 
 
 		%section.current
 			%nav{"data-type" => "toolbar"}
 				%input{:type => "search", :name => "txt"}
-				%a.btn search
+				%a search
 	
 			%article.current{:id => "demo"}
 

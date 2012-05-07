@@ -72,10 +72,10 @@ nav a>i {
 
 
 a.btn {
-  @include button;
+  //@include button;
 }
 a.big-btn {
-  @include button;
+  //@include button;
   height: 44px;
   margin: 11px 0;
   line-height: 25px;
@@ -89,31 +89,7 @@ a.btn, a.big-btn {
 }
 
 
-  
-.controlgroup {
-  font-size: 0px;
-  text-align: center;
-  a.btn, a.big-btn {
-    @include border-radius(0);
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-    font-size: 12px;
-    border: 0;
-    &:first-child {
-    @include border-radius(3px 0px 0px 3px);
-    margin-left: 7px !important;
-    border-right: 1px solid #B92817;
-    }
-    &:last-child {
-    @include border-radius(0px 3px 3px 0px);
-    margin-right: 7px !important;
-    border-left: 1px solid #B92817;
-    }
-  }
-  .content & {
-    width: 100%;
-  }
-}
+
 
 //Dialog box
 

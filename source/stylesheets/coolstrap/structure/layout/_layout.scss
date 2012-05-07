@@ -8,6 +8,9 @@ div[role="main"],
 section,
 article {
   @include setHeight();
+}
+
+article {
   overflow: hidden;
 }
 
