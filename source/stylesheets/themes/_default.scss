@@ -13,8 +13,6 @@ a {
 }
 */
 
-
-
 article {
   background-color: white;
 }
@@ -22,7 +20,6 @@ header,
 nav {
   border-bottom: 1px solid darken($basecolor,30);
 }
-
 
 header {
   > a {
@@ -62,3 +59,5 @@ footer:not([data-type]) {
 
 
 
+=======
+>>>>>>> some fixes
