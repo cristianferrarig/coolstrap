@@ -8,6 +8,9 @@ div[role="main"],
 section,
 article {
   @include setHeight();
+}
+
+article {
   overflow: hidden;
 }
 
@@ -24,15 +27,20 @@ article {
     top: $default-header-size;
   }
 
-  nav:not([data-type="tabbar"]) ~ &,
-  footer:not([data-type="tabbar"]) ~ & {
+  nav:not([data-type="tabbar"]) ~ & {
     top: $default-nav-size;
   }
+  nav[data-type="tabbar"] ~ & {
+    top: $default-tabbar-size;
+  }
 
-  nav[data-type="tabbar"] ~ &,
+  footer:not([data-type="tabbar"]) ~ & {
+    bottom: $default-nav-size;
+  }
   footer[data-type="tabbar"] ~ & {
     bottom: $default-tabbar-size;
   }
+
 }
 
 div[role="main"],

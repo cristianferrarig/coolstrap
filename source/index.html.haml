@@ -1,33 +1,21 @@
+= content_for :title do
+	Simple layout demo
+
 = content_for :principal do
 
 	%div.a{"role" => "main"}
 
-		-#%header{"data-type" => "extended"}
-		-#%header{"data-type" => "vertical"}
-		
 		%header
 			%a Volver
-			%h1 Rhybo
+			%hgroup
+				%h1 Rhybo
+				%h2 Subtitulo
 			%a Entrar
 
-
-		-#header
-			%a d
-			%hgroup
-				%h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				%h2 Curabitur blandit tempus porttitor.
-			.button-group
-				%a g
-				%a h
-
-
-		-#%footer
+		%footer
+			%h1 dsghfh
 
 		%section.current
-			%nav
-				%a{:href => "#"} nombre 1
-				%a{:href => "#"} nombre 2
-				%a{:href => "#"} nombre 3
 
 			%article.current{:id => "demo"}
 				.scroller

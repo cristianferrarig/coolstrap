@@ -1,11 +1,5 @@
 @import "variables";
 
-/* Compass varialbes */
-$default-transition-property : transform;
-$default-transition-duration : 250ms;
-$default-transition-function : false;
-$default-transition-delay    : false;
-
 @mixin setTransition($type: $default-transition-type, $distance: $default-transform-distance) {
 	@if $type == false {
 		$default-translate-x : 0;
@@ -31,7 +25,3 @@ $default-transition-delay    : false;
 	@include translate3d();
 	@include single-transition();
 }
-
-
-
-

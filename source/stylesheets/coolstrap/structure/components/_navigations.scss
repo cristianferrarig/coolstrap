@@ -1,0 +1,124 @@
+@import "../utilities";
+
+header,
+nav,
+footer {
+  @include setFlexibleBox;
+  text-align: center;
+
+  h1, h2, li, a {
+    @include ellipsis;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  h1 {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 13px;
+  }
+}
+
+nav, footer {
+  ul {
+    @include setFlexibleBox;
+  }
+  ul, li {
+    @include box-flex(1);
+  }
+}
+
+header:not([data-type="vertical"]),
+nav[data-type="toolbar"],
+footer[data-type="toolbar"] {
+  .content {
+    @include setFlexibleBox;
+  }
+  > hgroup {
+    @include setFlexibleBox(vertical);
+  }
+  .content,
+  > hgroup,
+  > h1 {
+    @include box-flex(1);
+  }
+  > hgroup {
+    line-height: 16px;
+  }
+
+  a {
+    font-size: 12px;
+  }
+  > a + a {
+    margin-left: 0px;
+  }
+
+  input[type="search"] {
+    @include box-flex(1);
+    //@include setInput;
+    display: block;
+    //margin: $default-header-spacing;
+  }
+  input[type="search"] + a {
+    margin-left: 0 !important;
+  }
+  
+}
+ 
+
+
+nav,
+footer {
+  &:not([data-type]),
+  &[data-type="tabbar"] {
+    >a {
+      @include box-flex(1);
+      display: block;
+    }
+  }
+  footer,
+  header,
+  &:not([data-type]),
+  &[data-type="toolbar"] {
+    
+  }
+  &:not([data-type]) {
+    a {
+      //line-height: $default-nav-size;
+    }
+  }
+  &[data-type="tabbar"] {
+    a {
+      padding: $default-tabbar-spacing;
+    }
+  }
+
+  span {
+    font-size: 11px;
+  }
+}
+
+
+
+.flex {
+  @include box-flex(1);
+}
+
+
+.message {
+  i {
+    @include inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -2px 5px 0 0;
+    // TOTO: delete, it's only for debug
+    @include border-radius(100%);
+    border: 3px solid #666;
+  }
+}
+
+
+
