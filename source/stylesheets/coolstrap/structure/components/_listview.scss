@@ -1,0 +1,39 @@
+@import "../utilities";
+
+//Lists  structural
+
+ul[data-type="listview"] {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li, li > a {
+    @include setFlexibleBox;
+    @include box-align(start);
+    @include box-pack(start);
+    > .content {
+    }
+  }
+  li {
+    padding: 10px;
+  }
+  .aside-left, {
+    padding-right: 11px;
+  }
+  .aside-right, {
+    @include setFlexibleBox;
+    padding-left: 11px;
+  }
+  .content {
+    @include box-flex(1);
+  }
+  .nested {
+    @include setFlexibleBox;
+  }
+  .title:not(.nested),
+  .title.nested .content {
+    @include ellipsis;
+  }
+  .desc {
+    padding-top: 7px
+  }
+}

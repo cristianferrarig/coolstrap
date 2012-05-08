@@ -1,0 +1,257 @@
+= content_for :title do
+	Listview demo
+
+= content_for :principal do
+
+	%div{"role" => "main"}
+		
+		%header
+			%a Volver
+			%hgroup
+				%h1 COOLSTRAP
+				%h2 Listview Demo
+			%a Entrar
+		
+			
+		%section{:id => "home", :class => "current"}
+
+			%article{:id => "demo", :class => "current"}
+				
+				.scroller
+						
+					%ul{"data-type" => "listview"}
+
+						-# Only content container.
+						%li
+							.content
+								.title
+									All inside the content
+
+						%li
+							.content
+								.title
+									All inside the content
+								.desc
+									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.
+
+						%li
+							.content
+								.title.nested
+									.content
+										All inside the content
+									.aside-right
+										4 days ago
+								.desc
+									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.
+							
+						%li 
+							.content
+								.title.nested
+									.content
+										All inside the content - With ellipsis to cut the text
+									.aside-right
+										12:00am
+								.desc.nested
+									.content
+										Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
+									.aside-right
+										%i 
+
+						-# Content and aside-right containers.
+						%li
+							.content
+								Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
+							.aside-right
+								%i
+
+						%li
+							.content
+								.title
+									Maecenas faucibus mollis interdum.
+								.desc
+									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
+							.aside-right
+								%i
+
+						%li
+							.content
+								.title.nested
+									.content
+										Maecenas faucibus mollis interdum.
+									.aside-right
+										Aside Right
+							.aside-right
+								%i
+
+						%li
+							.content
+								.title.nested
+									.content
+										Maecenas faucibus mollis interdum.
+									.aside-right
+										100 new mails
+								.desc.nested
+									.content
+										Maecenas faucibus mollis interdum.
+									.aside-right
+										1st/June/2012
+							.aside-right
+								%i
+
+						-# Content and aside-left containers.
+						%li
+							.aside-left
+								%i
+							.content
+								Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
+								Aside Right
+
+						%li
+							.aside-left
+								%i
+							.content
+								.title
+									Maecenas faucibus mollis interdum.
+								.desc
+									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
+
+						%li
+							.aside-left
+								%i
+							.content
+								.title.nested
+									.content
+										Maecenas faucibus mollis interdum.
+									.aside-right
+										Aside Right
+
+						%li
+							.aside-left
+								%i
+							.content
+								.title.nested
+									.content
+										Maecenas faucibus mollis interdum.
+									.aside-right
+										Aside Right
+								.desc.nested
+									.content
+										Maecenas faucibus mollis interdum.
+									.aside-right
+										%i
+
+						-# Content, aside-left and aside-right containers.
+						%li
+							.aside-left
+								%i
+							.content
+								Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
+							.aside-right
+								%i
+
+						%li
+							.aside-left
+								%i
+							.content
+								.title
+									Maecenas faucibus mollis interdum.
+								.desc
+									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
+							.aside-right
+								%i
+
+						%li
+							.aside-left
+								%i
+							.content
+								.title.nested
+									.content
+										Maecenas faucibus mollis interdum.
+									.aside-right
+										Aside Right
+							.aside-right
+								%i
+
+						%li
+							.aside-left
+								%i
+							.content
+								.title.nested
+									.content
+										Maecenas faucibus mollis interdum.
+									.aside-right
+										Aside Right
+								.desc.nested
+									.content
+										Maecenas faucibus mollis interdum.
+									.aside-right
+										Aside Right
+							.aside-right
+								%i
+
+						%li 
+							.aside-left
+								%i
+							.content
+								.title.nested
+									.content
+										All inside the content - With ellipsis to cut the text
+									.aside-right
+										12:00am
+								.desc.nested
+									.content
+										Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
+									.aside-right
+										%i 		
+								
+
+
+						
+										
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
