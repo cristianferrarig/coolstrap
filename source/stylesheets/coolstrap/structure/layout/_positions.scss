@@ -3,21 +3,23 @@
 
 
 header {
-  &[data-type="vertical"]     { @include setFixedPosition(left, $default-header-vertical-size); }
+  &[data-type="vertical"]     { @include setFixedPosition(left, $default-headerV-size); }
   &[data-type="extended"]     { @include setFixedPosition(top, $default-header-size); }
   &:not([data-type])          { @include setFixedPosition(top, $default-header-size); }
 }
 
 
 nav {
-  &:not([data-type="tabbar"]) { @include setFixedPosition(top, $default-nav-size); }
   &[data-type="tabbar"]       { @include setFixedPosition(top, $default-tabbar-size); }
+  &[data-type="toolbar"]      { @include setFixedPosition(top, $default-nav-size); }
+  &:not([data-type])          { @include setFixedPosition(top, $default-nav-size); }
 }
 
 
 footer {
-  &:not([data-type="tabbar"]) { @include setFixedPosition(bottom, $default-nav-size); }
   &[data-type="tabbar"]       { @include setFixedPosition(bottom, $default-tabbar-size); }
+  &[data-type="toolbar"]      { @include setFixedPosition(bottom, $default-nav-size); }
+  &:not([data-type])          { @include setFixedPosition(bottom, $default-nav-size); }
 }
 
 header[data-type="vertical"] ~ footer {
@@ -30,9 +32,6 @@ aside {
   &[data-type="onLeft"]     { @include setFixedPosition(left, $default-aside-left-size); }
   &[data-type="onRight"]    { @include setFixedPosition(right, $default-aside-right-size); }
 }
-
-
-
 
 
 

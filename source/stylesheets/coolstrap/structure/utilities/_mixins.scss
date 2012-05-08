@@ -2,18 +2,24 @@
 
 
 @mixin setFixedPosition($position: $default-fixed-position, $size: $default-fixed-size) {
-	@if $position == top, bottom {
+	@if $position == top {
 		width: 100%;
 		height: $size;
 		max-height: $size;
 	}
-	@else if $position == left, right {
+	@if $position == bottom {
+		width: 100%;
+		height: $size;
+		max-height: $size;
+	}
+	@else if $position == left {
 		width: $size;
 		max-width: $size;
 		height: 100%;
 	}
-	@else {
-		width: 100%;
+	@else if $position == right {
+		width: $size;
+		max-width: $size;
 		height: 100%;
 	}
 	position: absolute;
@@ -34,4 +40,9 @@
 	@include box-align($align);
 	@include box-pack($pack);
 	@include box-direction($direction);
+}
+
+@mixin square($size) {
+	width: $size;
+	height: $size;
 }

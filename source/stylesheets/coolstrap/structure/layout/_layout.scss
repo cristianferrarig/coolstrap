@@ -17,11 +17,11 @@ article {
 section,
 article {
   header[data-type="vertical"] ~ & {
-    left: $default-header-vertical-size;
+    left: $default-headerV-size;
     bottom: 0;
   }
   header[data-type="extended"] ~ & {
-    top: $default-header-extended-size;
+    top: $default-headerE-size;
   }
   header:not([data-type]) ~ & {
     top: $default-header-size;
@@ -52,6 +52,8 @@ nav {
   @include box-sizing(content-box);
 }
 
-article nav {
+article header,
+article nav,
+article footer {
   position: relative !important;
 }

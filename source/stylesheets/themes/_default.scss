@@ -5,17 +5,37 @@ $basecolor: #F8F8F8;
 div[role="main"] {
   //background-color: ;
 }
+
 a {
   color: #fff !important;
 }
-/*
+
+
+a {
+  background-color: darken($basecolor,10);
+  border: 1px solid darken($basecolor,15);
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 a {
   color: darken($basecolor,0);
   background-color: darken($basecolor,30);
   border: 1px solid darken($basecolor,40);
   font-weight: bold;
 }
-*/
+
 
 article {
   background-color: rgba(0,0,0,.01);

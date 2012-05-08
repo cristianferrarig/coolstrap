@@ -1,0 +1,83 @@
+= content_for :title do
+	Simple layout demo
+
+= content_for :principal do
+
+	%div.a{"role" => "main"}
+
+		%header
+			%a Volver
+			%hgroup
+				%h1 Rhybo
+				%h2 Subtitulo
+			%a Entrar
+
+		%footer{"data-type" => "tabbar"}
+			%a
+
+		%section.current
+
+			%nav
+				%a Boton 1
+				%a Boton 2
+				%a Boton 3
+				%a Boton 4
+				%a Boton 5
+
+			%article.current{:id => "demo"}
+				.scroller
+					%nav
+						%a Boton 1
+						%a Boton 2
+						%a Boton 3
+						%a Boton 4
+						%a Boton 5
+
+					%nav{"data-type" => "toolbar"}
+						%a Boton 1
+						%a Boton 2
+						%a Boton 3
+						%a Boton 4
+						%a Boton 5
+
+					%nav{"data-type" => "tabbar"}
+						%ul
+							%li
+								%a Boton 1
+							%li
+								%a Boton 2
+							%li
+								%a Boton 3
+							%li
+								%a Boton 4
+							%li
+								%a
+									%i
+									%span Boton 5
+
+					%header
+						%a Volver
+						%h1 Rhybo
+						%a Entrar
+						%a Entrar
+						%a Entrar
+						%a Entrar
+
+					%header
+						%a Volver
+						%h1 Rhybo
+						.controlgroup	
+							%a Entrar
+							%a Entrar
+							%a Entrar
+							%a
+								%i
+
+
+	%aside{"data-type" => "onLeft"}
+
+	%aside{"data-type" => "onRight"}
+
+	%aside{"data-type" => "onTop"}
+
+	%aside{"data-type" => "onBottom"}

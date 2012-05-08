@@ -49,12 +49,12 @@ footer[data-type="toolbar"] {
     line-height: 16px;
   }
 
-  a {
-    font-size: 12px;
-  }
-  > a + a {
-    margin-left: 0px;
-  }
+  //a {
+  //  font-size: 12px;
+  //}
+  //> a + a {
+  //  margin-left: 0px;
+  //}
 
   input[type="search"] {
     @include box-flex(1);
@@ -74,10 +74,10 @@ nav,
 footer {
   &:not([data-type]),
   &[data-type="tabbar"] {
-    >a {
-      @include box-flex(1);
-      display: block;
-    }
+    //> a {
+    //  @include box-flex(1);
+    //  display: block;
+    //}
   }
   footer,
   header,
@@ -86,14 +86,14 @@ footer {
     
   }
   &:not([data-type]) {
-    a {
+    //a {
       //line-height: $default-nav-size;
-    }
+    //}
   }
   &[data-type="tabbar"] {
-    a {
-      padding: $default-tabbar-spacing;
-    }
+    //a {
+      //padding: $default-tabbar-button-spacing;
+    //}
   }
 
   span {
@@ -120,5 +120,21 @@ footer {
   }
 }
 
+
+.controlgroup {
+  @include setFlexibleBox;
+  margin: 0 $default-button-spacing;
+  a {
+    &:first-child {
+      @include border-radius(3px 0px 0px 3px);
+    }
+    &:last-child {
+      @include border-radius(0px 3px 3px 0px);
+    }
+  }
+  .content & {
+    width: 100%;
+  }
+}
 
 
