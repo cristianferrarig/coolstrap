@@ -27,16 +27,12 @@ $default-nav-spacing: 7px !default;
 $default-tabbar-size: 60px !default;
 $default-tabbar-spacing: 5px !default;
 
-// Buttons
-$default-button-color: #FFF;
-
-
-$default-spacing-size: 6px !default;
 
 
 $default-header-extended-size: $default-header-size + $default-nav-size !default;
 $default-header-vertical-size: 50px !default;
 $default-header-landscape-size: 50px !default;
+
 
 $default-navicon-size: 26px !default;
 $default-toolicon-size: 26px !default;
@@ -50,13 +46,25 @@ $default-aside-top-size: 300px !default;
 $default-aside-bottom-size: 300px !default;
 
 
-$default-box-orient: horizontal !default;
 
 
-// Buttons
-$default-button-type: spacing !default;
 
+// Compass Animation
+$default-transition-property : transform;
+$default-transition-duration : 250ms;
+$default-transition-function : false;
+$default-transition-delay    : false;
 
+// Compass box
+// Box orientation [ horizontal | vertical | inline-axis | block-axis | inherit ]
+// Box align [ start | end | center | baseline | stretch ]
+// box pack [ start | end | center | justify ]
+// box-direction [ normal | reverse | inherit ]
+$default-box-flex: 1;
+$default-box-orient: horizontal;
+$default-box-align: center;
+$default-box-pack: center;
+$default-box-direction: normal;
 
 
 
