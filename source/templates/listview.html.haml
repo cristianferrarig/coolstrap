@@ -5,12 +5,14 @@
 
 	%div{"role" => "main"}
 		
-		%header
+		%header{"data-type" => "listview"}
 			%a Volver
 			%hgroup
 				%h1 COOLSTRAP
 				%h2 Listview Demo
 			%a Entrar
+
+		%footer	
 		
 			
 		%section{:id => "home", :class => "current"}
@@ -18,7 +20,7 @@
 			%article{:id => "demo", :class => "current"}
 				
 				.scroller
-						
+
 					%ul{"data-type" => "listview"}
 
 						-# Only content container.
@@ -202,8 +204,9 @@
 									.content
 										Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
 									.aside-right
-										%i 		
-								
+										%i 	
+
+					
 
 
 						

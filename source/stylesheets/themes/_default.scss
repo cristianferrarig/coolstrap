@@ -1,3 +1,5 @@
+
+
 $basecolor: #F8F8F8;
 
 div[role="main"] {
@@ -70,6 +72,10 @@ header {
     margin: 0 7px;
     border: 1px solid #0765A6;
     color: #fff;
+    &:hover {
+      @include background(linear-gradient(top, #0767A6, #0B7ABA));
+      color: #ddd;
+    }
   }
   h2 {
     font-weight: normal;
@@ -118,11 +124,11 @@ ul {
   
 
 
-
-
-
-
-
+nav
+  a {
+    background-color: rgba(0,0,0,.5);
+    height: 44px;
+}
 
 
 
