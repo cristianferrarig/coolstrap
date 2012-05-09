@@ -16,10 +16,10 @@ ul[data-type="listview"] {
   li {
     padding: 10px;
   }
-  .aside-left, {
+  .aside-left {
     padding-right: 11px;
   }
-  .aside-right, {
+  .aside-right {
     @include setFlexibleBox;
     padding-left: 11px;
   }

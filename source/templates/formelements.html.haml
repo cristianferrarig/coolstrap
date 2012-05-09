@@ -1,0 +1,67 @@
+= content_for :title do
+	Form Elements Demo
+
+= content_for :principal do
+
+	%div.a{"role" => "main"}
+
+		%header
+			%a{:href => "listview.html"} Lists
+			%hgroup
+				%h1 COOLSTRAP
+				%h2 Form Elements Demo
+			%a Entrar
+		%footer
+			%a Button
+			%a Button
+			%a Button
+			%a Button
+			%a Button	
+
+		%section.current
+			%nav{"data-type" => "toolbar"}
+				%input{:type => "search", :name => "txt"}
+				%a search
+
+			%article.current{:id => "demo"}
+
+				.scroller
+					%h2 Inputs
+					%h3 Text, default keyboard
+					%input{:type => "text", :name => "txt"}
+
+					%h3 Search
+					%input{:type => "search", :name => "txt"}
+
+					%h3 Password
+					%input{:type => "password", :name => "pwd"}
+
+					%h3 To url keyboard
+					%input{:type => "url", :name => "url"}
+
+					%h3 To email keyboard
+					%input{:type => "email", :name => "email"}
+
+					%h3 To number keyboard
+					%input{:type => "number", :name => "number"}
+
+					%h3 To phone keyboard
+					%input{:type => "tel", :name => "number"}
+
+					%h3 Radio buttons.
+					%input{:type => "radio", :name => "options", :value => "1"} Option 1 
+					%br  
+					%input{:type => "radio", :name => "options", :value => "2"} Option 2
+
+					%h3 Checkbox buttons.
+					%input{:type => "checkbox", :name => "items", :value => "checkbox1"} Checkbox A
+					%br
+					%input{:type => "checkbox", :name => "items", :value => "checkbox2"} Checkbox B
+
+	%aside{"data-type" => "onLeft"}
+
+	%aside{"data-type" => "onRight"}
+
+	%aside{"data-type" => "onTop"}
+
+	%aside{"data-type" => "onBottom"}

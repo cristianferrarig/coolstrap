@@ -5,7 +5,9 @@ $basecolor: #F8F8F8;
 div[role="main"] {
   //background-color: ;
 }
-
+a {
+  color: #fff !important;
+}
 /*
 a {
   color: darken($basecolor,0);
@@ -16,7 +18,7 @@ a {
 */
 
 article {
-  background-color: white;
+  background-color: rgba(0,0,0,.01);
 }
 header,
 nav {
@@ -58,7 +60,13 @@ header {
   @include background(linear-gradient(top, #129ADA, #0C7DBE));
   border-bottom: 1px solid #ddd;
   color: #fff;
-  a {
+  h2 {
+    font-weight: normal;
+  }
+}
+//Header Button
+header {
+   a {
     $button-color: darkn(#129ADA, 10%);
     $button-shadow: darken(#129ADA, 8%);
     @include background(linear-gradient(top, #129ADA, #0767A6));
@@ -67,7 +75,7 @@ header {
       0 0 0 1px rgba($button-shadow,.3) inset,
       0 1px 0 0 rgba(#FFF,.1));
     @include border-radius(3px);
-    display: inline-block;
+    @include inline-block;
     padding: 7px 10px;
     margin: 0 7px;
     border: 1px solid #0765A6;
@@ -76,9 +84,24 @@ header {
       @include background(linear-gradient(top, #0767A6, #0B7ABA));
       color: #ddd;
     }
+    &:visited {
+      color: #fff;
+    }
   }
-  h2 {
-    font-weight: normal;
+}
+//Footer
+footer {
+  @include background(linear-gradient(top, #a7a7a7, #757575));
+  border-top: 1px solid #999;
+  a {
+  @include text-shadow(0 -1px 0 #777);
+  height: 44px;
+  border-right: 1px solid #a7a7a7;
+  line-height: 44px;
+  color: #fff;
+  &:last-child {
+    border-right: 0;
+  }
   }
 }
 
@@ -87,32 +110,42 @@ ul {
   color: #666;
   li {
     border-bottom: 1px solid #ccc;
+    position: relative;
   .title {
     color: #444;
   }
   i {
-    border: 1px solid #99f;
-    background-color: #ccf;
   }
   .aside-left {
     i {
+     @include border-radius(5px);
+      background-image: url(https://si0.twimg.com/profile_images/1608424533/twitter_normal.jpg);
       display: block;
       width: 44px;
       height: 44px;
+      border: 1px solid #eee;
     }
   }
   .aside-right {
     color: #999;
     i {
-      @include border-radius(100%);
+      background-image: image-url('arrow-list.png');
       display: block;
       width: 16px;
       height: 16px;
     }
+    i.center {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      margin-top: -8px;
+    }
   }
+  .width-r {
+      width: 40px;
+    }
   &:active {
-    background-color: rgba(0,0,0,.1);
-    border-bottom: 1px solid #bbb;
+    @include background(linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.05)));
   }
   }
   .title:not(.nested),
@@ -121,7 +154,13 @@ ul {
     font-size: 14px;
   }
 }
-  
+
+.list-divider {
+  @include background(linear-gradient(top, #d7d7d7, #c6c6c6));
+  color: #444;
+  font-weight: bold;
+  border-bottom: 0;
+} 
 
 
 nav
