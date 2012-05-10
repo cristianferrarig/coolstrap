@@ -45,32 +45,33 @@ $default-layer-back: 0 !default;
 $default-transition-type: false !default;
 $default-transform-distance: 0 !default;
 
+$default-interface-spacing: 7px !default;
+$default-content-spacing: 17px !default;
 
 // Header
 $default-header-size: 44px !default;
-$default-header-button-size: 30px !default;
-$default-header-icon-size: 26px !default;
+$default-header-button: 30px !default;
+$default-header-icon: 26px !default;
 
 // Nav, Footer and Toolbar
 $default-navbar-size: 44px !default;
-$default-navbar-button-size: 30px !default;
-$default-navbar-icon-size: 20px !default;
+$default-navbar-button: 30px !default;
+$default-navbar-icon: 20px !default;
 
 
 // Tabbar
 $default-tabbar-size: 60px !default;
-$default-tabbar-button-spacing: 5px !default;
-$default-tabbar-icon-size: 30px !default;
+$default-tabbar-spacing: 5px !default;
+$default-tabbar-icon: 30px !default;
 
 
 
-$default-button-spacing: 7px !default;
 
 
 $default-header-vertical-size: 50px !default;
-$default-header-vertical-button-size: 40px !default;
-$default-header-vertical-button-spacing: 5px !default;
-$default-header-vertical-icon-size: 30px !default;
+$default-header-vertical-button: 40px !default;
+$default-header-vertical-spacing: 5px !default;
+$default-header-vertical-icon: 30px !default;
 
 
 $default-header-extended-size: $default-header-size + $default-navbar-size !default;

@@ -18,7 +18,13 @@ footer {
     @include ellipsis;
   }
   a {
-    @include setFlexibleBox;
+    @include setFlexibleBox(vertical, center);
+  }
+  a.onlyIcon {
+    padding: 0 !important;
+  }
+  > * + * {
+    margin-left: 0 !important;
   }
   h1 {
     font-size: 16px;
@@ -26,8 +32,11 @@ footer {
   h2 {
     font-size: 13px;
   }
+  i {
+    display: block;
+  }
   .content {
-    @include setFlexibleBox;
+    @include setFlexibleBox(vertical);
   }
   > hgroup {
     @include setFlexibleBox(vertical);
@@ -44,54 +53,77 @@ footer {
 
 
 
-nav, footer {
-  &#{$isNotToolbar} {
-    @include box-align(stretch);
-    ul, li {
-      @include setFlexibleBox(horizontal, stretch);
-    }
-    a {
-      @include setFlexibleBox(vertical, center);
-      @include box-flex(1);
-    }
-    i {
-      @include square(30px);
-      @include border-radius(100%);
-      display: block;
-      background-color: red;
-    }
-  }
-}
 
 
 header {
   &#{$isNotVertical} {
     a {
-      height:        $default-header-button-size;
-      line-height:   $default-header-button-size;
-      margin:      0 $default-button-spacing;
-      padding:     0 $default-button-spacing;
+      height:        $default-header-button;
+      margin:      0 $default-interface-spacing;
+      padding:     0 $default-interface-spacing;
     }
   }
   &#{$isVertical} {
     a {
-      width:         $default-header-vertical-button-size;
-      margin:        $default-header-vertical-button-spacing;
-      padding:       $default-header-vertical-button-spacing;
+      width:         $default-header-vertical-button;
+      margin:        $default-header-vertical-spacing;
+      padding:       $default-header-vertical-spacing;
     }
   }
 }
-nav#{$isNotTabbar},
-footer#{$isNotTabbar} {
-  a {
-    height:        $default-navbar-button-size;
-    line-height:   $default-navbar-button-size;
-    margin:      0 $default-button-spacing;
-    padding:     0 $default-button-spacing;
+nav,
+footer {
+  &#{$isToolbar} {
+    a {
+      height:        $default-navbar-button;
+      line-height:   $default-navbar-button;
+      margin:      0 $default-interface-spacing;
+      padding:     0 $default-interface-spacing;
+      display:       block;
+      // TODO: si tiene un <i> dentro del a tiene que cambiar display:block; por display:box;
+    }
   }
 }
 
 
+
+header {
+  &#{$isNotVertical} i { @include square($default-header-icon); }
+  &#{$isVertical} i    { @include square($default-header-vertical-icon); }
+}
+nav,
+footer {
+  &#{$isToolbar} i     { @include square($default-navbar-icon); }
+  &#{$isTabbar} i      { @include square($default-tabbar-icon); }
+}
+
+
+
+
+.titleOnLeft {
+  * {
+    @include box-ordinal-group(2);
+  }
+  > h1, hgroup, .content {
+    @include box-ordinal-group(1);
+    @include box-align(start); 
+    padding-left: $default-interface-spacing;
+    text-align: left;
+  }
+}
+
+nav, footer {
+  &#{$isTabbar},
+  &#{$isNormal} {
+    @include box-align(stretch);
+    ul, li {
+      @include setFlexibleBox(horizontal, stretch);
+    }
+    a {
+      @include box-flex(1);
+    }
+  }
+}
 
 
 
@@ -99,22 +131,45 @@ footer#{$isNotTabbar} {
 .flex {
   @include box-flex(1);
 }
+.fix {
+  //width: ;
+}
+
+.list-divider {
+  padding: 5px;
+  font-size: 11px;
+  @include background(linear-gradient(top, #d7d7d7, #c6c6c6));
+  color: #444;
+  text-transform: uppercase;
+}
 
 .control-group {
   @include setFlexibleBox;
-  @include box-flex(1);
-  margin: 0 $default-button-spacing;
+  @include box-flex(0);
+  margin: 0 $default-interface-spacing;
   a {
     @include box-flex(1);
     margin: 0 !important;
-    &:first-child {
-    }
-    &:last-child {
-    }
+  }
+  &.autoWidth {
+    @include box-flex(1);
+  }
+}
+
+
+.loader {
+  width: 220px;
+  height: 10px;
+  padding: 1px;
+  background-color: grey;
+  .progress {
+    width: 0;
+    min-width: 10px;
+    max-width: 100%;
+    height: 100%;
   }
   * + & {
-    //width: 100%;
-    @include box-flex(0);
+    margin-top: 5px;
   }
 }
 
@@ -130,9 +185,10 @@ footer#{$isNotTabbar} {
       @include border-radius(0px 5px 5px 0px);
     }
   }
-  .content & {
-  }
 }
+
+
+
 
 
 
@@ -161,14 +217,7 @@ footer#{$isToolbar} {
 
 
 
-.list-divider {
-  padding: 5px;
-  font-size: 15px;
-  background-color: grey;
-  color: whiteSmoke;
-  border-top: 2px solid #444;
-  border-bottom: 1px solid #444;
-}
+
 
 .message {
   i {

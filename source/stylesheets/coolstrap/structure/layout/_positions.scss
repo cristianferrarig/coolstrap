@@ -3,7 +3,6 @@
 
 
 header {
-
   &#{$isVertical}        { @include setFixedPosition(left, $default-header-vertical-size); }
   &#{$isExtended}        { @include setFixedPosition(top, $default-header-size); }
   &#{$isNormal}          { @include setFixedPosition(top, $default-header-size); }

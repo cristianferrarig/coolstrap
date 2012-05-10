@@ -6,76 +6,25 @@ div[role="main"] {
   //background-color: ;
 }
 
-a {
-  color: #fff !important;
+
+header, nav, footer {
+  i {
+    @include border-radius(100%);
+    background-color: red;
+  }
 }
 
 
-a {
+a:not(.onlyIcon) {
   background-color: darken($basecolor,10);
   border: 1px solid darken($basecolor,15);
   font-weight: bold;
+  color: #656A6C !important;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-a {
-  color: darken($basecolor,0);
-  background-color: darken($basecolor,30);
-  border: 1px solid darken($basecolor,40);
-  font-weight: bold;
-}
-
-
-article {
-  background-color: rgba(0,0,0,.01);
-}
-header,
-nav {
-  border-bottom: 1px solid darken($basecolor,30);
-}
-
-
-header {
-  > a {
-
-  }
-}
-
-[data-type="toolbar"] {
-  > a {
-
-  }
-}
-
-[data-type="tabbar"] {
-  > a {
-
-  }
-}
-
-nav:not([data-type]) {
-  > a {
-
-  }
-}
-
-footer:not([data-type]) {
-  > a {
-
-  }
-}
-//Header
 header {
   @include background(linear-gradient(top, #129ADA, #0C7DBE));
   border-bottom: 1px solid #ddd;
@@ -84,9 +33,33 @@ header {
     font-weight: normal;
   }
 }
-//Header Button
+
+header,
+nav {
+  border-bottom: 1px solid darken($basecolor,20);
+}
+
+
+.loader {
+  @include border-radius(10px);
+  background-color: darken($basecolor,20);
+  .progress {
+    @include border-radius(10px);
+    background-color: darken($basecolor,10);
+  }
+}
+
+
+
+/*
+article {
+  background-color: rgba(0,0,0,.01);
+}
+*/
+
+/*
 header {
-   a {
+   a:not(.onlyIcon) {
     $button-color: darkn(#129ADA, 10%);
     $button-shadow: darken(#129ADA, 8%);
     @include background(linear-gradient(top, #129ADA, #0767A6));
@@ -95,11 +68,8 @@ header {
       0 0 0 1px rgba($button-shadow,.3) inset,
       0 1px 0 0 rgba(#FFF,.1));
     @include border-radius(3px);
-    @include inline-block;
-    padding: 7px 10px;
-    margin: 0 7px;
     border: 1px solid #0765A6;
-    color: #fff;
+    color: #fff !important;
     &:hover {
       @include background(linear-gradient(top, #0767A6, #0B7ABA));
       color: #ddd;
@@ -109,64 +79,62 @@ header {
     }
   }
 }
-//Footer
+*/
+/*
 footer {
   @include background(linear-gradient(top, #a7a7a7, #757575));
   border-top: 1px solid #999;
   a {
-  @include text-shadow(0 -1px 0 #777);
-  height: 44px;
-  border-right: 1px solid #a7a7a7;
-  line-height: 44px;
-  color: #fff;
-  &:last-child {
-    border-right: 0;
-  }
+    @include text-shadow(0 -1px 0 #777);
+    border-right: 1px solid #a7a7a7;
+    color: #fff;
+    &:last-child {
+      border-right: 0;
+    }
   }
 }
 
-// Lists
 ul {
   color: #666;
   li {
     border-bottom: 1px solid #ccc;
     position: relative;
-  .title {
-    color: #444;
-  }
-  i {
-  }
-  .aside-left {
+    .title {
+      color: #444;
+    }
     i {
-     @include border-radius(5px);
-      background-image: url(https://si0.twimg.com/profile_images/1608424533/twitter_normal.jpg);
-      display: block;
-      width: 44px;
-      height: 44px;
-      border: 1px solid #eee;
     }
-  }
-  .aside-right {
-    color: #999;
-    i {
-      background-image: image-url('arrow-list.png');
-      display: block;
-      width: 16px;
-      height: 16px;
+    .aside-left {
+      i {
+       @include border-radius(5px);
+        background-image: url(https://si0.twimg.com/profile_images/1608424533/twitter_normal.jpg);
+        display: block;
+        width: 44px;
+        height: 44px;
+        border: 1px solid #eee;
+      }
     }
-    i.center {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      margin-top: -8px;
+    .aside-right {
+      color: #999;
+      i {
+        background-image: image-url('arrow-list.png');
+        display: block;
+        width: 16px;
+        height: 16px;
+      }
+      i.center {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -8px;
+      }
     }
-  }
-  .width-r {
-      width: 40px;
+    .width-r {
+        width: 40px;
+      }
+    &:active {
+      @include background(linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.05)));
     }
-  &:active {
-    @include background(linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.05)));
-  }
   }
   .title:not(.nested),
   .title.nested .content {
@@ -174,20 +142,7 @@ ul {
     font-size: 14px;
   }
 }
-
-.list-divider {
-  @include background(linear-gradient(top, #d7d7d7, #c6c6c6));
-  color: #444;
-  font-weight: bold;
-  border-bottom: 0;
-} 
-
-
-nav
-  a {
-    background-color: rgba(0,0,0,.5);
-    height: 44px;
-}
+*/
 
 
 

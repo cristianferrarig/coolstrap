@@ -6,7 +6,7 @@
 	%div.a{"role" => "main"}
 
 		%header
-			%a Volver
+			%a.onlyIcon <i></i>
 			%hgroup
 				%h1 COOLSTRAP
 				%h2 Toolbar
@@ -15,8 +15,15 @@
 		%section.current
 
 			%article.current{:id => "demo"}
+
 				.scroller
 
+					%nav{"data-type" => "toolbar"}
+						.control-group.autoWidth
+							%a nombre 1
+							%a nombre 2
+							%a nombre 3
+							%a nombre 4
 
 					%nav{"data-type" => "toolbar"}
 						.control-group
@@ -26,42 +33,101 @@
 							%a nombre 4
 
 					%nav{"data-type" => "toolbar"}
-						.flex
-						.control-group
+						%a back
+						.control-group.autoWidth
 							%a nombre 1
 							%a nombre 2
 							%a nombre 3
 							%a nombre 4
+						%a next
+
+					%nav{"data-type" => "toolbar"}
+						%a.onlyIcon <i></i>
+						.control-group.autoWidth
+							%a nombre 1
+							%a nombre 2
+							%a nombre 3
+							%a nombre 4
+						%a next
+
+					%nav{"data-type" => "toolbar"}
+						%a next
 						.flex
+						%a next
+						.flex
+						%a next
+						.flex
+						%a next
+						.flex
+						%a next
+
+					%nav{"data-type" => "toolbar"}
+						%a.onlyIcon <i></i>
+						.flex
+						%a.onlyIcon <i></i>
+						.flex
+						%a.onlyIcon <i></i>
+						.flex
+						%a.onlyIcon <i></i>
+						.flex
+						%a.onlyIcon <i></i>
 
 					%nav{"data-type" => "toolbar"}
 						%a back
 						%hgroup
 							%h1 Rhyboo
 							%h2 The social TV
+						%a back
 						.control-group
-							%a nombre 1
-							%a nombre 2
-
-
-
-
-
+							%a <i></i>
+							%a <i></i>
 
 					%nav{"data-type" => "toolbar"}
+						.control-group
+							%a 1
+							%a 2
+						%a back
+						%hgroup
+							%h1 Rhyboo
+							%h2 The social TV
+						%a back
+						
+
+					%nav{"data-type" => "toolbar"}
+						%a back
+						%a <
+						%h1 Rhyboo
+						%a <
+						%a >
+
+					%nav{"data-type" => "toolbar"}
+						%a back
+						.content
+							%h2 Descargando 1 de 5
+							.loader
+								.progress
+						%a >
+
+					%nav{"data-type" => "toolbar"}
+						%a back
+						.content
+							.loader
+								.progress
+						%a >
+
+
+					-#%nav{"data-type" => "toolbar"}
 						%a Boton 1
 						%a Boton 2
 						%a Boton 3
 						%a Boton 4
 						%a Boton 5
 
-					
-
-					%nav{"data-type" => "toolbar"}
+					-#%nav{"data-type" => "toolbar"}
 						%input{:type => "search", :name => "txt"}
 						%a search
 
-					%nav{"data-type" => "toolbar"}
+					-#%nav{"data-type" => "toolbar"}
 						%a d
 						.flex
 						.content
@@ -71,7 +137,7 @@
 						.flex
 						%a h
 
-					%nav{"data-type" => "toolbar"}
+					-#%nav{"data-type" => "toolbar"}
 						%a d
 						.flex
 						.content
@@ -79,7 +145,7 @@
 						.flex
 						%a h
 
-					%nav{"data-type" => "toolbar"}
+					-#%nav{"data-type" => "toolbar"}
 						%a d
 						.content
 							%ul
@@ -91,7 +157,7 @@
 									%a 3
 						%a h
 
-					%nav{"data-type" => "toolbar"}
+					-#%nav{"data-type" => "toolbar"}
 						%a d
 						.flex
 						%a 1
@@ -102,7 +168,7 @@
 						.flex
 						%a h
 
-					%nav{"data-type" => "toolbar"}
+					-#%nav{"data-type" => "toolbar"}
 						%a d
 						.flex
 						.message
@@ -110,7 +176,7 @@
 						.flex
 						%a h
 
-					%nav{"data-type" => "toolbar"}
+					-#%nav{"data-type" => "toolbar"}
 						%a d
 						.flex
 						.message
@@ -119,7 +185,7 @@
 						.flex
 						%a h
 
-					%nav{"data-type" => "toolbar"}
+					-#%nav{"data-type" => "toolbar"}
 						%input{:type => "search", :name => "txt"}
 					
 
