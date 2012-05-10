@@ -1,0 +1,133 @@
+= content_for :title do
+	Tabbars markup
+
+= content_for :principal do
+
+	%div.a{"role" => "main"}
+
+		%header
+			%a Volver
+			%hgroup
+				%h1 COOLSTRAP
+				%h2 Toolbar
+			%a Entrar
+
+		%section.current
+
+			%article.current{:id => "demo"}
+				.scroller
+
+
+					%nav{"data-type" => "toolbar"}
+						.content
+							.control-group
+								%a nombre 1
+								%a nombre 2
+								%a nombre 3
+								%a nombre 4
+
+					%nav{"data-type" => "toolbar"}
+						.flex
+						.control-group
+							%a nombre 1
+							%a nombre 2
+							%a nombre 3
+							%a nombre 4
+						.flex
+
+					%nav{"data-type" => "toolbar"}
+						%a back
+						%hgroup
+							%h1 Rhyboo
+							%h2 The social TV
+						.control-group
+							%a nombre 1
+							%a nombre 2
+
+
+
+
+
+
+					%nav{"data-type" => "toolbar"}
+						%a Boton 1
+						%a Boton 2
+						%a Boton 3
+						%a Boton 4
+						%a Boton 5
+
+					
+
+					%nav{"data-type" => "toolbar"}
+						%input{:type => "search", :name => "txt"}
+						%a search
+
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						.content
+							.controlgroup
+								%a nombre 1
+								%a nombre 2
+						.flex
+						%a h
+
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						.content
+							%h1 Texto
+						.flex
+						%a h
+
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.content
+							%ul
+								%li
+									%a 1
+								%li
+									%a 2
+								%li
+									%a 3
+						%a h
+
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						%a 1
+						.flex
+						%a 2
+						.flex
+						%a 3
+						.flex
+						%a h
+
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						.message
+							Actualizado 03-05-12 16:58
+						.flex
+						%a h
+
+					%nav{"data-type" => "toolbar"}
+						%a d
+						.flex
+						.message
+							%i
+							Comprobando correo...
+						.flex
+						%a h
+
+					%nav{"data-type" => "toolbar"}
+						%input{:type => "search", :name => "txt"}
+					
+
+	%aside{"data-type" => "onLeft"}
+
+	%aside{"data-type" => "onRight"}
+
+	%aside{"data-type" => "onTop"}
+
+	%aside{"data-type" => "onBottom"}

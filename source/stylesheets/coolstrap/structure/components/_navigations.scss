@@ -6,13 +6,19 @@ footer {
   @include setFlexibleBox;
   text-align: center;
 
-  h1, h2, li, a {
-    @include ellipsis;
-  }
   ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+  }
+  ul, li {
+    @include box-flex(1);
+  }
+  h1, h2, li, a {
+    @include ellipsis;
+  }
+  a {
+    @include setFlexibleBox;
   }
   h1 {
     font-size: 16px;
@@ -20,20 +26,6 @@ footer {
   h2 {
     font-size: 13px;
   }
-}
-
-nav, footer {
-  ul {
-    @include setFlexibleBox;
-  }
-  ul, li {
-    @include box-flex(1);
-  }
-}
-
-header:not([data-type="vertical"]),
-nav[data-type="toolbar"],
-footer[data-type="toolbar"] {
   .content {
     @include setFlexibleBox;
   }
@@ -48,58 +40,59 @@ footer[data-type="toolbar"] {
   > hgroup {
     line-height: 16px;
   }
-
-  //a {
-  //  font-size: 12px;
-  //}
-  //> a + a {
-  //  margin-left: 0px;
-  //}
-
-  input[type="search"] {
-    @include box-flex(1);
-    //@include setInput;
-    display: block;
-    //margin: $default-header-spacing;
-  }
-  input[type="search"] + a {
-    margin-left: 0 !important;
-  }
-  
 }
- 
 
 
-nav,
-footer {
-  &:not([data-type]),
-  &[data-type="tabbar"] {
-    //> a {
-    //  @include box-flex(1);
-    //  display: block;
-    //}
-  }
-  footer,
-  header,
-  &:not([data-type]),
-  &[data-type="toolbar"] {
-    
-  }
-  &:not([data-type]) {
-    //a {
-      //line-height: $default-nav-size;
-    //}
-  }
-  &[data-type="tabbar"] {
-    //a {
-      //padding: $default-tabbar-button-spacing;
-    //}
-  }
 
-  span {
-    font-size: 11px;
+nav, footer {
+  &#{$isNotToolbar} {
+    @include box-align(stretch);
+    ul, li {
+      @include setFlexibleBox(horizontal, stretch);
+    }
+    a {
+      @include setFlexibleBox(vertical, center);
+      @include box-flex(1);
+    }
+    i {
+      @include square(30px);
+      @include border-radius(100%);
+      display: block;
+      background-color: red;
+    }
   }
 }
+
+
+header {
+  &#{$isNotVertical} {
+    a {
+      height:        $default-header-button-size;
+      line-height:   $default-header-button-size;
+      margin:      0 $default-button-spacing;
+      padding:     0 $default-button-spacing;
+    }
+  }
+  &#{$isVertical} {
+    a {
+      width:         $default-header-vertical-button-size;
+      margin:        $default-header-vertical-button-spacing;
+      padding:       $default-header-vertical-button-spacing;
+    }
+  }
+}
+nav#{$isNotTabbar},
+footer#{$isNotTabbar} {
+  a {
+    height:        $default-navbar-button-size;
+    line-height:   $default-navbar-button-size;
+    margin:      0 $default-button-spacing;
+    padding:     0 $default-button-spacing;
+  }
+}
+
+
+
 
 
 
@@ -107,6 +100,75 @@ footer {
   @include box-flex(1);
 }
 
+.control-group {
+  @include setFlexibleBox;
+  @include box-flex(1);
+  margin: 0 $default-button-spacing;
+  a {
+    @include box-flex(1);
+    margin: 0 !important;
+    &:first-child {
+    }
+    &:last-child {
+    }
+  }
+  * + & {
+    //width: 100%;
+    @include box-flex(0);
+  }
+}
+
+
+
+.control-group {
+  //margin: 0 $default-button-spacing;
+  a {
+    &:first-child {
+      @include border-radius(5px 0px 0px 5px);
+    }
+    &:last-child {
+      @include border-radius(0px 5px 5px 0px);
+    }
+  }
+  .content & {
+  }
+}
+
+
+
+/*
+header#{$isNotVertical},
+nav#{$isToolbar},
+footer#{$isToolbar} {
+  a {
+    font-size: 12px;
+  }
+  > a + a {
+    margin-left: 0px;
+  }
+  input[type="search"] {
+    @include box-flex(1);
+    display: block;
+  }
+  input[type="search"] + a {
+    margin-left: 0 !important;
+  }
+}
+
+
+
+
+
+
+
+.list-divider {
+  padding: 5px;
+  font-size: 15px;
+  background-color: grey;
+  color: whiteSmoke;
+  border-top: 2px solid #444;
+  border-bottom: 1px solid #444;
+}
 
 .message {
   i {
@@ -121,20 +183,6 @@ footer {
 }
 
 
-.controlgroup {
-  @include setFlexibleBox;
-  margin: 0 $default-button-spacing;
-  a {
-    &:first-child {
-      @include border-radius(3px 0px 0px 3px);
-    }
-    &:last-child {
-      @include border-radius(0px 3px 3px 0px);
-    }
-  }
-  .content & {
-    width: 100%;
-  }
-}
 
+*/
 

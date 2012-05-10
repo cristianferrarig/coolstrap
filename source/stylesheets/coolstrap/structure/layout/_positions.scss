@@ -3,34 +3,35 @@
 
 
 header {
-  &[data-type="vertical"]     { @include setFixedPosition(left, $default-headerV-size); }
-  &[data-type="extended"]     { @include setFixedPosition(top, $default-header-size); }
-  &:not([data-type])          { @include setFixedPosition(top, $default-header-size); }
+
+  &#{$isVertical}        { @include setFixedPosition(left, $default-header-vertical-size); }
+  &#{$isExtended}        { @include setFixedPosition(top, $default-header-size); }
+  &#{$isNormal}          { @include setFixedPosition(top, $default-header-size); }
 }
 
 
 nav {
-  &[data-type="tabbar"]       { @include setFixedPosition(top, $default-tabbar-size); }
-  &[data-type="toolbar"]      { @include setFixedPosition(top, $default-nav-size); }
-  &:not([data-type])          { @include setFixedPosition(top, $default-nav-size); }
+  &#{$isTabbar}          { @include setFixedPosition(top, $default-tabbar-size); }
+  &#{$isToolbar}         { @include setFixedPosition(top, $default-navbar-size); }
+  &#{$isNormal}          { @include setFixedPosition(top, $default-navbar-size); }
 }
 
 
 footer {
-  &[data-type="tabbar"]       { @include setFixedPosition(bottom, $default-tabbar-size); }
-  &[data-type="toolbar"]      { @include setFixedPosition(bottom, $default-nav-size); }
-  &:not([data-type])          { @include setFixedPosition(bottom, $default-nav-size); }
+  &#{$isTabbar}         { @include setFixedPosition(bottom, $default-tabbar-size); }
+  &#{$isToolbar}        { @include setFixedPosition(bottom, $default-navbar-size); }
+  &#{$isNormal}         { @include setFixedPosition(bottom, $default-navbar-size); }
 }
 
-header[data-type="vertical"] ~ footer {
+header#{$isVertical} ~ footer {
   display: none;
 }
 
 aside {
-  &[data-type="onTop"]      { @include setFixedPosition(top, $default-aside-top-size); }
-  &[data-type="onBottom"]   { @include setFixedPosition(bottom, $default-aside-bottom-size); }
-  &[data-type="onLeft"]     { @include setFixedPosition(left, $default-aside-left-size); }
-  &[data-type="onRight"]    { @include setFixedPosition(right, $default-aside-right-size); }
+  &#{$isOnTop}         { @include setFixedPosition(top, $default-aside-top-size); }
+  &#{$isOnBottom}      { @include setFixedPosition(bottom, $default-aside-bottom-size); }
+  &#{$isOnLeft}        { @include setFixedPosition(left, $default-aside-left-size); }
+  &#{$isOnRight}       { @include setFixedPosition(right, $default-aside-right-size); }
 }
 
 

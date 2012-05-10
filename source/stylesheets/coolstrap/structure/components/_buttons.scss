@@ -1,34 +1,28 @@
 @import "../utilities";
 
 
+a#{$isVertical} {
+	background-color: red;
+}
+
+/*
 a {
 	display: block;
 
-	header[data-type="extended"] &,
-	header:not([data-type="vertical"]) & {
-		height:        $default-header-button-size;
-		line-height:   $default-header-button-size;
-		margin:      0 $default-button-spacing;
-		padding:     0 $default-button-spacing;
-	}
-	header[data-type="vertical"] & {
-		width:         $default-headerV-button-size;
-		margin:        $default-headerV-button-spacing;
-		padding:       $default-headerV-button-spacing;
-	}
 
-	nav:not([data-type]) &,
-	footer:not([data-type]) & {
-		height:        $default-nav-size;
-		line-height:   $default-nav-size;
-		@include box-flex(1);
-	}
 	nav[data-type="toolbar"] &,
 	footer[data-type="toolbar"] & {
 		height:        $default-nav-button-size;
 		line-height:   $default-nav-button-size;
 		margin:      0 $default-button-spacing;
 		padding:     0 $default-button-spacing;
+	}
+	nav[data-type="tabbar"] &, 
+	footer[data-type="tabbar"] & {
+		height:        $default-tabbar-button-size;
+		margin:      0 $default-tabbar-button-spacing;
+		padding:     0 $default-tabbar-button-spacing;
+    @include box-flex(1);
 	}
 
 	.controlgroup & {
@@ -37,27 +31,20 @@ a {
 
 }
 
-li {
-	nav[data-type="tabbar"] &, 
-	footer[data-type="tabbar"] & {
-		height:        $default-tabbar-button-size;
-		margin:      0 $default-tabbar-button-spacing;
-		padding:     0 $default-tabbar-button-spacing;
-	}
-}
-
 header[data-type="extended"],
 header:not([data-type="vertical"]),
 nav[data-type="toolbar"],
-nav[data-type="tabbar"] {
+nav[data-type="tabbar"],
+footer[data-type="toolbar"],
+footer[data-type="tabbar"] {
 	a {
-		@include setFlexibleBox;
+  	@include setFlexibleBox;
 		& + a {
-			margin-left: 0px;
+	    margin-left: 0px;
 		}
-		i, span { display: block; }
 		i {
-			@include border-radius(100%);
+  		@include border-radius(100%);
+			display: block;
 			background-color: red;
 		}
 	}
@@ -74,15 +61,11 @@ header:not([data-type="vertical"]),
 	}
 }
 
-/*
 [data-type="tabbar"] {
 	a {
-		@include box-flex(1);
 		i {
 			@include square($default-tabbar-icon-size);
 		}
 	}
 }
 */
-
-

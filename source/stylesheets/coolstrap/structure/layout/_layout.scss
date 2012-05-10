@@ -4,7 +4,7 @@
 .onleft   { float: left; }
 .onright  { float: right; }
 
-div[role="main"],
+div#{$isMain},
 section,
 article {
   @include setHeight();
@@ -16,34 +16,16 @@ article {
 
 section,
 article {
-  header[data-type="vertical"] ~ & {
-    left: $default-headerV-size;
-    bottom: 0;
-  }
-  header[data-type="extended"] ~ & {
-    top: $default-headerE-size;
-  }
-  header:not([data-type]) ~ & {
-    top: $default-header-size;
-  }
-
-  nav:not([data-type="tabbar"]) ~ & {
-    top: $default-nav-size;
-  }
-  nav[data-type="tabbar"] ~ & {
-    top: $default-tabbar-size;
-  }
-
-  footer:not([data-type="tabbar"]) ~ & {
-    bottom: $default-nav-size;
-  }
-  footer[data-type="tabbar"] ~ & {
-    bottom: $default-tabbar-size;
-  }
-
+  header#{$isVertical} ~ &     { left: $default-header-vertical-size; bottom: 0; }
+  header#{$isExtended} ~ &     { top: $default-header-extended-size; }
+  header#{$isNormal} ~ &       { top: $default-header-size; }
+  nav#{$isNotTabbar} ~ &       { top: $default-navbar-size; }
+  nav#{$isTabbar} ~ &          { top: $default-tabbar-size; }
+  footer#{$isNotTabbar} ~ &    { bottom: $default-navbar-size; }
+  footer#{$isTabbar} ~ &       { bottom: $default-tabbar-size; }
 }
 
-div[role="main"],
+div#{$isMain},
 section,
 article,
 header,
