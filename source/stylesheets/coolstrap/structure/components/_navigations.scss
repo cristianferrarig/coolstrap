@@ -53,8 +53,6 @@ footer {
 
 
 
-
-
 header {
   &#{$isNotVertical} {
     a {
@@ -75,13 +73,16 @@ nav,
 footer {
   &#{$isToolbar} {
     a {
+      @include box-orient; 
       height:        $default-navbar-button;
       line-height:   $default-navbar-button;
       margin:      0 $default-interface-spacing;
       padding:     0 $default-interface-spacing;
-      display:       block;
+      //display:       block;
       // TODO: si tiene un <i> dentro del a tiene que cambiar display:block; por display:box;
     }
+    i + span { margin-left:  5px; }
+    span + i { margin-left: 5px; }
   }
 }
 
@@ -126,6 +127,11 @@ nav, footer {
 }
 
 
+.content,
+hgroup,
+.control-group {
+  margin: 0 $default-interface-spacing;
+}
 
 
 .flex {
@@ -146,7 +152,6 @@ nav, footer {
 .control-group {
   @include setFlexibleBox;
   @include box-flex(0);
-  margin: 0 $default-interface-spacing;
   a {
     @include box-flex(1);
     margin: 0 !important;

@@ -10,7 +10,8 @@ div[role="main"] {
 header, nav, footer {
   i {
     @include border-radius(100%);
-    background-color: red;
+    //background-color: darken($basecolor,30);
+    border: 4px solid darken($basecolor,30);
   }
 }
 
