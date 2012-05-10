@@ -1,3 +1,15 @@
 @import "../utilities";
 
 
+@mixin header($color: $default-header-color, $style: $default-header-color) {
+  
+  @if $style == linear {
+    @include background(linear-gradient(top left, #333, #0c0));
+  }
+  @else if $style == shiny {
+
+  }
+  @else if $style == radial {
+    @include background(radial-gradient(#c00, #fff 100px));
+  }
+}
