@@ -2,6 +2,15 @@
 
 //Lists  structural
 
+
+
+
+
+
+
+
+
+
 ul[data-type="listview"] {
   list-style-type: none;
   margin: 0;
@@ -17,11 +26,10 @@ ul[data-type="listview"] {
     padding: 10px;
   }
   .aside-left {
-    padding-right: 11px;
+    padding-right: 10px;
   }
   .aside-right {
-    @include setFlexibleBox;
-    padding-left: 11px;
+    padding-left: 10px;
   }
   .content {
     @include box-flex(1);
