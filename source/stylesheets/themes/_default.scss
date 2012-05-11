@@ -6,6 +6,11 @@ div[role="main"] {
   //background-color: ;
 }
 
+.badge {
+  background-color: darken($basecolor,30);
+  @include border-radius(10px);
+  color: #FFF;
+}
 
 header, nav, footer {
   i {
@@ -106,17 +111,18 @@ ul {
     i {
       display: block;
     }
-    .aside-left {
-      i {
-       @include border-radius(5px);
+    .aside {
+      color: #999;
+      &:not(.stretch-pic) .picture {
+        @include border-radius(5px);
+      }
+      .picture {
+        background-color: darken($basecolor,30);
         background-image: url(https://si0.twimg.com/profile_images/1608424533/twitter_normal.jpg);
         width: 44px;
         height: 44px;
-        border: 1px solid #eee;
+        @include box-shadow(0 0 0 1px rgba(#000,.4) inset);
       }
-    }
-    .aside-right {
-      color: #999;
       i {
         background-image: image-url('arrow-list.png');
         width: 16px;

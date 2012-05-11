@@ -49,6 +49,11 @@ footer {
   > hgroup {
     line-height: 16px;
   }
+  .content,
+  hgroup,
+  .control-group {
+    margin: 0 $default-interface-spacing;
+  }
 }
 
 
@@ -127,11 +132,7 @@ nav, footer {
 }
 
 
-.content,
-hgroup,
-.control-group {
-  margin: 0 $default-interface-spacing;
-}
+
 
 
 .flex {

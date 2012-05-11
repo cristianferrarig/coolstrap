@@ -1,796 +1,231 @@
 = content_for :title do
-	Listview Demo
+  Listview Demo
 
 = content_for :principal do
 
-	%div{"role" => "main"}
-		
-		%header
-			%a{:href => "simple.html"} Inicio
-			%hgroup
-				%h1 COOLSTRAP
-				%h2 Listview Demo
-			%a{:href => "formelements.html"} Forms
-		%footer
-			%a Button
-			%a Button
-			%a Button
-			%a Button
-			%a Button
-			
-		%section{:id => "home", :class => "current"}
-
-			%article{:id => "demo", :class => "current"}
-				
-				.scroller
-
-					%ul{"data-type" => "listview"}
-
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Jason Newsted
-									.aside-right
-										Sn Fransisco
-								.desc.nested
-									.content
-										Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia
-									.aside-right
-										Metallica
-							.aside-right
-								%i
-
-
-						%li.list-divider
-							1. Simple list - All inside the content
-						%li
-							.content
-								.title
-									Abraham
-						%li
-							.content
-								.title
-									Alarcon
-						%li
-							.content
-								.title
-									Ferrari
-						%li
-							.content
-								.title
-									Funes	
-						%li
-							.content
-								.title
-									Jorge	
-
-						%li.list-divider
-							2. Title and description - All inside the content			
-						%li
-							.content
-								.title
-									First Item
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 
-						%li
-							.content
-								.title
-									Second Item
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 
-						%li
-							.content
-								.title
-									Third Item
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 
-						%li
-							.content
-								.title
-									Fourth Item
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 									
-						%li.list-divider
-							3. Title, description and aside - All inside the content
-						%li
-							.content
-								.title.nested
-									.content
-										First Item
-									.aside-right
-										4 days ago
-								.desc
-									Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. 
-						%li
-							.content
-								.title.nested
-									.content
-										Second Item
-									.aside-right
-										3 minutes ago
-								.desc
-									Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. 
-						%li
-							.content
-								.title.nested
-									.content
-										Third Item
-									.aside-right
-										1 year ago
-								.desc
-									Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. 
-						%li
-							.content
-								.title.nested
-									.content
-										Fourth Item
-									.aside-right
-										Today
-								.desc
-									Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. 
-
-						%li.list-divider
-							4. Title, description, meta, icon - All inside the content										
-						%li 
-							.content
-								.title.nested
-									.content
-										Firs Item
-									.aside-right
-										12:00am
-								.desc.nested
-									.content
-										Morbi leo risus, porta ac consectetur ac. 
-									.aside-right
-										%i 
-						%li 
-							.content
-								.title.nested
-									.content
-										Did you note the ellipsis on our beautifull and great boxes?
-									.aside-right
-										14:00hr
-								.desc.nested
-									.content
-										Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-									.aside-right
-										%i 
-						%li 
-							.content
-								.title.nested
-									.content
-										Third Longer Item
-									.aside-right
-										12:00am
-								.desc.nested
-									.content
-										Aenean eu leo quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-									.aside-right
-										%i 
-						%li 
-							.content
-								.title.nested
-									.content
-										Fourth Item
-									.aside-right
-										12:00am
-								.desc.nested
-									.content
-										Morbi leo risus, porta ac.
-									.aside-right
-										%i
-
-						%li.list-divider
-							5. Description and icon - Content and aside-right				
-						%li
-							.content
-								.title
-									This is a very longer title for this great and awesome list item. 
-							.aside-right.width-r
-								%i.center
-						%li
-							.content
-								.title
-									This is a title 
-							.aside-right.width-r
-								%i.center
-						%li
-							.content
-								Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
-							.aside-right.width-r
-								%i.center
-						%li
-							.content
-								Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. 
-							.aside-right.width-r
-								%i.center						
-
-						%li.list-divider
-							6. Title, description and icon - Content and aside-right
-						%li
-							.content
-								.title
-									Maecenas faucibus mollis interdum.
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-							.aside-right.width-r
-								%i.center
-						%li
-							.content
-								.title
-									Maecenas faucibus mollis interdum.
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
-							.aside-right.width-r
-								%i.center
-						%li
-							.content
-								.title
-									Maecenas faucibus mollis interdum.
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-							.aside-right.width-r
-								%i.center
-						%li
-							.content
-								.title
-									Maecenas faucibus mollis interdum.
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. 
-							.aside-right.width-r
-								%i.center	
-
-						%li.list-divider
-							7. Title, description, meta and icon - Content and aside-right							
-						%li
-							.content
-								.title.nested
-									.content
-										First Item.
-									.aside-right
-										4m ago
-							.aside-right
-								%i
-						%li
-							.content
-								.title.nested
-									.content
-										Second Item.
-									.aside-right
-										3h ago
-							.aside-right
-								%i
-						%li
-							.content
-								.title.nested
-									.content
-										Third Item.
-									.aside-right
-										3d ago
-							.aside-right
-								%i
-						%li
-							.content
-								.title.nested
-									.content
-										Fourth Item.
-									.aside-right
-										2nd June 1810
-							.aside-right
-								%i
-						%li.list-divider
-							8. Title, aside, description, meta and icon - Content and aside-right		
-						%li
-							.content
-								.title.nested
-									.content
-										Jason Newsted
-									.aside-right
-										Facebook friend
-								.desc.nested
-									.content
-										Bass Guitar
-									.aside-right
-										1st/June/2012
-							.aside-right.width-r
-								%i.center
-						%li
-							.content
-								.title.nested
-									.content
-										Kirk Hammett
-									.aside-right
-										Twitter Friend
-								.desc.nested
-									.content
-										Lead Guitar
-									.aside-right
-										21st/Agust/2012
-							.aside-right.width-r
-								%i.center
-						%li
-							.content
-								.title.nested
-									.content
-										Lars Ulrich
-									.aside-right
-										Tumblr Friend
-								.desc.nested
-									.content
-										Drums
-									.aside-right
-										1st/June/2012
-							.aside-right.width-r
-								%i.center
-						%li
-							.content
-								.title.nested
-									.content
-										James Hetfield
-									.aside-right
-										Not Friend
-								.desc.nested
-									.content
-										Vocals and Guitars
-									.aside-right
-										22nd/December/2012
-							.aside-right.width-r
-								%i.center
-
-						%li.list-divider
-							9. Avatar and description - aside-left and content	
-						%li
-							.aside-left
-								%i
-							.content
-								Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. 
-						%li
-							.aside-left
-								%i
-							.content
-								Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. 
-						%li
-							.aside-left
-								%i
-							.content
-								Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. 
-						%li
-							.aside-left
-								%i
-							.content
-								Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. 
-						
-						%li.list-divider
-							10. Avatar, title and description - aside-left and content
-						%li
-							.aside-left
-								%i
-							.content
-								.title
-									First Item
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.	
-						%li
-							.aside-left
-								%i
-							.content
-								.title
-									Second Item
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.			
-						%li
-							.aside-left
-								%i
-							.content
-								.title
-									Third Item
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.			
-						%li
-							.aside-left
-								%i
-							.content
-								.title
-									Fourth Item
-								.desc
-									Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.	
-
-						%li.list-divider
-							11. Avatar, title and aside - aside-left, content and aside-right
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Maecenas faucibus mollis interdum.
-									.aside-right
-										13:30	
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Maecenas faucibus.
-									.aside-right
-										11:15	
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Maecenas faucibus mollis interdum.
-									.aside-right
-										9:45	
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Maecenas interdum.
-									.aside-right
-										6:20
-
-						%li.list-divider
-							12. Avatar, title, description, aside and icon - aside-left, content and aside right
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										First Item
-									.aside-right
-										01/may/12
-								.desc.nested
-									.content
-										Maecenas faucibus mollis interdum.
-									.aside-right
-										%i		
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Second Item
-									.aside-right
-										14/jun/12
-								.desc.nested
-									.content
-										Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-									.aside-right
-										%i		
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Third Item
-									.aside-right
-										23/oct/12
-								.desc.nested
-									.content
-										Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-									.aside-right
-										%i		
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Fourth Item
-									.aside-right
-										18/sep/12
-								.desc.nested
-									.content
-										Maecenas faucibus mollis interdum.
-									.aside-right
-										%i	
-
-						%li.list-divider
-							13. Avatar, content and icon - aside-left, content and aside right
-						%li
-							.aside-left
-								%i
-							.content
-								Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-							.aside-right.width-r
-								%i.center
-						%li
-							.aside-left
-								%i
-							.content
-								Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-							.aside-right.width-r
-								%i.center
-						%li
-							.aside-left
-								%i
-							.content
-								Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-							.aside-right.width-r
-								%i.center
-						%li
-							.aside-left
-								%i
-							.content
-								Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-							.aside-right.width-r
-								%i.center
-
-						%li.list-divider
-							14. Avatar, title, description and icon - aside-left, content and aside right
-						%li
-							.aside-left
-								%i
-							.content
-								.title
-									First Item
-								.desc
-									Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-							.aside-right.width-r
-								%i.center	
-						%li
-							.aside-left
-								%i
-							.content
-								.title
-									Second Item
-								.desc
-									Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-							.aside-right.width-r
-								%i.center		
-						%li
-							.aside-left
-								%i
-							.content
-								.title
-									Third Item
-								.desc
-									Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-							.aside-right.width-r
-								%i.center		
-						%li
-							.aside-left
-								%i
-							.content
-								.title
-									Fourth Item
-								.desc
-									Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-							.aside-right.width-r
-								%i.center	
-
-						%li.list-divider
-							15. Avatar, title, meta and icon - aside-left, content and aside right	
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										First Item
-									.aside-right
-										Aside Right
-							.aside-right.width-r
-								%i.center
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Second Item
-									.aside-right
-										Aside Right
-							.aside-right.width-r
-								%i.center
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Thid Item
-									.aside-right
-										Aside Right
-							.aside-right.width-r
-								%i.center
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Fourth Item
-									.aside-right
-										Aside Right
-							.aside-right.width-r
-								%i.center												
-						%li.list-divider
-							16. Avatar, title, description, two metas and icon - aside-left, content and aside right
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										James Hetfield
-									.aside-right
-										Sn Fransisco
-								.desc.nested
-									.content
-										Vocals and Guitars
-									.aside-right
-										Metallica
-							.aside-right.width-r
-								%i.center
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Lars Ulrich
-									.aside-right
-										Sn Fransisco
-								.desc.nested
-									.content
-										Drums
-									.aside-right
-										Metallica
-							.aside-right.width-r
-								%i.center
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Kirk Hammett
-									.aside-right
-										Sn Fransisco
-								.desc.nested
-									.content
-										Guitars
-									.aside-right
-										Metallica
-							.aside-right.width-r
-								%i.center
-						%li
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Jason Newsted
-									.aside-right
-										Sn Fransisco
-								.desc.nested
-									.content
-										Bass Guitars
-									.aside-right
-										Metallica
-							.aside-right.width-r
-								%i.center
-
-						%li.list-divider
-							17. Avatar, title, description, metas and icon - aside-left, content and aside right
-						%li 
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										First Item
-									.aside-right
-										12:00am
-								.desc.nested
-									.content
-										Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-									.aside-right
-										%i 	
-						%li 
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Second Item
-									.aside-right
-										12:00am
-								.desc.nested
-									.content
-										Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-									.aside-right
-										%i 	
-						%li 
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Third Item
-									.aside-right
-										12:00am
-								.desc.nested
-									.content
-										Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-									.aside-right
-										%i 	
-						%li 
-							.aside-left
-								%i
-							.content
-								.title.nested
-									.content
-										Fourth Item
-									.aside-right
-										12:00am
-								.desc.nested
-									.content
-										Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. 
-									.aside-right
-										%i 													
-
-					
-
-
-						
-										
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
+  %div{"role" => "main"}
+    
+    %header
+      %a{:href => "simple.html"} Inicio
+      %hgroup
+        %h1 COOLSTRAP
+        %h2 Listview Demo
+      %a{:href => "formelements.html"} Forms
+    %footer
+      %a Button
+      %a Button
+      %a Button
+      %a Button
+      %a Button
+      
+    %section{:id => "home", :class => "current"}
+
+      %article{:id => "demo", :class => "current"}
+        
+        .scroller
+
+          %ul{"data-type" => "listview"}
+
+            %li.list-divider 1. Simple list one line - All inside
+
+            %li
+              .content
+                .title Abraham
+            %li
+              .content
+                .title
+                  First Item.
+              .aside
+                %i
+            %li
+              .content
+                .title
+                  First Item.
+              .aside
+                %span 4m ago
+                %i
+            %li
+              .content
+                .title
+                  Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+              .aside
+                %span.badge 3
+                %i
+            %li
+              .aside.stretch-pic
+                .picture
+              .content
+                .title
+                  Fourth Item.
+              .aside
+                %span.badge 3
+                %i
+            %li
+              .aside
+                .picture
+              .content
+                .title
+                  Fourth Item.
+              .aside
+                %span.badge 3
+                %i
+
+            %li
+              .aside
+                %span.badge 3
+              .content
+                .title
+                  Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+              .aside.stretch-pic
+                .picture
+              .aside
+                %i
+
+
+
+
+
+
+
+
+
+
+
+            %li.list-divider 2. Title and description - All inside the content      
+            
+            %li
+              .content
+                .title First Item
+                .desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 
+
+            %li
+              .content
+                .title First Item
+                .desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 
+              .aside
+                %i
+
+            %li
+              .content
+                .nested
+                  .title First Item
+                  .aside 4 days ago
+                .desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+
+            %li
+              .content
+                .nested
+                  .title First Item
+                  .aside 4 days ago
+                .desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+              .aside
+                %i
+               
+            %li 
+              .content
+                .nested
+                  .title Firs Item
+                  .aside 12:00am
+                .nested
+                  .desc Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                  .aside
+                    %i 
+            
+
+
+
+            %li.list-divider 5. Description and icon - Content and aside        
+
+
+            %li
+              .desc Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
+              .aside
+                %i
+
+            %li
+              .content
+                .nested
+                  .title
+                    Jason Newsted
+                  .aside
+                    Facebook friend
+                .nested
+                  .desc
+                    Bass Guitar
+                  .aside
+                    1st/June/2012
+              .aside
+                %i
+
+            %li
+              .aside.picture-up
+                .picture
+              .desc Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+
+            %li
+              .aside.picture-up
+                .picture
+              .content
+                .title First Item
+                .desc Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+              .aside
+                %i
+
+
+
+            
+
+                                    
+
+          
+
+
+            
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 

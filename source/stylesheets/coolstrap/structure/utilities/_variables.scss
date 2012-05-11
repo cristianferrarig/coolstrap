@@ -26,14 +26,10 @@ $isOnRight:     '[data-type="onRight"]';
 $isMain:        '[role="main"]';
 
 
-
-
-
-
-
 // Fixed positions
 $default-fixed-position: false !default;
 $default-fixed-size: 100% !default;
+
 
 // Layers positions
 $default-layer-front: 3 !default;
@@ -53,41 +49,52 @@ $default-header-size: 44px !default;
 $default-header-button: 30px !default;
 $default-header-icon: 26px !default;
 
-// Nav, Footer and Toolbar
-$default-navbar-size: 44px !default;
-$default-navbar-button: 30px !default;
-$default-navbar-icon: 20px !default;
-
-
-// Tabbar
-$default-tabbar-size: 60px !default;
-$default-tabbar-spacing: 5px !default;
-$default-tabbar-icon: 30px !default;
-
-
-
-
-
+// Vertical Header
 $default-header-vertical-size: 50px !default;
 $default-header-vertical-button: 40px !default;
 $default-header-vertical-spacing: 5px !default;
 $default-header-vertical-icon: 30px !default;
 
 
+// Nav, Footer and Toolbar
+$default-navbar-size: 44px !default;
+$default-navbar-button: 30px !default;
+$default-navbar-icon: 20px !default;
+
+// Other Header
 $default-header-extended-size: $default-header-size + $default-navbar-size !default;
 $default-header-landscape-size: 30px !default;
 
+// Tabbar
+$default-tabbar-size: 60px !default;
+$default-tabbar-spacing: 5px !default;
+$default-tabbar-icon: 30px !default;
 
+// Icons
 $default-navicon-size: 26px !default;
 $default-toolicon-size: 26px !default;
 $default-tabicon-size: 30px !default;
-
 
 // Aside
 $default-aside-left-size: 276px !default;
 $default-aside-right-size: 276px !default;
 $default-aside-top-size: 300px !default;
 $default-aside-bottom-size: 300px !default;
+
+
+
+// Listview
+$default-listview-spacing: 10px !default;
+
+
+
+
+
+
+
+
+
+
 
 
 

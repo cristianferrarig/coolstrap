@@ -1,47 +1,67 @@
 @import "../utilities";
 
 //Lists  structural
-
-
-
-
-
-
-
-
-
-
 ul[data-type="listview"] {
   list-style-type: none;
   margin: 0;
   padding: 0;
   li, li > a {
-    @include setFlexibleBox;
-    @include box-align(start);
-    @include box-pack(start);
+    @include setFlexibleBox(horizontal,stretch);
+    //@include box-align(start);
+    //@include box-pack(start);
     > .content {
     }
   }
   li {
-    padding: 10px;
+    padding: $default-listview-spacing;
+    > div {
+      @include setFlexibleBox(vertical,stretch,center);
+      margin-left: $default-listview-spacing;
+      &:first-child {
+        margin-left: 0px;
+      }
+      &.picture-up {
+        @include box-pack(start);
+      }
+      &.stretch-pic {
+        margin-top: -($default-listview-spacing);
+        margin-bottom: -($default-listview-spacing);
+      }
+      &.stretch-pic {
+        &:first-child { margin-left: -($default-listview-spacing) !important; }
+      }
+    }
+    .content,
+    .desc,
+    .nested {
+      @include box-flex(1);
+    }
+    .nested {
+      @include setFlexibleBox;
+      .title {
+        @include box-flex(1);
+      }
+    }
+    //.nested .content,
+    .title {
+      @include ellipsis;
+      display: block;
+    }
+    .nested + .nested,
+    .nested + .desc,
+    .title + .desc {
+      padding-top: 7px
+    }
+    i {
+      @include inline-block;
+    }
+    span {
+      vertical-align: middle;
+    }
   }
-  .aside-left {
-    padding-right: 10px;
-  }
-  .aside-right {
-    padding-left: 10px;
-  }
-  .content {
-    @include box-flex(1);
-  }
-  .nested {
-    @include setFlexibleBox;
-  }
-  .title:not(.nested),
-  .title.nested .content {
-    @include ellipsis;
-  }
-  .desc {
-    padding-top: 7px
-  }
+}
+
+
+.badge {
+  padding: 3px 5px;
 }
