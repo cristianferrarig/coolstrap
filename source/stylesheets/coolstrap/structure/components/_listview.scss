@@ -8,10 +8,6 @@ ul[data-type="listview"] {
   li,
   li > a, {
     @include setFlexibleBox(horizontal,stretch);
-    //@include box-align(start);
-    //@include box-pack(start);
-    > .content {
-    }
   }
   li {
 
@@ -20,7 +16,7 @@ ul[data-type="listview"] {
       @include setFlexibleBox(vertical,stretch,center);
       margin-left: $default-listview-spacing;
       &:first-child {
-        margin-left: 0px;
+        margin-left: 0 !important;
       }
       &.picture-up {
         @include box-pack(start);
@@ -52,7 +48,7 @@ ul[data-type="listview"] {
     .nested + .nested,
     .nested + .desc,
     .title + .desc {
-      padding-top: 7px
+      padding-top: 7px;
     }
     i {
       @include inline-block;
@@ -68,6 +64,3 @@ ul[data-type="listview"] {
 }
 
 
-.badge {
-  padding: 3px 5px;
-}

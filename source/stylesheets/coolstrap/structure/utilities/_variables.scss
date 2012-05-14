@@ -70,10 +70,6 @@ $default-tabbar-size: 60px !default;
 $default-tabbar-spacing: 5px !default;
 $default-tabbar-icon: 30px !default;
 
-// Icons
-$default-navicon-size: 26px !default;
-$default-toolicon-size: 26px !default;
-$default-tabicon-size: 30px !default;
 
 // Aside
 $default-aside-left-size: 276px !default;
@@ -82,9 +78,12 @@ $default-aside-top-size: 300px !default;
 $default-aside-bottom-size: 300px !default;
 
 
-
 // Listview
 $default-listview-spacing: 10px !default;
+
+
+// Badges
+$default-badge-spacing: 3px 5px !default;
 
 
 

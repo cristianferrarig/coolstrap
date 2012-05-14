@@ -1,33 +1,27 @@
 
-
 $basecolor: #F8F8F8;
 
-div[role="main"] {
-  //background-color: ;
-}
+
+
 
 
 header, nav, footer {
   i {
     @include border-radius(100%);
-    //background-color: darken($basecolor,30);
     border: 4px solid darken($basecolor,30);
   }
 }
 
+header, nav {
+  background-color: darken($basecolor,05);
+  border-bottom: 1px solid darken($basecolor,20);
+}
 
 a:not(.onlyIcon) {
   background-color: darken($basecolor,15);
   border: 1px solid darken($basecolor,20);
   font-weight: bold;
   color: #656A6C !important;
-}
-
-
-header,
-nav {
-  background-color: darken($basecolor,05);
-  border-bottom: 1px solid darken($basecolor,20);
 }
 
 
@@ -41,7 +35,6 @@ nav {
 }
 
 
-
 ul {
   color: #666;
   li {
@@ -49,9 +42,6 @@ ul {
     position: relative;
     .title {
       color: #444;
-    }
-    i {
-      display: block;
     }
     .picture {
       background-image: url(https://si0.twimg.com/profile_images/1608424533/twitter_normal.jpg);
@@ -75,16 +65,3 @@ ul {
     font-size: 14px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-  
