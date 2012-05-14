@@ -1,10 +1,8 @@
-//Elaborated styles for coolstrap
+@import "compass";
+@import "../styles";
 
-
-
-/*
 header {
-  @include background(linear-gradient(top, #129ADA, #0C7DBE));
+  @include background(linear-gradient(top, #129ADA, #0C7DBE)); 
   border-bottom: 1px solid #ddd;
   color: #fff;
   h2 {
@@ -50,4 +48,4 @@ footer {
 article {
   background-color: rgba(0,0,0,.01);
 }
-*/
+ 

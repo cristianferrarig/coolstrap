@@ -1,0 +1,10 @@
+@import "../utilities/variables";
+@import "../utilities/animate";
+
+div#{$isMain} {
+  @include setTransition();
+  body.showAsideLeft &   { @include setTransition(left, $default-aside-left-size); }
+  body.showAsideRight &  { @include setTransition(right, $default-aside-right-size); }
+  body.showAsideTop &    { @include setTransition(top, $default-aside-top-size); }
+  body.showAsideBottom & { @include setTransition(bottom, $default-aside-bottom-size); }
+}
