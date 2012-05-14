@@ -5,20 +5,17 @@
 COOL.Core = (function(coolstrap, undefined) {
 
   var HASHTAG_CHARACTER = '#';
-
-  /**
-   * Console system to display messages when you are in debug mode.
-   *
-   * @method log
-   *
-   * @param {number} Severity based in (1)Log, (2)Warn, (>2)Error
-   * @param {string} Message to show in console
-   */
-  var log = function(severity, message) {
-    if (!coolstrap.Core.isMobile()) {
-      console[(severity === 1) ? 'log' : (severity === 2) ? 'warn' : 'error'](message);
-    } 
+  var CURRENT_ENVIRONMENT = null;
+  var IS_WEBKIT = /WebKit\/([\d.]+)/;
+  var SUPPORTED_OS = {
+    android: /(Android)\s+([\d.]+)/,
+    ipad: /(iPad).*OS\s([\d_]+)/,
+    iphone: /(iPhone\sOS)\s([\d_]+)/,
+    blackberry: /(BlackBerry).*Version\/([\d.]+)/,
+    webos: /(webOS|hpwOS)[\s\/]([\d.]+)/
   };
+
+
 
   /**
    * Executes callbacks based on the parameters received.
@@ -99,21 +96,77 @@ COOL.Core = (function(coolstrap, undefined) {
    * @return {boolean} true if is mobile environment, false if not.
    */
   var isMobile = function() {
-    //TODO: implement isMobile method
-    return true;
+    CURRENT_ENVIRONMENT = CURRENT_ENVIRONMENT || _detectEnvironment();
+    return CURRENT_ENVIRONMENT.isMobile;
   };
 
-  /**
-   * Returns information of execute environment
-   *
-   * @method environment
-   *
-   * @return {object} Environment information
-   */
+  /** 
+  * Get from current environment
+  *
+  * Inspired by LungoJS
+  *
+  * @method environment
+  */
   var environment = function() {
-    //TODO: implement environment
-    return {};
+    CURRENT_ENVIRONMENT = CURRENT_ENVIRONMENT || _detectEnvironment();
+    return CURRENT_ENVIRONMENT;
   };
+
+
+  /** 
+  * Detect if browser is online
+  *
+  * Inspired by LungoJS
+  *
+  * @method isOnline
+  */
+  var isOnline = function() {
+    return (navigator.onLine);
+  };
+
+  var _detectEnvironment = function() {
+    var ua = navigator.userAgent;
+    var environment = {};
+
+    environment.browser = _detectBrowser(ua);
+    environment.os = _detectOS(ua);
+    environment.isMobile = (environment.os) ? true : false;
+    environment.screen = _detectScreen();
+
+    return environment;
+  }
+
+  var _detectBrowser = function(user_agent) {
+    var is_webkit = user_agent.match(IS_WEBKIT);
+    return (is_webkit) ? is_webkit[0]: user_agent;
+  }
+
+  var _detectOS = function(user_agent) {
+    var detected_os;
+
+    for (os in SUPPORTED_OS) {
+      var supported = user_agent.match(SUPPORTED_OS[os]);
+
+      if (supported) {
+        detected_os = {
+          name: (os === 'iphone' || os === 'ipad') ? 'ios' : os,
+          version: supported[2].replace('_', '.')
+        }
+        break;
+      }
+    }
+
+    return detected_os;
+  }
+
+  var _detectScreen = function() {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight
+    }
+  }
+
+
 
   /**
    * Returns a ordered list of objects by a property
@@ -181,13 +234,13 @@ COOL.Core = (function(coolstrap, undefined) {
   };
 
   return {
-      log: log,
       execute: execute,
       bind: bind,
       extend: extend,
       toType: toType,
       toArray: toArray,
       isMobile: isMobile,
+      isOnline: isOnline,
       environment: environment,
       orderByProperty: orderByProperty,
       parseUrl: parseUrl,

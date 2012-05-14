@@ -15,99 +15,8 @@ COOL.Helper = (function(coolstrap, document, undefined) {
 
   var BODY_SCROLL_TOP = false;
   var VIEWPORT_META = document.querySelector && document.querySelector('meta[name="viewport"]');
-  var CURRENT_ENVIRONMENT = null;
-  var IS_WEBKIT = /WebKit\/([\d.]+)/;
-  var SUPPORTED_OS = {
-    android: /(Android)\s+([\d.]+)/,
-    ipad: /(iPad).*OS\s([\d_]+)/,
-    iphone: /(iPhone\sOS)\s([\d_]+)/,
-    blackberry: /(BlackBerry).*Version\/([\d.]+)/,
-    webos: /(webOS|hpwOS)[\s\/]([\d.]+)/
-  };
   var hadTouchEvent = false;
-
-
-
-  /** 
-  * Get from current environment if is mobile
-  *
-  * Inspired by LungoJS
-  *
-  * @method isMobile
-  */
-  var isMobile = function() {
-    CURRENT_ENVIRONMENT = CURRENT_ENVIRONMENT || _detectEnvironment();
-    return CURRENT_ENVIRONMENT.isMobile;
-  };
-
-  /** 
-  * Get from current environment
-  *
-  * Inspired by LungoJS
-  *
-  * @method environment
-  */
-  var environment = function() {
-    CURRENT_ENVIRONMENT = CURRENT_ENVIRONMENT || _detectEnvironment();
-    return CURRENT_ENVIRONMENT;
-  };
-
-
-  /** 
-  * Detect if browser is online
-  *
-  * Inspired by LungoJS
-  *
-  * @method isOnline
-  */
-  var isOnline = function() {
-    return (navigator.onLine);
-  };
-
-  var _detectEnvironment = function() {
-    var ua = navigator.userAgent;
-    var environment = {};
-
-    environment.browser = _detectBrowser(ua);
-    environment.os = _detectOS(ua);
-    environment.isMobile = (environment.os) ? true : false;
-    environment.screen = _detectScreen();
-
-    return environment;
-  }
-
-  var _detectBrowser = function(user_agent) {
-    var is_webkit = user_agent.match(IS_WEBKIT);
-    return (is_webkit) ? is_webkit[0]: user_agent;
-  }
-
-  var _detectOS = function(user_agent) {
-    var detected_os;
-
-    for (os in SUPPORTED_OS) {
-      var supported = user_agent.match(SUPPORTED_OS[os]);
-
-      if (supported) {
-        detected_os = {
-          name: (os === 'iphone' || os === 'ipad') ? 'ios' : os,
-          version: supported[2].replace('_', '.')
-        }
-        break;
-      }
-    }
-
-    return detected_os;
-  }
-
-  var _detectScreen = function() {
-      return {
-          width: window.innerWidth,
-          height: window.innerHeight
-      }
-  }
-
-
-
+ 
   /** 
   * Fix for iPhone viewport scale bug 
   * http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
@@ -407,9 +316,6 @@ COOL.Helper = (function(coolstrap, document, undefined) {
   };
 
   return {
-    isMobile: isMobile,
-    environment: environment,
-    isOnline: isOnline,
     scaleFix: scaleFix,
     hideUrlBarOnLoad: hideUrlBarOnLoad,
     fastButton: fastButton,

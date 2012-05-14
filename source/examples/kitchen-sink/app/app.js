@@ -3,6 +3,7 @@ var App = (function(coolstrap, undefined) {
   coolstrap.App.init({
     name: 'Kitchen Sink',
     version: '1.0',
+    log_level: coolstrap.Constants.LOG_LEVEL.INFO,
     resources: {
       sections: []
     }

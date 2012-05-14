@@ -11,7 +11,7 @@ var App = (function(coolstrap, undefined) {
   var _getEnvironmentFromHelper = (function() {
     var environment = coolstrap.Core.environment();
     if (environment.isMobile) {
-      alert('Your phone is ' + environment.os.name + ' (' + environment.os.version + ')');
+      console.log('Your phone is ' + environment.os.name + ' (' + environment.os.version + ')');
     }
   })();
 

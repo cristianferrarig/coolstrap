@@ -1,7 +1,7 @@
 App.Events = (function(coolstrap, undefined) {
 
   $(document).ready(function() {
-    console.log('page ready');
+    coolstrap.Console.info("ready");
     myScroll = new iScroll('demo');
   });
  
