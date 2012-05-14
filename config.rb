@@ -75,6 +75,7 @@ end
 # 
 # With alternative layout
 <<<<<<< HEAD
+<<<<<<< HEAD
  page "/examples/simple-layout/index.html", :layout => "/examples/examples"
  page "/examples/kitchen-sink/index.html", :layout => "/examples/examples"
  page "/examples/components/formelements.html", :layout => "/examples/examples"
@@ -85,6 +86,10 @@ end
  page "/examples/layout/index.html", :layout => "/examples/layout/layout"
  page "/examples/kitchen-sink/index.html", :layout => "/examples/kitchen-sink/layout"
 >>>>>>> framework structure first commit
+=======
+ page "/examples/simple-layout/index.html", :layout => "/examples/examples"
+ page "/examples/kitchen-sink/index.html", :layout => "/examples/examples"
+>>>>>>> some file refactor
 # 
 # A path which all have the same layout
 # with_layout :admin do
