@@ -39,3 +39,7 @@ article nav,
 article footer {
   position: relative !important;
 }
+
+.scroller.inset {
+  margin: $default-content-spacing;
+}
