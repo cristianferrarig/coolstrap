@@ -74,7 +74,7 @@ end
 # page "/path/to/file.html", :layout => false
 # 
 # With alternative layout
- page "/examples/simple-layout/*", :layout => "/examples/examples"
+ page "/examples/layouts/*", :layout => "/examples/examples"
  page "/examples/kitchen-sink/*", :layout => "/examples/examples"
  page "/examples/components/*", :layout => "/examples/examples"
 # 
