@@ -1,0 +1,53 @@
+//Elaborated styles for coolstrap
+
+
+
+/*
+header {
+  @include background(linear-gradient(top, #129ADA, #0C7DBE));
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+  h2 {
+    font-weight: normal;
+  }
+}
+
+header {
+   a:not(.onlyIcon) {
+    $button-color: darkn(#129ADA, 10%);
+    $button-shadow: darken(#129ADA, 8%);
+    @include background(linear-gradient(top, #129ADA, #0767A6));
+    @include box-shadow(
+      0 0 0 0 $button-shadow inset,
+      0 0 0 1px rgba($button-shadow,.3) inset,
+      0 1px 0 0 rgba(#FFF,.1));
+    @include border-radius(3px);
+    border: 1px solid #0765A6;
+    color: #fff !important;
+    &:hover {
+      @include background(linear-gradient(top, #0767A6, #0B7ABA));
+      color: #ddd;
+    }
+    &:visited {
+      color: #fff;
+    }
+  }
+}
+
+footer {
+  @include background(linear-gradient(top, #a7a7a7, #757575));
+  border-top: 1px solid #999;
+  a {
+    @include text-shadow(0 -1px 0 #777);
+    border-right: 1px solid #a7a7a7;
+    color: #fff;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+article {
+  background-color: rgba(0,0,0,.01);
+}
+*/

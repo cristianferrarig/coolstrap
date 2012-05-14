@@ -1,195 +1,130 @@
 = content_for :title do
-  Listview Demo
+	Listview Demo
 
 = content_for :principal do
 
-  %div{"role" => "main"}
-    
-    %header
-      %a{:href => "simple.html"} Inicio
-      %hgroup
-        %h1 COOLSTRAP
-        %h2 Listview Demo
-      %a{:href => "formelements.html"} Forms
-    %footer
-      %a Button
-      %a Button
-      %a Button
-      %a Button
-      %a Button
-      
-    %section{:id => "home", :class => "current"}
-
-      %article{:id => "demo", :class => "current"}
-        
-        .scroller
-
-          %ul{"data-type" => "listview"}
-
-            %li.list-divider 1. Simple list one line - All inside
-
-            %li
-              .content
-                .title Abraham
-            %li
-              .content
-                .title
-                  First Item.
-              .aside
-                %i
-            %li
-              .content
-                .title
-                  First Item.
-              .aside
-                %span 4m ago
-                %i
-            %li
-              .content
-                .title
-                  Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
-              .aside
-                %span.badge 3
-                %i
-            %li
-              .aside.stretch-pic
-                .picture
-              .content
-                .title
-                  Fourth Item.
-              .aside
-                %span.badge 3
-                %i
-            %li
-              .aside
-                .picture
-              .content
-                .title
-                  Fourth Item.
-              .aside
-                %span.badge 3
-                %i
-
-            %li
-              .aside
-                %span.badge 3
-              .content
-                .title
-                  Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
-              .aside.stretch-pic
-                .picture
-              .aside
-                %i
-
-
-
-
-
-
-
-
-
-
-
-            %li.list-divider 2. Title and description - All inside the content      
-            
-            %li
-              .content
-                .title First Item
-                .desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 
+	%div{"role" => "main"}
+		
+		%header
+			%a{:href => "simple.html"} Inicio
+			%hgroup
+				%h1 COOLSTRAP
+				%h2 Listview Demo
+			%a{:href => "formelements.html"} Forms
+		%footer
+			%a Button
+			%a Button
+			%a Button
+			%a Button
+			%a Button
+			
+		%section{:id => "home", :class => "current"}
+
+			%article{:id => "demo", :class => "current"}
+				
+				.scroller
+
+					%ul{"data-type" => "listview"}
+
+						= partial "components/listview/list01" 
 
-            %li
-              .content
-                .title First Item
-                .desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 
-              .aside
-                %i
 
-            %li
-              .content
-                .nested
-                  .title First Item
-                  .aside 4 days ago
-                .desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
 
-            %li
-              .content
-                .nested
-                  .title First Item
-                  .aside 4 days ago
-                .desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
-              .aside
-                %i
-               
-            %li 
-              .content
-                .nested
-                  .title Firs Item
-                  .aside 12:00am
-                .nested
-                  .desc Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                  .aside
-                    %i 
-            
 
 
 
-            %li.list-divider 5. Description and icon - Content and aside        
 
 
-            %li
-              .desc Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
-              .aside
-                %i
 
-            %li
-              .content
-                .nested
-                  .title
-                    Jason Newsted
-                  .aside
-                    Facebook friend
-                .nested
-                  .desc
-                    Bass Guitar
-                  .aside
-                    1st/June/2012
-              .aside
-                %i
 
-            %li
-              .aside.picture-up
-                .picture
-              .desc Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
-            %li
-              .aside.picture-up
-                .picture
-              .content
-                .title First Item
-                .desc Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-              .aside
-                %i
+						%li.list-divider 2. Title and description - Content and asides
+						
+						%li
+							.content
+								.title First Item
+								.desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 
 
+						%li
+							.content
+								.title First Item
+								.desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. 
+							.aside
+								%i
 
+						%li
+							.content
+								.nested
+									.title First Item
+									.aside 4 days ago
+								.desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
 
-            
+						%li
+							.content
+								.nested
+									.title First Item
+									.aside 4 days ago
+								.desc Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+							.aside
+								%i
+							 
+						%li 
+							.content
+								.nested
+									.title Firs Item
+									.aside 12:00am
+								.nested
+									.desc Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+									.aside
+										%i 
+						
 
-                                    
 
-          
+						%li
+							.desc Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
+							.aside
+								%i
 
+						%li
+							.content
+								.nested
+									.title
+										Jason Newsted
+									.aside
+										Facebook friend
+								.nested
+									.desc
+										Bass Guitar
+									.aside
+										1st/June/2012
+							.aside
+								%i
 
-            
-                    
+						%li
+							.aside.picture-up
+								.picture
+							.desc Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
+						%li
+							.aside.picture-up
+								.picture
+							.content
+								.title First Item
+								.desc Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+							.aside
+								%i
 
 
 
+						
 
+																		
 
+					
 
 
+						
+										
 
 
 
@@ -227,5 +162,13 @@
 
 
 
-    
+
+
+
+
+
+
+
+
+		
 

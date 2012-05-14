@@ -17,10 +17,10 @@ $isNotToolbar:   ':not([data-type="toolbar"])';
 $isTabbar:       '[data-type="tabbar"]';
 $isNotTabbar:    ':not([data-type="tabbar"])';
 
-$isOnTop:       '[data-type="onTop"]';
-$isOnBottom:    '[data-type="onBottom"]';
-$isOnLeft:      '[data-type="onLeft"]';
-$isOnRight:     '[data-type="onRight"]';
+$isOnTop:        '[data-type="onTop"]';
+$isOnBottom:     '[data-type="onBottom"]';
+$isOnLeft:       '[data-type="onLeft"]';
+$isOnRight:      '[data-type="onRight"]';
 
 
 $isMain:        '[role="main"]';

@@ -5,7 +5,8 @@ ul[data-type="listview"] {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  li, li > a {
+  li,
+  li > a, {
     @include setFlexibleBox(horizontal,stretch);
     //@include box-align(start);
     //@include box-pack(start);
@@ -60,25 +61,9 @@ ul[data-type="listview"] {
       vertical-align: middle;
     }
   }
-  .aside-left {
-    padding-right: 10px;
-  }
-  .aside-right {
-    @include setFlexibleBox;
-    padding-left: 10px;
-  }
-  .content {
-    @include box-flex(1);
-  }
-  .nested {
-    @include setFlexibleBox;
-  }
   .title:not(.nested),
   .title.nested .content {
     @include ellipsis;
-  }
-  .desc {
-    padding-top: 7px
   }
 }
 
