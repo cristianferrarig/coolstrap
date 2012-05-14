@@ -31,19 +31,19 @@ COOL.Console = (function(coolstrap, undefined) {
  
   return {
     debug: function(message) {
-      _log(coolstrap.Constants.LOG_LEVEL.DEBUG, message);
+      _log(coolstrap.Constants.LOG_LEVEL.DEBUG, '[DEBUG] '+ message);
     },
     info: function(message) {
-      _log(coolstrap.Constants.LOG_LEVEL.INFO, message);
+      _log(coolstrap.Constants.LOG_LEVEL.INFO, '[INFO]  '+ message);
     },
     log: function(message) {
-      _log(coolstrap.Constants.LOG_LEVEL.LOG, message);
+      _log(coolstrap.Constants.LOG_LEVEL.LOG, '[LOG]   '+ message);
     }, 
     warn: function(message) {
-      _log(coolstrap.Constants.LOG_LEVEL.WARN, message);
+      _log(coolstrap.Constants.LOG_LEVEL.WARN, '[WARN]  '+ message);
     }, 
     error: function(message) {
-      _log(coolstrap.Constants.LOG_LEVEL.ERROR, message);
+      _log(coolstrap.Constants.LOG_LEVEL.ERROR, '[ERROR] '+ message);
     }, 
   };
 

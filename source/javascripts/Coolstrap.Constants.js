@@ -3,15 +3,13 @@
 */
 
 COOL.Constants = {
-  //TODO: complement Element constants
+
   ELEMENT: {
-    /*SECTION: 'section',
+    SECTION: 'section',
     ARTICLE: 'article',
     ASIDE: 'aside',
     BODY: 'body',
-    DIV: 'div',
-    LIST: '<ul></ul>',
-    SPAN: '<span>&nbsp;</span>' */
+    DIV: 'div'
   },
 
   CLASS: {

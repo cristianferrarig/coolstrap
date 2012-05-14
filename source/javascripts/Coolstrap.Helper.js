@@ -47,7 +47,7 @@ COOL.Helper = (function(coolstrap, document, undefined) {
   *
   * So we don't redefine this function everytime we call hideUrlBar
   */ 
-  var hideUrlBarOnLoad = function () {
+  var hideNavigationBar = function () {
     var win = window,
         doc = win.document,
         bodycheck;
@@ -317,7 +317,7 @@ COOL.Helper = (function(coolstrap, document, undefined) {
 
   return {
     scaleFix: scaleFix,
-    hideUrlBarOnLoad: hideUrlBarOnLoad,
+    hideNavigationBar: hideNavigationBar,
     fastButton: fastButton,
     autogrow: autogrow,
     enableActive: enableActive,
