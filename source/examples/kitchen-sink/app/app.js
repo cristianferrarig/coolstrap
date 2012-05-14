@@ -4,7 +4,11 @@ var App = (function(coolstrapp, undefined) {
     name: 'Kitchen Sink',
     version: '1.0',
     resources: {
+<<<<<<< HEAD
       sections: []
+=======
+        sections: []
+>>>>>>> framework structure first commit
     }
   });
 
@@ -19,4 +23,8 @@ var App = (function(coolstrapp, undefined) {
 
   };
 
+<<<<<<< HEAD
 })(STRAPP);
+=======
+})(STRAPP);
+>>>>>>> framework structure first commit

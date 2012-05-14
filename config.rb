@@ -74,12 +74,17 @@ end
 # page "/path/to/file.html", :layout => false
 # 
 # With alternative layout
+<<<<<<< HEAD
  page "/examples/simple-layout/index.html", :layout => "/examples/examples"
  page "/examples/kitchen-sink/index.html", :layout => "/examples/examples"
  page "/examples/components/formelements.html", :layout => "/examples/examples"
  page "/examples/components/listview.html", :layout => "/examples/examples"
  page "/examples/components/tabbar.html", :layout => "/examples/examples"
  page "/examples/components/toolbar.html", :layout => "/examples/examples"
+=======
+ page "/examples/layout/index.html", :layout => "/examples/layout/layout"
+ page "/examples/kitchen-sink/index.html", :layout => "/examples/kitchen-sink/layout"
+>>>>>>> framework structure first commit
 # 
 # A path which all have the same layout
 # with_layout :admin do
