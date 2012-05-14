@@ -4,7 +4,7 @@ var App = (function(coolstrapp, undefined) {
     name: 'Kitchen Sink',
     version: '1.0',
     resources: {
-        sections: []
+      sections: []
     }
   });
 

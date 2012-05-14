@@ -74,8 +74,8 @@ end
 # page "/path/to/file.html", :layout => false
 # 
 # With alternative layout
- page "/examples/layout/index.html", :layout => "/examples/layout/layout"
- page "/examples/kitchen-sink/index.html", :layout => "/examples/kitchen-sink/layout"
+ page "/examples/simple-layout/index.html", :layout => "/examples/examples"
+ page "/examples/kitchen-sink/index.html", :layout => "/examples/examples"
 # 
 # A path which all have the same layout
 # with_layout :admin do

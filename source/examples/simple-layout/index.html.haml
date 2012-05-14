@@ -56,3 +56,6 @@
 	%aside{"data-type" => "onTop"}
 
 	%aside{"data-type" => "onBottom"}
+
+= content_for :application_js do  
+	%script{:src => "app/app.js", :type=> "text/javascript"}
