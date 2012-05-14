@@ -78,9 +78,8 @@
 	-# Create your own custom Modernizr build: www.modernizr.com/download/
 
 	-# Javascript
-	= javascript_include_tag "libs/modernizr-2.5.3"
-	= javascript_include_tag "init"
-
+	= javascript_include_tag "lib/modernizr-2.5.3"
+	
 %body
 
 	-# Prompt IE 8 users to install Chrome Frame. Remove this if you support IE 6.
@@ -92,14 +91,10 @@
 
 	-# JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom
 	-# scripts concatenated and minified via build script
-	= javascript_include_tag "plugins"
-	-#= javascript_include_tag "helper"
-	= javascript_include_tag "script"
+	= javascript_include_tag "lib/jquery-1.7.1"
+	= javascript_include_tag "lib/iscroll"
 	
-
-
-	-# Debugger - remove for production
-	%script{:src => "https://getfirebug.com/firebug-lite.js"}
+	%script{:src => "app/app.js", :type=> "text/javascript"}
 
 	-# Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
 	-# mathiasbynens.be/notes/async-analytics-snippet
