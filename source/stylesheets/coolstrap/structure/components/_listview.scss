@@ -13,6 +13,7 @@ ul[data-type="listview"] {
     }
   }
   li {
+
     padding: $default-listview-spacing;
     > div {
       @include setFlexibleBox(vertical,stretch,center);
@@ -58,6 +59,26 @@ ul[data-type="listview"] {
     span {
       vertical-align: middle;
     }
+  }
+  .aside-left {
+    padding-right: 10px;
+  }
+  .aside-right {
+    @include setFlexibleBox;
+    padding-left: 10px;
+  }
+  .content {
+    @include box-flex(1);
+  }
+  .nested {
+    @include setFlexibleBox;
+  }
+  .title:not(.nested),
+  .title.nested .content {
+    @include ellipsis;
+  }
+  .desc {
+    padding-top: 7px
   }
 }
 
