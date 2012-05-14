@@ -1,4 +1,4 @@
-App.Events = (function(coolstrapp, undefined) {
+App.Events = (function(coolstrap, undefined) {
 
   $(document).ready(function() {
     console.log('page ready');
@@ -6,4 +6,4 @@ App.Events = (function(coolstrapp, undefined) {
   });
  
 
-})(STRAPP);
+})(COOL);

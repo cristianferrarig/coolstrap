@@ -2,18 +2,18 @@
 * Coolstrapp.App.js 
 */
 
-STRAPP.App = (function(coolstrapp, undefined) {
+COOL.App = (function(coolstrap, undefined) {
 
   var default_config = {
     id: 1,
-    name: 'coolstrapp',
+    name: 'coolstrap',
     version: 0.9,
     icon: ''
   }; 
 
   var init = function(app_config) {
-      default_config = coolstrapp.Core.extend(default_config, app_config);
-      //coolstrapp.Boot(); // TODO: boot coolstrapp
+      default_config = coolstrap.Core.extend(default_config, app_config);
+      //coolstrap.Boot(); // TODO: boot coolstrap
   };
 
   var get = function(property) {
@@ -25,4 +25,4 @@ STRAPP.App = (function(coolstrapp, undefined) {
       get: get
   };
 
-})(STRAPP);
+})(COOL);

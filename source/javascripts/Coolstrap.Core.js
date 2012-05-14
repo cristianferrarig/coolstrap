@@ -2,7 +2,7 @@
  * Coolstrapp.Core.js
  */
 
-STRAPP.Core = (function(coolstrapp, undefined) {
+COOL.Core = (function(coolstrap, undefined) {
 
   var HASHTAG_CHARACTER = '#';
 
@@ -15,7 +15,7 @@ STRAPP.Core = (function(coolstrapp, undefined) {
    * @param {string} Message to show in console
    */
   var log = function(severity, message) {
-    if (!coolstrapp.Core.isMobile()) {
+    if (!coolstrap.Core.isMobile()) {
       console[(severity === 1) ? 'log' : (severity === 2) ? 'warn' : 'error'](message);
     } 
   };
@@ -195,4 +195,4 @@ STRAPP.Core = (function(coolstrapp, undefined) {
       $: "undefined" !== typeof window ? window.jQuery || window.Zepto || null : null
   };
 
-})(STRAPP);
+})(COOL);

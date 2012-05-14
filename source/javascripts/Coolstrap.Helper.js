@@ -3,7 +3,7 @@
  * Inspired by MBP - Mobile boilerplate helper functions
  * https://github.com/h5bp/mobile-boilerplate/blob/master/js/helper.js
  * 
- * @namespace STRAPP
+ * @namespace COOL
  * @class Helper
  * 
  * @author Cristian Ferrari <cristianferrarig@gmail.com> || @energettico
@@ -11,12 +11,103 @@
  * 
  */
 
-STRAPP.Helper = (function(coolstrapp, document, undefined) {
+COOL.Helper = (function(coolstrap, document, undefined) {
 
   var BODY_SCROLL_TOP = false;
   var VIEWPORT_META = document.querySelector && document.querySelector('meta[name="viewport"]');
-  var UA = navigator.userAgent;
+  var CURRENT_ENVIRONMENT = null;
+  var IS_WEBKIT = /WebKit\/([\d.]+)/;
+  var SUPPORTED_OS = {
+    android: /(Android)\s+([\d.]+)/,
+    ipad: /(iPad).*OS\s([\d_]+)/,
+    iphone: /(iPhone\sOS)\s([\d_]+)/,
+    blackberry: /(BlackBerry).*Version\/([\d.]+)/,
+    webos: /(webOS|hpwOS)[\s\/]([\d.]+)/
+  };
   var hadTouchEvent = false;
+
+
+
+  /** 
+  * Get from current environment if is mobile
+  *
+  * Inspired by LungoJS
+  *
+  * @method isMobile
+  */
+  var isMobile = function() {
+    CURRENT_ENVIRONMENT = CURRENT_ENVIRONMENT || _detectEnvironment();
+    return CURRENT_ENVIRONMENT.isMobile;
+  };
+
+  /** 
+  * Get from current environment
+  *
+  * Inspired by LungoJS
+  *
+  * @method environment
+  */
+  var environment = function() {
+    CURRENT_ENVIRONMENT = CURRENT_ENVIRONMENT || _detectEnvironment();
+    return CURRENT_ENVIRONMENT;
+  };
+
+
+  /** 
+  * Detect if browser is online
+  *
+  * Inspired by LungoJS
+  *
+  * @method isOnline
+  */
+  var isOnline = function() {
+    return (navigator.onLine);
+  };
+
+  var _detectEnvironment = function() {
+    var ua = navigator.userAgent;
+    var environment = {};
+
+    environment.browser = _detectBrowser(ua);
+    environment.os = _detectOS(ua);
+    environment.isMobile = (environment.os) ? true : false;
+    environment.screen = _detectScreen();
+
+    return environment;
+  }
+
+  var _detectBrowser = function(user_agent) {
+    var is_webkit = user_agent.match(IS_WEBKIT);
+    return (is_webkit) ? is_webkit[0]: user_agent;
+  }
+
+  var _detectOS = function(user_agent) {
+    var detected_os;
+
+    for (os in SUPPORTED_OS) {
+      var supported = user_agent.match(SUPPORTED_OS[os]);
+
+      if (supported) {
+        detected_os = {
+          name: (os === 'iphone' || os === 'ipad') ? 'ios' : os,
+          version: supported[2].replace('_', '.')
+        }
+        break;
+      }
+    }
+
+    return detected_os;
+  }
+
+  var _detectScreen = function() {
+      return {
+          width: window.innerWidth,
+          height: window.innerHeight
+      }
+  }
+
+
+
   /** 
   * Fix for iPhone viewport scale bug 
   * http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
@@ -24,11 +115,12 @@ STRAPP.Helper = (function(coolstrapp, document, undefined) {
   * @method scaleFix 
   */
   var scaleFix = function () {
+    var ua = navigator.userAgent;
     var gestureStart = function(){
       VIEWPORT_META.content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
     };
 
-    if (VIEWPORT_META && /iPhone|iPad|iPod/.test(UA) && !/Opera Mini/.test(UA)) {
+    if (VIEWPORT_META && /iPhone|iPad|iPod/.test(ua) && !/Opera Mini/.test(ua)) {
       VIEWPORT_META.content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
       document.addEventListener("gesturestart", gestureStart, false);
     }
@@ -59,28 +151,28 @@ STRAPP.Helper = (function(coolstrapp, document, undefined) {
       bodycheck = setInterval(function() {
         if( doc.body ) {
           clearInterval( bodycheck );
-          BODY_SCROLL_TOP = getScrollTop();
-          hideUrlBar();
+          BODY_SCROLL_TOP = _getScrollTop();
+          _hideUrlBar();
         }
       }, 15 );
 
       win.addEventListener( "load", function() {
         setTimeout(function() {
-          if(getScrollTop() < 20 ) {
-            hideUrlBar();
+          if(_getScrollTop() < 20 ) {
+            _hideUrlBar();
           }
         }, 0);
       } );
     }
   };
 
-  var getScrollTop = function(){
+  var _getScrollTop = function(){
     var win = window,
         doc = document;
     return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
   };
 
-  var hideUrlBar = function(){
+  var _hideUrlBar = function(){
     var win = window;
     if( !location.hash && BODY_SCROLL_TOP !== false){
         win.scrollTo( 0, BODY_SCROLL_TOP === 1 ? 0 : 1 );
@@ -93,7 +185,7 @@ STRAPP.Helper = (function(coolstrapp, document, undefined) {
   * fastButton is used to make instant responsive buttons, 
   * 300ms faster to be exact.
   *
-  * new STRAPP.Helper.fastButton(document.getElementById('myBtn'), function() { // do something });
+  * new COOL.Helper.fastButton(document.getElementById('myBtn'), function() { // do something });
   */ 
   var fastButton = function (element, handler) {
     this.handler = handler;
@@ -315,6 +407,9 @@ STRAPP.Helper = (function(coolstrapp, document, undefined) {
   };
 
   return {
+    isMobile: isMobile,
+    environment: environment,
+    isOnline: isOnline,
     scaleFix: scaleFix,
     hideUrlBarOnLoad: hideUrlBarOnLoad,
     fastButton: fastButton,
@@ -323,4 +418,4 @@ STRAPP.Helper = (function(coolstrapp, document, undefined) {
     preventZoom: preventZoom 
   }
 
-})(STRAPP, document);
+})(COOL, document);

@@ -1,7 +1,7 @@
 /**
 * Coolstrapp.Constants.js 
 */
-STRAPP.Constants = {
+COOL.Constants = {
   //TODO: complement Element constants
   ELEMENT: {
     /*SECTION: 'section',
