@@ -5,6 +5,11 @@ ul[data-type="listview"] {
   list-style-type: none;
   margin: 0;
   padding: 0;
+
+  &.inset {
+    margin: 10px;
+  }
+
   li,
   li > a, {
     @include setFlexibleBox(horizontal,stretch);
