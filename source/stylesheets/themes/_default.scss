@@ -53,7 +53,7 @@ ul {
         height: 16px;
       }
     }
-    &:active {
+    &:not(.list-divider):active {
       @include background(linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.05)));
     }
   }
