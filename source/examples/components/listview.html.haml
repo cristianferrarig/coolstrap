@@ -26,16 +26,9 @@
 
 					%ul{"data-type" => "listview"}
 
-						= partial "components/listview/list01" 
+						= partial "examples/components/listview/list01" 
 
-
-
-
-
-
-
-
-
+ 
 
 
 						%li.list-divider 2. Title and description - Content and asides
@@ -113,7 +106,9 @@
 								.desc Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 							.aside
 								%i
-
+= content_for :application_js do  
+	%script{:src => "app/app.js", :type=> "text/javascript"}
+	%script{:src => "app/events.js", :type=> "text/javascript"}
 
 
 						

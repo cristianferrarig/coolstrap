@@ -76,6 +76,10 @@ end
 # With alternative layout
  page "/examples/simple-layout/index.html", :layout => "/examples/examples"
  page "/examples/kitchen-sink/index.html", :layout => "/examples/examples"
+ page "/examples/components/formelements.html", :layout => "/examples/examples"
+ page "/examples/components/listview.html", :layout => "/examples/examples"
+ page "/examples/components/tabbar.html", :layout => "/examples/examples"
+ page "/examples/components/toolbar.html", :layout => "/examples/examples"
 # 
 # A path which all have the same layout
 # with_layout :admin do
