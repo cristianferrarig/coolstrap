@@ -1,15 +1,57 @@
-%ul.inset{"data-type" => "listview"}
-  %li.list-divider 1. Simple list one line - All inside
+%header
+  %h1 Simple list
 
+%ul.inset{"data-type" => "listview"}
+  
+  %li.list-divider 1. Simple
   %li
     .content
-      .title Abraham
+      .title Maria Jesus
+  %li
+    .content
+      .title Monserrat
+  %li
+    .content
+      .title Valeria 
+
+
+  %li.list-divider 2. Simple with arrow        
   %li
     .content
       .title
         First Item.
     .aside
       %i
+  %li
+    .content
+      .title
+        Second Item.
+    .aside
+      %i
+  %li
+    .content
+      .title
+        Third Item.
+    .aside
+      %i
+
+
+  %li.list-divider 3. Simple with arrow meta and counters 
+  %li
+    .desc Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
+    .aside
+      %i
+  %li
+    .desc Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
+    .aside
+      %i
+  %li
+    .desc Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
+    .aside
+      %i
+
+
+  %li.list-divider 4. Simple with arrow meta and counters           
   %li
     .content
       .title
@@ -20,16 +62,63 @@
   %li
     .content
       .title
-        Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+        Second Item.
+    .aside
+      %span 2h ago
+      %i
+  %li
+    .content
+      .title
+        This is a very long text to prove the great ellipsis implemented here.
+    .aside
+      %span.badge 66
+      %i
+  %li
+    .content
+      .title
+        Second Item.
     .aside
       %span.badge 3
+      %i
+    
+
+  %li.list-divider 5. Simple with strech picture.
+  %li
+    .aside.stretch-pic
+      .picture
+    .content
+      .title
+        First Item.
+    .aside
+      %span.badge 15
       %i
   %li
     .aside.stretch-pic
       .picture
     .content
       .title
-        Fourth Item.
+        Second Item.
+    .aside
+      %span.badge 0
+      %i
+  %li
+    .aside.stretch-pic
+      .picture
+    .content
+      .title
+        Thirtd Item.
+    .aside
+      %span.badge 1
+      %i 
+
+
+  %li.list-divider 6. Simple with magin picture.           
+  %li
+    .aside
+      .picture
+    .content
+      .title
+        First Item.
     .aside
       %span.badge 3
       %i
@@ -38,14 +127,25 @@
       .picture
     .content
       .title
-        Fourth Item.
+        Second Item.
     .aside
-      %span.badge 3
+      %span.badge 23
       %i
-
   %li
     .aside
-      %span.badge 3
+      .picture
+    .content
+      .title
+        Third Item.
+    .aside
+      %span.badge 64
+      %i        
+
+
+  %li.list-divider 7. Simple with diferent order.     
+  %li
+    .aside
+      %span.badge 2
     .content
       .title
         Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
@@ -53,3 +153,23 @@
       .picture
     .aside
       %i
+  %li
+    .aside
+      %span.badge 7
+    .content
+      .title
+        Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+    .aside.stretch-pic
+      .picture
+    .aside
+      %i
+  %li
+    .aside
+      %span.badge 8
+    .content
+      .title
+        Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+    .aside.stretch-pic
+      .picture
+    .aside
+      %i        
