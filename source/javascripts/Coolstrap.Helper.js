@@ -1,6 +1,7 @@
 /**
  * Coolstrapp Mobile Helper
- * Inspired by MBP - Mobile boilerplate helper functions
+ *
+ * Inspired by MBP
  * https://github.com/h5bp/mobile-boilerplate/blob/master/js/helper.js
  * 
  * @namespace COOL
@@ -16,7 +17,7 @@ COOL.Helper = (function(coolstrap, document, undefined) {
   var BODY_SCROLL_TOP = false;
   var VIEWPORT_META = document.querySelector && document.querySelector('meta[name="viewport"]');
   var hadTouchEvent = false;
- 
+
   /** 
   * Fix for iPhone viewport scale bug 
   * http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
@@ -47,47 +48,31 @@ COOL.Helper = (function(coolstrap, document, undefined) {
   *
   * So we don't redefine this function everytime we call hideUrlBar
   */ 
-  var hideNavigationBar = function () {
-    var win = window,
-        doc = win.document,
-        bodycheck;
+  var hideNavigationBar = function() {
+    var _window = window;
+    var _document = _window.document;
 
-    if( !location.hash && win.addEventListener ) {
+    if( !location.hash || !_window.addEventListener ){
+      _window.scrollTo( 0, 1 );
+      var scrollTop = 1,
 
-      window.scrollTo( 0, 1 );
-      BODY_SCROLL_TOP = 1;
-
-      bodycheck = setInterval(function() {
-        if( doc.body ) {
-          clearInterval( bodycheck );
-          BODY_SCROLL_TOP = _getScrollTop();
-          _hideUrlBar();
-        }
+      //reset to 0 on bodyready, if needed
+      bodycheck = setInterval(function(){
+          if( _document.body ){
+              clearInterval( bodycheck );
+              scrollTop = 'scrollTop' in _document.body ? _document.body.scrollTop : 1;
+              _window.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+          }
       }, 15 );
 
-      win.addEventListener( "load", function() {
-        setTimeout(function() {
-          if(_getScrollTop() < 20 ) {
-            _hideUrlBar();
-          }
-        }, 0);
-      } );
+      _window.addEventListener('load', function(){
+          setTimeout(function(){
+              _window.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+          }, 0);
+      }, false );
     }
   };
-
-  var _getScrollTop = function(){
-    var win = window,
-        doc = document;
-    return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
-  };
-
-  var _hideUrlBar = function(){
-    var win = window;
-    if( !location.hash && BODY_SCROLL_TOP !== false){
-        win.scrollTo( 0, BODY_SCROLL_TOP === 1 ? 0 : 1 );
-    }
-  };
-
+  
 
   /**
   * Fast Buttons  

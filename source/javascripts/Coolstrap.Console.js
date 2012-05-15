@@ -12,7 +12,7 @@ COOL.Console = (function(coolstrap, undefined) {
   /**
    * Console system to display messages when you are in debug mode.
    *
-   * @method log
+   * @method _log
    *
    * @param {number} Level based COOL.Constants.LOG_LEVEL
    * @param {string} Message to show in console
@@ -28,6 +28,7 @@ COOL.Console = (function(coolstrap, undefined) {
       //TODO: try to log natively 
     }
   };
+
  
   return {
     debug: function(message) {

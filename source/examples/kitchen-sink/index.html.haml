@@ -11,14 +11,20 @@
       %a Entrar
     %footer
       %h1 footer
-    %section.current
+    %section.current{:id => "home"}
       %article.current{:id => "demo"}
         .scroller
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
 
-          %pDuis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.
+          %p Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
+          %a{"href" => "#demo2", "data-target" => "section"}
+            hola
 
           %aside{"data-type" => "onLeft"}
+    %section{:id => "demo2"}
+      %article
+        .scroller
+          %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla  . Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
 
   %aside{"data-type" => "onRight"}
   %aside{"data-type" => "onTop"}

@@ -1,6 +1,13 @@
 /**
-* Coolstrapp.Constants.js 
-*/
+ * Coolstrapp Global Constants
+ * Inspired by LungoJs
+ * 
+ * @namespace COOL
+ * @class Constants
+ * 
+ * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
+ * 
+ */
 
 COOL.Constants = {
 
@@ -25,6 +32,22 @@ COOL.Constants = {
     HORIZONTAL: 'horizontal'
   },
 
+  ATTRIBUTE: {
+    ID: 'id',
+    HREF: 'href',
+    TITLE: 'title',
+    ARTICLE: 'article',
+    CLASS: 'class',
+    WIDTH: 'width',
+    HEIGHT: 'height',
+    PIXEL: 'px',
+    PERCENT: '%',
+    TARGET: 'target',
+    FIRST: 'first',
+    LAST: 'last',
+    EMPTY: ''
+  },
+
   TRIGGER: {
     LOAD: 'load',
     UNLOAD: 'unload'
@@ -35,7 +58,14 @@ COOL.Constants = {
     INFO: 0,
     LOG: 1,
     WARN: 2,
-    ERROR: 3
+    ERROR: 3,
+    NONE: 4
+  },
+
+  ERROR: {
+    CREATE_SCROLL: 'ERROR: Impossible to create a <scroll> without ID.',
+    ROUTER: 'ERROR: The target does not exists >>',
+    LOADING_RESOURCE: 'ERROR: Loading resource.'
   }
 
 }

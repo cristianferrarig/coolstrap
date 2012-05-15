@@ -1,5 +1,12 @@
 /**
- * Coolstrapp.Core.js
+ * Coolstrapp Core functions
+ * Inspired by LungoJS
+ * 
+ * @namespace COOL
+ * @class Core
+ * 
+ * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
+ * 
  */
 
 COOL.Core = (function(coolstrap, undefined) {
@@ -244,8 +251,7 @@ COOL.Core = (function(coolstrap, undefined) {
       environment: environment,
       orderByProperty: orderByProperty,
       parseUrl: parseUrl,
-      findByProperty: findByProperty,
-      $: "undefined" !== typeof window ? window.jQuery || window.Zepto || null : null
+      findByProperty: findByProperty
   };
 
 })(COOL);

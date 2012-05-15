@@ -12,7 +12,7 @@ COOL.Boot = (function(coolstrap, undefined) {
    
     //coolstrap.Boot.Resources.start(); //TODO: Boot resources
     coolstrap.Boot.Layout.start(); 
-    //coolstrap.Boot.Events.start(); //TODO: Boot events
+    coolstrap.Boot.Events.start(); 
     //coolstrap.Boot.Data.start(); //TODO: Boot data
     //coolstrap.Boot.Section.start(); //TODO: Boot sections
     //coolstrap.Boot.Article.start(); //TODO: Boot articles
