@@ -15,6 +15,13 @@ header, nav {
   border-bottom: 1px solid darken($basecolor,20);
 }
 
+ul.inset {
+  border: 1px solid #ccc;
+  li:last-child {
+    border-bottom: 0;
+  }
+}
+
 a:not(.onlyIcon) {
   background-color: darken($basecolor,15);
   border: 1px solid darken($basecolor,20);
@@ -53,7 +60,7 @@ ul {
         height: 16px;
       }
     }
-    &:active {
+    &:not(.list-divider):active {
       @include background(linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.05)));
     }
   }
