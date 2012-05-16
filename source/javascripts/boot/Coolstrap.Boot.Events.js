@@ -99,10 +99,10 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
 
   //TODO:  _goAside
   var _goAside = function(element) {
-      var section_id = coolstrap.Router.History.current();
-      var aside_id = element.attr(ATTRIBUTE.HREF);
+    var section_id = coolstrap.Router.History.current();
+    var aside_id = element.attr(ATTRIBUTE.HREF);
 
-      coolstrap.Router.aside(section_id, aside_id);
+    coolstrap.Router.aside(section_id, aside_id);
   };
 
   //TODO:  _hideAsideIfNecesary

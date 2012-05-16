@@ -45,7 +45,12 @@ article,
 div#{$isModal} {
   -webkit-backface-visibility: hidden;
   visibility: hidden;
-  &.current {
+}
+
+section.current, 
+aside.current {
+  visibility: visible;
+  article.current {
     visibility: visible;
   }
 }

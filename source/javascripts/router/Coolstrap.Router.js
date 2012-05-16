@@ -15,6 +15,7 @@ COOL.Router = (function(coolstrap, undefined) {
   var ERROR = coolstrap.Constants.ERROR;
   var TRIGGER = coolstrap.Constants.TRIGGER;
   var _console = coolstrap.Console; 
+
   /**
    * Navigate to a <section>.
    *
@@ -26,10 +27,9 @@ COOL.Router = (function(coolstrap, undefined) {
     var section_id = coolstrap.Core.parseUrl(section_id);
     var current = _getHistoryCurrent();
     var target = ELEMENT.SECTION + section_id;
-    _console.debug('current section ' + current);
     if (_existsTarget(target)) {
-      coolstrap.dom(current).removeClass(CLASS.HIDE_REVOKE).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
-      coolstrap.dom(target).removeClass(CLASS.SHOW_REVOKE).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+      coolstrap.dom(current).removeClass(CLASS.SHOW).addClass(CLASS.HIDE).removeClass(CLASS.CURRENT);
+      coolstrap.dom(target).addClass(CLASS.SHOW).addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
 
       coolstrap.Router.History.add(section_id);
     }  
@@ -59,21 +59,19 @@ COOL.Router = (function(coolstrap, undefined) {
    *
    * @method aside
    *
-   * @param {string} <section> Id
+   * @param {string} <section> Id Not used yet
    * @param {string} <aside> Id
    */
-  //TODO: show aside
   var aside = function(section_id, aside_id) {
-    var section_id = coolstrap.Core.parseUrl(section_id);
     var aside_id = coolstrap.Core.parseUrl(aside_id);
     var target = ELEMENT.ASIDE + aside_id;
 
     if (_existsTarget(target)) {
       var is_visible = coolstrap.dom(target).hasClass(CLASS.CURRENT);
       if (is_visible) {
-        coolstrap.View.Aside.hide(section_id, aside_id);
+        coolstrap.View.Aside.hide(aside_id);
       } else {
-        coolstrap.View.Aside.show(section_id, aside_id);
+        coolstrap.View.Aside.show(aside_id);
       }
     }
   };
@@ -86,9 +84,9 @@ COOL.Router = (function(coolstrap, undefined) {
   var back = function() {
     if (_getHistoryLength() > 1) {
       var current_section = ELEMENT.SECTION + _getHistoryCurrent();
-      coolstrap.dom(current_section).removeClass(CLASS.SHOW).addClass(CLASS.SHOW_REVOKE).trigger(TRIGGER.UNLOAD);
+      coolstrap.dom(current_section).removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD).removeClass(CLASS.CURRENT);
       coolstrap.Router.History.removeLast();
-      coolstrap.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.HIDE_REVOKE).addClass(CLASS.SHOW);
+      coolstrap.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.CURRENT).addClass(CLASS.SHOW);
     } else {
       _console.warn('Hey! Nothing back');
     }

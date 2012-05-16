@@ -29,7 +29,7 @@ COOL.Boot.Section = (function(coolstrap, undefined) {
   var _initFirstSection = function(sections) {
     var first_section = sections.first();
     var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
-
+    first_section.addClass(CLASS.STARTING);
     first_section.addClass(CLASS.CURRENT);
     coolstrap.Router.History.add(first_section_id);
   };

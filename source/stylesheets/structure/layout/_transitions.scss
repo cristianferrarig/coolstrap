@@ -3,17 +3,17 @@
 
 div#{$isMain} {
   @include setTransition();
-  body.showAsideLeft &   { @include setTransition(left, $default-aside-left-size); }
-  body.showAsideRight &  { @include setTransition(right, $default-aside-right-size); }
-  body.showAsideTop &    { @include setTransition(top, $default-aside-top-size); }
-  body.showAsideBottom & { @include setTransition(bottom, $default-aside-bottom-size); }
+  body.showasideonLeft &   { @include setTransition(left, $default-aside-left-size); }
+  body.showasideonRight &  { @include setTransition(right, $default-aside-right-size); }
+  body.showasideonTop &    { @include setTransition(top, $default-aside-top-size); }
+  body.showasideonBottom & { @include setTransition(bottom, $default-aside-bottom-size); }
 }
 
 
 section {
   @include setTransition();
   @include setTransition(left, 100%);
-  &.current{ 
+  &.starting{ 
     @include setTransition(left, 0%);
     @include transition-duration(0);
   }

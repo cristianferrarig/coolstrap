@@ -20,11 +20,10 @@ $isNotToolbar:   ':not([data-type="toolbar"])';
 $isTabbar:       '[data-type="tabbar"]';
 $isNotTabbar:    ':not([data-type="tabbar"])';
 
-$isOnTop:        '[data-type="onTop"]';
-$isOnBottom:     '[data-type="onBottom"]';
-$isOnLeft:       '[data-type="onLeft"]';
-$isOnRight:      '[data-type="onRight"]';
-
+$isOnTop:        '.onTop';
+$isOnBottom:     '.onBottom';
+$isOnLeft:       '.onLeft';
+$isOnRight:      '.onRight';
 
 
 
