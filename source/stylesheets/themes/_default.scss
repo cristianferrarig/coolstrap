@@ -2,7 +2,65 @@
 @import "../styles";
 
 $basecolor: #F8F8F8;
- 
+
+.interfaceButton {
+  background-color: darken($basecolor,15);
+  border: 1px solid darken($basecolor,20);
+  font-weight: bold;
+  color: #656A6C !important;
+}
+
+header, nav, footer {
+  a:not(.onlyIcon) {
+    @extend .interfaceButton;
+  }
+  i {
+
+  }
+}
+
+header {
+  &#{$isNotVertical} {
+    a:not(.onlyIcon) {
+    }
+  }
+  &#{$isVertical} {
+    a:not(.onlyIcon) {
+      
+    }
+  }
+  &#{$isNotVertical},
+  &#{$isVertical} {
+    a:not(.onlyIcon) {
+      
+    }
+  }
+}
+nav,
+footer {
+  &#{$isToolbar} {
+    a:not(.onlyIcon) {
+      
+    }
+  }
+  &#{$isNormal} {
+    a:not(.onlyIcon) {
+      
+    }
+  }
+  &#{$isToolbar},
+  &#{$isNormal} {
+    a:not(.onlyIcon) {
+
+    }
+  }
+}
+
+
+
+
+
+
 header, nav, footer {
   i {
     @include border-radius(100%);
@@ -28,11 +86,8 @@ ul.inset {
   }
 }
 
-a:not(.onlyIcon) {
-  background-color: darken($basecolor,15);
-  border: 1px solid darken($basecolor,20);
-  font-weight: bold;
-  color: #656A6C !important;
+a {
+  
 }
 
 

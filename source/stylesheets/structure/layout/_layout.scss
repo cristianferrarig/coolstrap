@@ -40,6 +40,9 @@ article footer {
   position: relative !important;
 }
 
-.scroller.inset {
-  margin: $default-content-spacing;
+.scroller {
+  @include clearfix;
+  .inset {
+    margin: $default-content-spacing;
+  }
 }
