@@ -6,7 +6,8 @@
 
 div#{$isMain},
 section,
-article {
+article,
+.overlay {
   @include setHeight();
 }
 
@@ -14,7 +15,7 @@ article {
   overflow: hidden;
 }
 
-section,
+section#{$isNotPopup},
 article {
   header#{$isVertical} ~ &     { left: $default-header-vertical-size; bottom: 0; }
   header#{$isExtended} ~ &     { top: $default-header-extended-size; }

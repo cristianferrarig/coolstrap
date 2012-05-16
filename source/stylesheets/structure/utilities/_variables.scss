@@ -1,7 +1,10 @@
 $debugBgColor:  rgba(0,0,0,.05);
 
+$isMain:         '[role="main"]';
+$isModal:        '[data-type="modal"]';
 
-
+$isPopup:        '[data-type="popup"]';
+$isNotPopup:     ':not([data-type="popup"])';
 
 $isVertical:     '[data-type="vertical"]';
 $isNotVertical:  ':not([data-type="vertical"])';
@@ -23,18 +26,21 @@ $isOnLeft:       '[data-type="onLeft"]';
 $isOnRight:      '[data-type="onRight"]';
 
 
-$isMain:        '[role="main"]';
+
 
 
 // Fixed positions
 $default-fixed-position: false !default;
 $default-fixed-size: 100% !default;
 
-
+ 
 // Layers positions
-$default-layer-front: 3 !default;
-$default-layer-overalay: 2 !default;
-$default-layer-current: 1 !default;
+$default-layer-modal: 600 !default;
+$default-layer-overalay: 500 !default;
+$default-layer-popup: 400 !default;
+$default-layer-front: 300 !default;
+$default-layer-overalay-inner: 200 !default;
+$default-layer-current: 100 !default;
 $default-layer-back: 0 !default;
 
 // Transition for aside and backface

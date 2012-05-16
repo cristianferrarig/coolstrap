@@ -3,17 +3,37 @@
 
 // Layers
 aside,
-section,
+section#{$isNotPopup},
 article {
   z-index: $default-layer-back;
   &.current {
     z-index: $default-layer-current;
   }
 }
+
+section#{$isPopup} {
+  z-index: $default-layer-back;
+  &.current {
+    z-index: $default-layer-popup;
+  }
+}
+
+.overlay {
+  z-index: $default-layer-overalay;
+  &.inner {
+    z-index: $default-layer-overalay-inner;
+  }
+}
+
+div#{$isModal} {
+  z-index: $default-layer-modal;
+}
+
+
 header, 
 footer,
 section > nav,
-div[role="main"] {
+div#{$isMain} {
   z-index: $default-layer-front;
 }
 
@@ -21,10 +41,14 @@ div[role="main"] {
 // Visibility
 aside,
 section,
-article {
+article,
+div#{$isModal} {
   -webkit-backface-visibility: hidden;
   visibility: hidden;
   &.current {
     visibility: visible;
   }
 }
+
+
+
