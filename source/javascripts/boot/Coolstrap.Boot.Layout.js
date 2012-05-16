@@ -16,7 +16,7 @@ COOL.Boot.Layout = (function(coolstrap, undefined) {
   /**
    * Initializes the automatic subscription events by markup of the project.
    *
-   * @method init
+   * @method start
    *
    */
   var start = function() {

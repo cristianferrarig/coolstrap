@@ -18,7 +18,7 @@ COOL.Boot.Section = (function(coolstrap, undefined) {
   /**
    * Initializes all <section>s of the project
    *
-   * @method init
+   * @method start
    */
   var start = function() {
     var sections = coolstrap.dom(ELEMENT.SECTION);

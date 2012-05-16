@@ -12,8 +12,8 @@
     %footer
       %h1 footer
     %section#home
-      %article#lorem
-        .scroller
+      %article#lorem.scrollable
+        .container
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
 
           %ul{"data-type" => "listview"}
@@ -63,7 +63,19 @@
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla  . Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
 
   %aside.onLeft#options
-    Menu Options
+    %article#options1
+      %ul{"data-type" => "listview"}
+        %li
+          %a{"href" => "#home2", "data-target" => "section"}
+            .content
+              .title go to some section section
+            .aside
+              %i
+        %li
+          %a{"href" => "#ipsum", "data-target" => "article"}
+            .content
+              .title change to private article
+
   %aside.onRight#colaborators
     Colaborators
   %aside.onTop#notifications

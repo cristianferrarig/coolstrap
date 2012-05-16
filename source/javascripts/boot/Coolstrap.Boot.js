@@ -1,5 +1,6 @@
 /**
  * Boot for a new Coolstrap Application instance
+ * Inspired by LungoJS
  *
  * @namespace COOL
  * @class Boot
@@ -14,8 +15,7 @@ COOL.Boot = (function(coolstrap, undefined) {
     coolstrap.Boot.Layout.start(); 
     coolstrap.Boot.Events.start(); 
     coolstrap.Boot.Section.start(); 
-    //coolstrap.Boot.Article.start(); //TODO: Boot articles
-    //coolstrap.Boot.Stats.start(); //TODO: Boot stats
+    coolstrap.Boot.Article.start();  
   };
 
 })(COOL);
