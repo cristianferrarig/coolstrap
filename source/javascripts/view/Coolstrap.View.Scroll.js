@@ -24,8 +24,7 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
       fadeScrollbar: true,
       hideScrollbar: true
   };
-  var CACHE_KEY = 'scrolls';
-  var SCROLLS = {};
+  var SCROLLS = {}; //TODO: maybe cache
   var SCROLL_TIMEFRAME = 250;
 
   /**
