@@ -19,6 +19,10 @@ COOL.Constants = {
     DIV: 'div'
   },
 
+  TRANSITION: {
+    DURATION: 250
+  },
+
   CLASS: {
     ACTIVE: 'active',
     ASIDE: 'aside',

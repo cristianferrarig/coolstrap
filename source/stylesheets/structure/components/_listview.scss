@@ -12,7 +12,7 @@ ul[data-type="listview"] {
 
   li:not(.list-divider),
   li:not(.list-divider) > a, {
-    @include setFlexibleBox(horizontal,stretch);
+    @include setFlexibleBox(horizontal,stretch, stretch);
   }
 
   li:not(.list-divider) {

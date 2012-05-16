@@ -27,7 +27,8 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
   var start = function() {
     var touch_move_event  = 'touchmove';
     var resize = 'resize';
-    if (coolstrap.dom.fn.tap && coolstrap.Core.isMobile()) {
+
+    if ('ontouchstart' in document.documentElement) {
       coolstrap.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_loadTargetFromAside);
       coolstrap.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
     } else {
@@ -44,7 +45,7 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
    
       var link = coolstrap.dom(this);
       var aside_id = '#' + link.parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
-      var section_id = '#' + coolstrap.dom('section.aside, section.current').first().attr(ATTRIBUTE.ID);
+      var section_id = '#' + coolstrap.dom('section.current').first().attr(ATTRIBUTE.ID);
 
       if (link.data(ATTRIBUTE.TARGET) === ELEMENT.ARTICLE) {
           coolstrap.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
@@ -97,7 +98,6 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
     coolstrap.Router.article(section_id, article_id);
   };
 
-  //TODO:  _goAside
   var _goAside = function(element) {
     var section_id = coolstrap.Router.History.current();
     var aside_id = element.attr(ATTRIBUTE.HREF);
@@ -107,9 +107,9 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
 
   //TODO:  _hideAsideIfNecesary
   var _hideAsideIfNecesary = function(section_id, aside_id) {
-      if (window.innerWidth < 768) {
-          coolstrap.View.Aside.hide(section_id, aside_id);
-      }
+    if (window.innerWidth < 768) {
+      coolstrap.View.Aside.hide(section_id, aside_id);
+    }
   };
 
   return {

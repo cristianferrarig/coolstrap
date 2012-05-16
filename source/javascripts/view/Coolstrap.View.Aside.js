@@ -12,7 +12,7 @@ COOL.View.Aside = (function(coolstrap, undefined) {
   var ELEMENT = coolstrap.Constants.ELEMENT;
   var CLASS = coolstrap.Constants.CLASS;
   var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
-
+  var TRANSITION = coolstrap.Constants.TRANSITION;
   /**
    * Display an aside element 
    *
@@ -41,7 +41,7 @@ COOL.View.Aside = (function(coolstrap, undefined) {
       setTimeout(function() {
           var current_aside = ELEMENT.ASIDE + aside_id + '.' + CLASS.CURRENT;
           coolstrap.dom(current_aside).removeClass(CLASS.CURRENT);
-      }, 300); //TODO: change 300 ms with CSS transition variable
+      }, TRANSITION.DURATION); 
   };
 
   var _classFromAside = function(aside) {

@@ -24,6 +24,7 @@ COOL.Router = (function(coolstrap, undefined) {
    * @param {string} Id of the <section>
    */
   var section = function(section_id) {
+
     var section_id = coolstrap.Core.parseUrl(section_id);
     var current = _getHistoryCurrent();
     var target = ELEMENT.SECTION + section_id;

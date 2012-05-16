@@ -32,6 +32,3 @@ aside {
   &#{$isOnLeft}        { @include setFixedPosition(left, $default-aside-left-size); }
   &#{$isOnRight}       { @include setFixedPosition(right, $default-aside-right-size); }
 }
-
-
-
