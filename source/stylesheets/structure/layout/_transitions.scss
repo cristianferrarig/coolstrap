@@ -8,3 +8,22 @@ div#{$isMain} {
   body.showAsideTop &    { @include setTransition(top, $default-aside-top-size); }
   body.showAsideBottom & { @include setTransition(bottom, $default-aside-bottom-size); }
 }
+
+
+section {
+  @include setTransition();
+  @include setTransition(left, 100%);
+  &.current{ 
+    @include setTransition(left, 0%);
+    @include transition-duration(0);
+  }
+  &.show { 
+    @include setTransition(left, 0%);
+  }
+  &.hide { 
+    @include setTransition(left, -100%);
+  }
+
+}
+
+

@@ -16,7 +16,8 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
       HREF_TARGET: 'a[href][data-target]',
       HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]'
   };
- 
+  var _console = coolstrap.Console; 
+  
   /**
    * Initializes the automatic subscription events by markup of the project.
    *
@@ -34,13 +35,11 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
       coolstrap.dom(SELECTORS.HREF_TARGET).click(_loadTarget);
     }
     
-    //TODO: coolstrap.Fallback.androidButtons();
+    coolstrap.Fallback.Android.buttons();
   };
 
-  var _iScroll = function(event) {
-      event.preventDefault();
-  };
-
+  
+  //TODO: Event _loadTargetFromAside
   var _loadTargetFromAside = function(event) {
    
       var link = coolstrap.dom(this);
@@ -59,44 +58,46 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
     _selectTarget(link);
 
     event.preventDefault();
-    return false;
+     
   };
 
   var _selectTarget = function(link) {
-      var target_type = link.data(ATTRIBUTE.TARGET);
+    var target_type = link.data(ATTRIBUTE.TARGET);
 
-      switch(target_type) {
-          case ELEMENT.SECTION:
-              var target_id = link.attr(ATTRIBUTE.HREF);
-              _goSection(target_id);
-              break;
+    switch(target_type) {
+      case ELEMENT.SECTION:
+        var target_id = link.attr(ATTRIBUTE.HREF);
+        _goSection(target_id);
+        break;
 
-          case ELEMENT.ARTICLE:
-              _goArticle(link);
-              break;
+      case ELEMENT.ARTICLE:
+        _goArticle(link);
+        break;
 
-          case ELEMENT.ASIDE:
-              _goAside(link);
-              break;
-      }
+      case ELEMENT.ASIDE:
+        _goAside(link);
+        break;
+    }
   };
 
   var _goSection = function(id) {
-      id = coolstrap.Core.parseUrl(id);
-      if (id === '#back') {
-          coolstrap.Router.back();
-      } else {
-          coolstrap.Router.section(id);
-      }
+    id = coolstrap.Core.parseUrl(id);
+    _console.debug('_goSection ' + id);
+    if (id === '#back') {
+      coolstrap.Router.back();
+    } else {
+      coolstrap.Router.section(id);
+    }
   };
 
   var _goArticle = function(element) {
-      var section_id = coolstrap.Router.History.current();
-      var article_id =  element.attr(ATTRIBUTE.HREF);
+    var section_id = coolstrap.Router.History.current();
+    var article_id =  element.attr(ATTRIBUTE.HREF);
 
-      coolstrap.Router.article(section_id, article_id);
+    coolstrap.Router.article(section_id, article_id);
   };
 
+  //TODO:  _goAside
   var _goAside = function(element) {
       var section_id = coolstrap.Router.History.current();
       var aside_id = element.attr(ATTRIBUTE.HREF);
@@ -104,6 +105,7 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
       coolstrap.Router.aside(section_id, aside_id);
   };
 
+  //TODO:  _hideAsideIfNecesary
   var _hideAsideIfNecesary = function(section_id, aside_id) {
       if (window.innerWidth < 768) {
           coolstrap.View.Aside.hide(section_id, aside_id);
@@ -111,7 +113,7 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
   };
 
   return {
-      start: start
+    start: start
   };
 
 })(COOL);

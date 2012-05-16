@@ -16,7 +16,7 @@ COOL.App = (function(coolstrap, undefined) {
     name: 'coolstrap',
     version: 0.9,
     icon: '',
-    log_level: 0
+    log_level: -1
   }; 
 
   var init = function(app_config) {

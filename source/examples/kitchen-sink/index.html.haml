@@ -4,25 +4,45 @@
 = content_for :principal do
   %div.a{"role" => "main"}
     %header
-      %a Volver
+      %a{"href" => "#back", "data-target" => "section"} Volver
       %hgroup
         %h1 Rhybo
         %h2 Subtitulo
       %a Entrar
     %footer
       %h1 footer
-    %section.current{:id => "home"}
-      %article.current{:id => "demo"}
+    %section#home
+      %article#lorem
         .scroller
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
 
           %p Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
-          %a{"href" => "#demo2", "data-target" => "section"}
-            hola
-
-          %aside{"data-type" => "onLeft"}
-    %section{:id => "demo2"}
-      %article
+          %ul{"data-type" => "listview"}
+            %li
+              %a{"href" => "#home2", "data-target" => "section"}
+                .content
+                  .title go to home2 section
+                .aside
+                  %i
+            %li
+              %a{"href" => "#ipsum", "data-target" => "article"}
+                .content
+                  .title change to ipsum article
+      %article#ipsum
+        %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+        %ul{"data-type" => "listview"}
+          %li
+            %a{"href" => "#home2", "data-target" => "section"}
+              .content
+                .title go to home2 section
+              .aside
+                %i
+          %li
+            %a{"href" => "#lorem", "data-target" => "article"}
+              .content
+                .title change to lorem article
+    %section#home2
+      %article#demo2
         .scroller
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla  . Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
 

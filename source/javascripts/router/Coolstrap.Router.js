@@ -14,7 +14,7 @@ COOL.Router = (function(coolstrap, undefined) {
   var ELEMENT = coolstrap.Constants.ELEMENT;
   var ERROR = coolstrap.Constants.ERROR;
   var TRIGGER = coolstrap.Constants.TRIGGER;
-
+  var _console = coolstrap.Console; 
   /**
    * Navigate to a <section>.
    *
@@ -26,13 +26,13 @@ COOL.Router = (function(coolstrap, undefined) {
     var section_id = coolstrap.Core.parseUrl(section_id);
     var current = _getHistoryCurrent();
     var target = ELEMENT.SECTION + section_id;
-
+    _console.debug('current section ' + current);
     if (_existsTarget(target)) {
-      coolstrap.dom(current).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
-      coolstrap.dom(target).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+      coolstrap.dom(current).removeClass(CLASS.HIDE_REVOKE).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
+      coolstrap.dom(target).removeClass(CLASS.SHOW_REVOKE).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
 
       coolstrap.Router.History.add(section_id);
-    }
+    }  
   };
 
   /**
@@ -51,7 +51,7 @@ COOL.Router = (function(coolstrap, undefined) {
     if (_existsTarget(target)) {
       coolstrap.dom(target).trigger(TRIGGER.LOAD);
       coolstrap.View.Article.show(section_id, article_id);
-    }
+    }  
   };
 
   /**
@@ -62,6 +62,7 @@ COOL.Router = (function(coolstrap, undefined) {
    * @param {string} <section> Id
    * @param {string} <aside> Id
    */
+  //TODO: show aside
   var aside = function(section_id, aside_id) {
     var section_id = coolstrap.Core.parseUrl(section_id);
     var aside_id = coolstrap.Core.parseUrl(aside_id);
@@ -83,11 +84,14 @@ COOL.Router = (function(coolstrap, undefined) {
    * @method back
    */
   var back = function() {
-    var current_section = ELEMENT.SECTION + _getHistoryCurrent();
-
-    coolstrap.dom(current_section).removeClass(CLASS.SHOW).addClass(CLASS.SHOW_REVOKE).trigger(TRIGGER.UNLOAD);
-    coolstrap.Router.History.removeLast();
-    coolstrap.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.HIDE_REVOKE).addClass(CLASS.SHOW);
+    if (_getHistoryLength() > 1) {
+      var current_section = ELEMENT.SECTION + _getHistoryCurrent();
+      coolstrap.dom(current_section).removeClass(CLASS.SHOW).addClass(CLASS.SHOW_REVOKE).trigger(TRIGGER.UNLOAD);
+      coolstrap.Router.History.removeLast();
+      coolstrap.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.HIDE_REVOKE).addClass(CLASS.SHOW);
+    } else {
+      _console.warn('Hey! Nothing back');
+    }
   };
 
   var _existsTarget = function(target) {
@@ -100,6 +104,10 @@ COOL.Router = (function(coolstrap, undefined) {
     }
 
     return exists;
+  };
+
+  var _getHistoryLength = function(){
+    return coolstrap.Router.History.stackLength();
   };
 
   var _getHistoryCurrent = function() {

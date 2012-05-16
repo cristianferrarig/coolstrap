@@ -45,10 +45,20 @@ COOL.Router.History = (function(undefined) {
     _history.length -= 1;
   };
 
+  /**
+  * Returns lenght of history stack
+  *
+  * @method stackLength
+  */
+  var stackLength = function() {
+    return _history.length;
+  }
+
   return {
     add: add,
     current: current,
-    removeLast: removeLast
+    removeLast: removeLast,
+    stackLength: stackLength
   };
 
 })();

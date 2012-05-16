@@ -22,6 +22,7 @@ div[role="main"] {
 aside,
 section,
 article {
+  -webkit-backface-visibility: hidden;
   visibility: hidden;
   &.current {
     visibility: visible;
