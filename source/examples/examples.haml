@@ -70,8 +70,7 @@
  
   -# StyleSheets
   = stylesheet_link_tag "coolstrap"
-  -#= stylesheet_link_tag "themes/defaultcolor"
-  
+  = yield_content(:application_styles)
   -# All JavaScript at the bottom, except this Modernizr build.
   -# Modernizr enables HTML5 elements & feature detects for optimal performance.
   = javascript_include_tag "lib/modernizr-2.5.3"

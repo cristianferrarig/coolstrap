@@ -32,8 +32,9 @@ COOL.Boot.Layout = (function(coolstrap, undefined) {
   var _resizeLayout = function() {
     if (_window.innerHeight == 356) {
       var _height = 416;
+      //TODO: @cristian cuando se visita desde un browser si se setea este tamaño, el footer crece al esconder la barra de na vegación.
       //_document.body.style.height = _height + 'px';
-      //coolstrap.dom('section').css('height', _height);
+      //coolstrap.dom('algunTag?').css('height', _height);
       coolstrap.Helper.hideNavigationBar();
     }
   };

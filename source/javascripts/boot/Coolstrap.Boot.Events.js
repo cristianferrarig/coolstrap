@@ -35,8 +35,10 @@ COOL.Boot.Events = (function(coolstrap, undefined) {
       coolstrap.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).click(_loadTargetFromAside);
       coolstrap.dom(SELECTORS.HREF_TARGET).click(_loadTarget);
     }
+    if (coolstrap.Fallback.Android) {
+      coolstrap.Fallback.Android.buttons();  
+    }
     
-    coolstrap.Fallback.Android.buttons();
   };
 
   

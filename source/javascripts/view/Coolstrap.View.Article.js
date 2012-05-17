@@ -51,9 +51,15 @@ COOL.View.Article = (function(coolstrap, undefined) {
     var current_active_article_id = '#' + coolstrap.dom(section_articles).attr(ATTRIBUTE.ID);
     
     coolstrap.dom(section_articles).removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
-    coolstrap.Fallback.Android.inputs(current_active_article_id, false);
+    _fallbackAndroidInputs(current_active_article_id, false);
     coolstrap.dom(article_id).addClass(CLASS.CURRENT);
-    coolstrap.Fallback.Android.inputs(article_id, true);
+    _fallbackAndroidInputs(article_id, true);
+  };
+
+  var _fallbackAndroidInputs = function(article_id, enable){
+    if (coolstrap.Fallback.Android) {
+      coolstrap.Fallback.Android.inputs(article_id, enable);  
+    }
   };
 
   var _setTitle = function(id, item) {

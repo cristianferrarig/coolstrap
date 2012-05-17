@@ -6,7 +6,9 @@
  * @class Router
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
+ *
  */
+//TODO: Navigation History between sections in Aside. We can !
 
 COOL.Router = (function(coolstrap, undefined) {
 
@@ -14,6 +16,7 @@ COOL.Router = (function(coolstrap, undefined) {
   var ELEMENT = coolstrap.Constants.ELEMENT;
   var ERROR = coolstrap.Constants.ERROR;
   var TRIGGER = coolstrap.Constants.TRIGGER;
+  var DURATION = coolstrap.Constants.TRANSITION.DURATION
   var _console = coolstrap.Console; 
 
   /**
@@ -30,9 +33,11 @@ COOL.Router = (function(coolstrap, undefined) {
     var target = ELEMENT.SECTION + section_id;
     if(current != section_id) {
       if (_existsTarget(target)) {
-        coolstrap.dom(current).removeClass(CLASS.SHOW).addClass(CLASS.HIDE).removeClass(CLASS.CURRENT);
-        coolstrap.dom(target).addClass(CLASS.SHOW).addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
-
+        coolstrap.dom(current).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
+        coolstrap.dom(target).addClass(CLASS.CURRENT).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+        setTimeout(function(){
+          coolstrap.dom(current).removeClass(CLASS.CURRENT)
+        }, DURATION)
         coolstrap.Router.History.add(section_id);
       }    
     } else {
@@ -90,9 +95,12 @@ COOL.Router = (function(coolstrap, undefined) {
   var back = function() {
     if (_getHistoryLength() > 1) {
       var current_section = ELEMENT.SECTION + _getHistoryCurrent();
-      coolstrap.dom(current_section).removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD).removeClass(CLASS.CURRENT);
+      coolstrap.dom(current_section).removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD);
+      setTimeout(function(){
+        coolstrap.dom(current_section).removeClass(CLASS.CURRENT)
+      }, DURATION)
       coolstrap.Router.History.removeLast();
-      coolstrap.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.CURRENT).addClass(CLASS.SHOW);
+      coolstrap.dom(_getHistoryCurrent()).addClass(CLASS.CURRENT).removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
     } else {
       _console.warn('Hey! Nothing back');
     }

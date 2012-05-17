@@ -1,17 +1,15 @@
 = content_for :title do
   Coolstrapp Kitchen-sink
-
+= content_for :application_styles do 
+  = stylesheet_link_tag "themes/defaultcolor"
 = content_for :principal do
   %div.a{"role" => "main"}
-    %header
-      %a{"href" => "#back", "data-target" => "section"} Volver
-      %hgroup
-        %h1 Rhybo
-        %h2 Subtitulo
-      %a Entrar
-    %footer
-      %h1 footer
     %section#home
+      %header
+        %hgroup
+          %h1 Coolstrap
+          %h2 Kitchen-sink
+        %a Entrar
       %article.scrollable#lorem
         .container
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
@@ -57,6 +55,11 @@
               .content
                 .title change to lorem article
     %section#home2
+      %header
+        %a{"href" => "#back", "data-target" => "section"} Volver
+        %hgroup
+          %h1 Coolstrap Sample
+        %a Entrar
       %article#demo2
         .scroller
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla  . Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
@@ -76,7 +79,6 @@
               .title change to private article
     %article#options2
       Logout 
-
 
   %aside.onRight#colaborators
     Colaborators

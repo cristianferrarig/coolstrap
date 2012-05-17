@@ -7,6 +7,7 @@
 *
 * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
 */
+//TODO: Navigation History between sections in Aside. We can !
 
 COOL.Router.History = (function(undefined) {
 
