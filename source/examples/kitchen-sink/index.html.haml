@@ -62,7 +62,7 @@
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla  . Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
 
   %aside.onLeft#options
-    %article#options1
+    %article.scrollable#options1
       %ul{"data-type" => "listview"}
         %li
           %a{"href" => "#home2", "data-target" => "section"}
@@ -71,9 +71,12 @@
             .aside
               %i
         %li
-          %a{"href" => "#ipsum", "data-target" => "article"}
+          %a{"href" => "#options2", "data-target" => "article"}
             .content
               .title change to private article
+    %article#options2
+      Logout 
+
 
   %aside.onRight#colaborators
     Colaborators

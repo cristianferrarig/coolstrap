@@ -28,12 +28,17 @@ COOL.Router = (function(coolstrap, undefined) {
     var section_id = coolstrap.Core.parseUrl(section_id);
     var current = _getHistoryCurrent();
     var target = ELEMENT.SECTION + section_id;
-    if (_existsTarget(target)) {
-      coolstrap.dom(current).removeClass(CLASS.SHOW).addClass(CLASS.HIDE).removeClass(CLASS.CURRENT);
-      coolstrap.dom(target).addClass(CLASS.SHOW).addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
+    if(current != section_id) {
+      if (_existsTarget(target)) {
+        coolstrap.dom(current).removeClass(CLASS.SHOW).addClass(CLASS.HIDE).removeClass(CLASS.CURRENT);
+        coolstrap.dom(target).addClass(CLASS.SHOW).addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
 
-      coolstrap.Router.History.add(section_id);
-    }  
+        coolstrap.Router.History.add(section_id);
+      }    
+    } else {
+      _console.warn('WTF! you are here!');
+    }
+    
   };
 
   /**

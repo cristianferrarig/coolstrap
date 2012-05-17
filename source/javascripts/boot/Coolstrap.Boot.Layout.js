@@ -26,6 +26,7 @@ COOL.Boot.Layout = (function(coolstrap, undefined) {
       _document = _window.document;
       _resizeLayout();
     }
+  
   };
 
   var _resizeLayout = function() {

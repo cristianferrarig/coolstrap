@@ -22,8 +22,10 @@ COOL.Boot.Section = (function(coolstrap, undefined) {
    */
   var start = function() {
     var sections = coolstrap.dom(ELEMENT.SECTION);
+    var asides = coolstrap.dom(ELEMENT.ASIDE);
     _initFirstSection(sections);
     _initAllSections(sections);
+    _initAsideArticles(asides);
   };
 
   var _initFirstSection = function(sections) {
@@ -36,22 +38,28 @@ COOL.Boot.Section = (function(coolstrap, undefined) {
 
   var _initAllSections = function(sections) {
     for (var i = 0, len = sections.length; i < len; i++) {
-        var section = coolstrap.dom(sections[i]);
-        _initArticles(section);
+      var section = coolstrap.dom(sections[i]);
+      _initArticles(section);
     }
   };
 
   var _initArticles = function(section) {
-      var first_article = section.children(ELEMENT.ARTICLE).first();
-      first_article.addClass(CLASS.CURRENT);
+    var first_article = section.children(ELEMENT.ARTICLE).first();
+    first_article.addClass(CLASS.CURRENT);
 
-      var first_article_id = first_article.attr(ATTRIBUTE.ID);
-      var section_id = '#' + section.attr(ATTRIBUTE.ID);
-      //TODO: coolstrap.View.Article.showReferenceLinks(section_id, first_article_id);
+    var first_article_id = first_article.attr(ATTRIBUTE.ID);
+    var section_id = '#' + section.attr(ATTRIBUTE.ID);
+  };
+
+  var _initAsideArticles = function(asides) {
+    for (var i = 0, len = asides.length; i < len; i++) {
+      var aside = coolstrap.dom(asides[i]);
+      _initArticles(aside);
+    }
   };
 
   return {
-      start: start
+    start: start
   };
 
 })(COOL);
