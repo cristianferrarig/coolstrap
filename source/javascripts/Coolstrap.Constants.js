@@ -20,7 +20,7 @@ COOL.Constants = {
   },
 
   TRANSITION: {
-    DURATION: 300
+    DURATION: 250
   },
 
   CLASS: {

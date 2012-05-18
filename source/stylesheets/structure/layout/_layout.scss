@@ -13,10 +13,9 @@ section,
 article,
 .overlay {
   @include setHeight();
-
 }
 
-article, section, div#{$isMain} {
+div#{$isMain} {
   overflow: hidden;
 }
 
@@ -52,3 +51,10 @@ article footer {
     margin: $default-content-spacing;
   }
 }
+
+
+header {
+  padding: 0 1px;
+  margin: 0 -1px;
+}
+

@@ -108,7 +108,7 @@ $default-badge-spacing: 3px 5px !default;
 // Compass Animation
 $default-transition-property : transform;
 $default-transition-duration : 250ms;
-$default-transition-function : false;
+$default-transition-function : ease-out;
 $default-transition-delay    : false;
 
 // Compass box

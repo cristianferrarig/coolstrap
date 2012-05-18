@@ -90,6 +90,9 @@ a {
   
 }
 
+article {
+  background-color: rgba(255,255,255,1.0);
+}
 
 .loader {
   @include border-radius(10px);
