@@ -9,12 +9,8 @@
  */
 
 COOL.Boot.Article = (function(coolstrap, undefined) {
-
-  var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
   var ELEMENT = coolstrap.Constants.ELEMENT;
-  var SELECTORS = {
-      SCROLL_IN_ARTICLE: '.scrollable'
-  };
+  var CLASS = coolstrap.Constants.CLASS;
 
   /**
    * Initializes the markup elements of an article
@@ -22,7 +18,7 @@ COOL.Boot.Article = (function(coolstrap, undefined) {
    * @method start
    */
   var start = function() {
-    _initElement(SELECTORS.SCROLL_IN_ARTICLE, _createScrollElement);
+    _initElement('.' + CLASS.SCROLLABLE, _createScrollElement);
   };
 
   var _initElement = function(selector, callback) {
@@ -34,8 +30,7 @@ COOL.Boot.Article = (function(coolstrap, undefined) {
   };
 
   var _createScrollElement = function(scroll) {
-    var scroll_id = scroll.attr(ATTRIBUTE.ID);
-    coolstrap.View.Scroll.init(scroll_id);
+    coolstrap.View.Scroll.init(scroll);
   };
 
   return {

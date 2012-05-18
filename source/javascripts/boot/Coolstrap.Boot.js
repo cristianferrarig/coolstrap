@@ -13,9 +13,9 @@ COOL.Boot = (function(coolstrap, undefined) {
    
     //coolstrap.Boot.Resources.start(); //TODO: Boot resources
     coolstrap.Boot.Layout.start(); 
-    coolstrap.Boot.Events.start(); 
     coolstrap.Boot.Section.start(); 
     coolstrap.Boot.Article.start();  
+    coolstrap.Boot.Events.start(); 
   };
 
 })(COOL);

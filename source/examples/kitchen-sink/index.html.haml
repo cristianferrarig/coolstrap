@@ -11,10 +11,15 @@
           %h2 Kitchen-sink
         %a{"href" => "#home2", "data-target" => "section"}
           Entrar
-      %article.scrollable#lorem
-        .container
-          %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
-
+      %article#lorem
+        .scrollable{"style"=>"height:50px"}
+          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+        .scrollable
+          %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla
           %ul{"data-type" => "listview"}
             %li
               %a{"href" => "#home2", "data-target" => "section"}
@@ -31,10 +36,6 @@
               %a{"href" => "#options", "data-target" => "aside"}
                 .content
                   .title Options Aside
-            %li
-              %a{"href" => "#colaborators", "data-target" => "aside"}
-                .content
-                  .title Colaborators Aside
             %li
               %a{"href" => "#notifications", "data-target" => "aside"}
                 .content
@@ -54,7 +55,8 @@
         %a{"href" => "#back", "data-target" => "section"} Volver
         %hgroup
           %h1 Coolstrap Sample
-        %a Entrar
+        %a{"href" => "#colaborators", "data-target" => "aside"}
+          %i
       %article#demo2
         .scroller
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla  . Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 

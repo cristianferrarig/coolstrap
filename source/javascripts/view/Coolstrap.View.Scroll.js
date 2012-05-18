@@ -14,6 +14,7 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
   var CLASS = coolstrap.Constants.CLASS;
   var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
   var ERROR = coolstrap.Constants.ERROR;
+  var EXCLUDE_ELEMENT = 'p'; 
   var DEFAULT_PROPERTIES = {
       hScroll: false,
       vScroll: false,
@@ -24,20 +25,34 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
       fadeScrollbar: true,
       hideScrollbar: true
   };
-  var SCROLLS = {}; //TODO: maybe cache
+  var SCROLLS = {}; 
   var SCROLL_TIMEFRAME = 250;
+  var NOID_COUNTER = 0
 
   /**
    * Creates a new iScroll element.
    *
    * @method init
    *
-   * @param {string} Id of the container scroll.
+   * @param {dom} element of the container scroll.
    * @param {object} [OPTIONAL] Properties
    */
-  var init = function(id, properties) {
-    if (id) {
-      _render(id, properties);
+  var init = function(element, properties) {
+    var scroll_id = element.attr(ATTRIBUTE.ID);
+    if (!scroll_id || scroll_id == '') {
+      NOID_COUNTER++;
+      scroll_id = CLASS.SCROLLABLE + NOID_COUNTER
+      element.attr(ATTRIBUTE.ID, scroll_id);
+    }
+    if (element.children().length > 1 || element.children().length == 0) {
+      var inner_html = element.html();
+      var inner_element = coolstrap.dom('<div class="scroll_container"></div>');
+      inner_element.append(inner_html);
+      element.html(inner_element);
+    }  
+
+    if (scroll_id) {
+      _render(scroll_id, properties);
     } else {
       coolstrap.Console.log(ERROR.CREATE_SCROLL);
     }

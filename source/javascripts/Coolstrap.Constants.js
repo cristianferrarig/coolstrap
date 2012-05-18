@@ -34,7 +34,8 @@ COOL.Constants = {
     LEFT: 'onleft',
     TOP: 'ontop',
     BOTTOM: 'onbottom',
-    HORIZONTAL: 'horizontal'
+    HORIZONTAL: 'horizontal',
+    SCROLLABLE: 'scrollable'
   },
 
   ATTRIBUTE: {
