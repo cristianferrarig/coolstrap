@@ -3,7 +3,7 @@
 
 = content_for :principal do
 
-	%div{"role" => "main"}
+	%div{:role => "main"}
 
 		%header
 			%a Volver
@@ -26,7 +26,14 @@
 				.scroller
 					%p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
 
-		%div{"data-type" => "action"}
+		%div{:role => "dialog", "data-type" => "action"}
+			.title Sem Nibh Bibendum
+			.button-group
+				%a Ullamcorper Ridiculus
+				%a Tristique Lorem
+			%a Ridiculus Tristique
+
+		-#%div{"data-type" => "action"}
 			.title Sem Nibh Bibendum
 			%a Ullamcorper Ridiculus
 			%a Tristique Lorem

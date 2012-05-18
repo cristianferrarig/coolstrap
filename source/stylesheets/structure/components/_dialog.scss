@@ -1,0 +1,23 @@
+div[data-type="action"] {
+	text-align: center;
+	padding: $default-content-spacing * 1.5;
+	.title {
+		margin-bottom: $default-content-spacing * 1.5;
+	}
+}
+
+
+a {
+	[data-type="action"] & {
+		width: $default-actionsheet-button-width;
+		height: $default-actionsheet-button-height;
+		margin-bottom: $default-content-spacing;
+		background-color: #333;
+		display: block;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+

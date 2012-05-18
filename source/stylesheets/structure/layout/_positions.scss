@@ -31,4 +31,4 @@ aside {
 }
 
 
-div[data-type="action"] { @include setFixedPosition(bottom, $default-modal-action-height); }
+div[data-type="action"] { @include setFixedPosition(bottom, $default-actionsheet-size); }

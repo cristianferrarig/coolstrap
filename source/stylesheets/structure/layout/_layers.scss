@@ -24,8 +24,8 @@ section#{$isPopup} {
 }
 
 
-div#{$isModalAction} {
-  z-index: $default-layer-modal;
+div#{$isDialog} {
+  z-index: $default-layer-dialog;
 }
 
 

@@ -31,6 +31,18 @@
   }
 }
 
+.button-group {
+  //@include setFlexibleBox;
+  //@include box-flex(0);
+  a {
+    @include box-flex(1);
+    //margin: 0 !important;
+  }
+  &.autoWidth {
+    //@include box-flex(1);
+  }
+}
+
 
 .loader {
   width: 220px;

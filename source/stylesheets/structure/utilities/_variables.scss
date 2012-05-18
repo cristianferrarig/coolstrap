@@ -1,27 +1,43 @@
+$isNormal:       ':not([data-type])';
+
+
 $isMain:         '[role="main"]';
 
-$isModal:        '[data-type="modal"]';
-$isModalAction:  '[data-type="action"]';
-$isModalPopover: '[data-type="modal popover"]';
+$isDialog:       '[role="dialog"]';
 
+$isAction:       '[data-type="action"]';
+$isPopover:      '[data-type="popover"]';
+$isAlert:        '[data-type="alert"]';
+$isModal:        '[data-type="modal"]';
+
+
+$isTooltip:      '[role="tooltip"]';
+
+// Popup section
 $isPopup:        '[data-type="popup"]';
 $isNotPopup:     ':not([data-type="popup"])';
 
+// Header
 $isVertical:     '[data-type="vertical"]';
 $isNotVertical:  ':not([data-type="vertical"])';
-
 $isExtended:     '[data-type="extended"]';
 $isNotExtended:  ':not([data-type="extended"])';
 
-$isNormal:       ':not([data-type])';
-
+// Nav & Footer
 $isToolbar:      '[data-type="toolbar"]';
 $isNotToolbar:   ':not([data-type="toolbar"])';
 
 $isTabbar:       '[data-type="tabbar"]';
 $isNotTabbar:    ':not([data-type="tabbar"])';
 
+// Positions
 $isOnTop:        '.onTop';
+$isOnBottom:     '.onBottom';
+$isOnLeft:       '.onLeft';
+$isOnRight:      '.onRight';
+
+// Alignment
+$alignTopLeft:       '.onTop';
 $isOnBottom:     '.onBottom';
 $isOnLeft:       '.onLeft';
 $isOnRight:      '.onRight';
@@ -32,7 +48,7 @@ $default-fixed-size: 100% !default;
 
  
 // Layers positions
-$default-layer-modal: 600 !default;
+$default-layer-dialog: 600 !default;
 $default-layer-overalay: 500 !default;
 $default-layer-popup: 400 !default;
 $default-layer-front: 300 !default;
@@ -40,12 +56,10 @@ $default-layer-overalay-inner: 200 !default;
 $default-layer-current: 100 !default;
 $default-layer-back: 0 !default;
 
-// Transition for aside and backface
+// Transition for aside
 $default-transition-type: false !default;
 $default-transform-distance: 0 !default;
 
-$default-interface-spacing: 7px !default;
-$default-content-spacing: 17px !default;
 
 // Header
 $default-header-size: 44px !default;
@@ -85,13 +99,11 @@ $default-aside-bottom-size: 300px !default;
 
 
 // Modals
-$default-modal-action-width: 100% !default;
-$default-modal-action-height: auto !default;
-$default-modal-action-spacing: 20px !default;
+$default-actionsheet-size: auto !default;
+$default-actionsheet-spacing: 15px !default;
 
-$default-modal-action-button-width: 100% !default;
-$default-modal-action-button-height: 40px !default;
-
+$default-actionsheet-button-width: 100% !default;
+$default-actionsheet-button-height: 40px !default;
 
 
 
@@ -100,8 +112,12 @@ $default-modal-action-button-height: 40px !default;
 
 
 
-
+$default-interface-spacing: 7px !default;
 $default-content-spacing: 10px !default;
+
+
+
+
 
 // Listview
 $default-listview-spacing: 10px !default;

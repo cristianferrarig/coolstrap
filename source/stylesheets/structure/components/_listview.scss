@@ -37,14 +37,12 @@ ul[data-type="listview"] {
     .content,
     .desc,
     .nested,
+    .title,
     > a {
       @include box-flex(1);
     }
     .nested {
       @include setFlexibleBox;
-      .title {
-        @include box-flex(1);
-      }
     }
     //.nested .content,
     .title {
