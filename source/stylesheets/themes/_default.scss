@@ -10,6 +10,10 @@ $basecolor: #F8F8F8;
   color: #656A6C !important;
 }
 
+article {
+  background-color: $basecolor;
+}
+
 header, nav, footer {
   a:not(.onlyIcon) {
     @extend .interfaceButton;
@@ -138,4 +142,11 @@ ul {
     background-color: darken($basecolor,20);
     font-size: 11px;
   }
+}
+
+
+
+
+div[data-type="modal action"] {
+  background-color: darken($basecolor,20);
 }

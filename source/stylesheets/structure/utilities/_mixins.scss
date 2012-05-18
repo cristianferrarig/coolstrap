@@ -1,6 +1,3 @@
-@import "variables";
-
-
 @mixin setFixedPosition($position: $default-fixed-position, $size: $default-fixed-size) {
 	@if $position == top {
 		width: 100%;
@@ -25,7 +22,6 @@
 	position: absolute;
 	#{$position}: 0;
 }
-
 @mixin setHeight() {
 	position: absolute;
 	width: 100% !important;
@@ -33,7 +29,6 @@
 	top: 0px;
 	bottom: 0px;
 }
-
 @mixin setFlexibleBox($orient: $default-box-orient, $align: $default-box-align, $pack: $default-box-pack, $direction: $default-box-direction) {
 	@include display-box;
 	@include box-orient($orient);

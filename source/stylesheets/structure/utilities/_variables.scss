@@ -1,7 +1,8 @@
-$debugBgColor:  rgba(0,0,0,.05);
-
 $isMain:         '[role="main"]';
+
 $isModal:        '[data-type="modal"]';
+$isModalAction:  '[data-type="action"]';
+$isModalPopover: '[data-type="modal popover"]';
 
 $isPopup:        '[data-type="popup"]';
 $isNotPopup:     ':not([data-type="popup"])';
@@ -24,9 +25,6 @@ $isOnTop:        '.onTop';
 $isOnBottom:     '.onBottom';
 $isOnLeft:       '.onLeft';
 $isOnRight:      '.onRight';
-
-
-
 
 // Fixed positions
 $default-fixed-position: false !default;
@@ -81,6 +79,26 @@ $default-aside-left-size: 276px !default;
 $default-aside-right-size: 276px !default;
 $default-aside-top-size: 300px !default;
 $default-aside-bottom-size: 300px !default;
+
+
+
+
+
+// Modals
+$default-modal-action-width: 100% !default;
+$default-modal-action-height: auto !default;
+$default-modal-action-spacing: 20px !default;
+
+$default-modal-action-button-width: 100% !default;
+$default-modal-action-button-height: 40px !default;
+
+
+
+
+
+
+
+
 
 
 $default-content-spacing: 10px !default;

@@ -1,0 +1,14 @@
+div[data-type="action"] {
+	text-align: center;
+}
+
+
+a {
+	[data-type="action"] & {
+		width: $default-modal-action-button-width;
+		height: $default-modal-action-button-height;
+		background-color: #333;
+	}
+}
+
+

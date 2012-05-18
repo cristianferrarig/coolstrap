@@ -1,5 +1,3 @@
-@import "../utilities/variables";
-
 
 // Layers
 aside,
@@ -25,7 +23,8 @@ section#{$isPopup} {
   }
 }
 
-div#{$isModal} {
+
+div#{$isModalAction} {
   z-index: $default-layer-modal;
 }
 

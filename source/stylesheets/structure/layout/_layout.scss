@@ -1,6 +1,3 @@
-@import "../utilities/variables";
-@import "../utilities/mixins";
-
 .onleft   { float: left; }
 .onright  { float: right; }
 
@@ -12,7 +9,7 @@ div#{$isMain},
 section,
 article,
 .overlay {
-  @include setHeight();
+  @include setHeight;
 }
 
 div#{$isMain} {

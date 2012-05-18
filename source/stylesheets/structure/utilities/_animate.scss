@@ -1,4 +1,3 @@
-@import "variables";
 
 @mixin setTransition($type: $default-transition-type, $distance: $default-transform-distance) {
 	@if $type == false {

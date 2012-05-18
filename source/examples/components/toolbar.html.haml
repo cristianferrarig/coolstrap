@@ -44,6 +44,20 @@
 							%a nombre 4
 
 					%nav{"data-type" => "toolbar"}
+						%input{:type => "search", :name => "txt"}
+						%a search
+
+					%nav{"data-type" => "toolbar"}
+						%a.onlyIcon <i></i>
+						%input{:type => "search", :name => "txt"}
+						%a
+							%span search
+							%i
+
+					%nav{"data-type" => "toolbar", "data-icon" => ""}
+						%input{:type => "search", :name => "txt"}
+
+					%nav{"data-type" => "toolbar"}
 						.control-group
 							%a <i></i>
 							%a <i></i>

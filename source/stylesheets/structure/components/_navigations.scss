@@ -1,5 +1,3 @@
-@import "../utilities";
-
 header,
 nav,
 footer {
@@ -35,6 +33,7 @@ footer {
   i {
     display: block;
   }
+  //input[type="search"] {}
   .content {
     @include setFlexibleBox(vertical);
   }
@@ -43,11 +42,26 @@ footer {
   }
   .content,
   > hgroup,
-  > h1 {
+  > h1,
+  input {
     @include box-flex(1);
   }
   > hgroup {
     line-height: 16px;
+  }
+  input {
+    position: relative;
+    display: block;
+    &[data-icon] {
+      &:after {
+        @include square($default-navbar-icon);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -($default-navbar-icon / 2);
+      }
+    }
   }
   .content,
   hgroup,
@@ -86,6 +100,10 @@ footer {
       //display:       block;
       // TODO: si tiene un <i> dentro del a tiene que cambiar display:block; por display:box;
     }
+    input {
+      height:        $default-navbar-button;
+      margin:        $default-interface-spacing;
+      }
   }
   &#{$isNormal} {
     a {
