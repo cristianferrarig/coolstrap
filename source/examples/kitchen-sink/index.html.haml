@@ -16,13 +16,13 @@
 
           %ul{"data-type" => "listview"}
             %li
-              %a{"href" => "#home2", "data-target" => "section"}
+              %a{"href" => "#home2", "data-target" => "section", "title" => "seccion 2"}
                 .content
                   .title go to home2 section
                 .aside
                   %i
             %li
-              %a{"href" => "#ipsum", "data-target" => "article"}
+              %a{"href" => "#ipsum", "data-target" => "article", "title" => "ipsum"}
                 .content
                   .title change to ipsum article
             
@@ -45,13 +45,7 @@
       %article.scrollable#ipsum
         %ul{"data-type" => "listview"}
           %li
-            %a{"href" => "#home2", "data-target" => "section"}
-              .content
-                .title go to home2 section
-              .aside
-                %i
-          %li
-            %a{"href" => "#lorem", "data-target" => "article"}
+            %a{"href" => "#lorem", "data-target" => "article", "title" => "Coolstrap"}
               .content
                 .title change to lorem article
     %section#home2
@@ -68,7 +62,7 @@
     %article.scrollable#options1
       %ul{"data-type" => "listview"}
         %li
-          %a{"href" => "#home2", "data-target" => "section"}
+          %a{"href" => "#home2", "data-target" => "section", "title" => "seccion 2"}
             .content
               .title go to some section section
             .aside

@@ -38,7 +38,6 @@ COOL.View.Article = (function(coolstrap, undefined) {
     for (var i = 0, len = nav_items.length; i < len; i++) {
       var nav_item = coolstrap.dom(nav_items[i]);
       var nav_item_parsed_url = coolstrap.Core.parseUrl(nav_item.attr(ATTRIBUTE.HREF));
-
       if (nav_item_parsed_url === article_id) {
           nav_item.addClass(CLASS.CURRENT);
           _setTitle(section_id, nav_item);
@@ -63,8 +62,7 @@ COOL.View.Article = (function(coolstrap, undefined) {
   };
 
   var _setTitle = function(id, item) {
-    var title = item.data(ATTRIBUTE.TITLE);
-
+    var title = item.attr(ATTRIBUTE.TITLE);
     if (title) {
       var section_title = id + ' header h1, ' + id + ' footer h1';
       coolstrap.dom(section_title).text(title);
