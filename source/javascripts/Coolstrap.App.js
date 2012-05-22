@@ -19,9 +19,15 @@ COOL.App = (function(coolstrap, undefined) {
     log_level: -1
   }; 
 
+  var _setupFramework = function(){
+    coolstrap.Framework.Sections.setup(); 
+    coolstrap.Framework.Articles.setup();  
+    coolstrap.Framework.Navigation.setup(); 
+  }; 
+
   var init = function(app_config) {
       default_config = coolstrap.Core.extend(default_config, app_config);      
-      coolstrap.Boot(); 
+      _setupFramework();
   };
 
   var get = function(property) {

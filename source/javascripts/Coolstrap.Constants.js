@@ -19,6 +19,11 @@ COOL.Constants = {
     DIV: 'div'
   },
 
+  TARGET: {
+    CONTAINER: 'container',
+    MAIN: 'main'
+  },
+
   TRANSITION: {
     DURATION: 250
   },

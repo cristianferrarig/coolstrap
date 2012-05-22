@@ -9,15 +9,7 @@
         %hgroup
           %h1 Coolstrap
           %h2 Kitchen-sink
-        %a{"href" => "#home2", "data-target" => "section"}
-          Entrar
       %article#lorem
-        .scrollable{"style"=>"height:50px"}
-          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
-          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
-          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
-          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
-          Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
         .scrollable
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla
           %ul{"data-type" => "listview"}
@@ -62,20 +54,25 @@
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla  . Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
 
   %aside.onLeft#options
-    %article.scrollable#options1
-      %ul{"data-type" => "listview"}
-        %li
-          %a{"href" => "#home2", "data-target" => "section", "title" => "seccion 2"}
-            .content
-              .title go to some section section
-            .aside
-              %i
-        %li
-          %a{"href" => "#options2", "data-target" => "article"}
-            .content
-              .title change to private article
-    %article#options2
-      Logout 
+    %section#section_options
+      %article.scrollable#options1
+        %ul{"data-type" => "listview"}
+          %li
+            %a{"href" => "#home2", "data-target" => "section", "title" => "seccion 2"}
+              .content
+                .title go to some section section
+              .aside
+                %i
+          %li
+            %a{"href" => "#section_options_second", "data-target" => "section"}
+              .content
+                .title change to private section
+    %section#section_options_second                
+      %header
+        %a{"href" => "#back", "data-target" => "section"} Volver
+        %h1 Account
+      %article#options2
+        Logout of this system
 
   %aside.onRight#colaborators
     Colaborators
