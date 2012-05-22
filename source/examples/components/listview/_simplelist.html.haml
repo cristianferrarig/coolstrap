@@ -3,32 +3,97 @@
 
 %ul.inset{"data-type" => "listview"}
   
+  %li.list-divider 1. FUCKING WORK IN PROGRESS
+
+  // Single element inside list item
+  %li.demo
+    %h5 Morbi leo risus, porta ac consectetur
+
+  %li.demo
+    .content
+      %h5 Morbi leo risus, porta ac consectetur
+      %h1 Sed posuere consectetur est at lobortis.
+      %p Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+
+  // Single element inside list item with aside
+  %li.demo
+    .content
+      %h5 Morbi leo risus, porta ac consectetur
+    .aside <i></i>
+
+  // Multi element inside list item with aside
+  %li.demo
+    .content
+      %h5 Morbi leo risus, porta ac consectetur
+      %h1 Sed posuere consectetur est at lobortis.
+      %p Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+    .aside <i></i>
+
+  // Multi element inside list item with aside
+  %li.demo
+    .content
+      .nested
+        %h5 Morbi leo risus, porta ac consectetur
+        %span 12 de sep
+      %h1 Sed posuere consectetur est at lobortis.
+      %p Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+    .aside <i></i>
+
+  %li.demo
+    .aside.up
+      .picture
+    .content
+      .nested
+        %h5 Morbi leo risus, porta ac consectetur
+        %span 12 de sep
+      .nested
+        .content
+          %h1 Sed posuere consectetur est at lobortis.
+          %p Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        .aside <i></i>
+
+  %li.demo
+    .aside.up
+      .picture
+    .content
+      .nested
+        %h5 Morbi leo risus, porta ac consectetur
+        %span 12 de sep
+      %h1 Sed posuere consectetur est at lobortis.
+      %p Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+    .aside <i></i>
+
+
+
+
+%ul.inset{"data-type" => "listview"}
+
   %li.list-divider 1. Simple
   %li
-    .content
-      .title Curabitur blandit tempus porttitor.Curabitur blandit tempus porttitor.
+    %h1 Gloria
+      
   %li
-    .content
-      .title Monserrat
+    %h1 Monserrat
   %li
-    .content
-      .title Valeria 
+    %h1 Valeria 
+
+
 
 
   %li.list-divider 2. Simple with arrow        
   %li
     .content
-      .title Curabitur blandit tempus porttitor.Curabitur blandit tempus porttitor.
+      %p Curabitur blandit tempus porttitor.Curabitur blandit tempus porttitor.
     .aside
       %i
   %li
     .content
-      .title Second Item.
+      %p Second Item.
     .aside
       %i
   %li
     .content
-      .title Third Item.
+      %p Third Item.
     .aside
       %i
 
@@ -36,17 +101,17 @@
   %li.list-divider 3. Simple with arrow meta and counters 
   %li
     .content
-      .desc Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
+      %p Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
     .aside
       %i
   %li
     .content
-      .desc Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
+      %p Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
     .aside
       %i
   %li
     .content
-      .desc Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
+      %p Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac. 
     .aside
       %i
 
@@ -54,28 +119,28 @@
   %li.list-divider 4. Simple with arrow meta and counters           
   %li
     .content
-      .title
+      %h1
         First Item.
     .aside
       %span 4m ago
       %i
   %li
     .content
-      .title
+      %h1
         Second Item.
     .aside
       %span 2h ago
       %i
   %li
     .content
-      .title
+      %h1
         This is a very long text to prove the great ellipsis implemented here.
     .aside
       %span.badge 66
       %i
   %li
     .content
-      .title
+      %h1
         Second Item.
     .aside
       %span.badge 3
@@ -87,7 +152,7 @@
     .aside.stretch
       .picture
     .content
-      .title
+      %h1
         First Item.
     .aside
       %span.badge 15
@@ -96,7 +161,7 @@
     .aside.stretch
       .picture
     .content
-      .title
+      %h1
         Second Item.
     .aside
       %span.badge 0
@@ -105,7 +170,7 @@
     .aside.stretch
       .picture
     .content
-      .title
+      %h1
         Thirtd Item.
     .aside
       %span.badge 1
@@ -117,7 +182,7 @@
     .aside
       .picture
     .content
-      .title
+      %h1
         First Item.
     .aside
       %span.badge 3
@@ -126,7 +191,7 @@
     .aside
       .picture
     .content
-      .title
+      %h1
         Second Item.
     .aside
       %span.badge 23
@@ -135,7 +200,7 @@
     .aside
       .picture
     .content
-      .title
+      %h1
         Third Item.
     .aside
       %span.badge 64
@@ -147,7 +212,7 @@
     .aside
       %span.badge 2
     .content
-      .title
+      %h1
         Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
     .aside.stretch
       .picture
@@ -157,7 +222,7 @@
     .aside
       %span.badge 7
     .content
-      .title
+      %h1
         Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
     .aside.stretch
       .picture
@@ -167,7 +232,7 @@
     .aside
       %span.badge 8
     .content
-      .title
+      %h1
         Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
     .aside.stretch
       .picture

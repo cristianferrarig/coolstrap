@@ -1,4 +1,5 @@
 //Lists  structural
+
 ul[data-type="listview"] {
   list-style-type: none;
   margin: 0;
@@ -13,67 +14,67 @@ ul[data-type="listview"] {
     @include setFlexibleBox(horizontal,stretch,stretch);
     padding: $default-listview-spacing;
   }
+  li:not(.list-divider) > a, {
+    margin: -($default-listview-spacing);
+  }
 
   li:not(.list-divider) {
-    > a {
-      margin: -($default-listview-spacing);
-    }
     > div,
     a > div {
-      @include setFlexibleBox(vertical,stretch,center);
       margin-left: $default-listview-spacing;
       &:first-child {
         margin-left: 0 !important;
       }
-      &.up {
-        @include box-pack(start);
-      }
-      &.stretch {
-        margin-top: -($default-listview-spacing);
-        margin-bottom: -($default-listview-spacing);
-        &:first-child { margin-left: -($default-listview-spacing) !important; }
-      }
     }
-    .content,
-    //.desc,
-    //.nested,
-    //.title,
-    > a {
-      @include box-flex(1);
-    }
-    .nested {
-      @include setFlexibleBox;
-    }
-    //.nested .content,
-    .title {
-      @include ellipsis;
+  }
+
+  div {
+    @include setFlexibleBox(vertical,stretch,center);
+  }
+  .nested {
+    @include setFlexibleBox;
+  }
+  .vertical {
+    //@include setFlexibleBox(vertical,center,center);
+    i, span {
       display: block;
     }
-    .nested + .nested,
-    .nested + .desc,
-    .title + .desc {
-      padding-top: 7px;
-    }
-    i {
-      @include inline-block;
-    }
-    span {
-      vertical-align: middle;
-    }
-    .aside.vertical {
-      @include setFlexibleBox(vertical,center);
-      i, span {
-        display: block;
-      }
-      * + * {
-        margin-top: 7px;
-      }
+    * + * {
+      margin-top: 7px;
     }
   }
-  .title:not(.nested),
-  .title.nested .content {
-    @include ellipsis;
+  .up {
+    @include box-pack(start);
   }
-}
+  .stretch {
+    margin-top: -($default-listview-spacing);
+    margin-bottom: -($default-listview-spacing);
+    &:first-child { margin-left: -($default-listview-spacing) !important; }
+  }
 
+  .content {
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    > * + * {
+      margin-top: 7px;
+    }
+  }
+
+  .content,
+  .nested > *:first-child,
+  > a {
+    @include box-flex(1);
+  }
+  i {
+    @include inline-block;
+  }
+  /*
+  span {
+    vertical-align: middle;
+  }*/
+  
+
+} // UL
 
