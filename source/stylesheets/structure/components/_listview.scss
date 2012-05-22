@@ -1,3 +1,5 @@
+@import "../utilities";
+
 //Lists  structural
 
 ul[data-type="listview"] {
@@ -10,8 +12,8 @@ ul[data-type="listview"] {
   }
 
   li:not(.list-divider),
-  li:not(.list-divider) > a, {
-    @include setFlexibleBox(horizontal,stretch,stretch);
+  li:not(.list-divider) > a {
+    @include setFlexibleBox(horizontal,stretch, stretch);
     padding: $default-listview-spacing;
   }
   li:not(.list-divider) > a, {
@@ -21,6 +23,7 @@ ul[data-type="listview"] {
   li:not(.list-divider) {
     > div,
     a > div {
+
       margin-left: $default-listview-spacing;
       &:first-child {
         margin-left: 0 !important;
@@ -35,8 +38,9 @@ ul[data-type="listview"] {
     @include setFlexibleBox;
   }
   .vertical {
-    //@include setFlexibleBox(vertical,center,center);
+    @include setFlexibleBox(vertical,center,center);
     i, span {
+
       display: block;
     }
     * + * {
@@ -70,11 +74,9 @@ ul[data-type="listview"] {
   i {
     @include inline-block;
   }
-  /*
-  span {
-    vertical-align: middle;
-  }*/
+  
   
 
 } // UL
+
 
