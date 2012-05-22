@@ -11,15 +11,15 @@ ul[data-type="listview"] {
   li:not(.list-divider),
   li:not(.list-divider) > a, {
     @include setFlexibleBox(horizontal,stretch,stretch);
+    padding: $default-listview-spacing;
   }
 
   li:not(.list-divider) {
-    padding: $default-listview-spacing;
     > a {
       margin: -($default-listview-spacing);
-      padding: $default-listview-spacing;
     }
-    > div, a > div {
+    > div,
+    a > div {
       @include setFlexibleBox(vertical,stretch,center);
       margin-left: $default-listview-spacing;
       &:first-child {
@@ -35,9 +35,9 @@ ul[data-type="listview"] {
       }
     }
     .content,
-    .desc,
-    .nested,
-    .title,
+    //.desc,
+    //.nested,
+    //.title,
     > a {
       @include box-flex(1);
     }
