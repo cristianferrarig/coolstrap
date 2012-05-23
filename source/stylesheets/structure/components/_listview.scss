@@ -69,7 +69,7 @@ ul[data-type="listview"] {
 
   .content,
   .nested > *:first-child,
-  > a {
+  li > a {
     @include box-flex(1);
   }
   i {
