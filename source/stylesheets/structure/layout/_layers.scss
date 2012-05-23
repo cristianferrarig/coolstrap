@@ -41,7 +41,7 @@ div#{$isMain} {
 aside,
 section,
 article,
-div#{$isModal} {
+div#{$isDialog} {
   -webkit-backface-visibility: hidden;
   visibility: hidden;
 }
@@ -54,5 +54,7 @@ aside.current {
   }
 }
 
-
+div#{$isDialog}.current {
+  visibility: visible;
+}
 

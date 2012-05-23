@@ -1,23 +1,76 @@
-div[data-type="action"] {
+div#{$isDialog} {
+	@include setFlexibleBox(vertical,stretch,start);
 	text-align: center;
-	padding: $default-content-spacing * 1.5;
-	.title {
-		margin-bottom: $default-content-spacing * 1.5;
+	&#{$isNotModal} {
+		max-height: $default-dialog-maxsize;
 	}
-}
 
-
-a {
-	[data-type="action"] & {
-		width: $default-actionsheet-button-width;
-		height: $default-actionsheet-button-height;
-		margin-bottom: $default-content-spacing;
-		background-color: #333;
+	> * {
+		margin: 0;
+	}
+	> a, div, input {
+		@include box-flex(1);
+	}
+	> *:not(:first-child) {
+		margin-top: $default-content-spacing;
+	}
+	a {
+		@include setFlexibleBox;
+		@include box-flex(1);
+	}
+	h1 {
+		font-size: 15px;
+	}
+	input {
 		display: block;
-		&:last-child {
-			margin-bottom: 0;
-		}
+	}
+	.button-group + a,
+	a + .button-group,
+	.button-group + .button-group {
+		margin-top: $default-action-spacing;
 	}
 }
+
+div#{$isAction} {
+	position: absolute;
+	padding: $default-action-spacing;
+	a {
+		height: $default-action-button;
+	}
+	&.onTop    { top: 0; }
+	&:not(.onTop) { bottom: 0; }
+}
+
+div#{$isAlert} {
+	width: $default-alert-size;
+	padding: $default-alert-spacing;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -($default-alert-size / 2);
+	a {
+		height: $default-alert-button;
+	}
+}
+
+div#{$isModal} {
+	position: absolute;
+	top: $default-modal-spacing;
+	bottom: $default-modal-spacing;
+	left: $default-modal-spacing;
+	right: $default-modal-spacing;
+	.close {
+		position: absolute;
+		top: -10px;
+		right: -10px;
+		display: inline-block;
+		padding: 5px 10px;
+	}
+}
+
+
+
+
+
 
 

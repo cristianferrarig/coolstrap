@@ -26,13 +26,39 @@ gs= content_for :title do
 				.scroller
 					%p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
 
+		%div{:role => "dialog", "data-type" => "modal"}
+			.close x
+			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+			
+
+		%div.current{:role => "dialog", "data-type" => "alert"}
+			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+			%input{:type => "search", :name => "txt"}
+			.button-group
+				%a Ullamcorper
+				%a Tristique
+
 		%div{:role => "dialog", "data-type" => "action"}
-			.title Sem Nibh Bibendum
+			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
 			.button-group
 				%a Ullamcorper Ridiculus
 				%a Tristique Lorem
-			%a Ridiculus Tristique
 
+		%div{:role => "dialog", "data-type" => "action"}
+			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+			%a Ullamcorper Ridiculus
+			%a Tristique Lorem
+
+		%div{:role => "dialog", "data-type" => "action"}
+			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+			.button-group
+				%a Ullamcorper 
+				%a Tristique
+			%p Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+			.button-group.alignVertical
+				%a Ullamcorper Ridiculus
+				%a Tristique Lorem
+ 
 		-#%div{"data-type" => "action"}
 			.title Sem Nibh Bibendum
 			%a Ullamcorper Ridiculus

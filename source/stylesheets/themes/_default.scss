@@ -146,7 +146,21 @@ ul {
 
 
 
-
-div[data-type="action"] {
+div[role="dialog"] {
   background-color: darken($basecolor,20);
+  a {
+    background-color: #333;
+    color: #FFF;
+  }
 }
+div#{$isModal} {
+  .close {
+    @include border-radius(20px);
+    border: 2px solid #FFF;
+    background: darken($basecolor,20);
+  }
+}
+
+
+
+

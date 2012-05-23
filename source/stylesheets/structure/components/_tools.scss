@@ -19,11 +19,17 @@
   text-transform: uppercase;
 }
 
+.button-group,
 .control-group {
   @include setFlexibleBox;
   @include box-flex(0);
   a {
     @include box-flex(1);
+  }
+}
+
+.control-group {
+  a {
     margin: 0 !important;
   }
   &.autoWidth {
@@ -32,16 +38,24 @@
 }
 
 .button-group {
-  //@include setFlexibleBox;
-  //@include box-flex(0);
   a {
-    @include box-flex(1);
-    //margin: 0 !important;
+    margin-right: $default-content-spacing;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-  &.autoWidth {
-    //@include box-flex(1);
+  &.alignVertical {
+    @include box-orient(vertical);
+    @include box-align(stretch);
+    a:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: $default-content-spacing;
+    }
   }
 }
+
+
+
 
 
 .loader {

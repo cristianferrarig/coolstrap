@@ -21,8 +21,8 @@ set :default_encoding, 'utf-8'
 configure :build do
   activate :compass
   
-  activate :minify_css
-  activate :minify_javascript
+  #activate :minify_css
+  #activate :minify_javascript
   
   # Use relative URLs
   activate :relative_assets

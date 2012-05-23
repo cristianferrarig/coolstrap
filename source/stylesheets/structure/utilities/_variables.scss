@@ -3,12 +3,13 @@ $isNormal:       ':not([data-type])';
 
 $isMain:         '[role="main"]';
 
+// Dialog model
 $isDialog:       '[role="dialog"]';
-
 $isAction:       '[data-type="action"]';
-$isPopover:      '[data-type="popover"]';
 $isAlert:        '[data-type="alert"]';
+$isPopover:      '[data-type="popover"]';
 $isModal:        '[data-type="modal"]';
+$isNotModal:     ':not([data-type="modal"])';
 
 
 $isTooltip:      '[role="tooltip"]';
@@ -64,7 +65,7 @@ $default-transform-distance: 0 !default;
 // Header
 $default-header-size: 44px !default;
 $default-header-button: 30px !default;
-$default-header-icon: 26px !default;
+$default-header-icon: 20px !default;
 
 // Vertical Header
 $default-header-vertical-size: 50px !default;
@@ -96,15 +97,20 @@ $default-aside-bottom-size: 300px !default;
 
 
 
+// Global Dialog
+$default-dialog-maxsize: 400px !default;
 
+// Action Sheet Dialog
+$default-action-spacing: 20px !default;
+$default-action-button: 40px !default;
 
-// Modals
-$default-actionsheet-size: auto !default;
-$default-actionsheet-spacing: 15px !default;
+// Alert Dialog
+$default-alert-size: 280px !default;
+$default-alert-spacing: 10px !default;
+$default-alert-button: 30px !default;
 
-$default-actionsheet-button-width: 100% !default;
-$default-actionsheet-button-height: 40px !default;
-
+// Modal Dialog
+$default-modal-spacing: 20px !default;
 
 
 

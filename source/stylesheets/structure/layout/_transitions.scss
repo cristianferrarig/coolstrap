@@ -21,7 +21,6 @@ section {
   &.hide { 
     @include setTransition(left, -100%);
   }
-
 }
 
 

@@ -7,12 +7,24 @@
 
 		%header
 			%a.onlyIcon <i></i>
-			%hgroup
-				%h1 COOLSTRAP
-				%h2 Toolbar
+			.flex
+			.control-group
+				%a
+					%i
+					%span boton 1
+				%a
+					%i
+					%span boton 2
+				%a
+					%span boton 3
+					%i
+			.flex
 			%a Entrar
 
 		%section.current
+			%header
+				%input{:type => "search", :name => "txt"}
+				%a search
 
 			%article.current{:id => "demo"}
 
