@@ -1,29 +1,25 @@
 div#{$isDialog} {
 	@include setFlexibleBox(vertical,stretch,start);
+	@include box-flex(1);
 	text-align: center;
 	&#{$isNotModal} {
-		max-height: $default-dialog-maxsize;
+		max-height: $default-dialog-maxheight;
 	}
 
-	> * {
-		margin: 0;
-	}
-	> a, div, input {
-		@include box-flex(1);
-	}
-	> *:not(:first-child) {
-		margin-top: $default-content-spacing;
-	}
+	> * { margin: 0; }
+
+	> a, div, input	 { @include box-flex(1); }
+
+	> *:not(:first-child) { margin-top: $default-content-spacing; }
+
 	a {
 		@include setFlexibleBox;
 		@include box-flex(1);
 	}
-	h1 {
-		font-size: 15px;
-	}
-	input {
-		display: block;
-	}
+
+	h1 { font-size: 15px; }
+	input { display: block; }
+
 	.button-group + a,
 	a + .button-group,
 	.button-group + .button-group {
@@ -32,11 +28,10 @@ div#{$isDialog} {
 }
 
 div#{$isAction} {
+	width: 100%;
 	position: absolute;
 	padding: $default-action-spacing;
-	a {
-		height: $default-action-button;
-	}
+	a { height: $default-action-button; }
 	&.onTop    { top: 0; }
 	&:not(.onTop) { bottom: 0; }
 }
@@ -48,9 +43,7 @@ div#{$isAlert} {
 	top: 50%;
 	left: 50%;
 	margin-left: -($default-alert-size / 2);
-	a {
-		height: $default-alert-button;
-	}
+	a { height: $default-alert-button; }
 }
 
 div#{$isModal} {
@@ -65,10 +58,65 @@ div#{$isModal} {
 		right: -10px;
 		display: inline-block;
 		padding: 5px 10px;
-
 	}
 }
 
+div#{$isPopover} {
+	position: absolute;
+	max-height: $default-dialog-maxheight;
+	max-width: $default-dialog-maxwidth;
+
+	$carret-front-size:     $default-popover-arrow;
+	$carret-back-size:      $default-popover-arrow + $default-popover-border;
+
+	$carret-front-position: -($carret-front-size * 2 - $default-popover-border);
+	$carret-back-position:  -($carret-back-size * 2 - $default-popover-border);
+
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		border-style: solid;
+		border-color: transparent; 
+		width: 0;
+		height: 0;
+	}
+	&:after {
+		border-width:   $carret-front-size;
+	}
+	&:before {
+		border-width:   $carret-back-size;
+	}
+
+	&.carretTop,
+	&.carretBottom {
+		&:after  { left: 50%; margin-left: -($carret-front-size); }
+		&:before { left: 50%; margin-left: -($carret-back-size);  }
+	}
+	&.carretRight,
+	&.carretLeft {
+		&:after  { top: 50%; margin-top:   -($carret-front-size); }
+		&:before { top: 50%; margin-top:   -($carret-back-size);  }
+	}
+
+	&.carretTop {
+		&:after  { top:    $carret-front-position; border-bottom-color:  red;   }
+		&:before { top:    $carret-back-position;  border-bottom-color:  green; }
+	}
+	&.carretRight {
+		&:after  { right:  $carret-front-position; border-left-color:    red;   }
+		&:before { right:  $carret-back-position;  border-left-color:    green; }
+	}
+	&.carretBottom {
+		&:after  { bottom: $carret-front-position; border-top-color:     red;   }
+		&:before { bottom: $carret-back-position;  border-top-color:     green; }
+	}
+	&.carretLeft {
+		&:after  { left:   $carret-front-position; border-right-color:   red;   }
+		&:before { left:   $carret-back-position;  border-right-color:   green; }
+	}
+}
 
 
 

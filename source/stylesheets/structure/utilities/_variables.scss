@@ -98,7 +98,8 @@ $default-aside-bottom-size: 300px !default;
 
 
 // Global Dialog
-$default-dialog-maxsize: 400px !default;
+$default-dialog-maxheight: 400px !default;
+$default-dialog-maxwidth: 300px !default;
 
 // Action Sheet Dialog
 $default-action-spacing: 20px !default;
@@ -112,6 +113,9 @@ $default-alert-button: 30px !default;
 // Modal Dialog
 $default-modal-spacing: 20px !default;
 
+// Popover Dialog
+$default-popover-arrow: 10px;
+$default-popover-border: 4px;
 
 
 
