@@ -39,6 +39,7 @@ COOL.Navigation = (function(coolstrap, undefined) {
           coolstrap.dom(current).removeClass(CLASS.CURRENT)
         }, DURATION)
         coolstrap.Navigation.History.add(section_id, container_id);
+        coolstrap.Navigation.History.pushState(section_id, container_id, 'section');
       }    
     } else {
       _console.warn('WTF! you are here!');
@@ -46,6 +47,7 @@ COOL.Navigation = (function(coolstrap, undefined) {
     
   };
 
+  
   /**
    * Displays the <article> in a particular <section>.
    *
@@ -81,8 +83,10 @@ COOL.Navigation = (function(coolstrap, undefined) {
       var is_visible = coolstrap.dom(target).hasClass(CLASS.CURRENT);
       if (is_visible) {
         coolstrap.View.Aside.hide(aside_id);
+        coolstrap.Navigation.History.historyBack();
       } else {
         coolstrap.View.Aside.show(aside_id);
+        coolstrap.Navigation.History.pushState(aside_id, aside_id, 'aside');
       }
     }
   };
@@ -100,7 +104,7 @@ COOL.Navigation = (function(coolstrap, undefined) {
         coolstrap.dom(current_section).removeClass(CLASS.CURRENT)
       }, DURATION)
       coolstrap.Navigation.History.removeLast(container_id);
-      coolstrap.dom(_getHistoryCurrent(container_id)).addClass(CLASS.CURRENT).removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
+      coolstrap.dom(_getHistoryCurrent(container_id)).addClass(CLASS.CURRENT).removeClass(CLASS.HIDE).addClass(CLASS.SHOW);      
     } else {
       _console.warn('Hey! Nothing back');
     }

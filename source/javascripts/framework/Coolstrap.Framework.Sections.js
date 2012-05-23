@@ -32,13 +32,13 @@ COOL.Framework.Sections = (function(coolstrap, undefined) {
     var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
     first_section.addClass(CLASS.CURRENT);
     coolstrap.Navigation.History.add(first_section_id);
+    coolstrap.Navigation.History.replaceState(first_section_id, null, 'section');
   };
 
 
   var _initFirstSectionOfAside = function(aside) {
     var aside_id = aside.attr(ATTRIBUTE.ID);
     var sections = coolstrap.dom('#' + aside_id + ' ' + ELEMENT.SECTION); 
-    console.info('#' + aside_id + ' ' + ELEMENT.SECTION);
     var first_section = sections.first();
     var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
     first_section.addClass(CLASS.CURRENT);

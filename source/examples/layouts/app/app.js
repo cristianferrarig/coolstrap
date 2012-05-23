@@ -1,9 +1,19 @@
 
-$(document).ready(function(){
+var logger = COOL.Console;
 
-	// TODO: @abraham el iScroll no deja hacer click en un input (en lungo se puede)
-	 myScroll = new iScroll('demo');
+var App = (function(coolstrap, undefined) {
+  
+  coolstrap.App.init({
+    name: 'Layout Demo',
+    version: '1.0',
+    resources: {
+      sections: [],
+      asides: []
+    }
+  });
 
-	 
+  return {
+ 	
+  };
 
-});
+})(COOL);

@@ -1,0 +1,90 @@
+= content_for :title do
+  Coolstrapp Kitchen-sink
+= content_for :application_styles do 
+  %link{:href => "assets/stylesheets/customtheme.css", :rel => "stylesheet", :type => "text/css"}
+
+= content_for :principal do
+  %div.a{"role" => "main"}
+    %section#home
+      %header
+        %a{"href" => "#options", "data-target" => "aside"}
+          %i.menuIcon
+        %hgroup
+          %h1 Coolstrap
+          %h2 Javascript API
+      %article#resume.scrollable
+        %p Coolstrap API sample Application
+        %ul{"data-type" => "listview"}
+          %li
+            %a{"href" => "#navigation", "data-target" => "section"}
+              .content
+                .title Navigation
+              .aside
+                %i
+          %li
+            %a{"href" => "#options", "data-target" => "aside"}
+              .content
+                .title Show Left Aside
+          %li
+            %a{"href" => "#notifications", "data-target" => "aside"}
+              .content
+                .title Show Top Aside                         
+    %section#navigation
+      %header
+        %a{"href" => "#back", "data-target" => "section"} Back
+        %hgroup
+          %h1 Coolstrap
+          %h2 Navigation
+        %a{"href" => "#colaborators", "data-target" => "aside"}
+          %i
+      %article#nav
+        .scroller
+          %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla  . Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
+
+  %aside.onLeft#options
+    %section#section_options
+      %header
+        %h1 Opciones
+      %article#options1.scrollable
+        %ul{"data-type" => "listview"}
+          %li
+            %a{"href" => "#navigation", "data-target" => "section", "title" => "Navigation"}
+              .content
+                .title Navigation Main
+          %li
+            %a{"href" => "#section_options_second", "data-target" => "section"}
+              .content
+                .title Account
+              .aside
+                %i
+    %section#section_options_second                
+      %header
+        %a{"href" => "#back", "data-target" => "section"} Volver
+        %h1 Account
+      %article#options2
+        %a
+          Logout of Facebook
+
+  %aside.onRight#colaborators
+    %section#colaborators_section
+      %header
+        %h1 Colaborators
+      %article#peple.scrollable
+        %ul{"data-type" => "listview"}
+          %li
+            .content
+              .title Cristian Ferrari
+          %li
+            .content
+              .title Felipe Funes
+          %li
+            .content
+              .title Abraham Barrera                            
+  %aside.onTop#notifications
+    Notifications
+  %aside.onBottom#configuration
+    Configuration
+
+= content_for :application_js do  
+  %script{:src => "app/app.js", :type=> "text/javascript"}
+  

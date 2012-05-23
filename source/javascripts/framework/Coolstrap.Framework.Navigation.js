@@ -10,7 +10,7 @@
 //TODO: hide aside when hiden
 //TODO: hide aside when load external section
 
-COOL.Framework.Navigation = (function(coolstrap, undefined) {
+COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
   var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
   var CLASS = coolstrap.Constants.CLASS;
   var ELEMENT = coolstrap.Constants.ELEMENT;
@@ -19,7 +19,7 @@ COOL.Framework.Navigation = (function(coolstrap, undefined) {
       HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]'
   };
   var _console = coolstrap.Console; 
-  
+
   /**
    * Initializes the automatic subscription events by markup of the project.
    *
@@ -36,10 +36,11 @@ COOL.Framework.Navigation = (function(coolstrap, undefined) {
     }
     if (coolstrap.Fallback.Android) {
       coolstrap.Fallback.Android.buttons();  
-    }
+    } 
+    coolstrap.Navigation.History.bindHashChange();
+    
   };
 
-  
   var _loadTargetFromAside = function(event) {
     var link = coolstrap.dom(this);
     var aside_id = '#' + link.parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
@@ -81,6 +82,7 @@ COOL.Framework.Navigation = (function(coolstrap, undefined) {
     id = coolstrap.Core.parseUrl(id);
     if (id === '#back') {  
       coolstrap.Navigation.back(container_id);
+      coolstrap.Navigation.History.historyBack();
     } else {
       coolstrap.Navigation.section(id);
     }
@@ -110,4 +112,4 @@ COOL.Framework.Navigation = (function(coolstrap, undefined) {
     setup: setup
   };
 
-})(COOL);
+})(COOL, window);
