@@ -30,7 +30,6 @@ COOL.Framework.Sections = (function(coolstrap, undefined) {
   var _initFirstSection = function(sections) {
     var first_section = sections.first();
     var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
-    first_section.addClass(CLASS.STARTING);
     first_section.addClass(CLASS.CURRENT);
     coolstrap.Navigation.History.add(first_section_id);
   };
@@ -42,7 +41,6 @@ COOL.Framework.Sections = (function(coolstrap, undefined) {
     console.info('#' + aside_id + ' ' + ELEMENT.SECTION);
     var first_section = sections.first();
     var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
-    first_section.addClass(CLASS.STARTING);
     first_section.addClass(CLASS.CURRENT);
     coolstrap.Navigation.History.add(first_section_id, aside_id);
   };

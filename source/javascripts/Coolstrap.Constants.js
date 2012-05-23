@@ -34,7 +34,7 @@ COOL.Constants = {
     SHOW: 'show',
     HIDE: 'hide',
     CURRENT: 'current',
-    STARTING: 'starting',
+    FIRST: 'first',
     RIGHT: 'onright',
     LEFT: 'onleft',
     TOP: 'ontop',

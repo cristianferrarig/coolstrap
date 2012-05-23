@@ -11,9 +11,8 @@ div#{$isMain} {
 section {
   @include setTransition();
   @include setTransition(left, 100%);
-  &.starting{ 
+  &:first-of-type {
     @include setTransition(left, 0%);
-    @include transition-duration(0);
   }
   &.show { 
     @include setTransition(left, 0%);

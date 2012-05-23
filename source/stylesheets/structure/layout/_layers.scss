@@ -46,8 +46,8 @@ div#{$isDialog} {
   visibility: hidden;
 }
 
-section.current, 
-aside.current {
+  
+div#{$isMain} section.current {
   visibility: visible;
   article.current {
     visibility: visible;
@@ -56,5 +56,23 @@ aside.current {
 
 div#{$isDialog}.current {
   visibility: visible;
+}
+
+aside {
+  section {
+    visibility: hidden; 
+    article {
+      visibility: hidden; 
+    } 
+  }
+  &.current {
+    visibility: visible; 
+    section.current {
+      visibility: visible; 
+      article.current {
+        visibility: visible;
+      } 
+    }
+  }
 }
 
