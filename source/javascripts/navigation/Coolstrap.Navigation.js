@@ -16,7 +16,7 @@ COOL.Navigation = (function(coolstrap, undefined) {
   var ELEMENT = coolstrap.Constants.ELEMENT;
   var ERROR = coolstrap.Constants.ERROR;
   var TRIGGER = coolstrap.Constants.TRIGGER;
-  var DURATION = coolstrap.Constants.TRANSITION.DURATION
+  var TRANSITION = coolstrap.Constants.TRANSITION.DURATION
   var _console = coolstrap.Console; 
 
   /**
@@ -37,7 +37,7 @@ COOL.Navigation = (function(coolstrap, undefined) {
         coolstrap.dom(target).addClass(CLASS.CURRENT).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
         setTimeout(function(){
           coolstrap.dom(current).removeClass(CLASS.CURRENT)
-        }, DURATION)
+        }, TRANSITION.DURATION)
         coolstrap.Navigation.History.add(section_id, container_id);
         coolstrap.Navigation.History.pushState(section_id, container_id, 'section');
       }    
@@ -120,7 +120,7 @@ COOL.Navigation = (function(coolstrap, undefined) {
       coolstrap.dom(current_section).removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD);
       setTimeout(function(){
         coolstrap.dom(current_section).removeClass(CLASS.CURRENT)
-      }, DURATION)
+      }, TRANSITION.DURATION)
       coolstrap.Navigation.History.removeLast(container_id);
       coolstrap.dom(_getHistoryCurrent(container_id)).addClass(CLASS.CURRENT).removeClass(CLASS.HIDE).addClass(CLASS.SHOW);      
     } else {
