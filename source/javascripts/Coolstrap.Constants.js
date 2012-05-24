@@ -15,6 +15,7 @@ COOL.Constants = {
     SECTION: 'section',
     ARTICLE: 'article',
     ASIDE: 'aside',
+    DIALOG: 'dialog',
     BODY: 'body',
     DIV: 'div'
   },

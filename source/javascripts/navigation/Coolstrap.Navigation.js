@@ -91,6 +91,24 @@ COOL.Navigation = (function(coolstrap, undefined) {
     }
   };
 
+
+  /**
+   * Displays the <dialog>.
+   *
+   * @method dialog
+   *
+   * @param {string} <dialog> Id
+   */
+  var dialog = function(dialog_id) {
+    var target = ELEMENT.DIALOG + dialog_id;
+    if (_existsTarget(target)) {
+      coolstrap.dom(target).trigger(TRIGGER.LOAD);
+      coolstrap.View.Dialog.show(dialog_id);
+    }  
+  };
+
+
+
   /**
    * Return to previous section.
    *
@@ -134,6 +152,7 @@ COOL.Navigation = (function(coolstrap, undefined) {
     section: section,
     article: article,
     aside: aside,
+    dialog: dialog,
     back: back
   };
 
