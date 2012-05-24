@@ -131,9 +131,7 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
       _prevent_hash_change = false;
     } 
   };
-
-  
-
+ 
 
   return {
     add: add,

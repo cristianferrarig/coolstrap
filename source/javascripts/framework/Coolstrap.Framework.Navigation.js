@@ -14,6 +14,7 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
   var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
   var CLASS = coolstrap.Constants.CLASS;
   var ELEMENT = coolstrap.Constants.ELEMENT;
+  var TARGET = coolstrap.Constants.TARGET;
   var SELECTORS = {
       HREF_TARGET: 'a[href][data-target]',
       HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]'
@@ -43,12 +44,12 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
 
   var _loadTargetFromAside = function(event) {
     var link = coolstrap.dom(this);
-    var aside_id = '#' + link.parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
+    var aside_id = '#' + link.parents(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
     if (link.data(ATTRIBUTE.TARGET) === ELEMENT.ARTICLE) {
         coolstrap.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
         link.addClass(CLASS.CURRENT);
     }
-    _hideAsideIfNecesary(aside_id);
+    _hideAsideIfNecesary(aside_id, link);
   };
 
   var _loadTarget = function(event) {
@@ -80,7 +81,7 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
 
   var _goSection = function(id, container_id) {
     id = coolstrap.Core.parseUrl(id);
-    if (id === '#back') {  
+    if (id === '#' + TARGET.BACK) {  
       coolstrap.Navigation.back(container_id);
       coolstrap.Navigation.History.historyBack();
     } else {
@@ -98,13 +99,19 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
   var _goAside = function(element) {
     var section_id = coolstrap.Navigation.History.current();
     var aside_id = element.attr(ATTRIBUTE.HREF);
-
+    var target = ELEMENT.ASIDE + aside_id;  
+    var current_aside = coolstrap.dom(ELEMENT.ASIDE + '.' + CLASS.CURRENT).first();
+    if (current_aside) {
+      _hideAsideIfNecesary('#' + current_aside.attr(ATTRIBUTE.ID), element);      
+    }
     coolstrap.Navigation.aside(section_id, aside_id);
   };
 
-  var _hideAsideIfNecesary = function(aside_id) {
-    if (window.innerWidth < 768) {
-      coolstrap.View.Aside.hide(aside_id);
+  var _hideAsideIfNecesary = function(aside_id, link) {
+    var target_id = link.attr(ATTRIBUTE.HREF);
+    var parent = coolstrap.dom(target_id).parents(ELEMENT.ASIDE).first();
+    if (!parent || '#'+ parent.attr(ATTRIBUTE.ID) != aside_id && target_id != '#' + TARGET.BACK) {
+      coolstrap.View.Aside.hide(aside_id); 
     }
   };
 
