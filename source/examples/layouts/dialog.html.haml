@@ -1,77 +1,60 @@
 = content_for :title do
-	Popup demo
+  Popup demo
 
 = content_for :principal do
 
-	%div{:role => "main"}
+  %div{:role => "main"}
 
-		%header
-			%a Volver
-			%hgroup
-				%h1 COOLSTRAP
-				%h2 Pop up demo
-			%a Entrar
+    %header
+      %a Volver
+      %hgroup
+        %h1 COOLSTRAP
+        %h2 Pop up demo
+      %a Entrar
 
-		%section.current
+    %section#demo
+      %article#dialogs
+        .scroller
+          %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
 
-			%header
-				%hgroup
-					%h1 COOLSTRAP
-					%h2 Pop up
-				%a Cerrar
+    %div#mymodal{:role => "dialog", "data-type" => "modal", "data-transition" => "slideup"}
+      .close x
+      %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+      
 
+    %div{:role => "dialog", "data-type" => "alert"}
+      %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+      %input{:type => "search", :name => "txt"}
+      .button-group
+        %a Ullamcorper
+        %a Tristique
 
-			%article.current{:id => "demo"}
-				.scroller
-					%p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+    %div{:role => "dialog", "data-type" => "action"}
+      %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+      .button-group
+        %a Ullamcorper Ridiculus
+        %a Tristique Lorem
 
-		%div{:role => "dialog", "data-type" => "modal"}
-			.close x
-			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
-			
+    %div{:role => "dialog", "data-type" => "action"}
+      %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+      %a Ullamcorper Ridiculus
+      %a Tristique Lorem
 
-		%div{:role => "dialog", "data-type" => "alert"}
-			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
-			%input{:type => "search", :name => "txt"}
-			.button-group
-				%a Ullamcorper
-				%a Tristique
-
-		%div{:role => "dialog", "data-type" => "action"}
-			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
-			.button-group
-				%a Ullamcorper Ridiculus
-				%a Tristique Lorem
-
-		%div{:role => "dialog", "data-type" => "action"}
-			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
-			%a Ullamcorper Ridiculus
-			%a Tristique Lorem
-
-		%div.current{:role => "dialog", "data-type" => "action"}
-			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
-			.button-group
-				%a Ullamcorper 
-				%a Tristique
-			%p Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
-			.button-group.alignVertical
-				%a Ullamcorper Ridiculus
-				%a Tristique Lorem
-		%div{:role => "dialog", "data-type" => "popover"}
-			%ul.inset{"data-type" => "listview"}
-				%li Donec id elit non 
-				%li Donec id el
-				%li Donec
-
+    %div{:role => "dialog", "data-type" => "action"}
+      %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+      .button-group
+        %a Ullamcorper 
+        %a Tristique
+      %p Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+      .button-group.alignVertical
+        %a Ullamcorper Ridiculus
+        %a Tristique Lorem
+    %div{:role => "dialog", "data-type" => "popover"}
+      %ul.inset{"data-type" => "listview"}
+        %li Donec id elit non 
+        %li Donec id el
+        %li Donec
  
 
-	%aside{"data-type" => "onLeft"}
-
-	%aside{"data-type" => "onRight"}
-
-	%aside{"data-type" => "onTop"}
-
-	%aside{"data-type" => "onBottom"}
-
 = content_for :application_js do  
-	%script{:src => "app/app.js", :type=> "text/javascript"}
+  %script{:src => "app/app.js", :type=> "text/javascript"}

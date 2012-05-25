@@ -1,5 +1,5 @@
 /**
- * Initialize the <dialog> layout 
+ * Initialize the <dialog> layout
  *
  * @namespace COOL.View
  * @class Dialog
@@ -7,14 +7,10 @@
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-
-COOL.View.Dialog = (function(coolstrap, undefined) {
+COOL.View.Dialog = (function(coolstrap) {
 
   var ELEMENT = coolstrap.Constants.ELEMENT;
   var CLASS = coolstrap.Constants.CLASS;
-  var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
-  var TRIGGER = coolstrap.Constants.TRIGGER;
-
 
   /**
    * Show dialog
@@ -22,11 +18,23 @@ COOL.View.Dialog = (function(coolstrap, undefined) {
    * @method show
    */
   var show = function(dialog_id) {
-    alert('showing' + dialog_id);
+    var dialog = coolstrap.dom(ELEMENT.DIALOG + dialog_id);
+    dialog.addClass(CLASS.CURRENT);
+  };
+
+  /**
+   * Close dialog
+   *
+   * @method show
+   */
+  var close = function(dialog_id) {
+    var dialog = coolstrap.dom(ELEMENT.DIALOG + dialog_id);
+    dialog.removeClass(CLASS.CURRENT);
   };
 
   return {
-    show: show
+    show: show,
+    close: close
   };
 
-})(COOL);
+}(COOL));

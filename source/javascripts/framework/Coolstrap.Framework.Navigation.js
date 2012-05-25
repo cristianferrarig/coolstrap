@@ -81,6 +81,10 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
       case ELEMENT.ASIDE:
         _goAside(link);
         break;
+
+      case ELEMENT.DIALOG:
+        _goDialog(link);
+        break;
     }
   };
 
@@ -95,9 +99,14 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
 
   var _goArticle = function(element) {
     var section_id = coolstrap.Navigation.History.current();
-    var article_id =  element.attr(ATTRIBUTE.HREF);
+    var article_id =element.attr(ATTRIBUTE.HREF);
 
     coolstrap.Navigation.article(section_id, article_id);
+  };
+
+  var _goDialog = function(element) {
+    var dialog_id = element.attr(ATTRIBUTE.HREF);
+    coolstrap.Navigation.dialog(dialog_id);
   };
 
   var _goAside = function(element) {

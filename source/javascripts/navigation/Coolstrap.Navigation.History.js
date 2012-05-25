@@ -1,6 +1,5 @@
 /**
 * Stores the stack of displayed <sections>
-*
 * @namespace COOL.Navigation
 * @class History
 *
@@ -41,7 +40,7 @@ COOL.Navigation.History = (function(coolstrap, document, window) {
 
   /**
   * Returns lenght of history stack
-  *
+  * 
   * @method size
   */
   var size = function(container_id) {

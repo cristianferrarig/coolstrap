@@ -15,9 +15,13 @@ COOL.Constants = {
     SECTION: 'section',
     ARTICLE: 'article',
     ASIDE: 'aside',
-    DIALOG: 'dialog',
+    DIALOG: 'div[role="dialog"]',
     BODY: 'body',
     DIV: 'div'
+  },
+
+  COMMAND: {
+    CLOSE_DIALOG: 'close'
   },
 
   TARGET: {
@@ -81,4 +85,4 @@ COOL.Constants = {
     LOADING_RESOURCE: 'ERROR: Loading resource.'
   }
 
-}
+};

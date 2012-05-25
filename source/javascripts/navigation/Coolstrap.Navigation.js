@@ -14,6 +14,7 @@ COOL.Navigation = (function(coolstrap) {
   var ELEMENT = coolstrap.Constants.ELEMENT;
   var TRIGGER = coolstrap.Constants.TRIGGER;
   var TRANSITION = coolstrap.Constants.TRANSITION;
+  var COMMAND = coolstrap.Constants.COMMAND;
   var _console = coolstrap.Console;
 
   var _existsTarget = function(target) {
@@ -113,11 +114,16 @@ COOL.Navigation = (function(coolstrap) {
    *
    * @param {string} <dialog> Id
    */
-  var dialog = function(dialog_id) {
+  var dialog = function(dialog_id, dialog_command) {
     var target = ELEMENT.DIALOG + dialog_id;
     if (_existsTarget(target)) {
-      coolstrap.dom(target).trigger(TRIGGER.LOAD);
-      coolstrap.View.Dialog.show(dialog_id);
+      if (dialog_command && dialog_command === COMMAND.CLOSE_DIALOG) {
+        coolstrap.dom(target).trigger(TRIGGER.UNLOAD);
+        coolstrap.View.Dialog.close(dialog_id);
+      } else {
+        coolstrap.dom(target).trigger(TRIGGER.LOAD);
+        coolstrap.View.Dialog.show(dialog_id);
+      }
     }
   };
 
