@@ -31,20 +31,12 @@ COOL.Framework.Sections = (function(coolstrap, undefined) {
     var first_section = sections.first();
     var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
     first_section.addClass(CLASS.CURRENT);
-    coolstrap.Navigation.History.add(first_section_id);
-    coolstrap.Navigation.History.replaceState(first_section_id, null, 'section');
+    coolstrap.Navigation.History.add({
+      section_id: first_section_id, 
+      replace_state: true
+    });
   };
 
-
-  var _initFirstSectionOfAside = function(aside) {
-    var aside_id = aside.attr(ATTRIBUTE.ID);
-    var sections = coolstrap.dom('#' + aside_id + ' ' + ELEMENT.SECTION); 
-    var first_section = sections.first();
-    var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
-    first_section.addClass(CLASS.CURRENT);
-    coolstrap.Navigation.History.add(first_section_id, aside_id);
-  };
-  
   var _initAllSections = function(sections) {
     for (var i = 0, len = sections.length; i < len; i++) {
       var section = coolstrap.dom(sections[i]);
@@ -64,7 +56,6 @@ COOL.Framework.Sections = (function(coolstrap, undefined) {
     for (var i = 0, len = asides.length; i < len; i++) {
       var aside = coolstrap.dom(asides[i]);
       _initArticles(aside);
-      _initFirstSectionOfAside(aside);
     }
   };
 

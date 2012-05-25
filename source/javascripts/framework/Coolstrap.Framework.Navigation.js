@@ -7,8 +7,6 @@
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-//TODO: hide aside when hiden
-//TODO: hide aside when load external section
 
 COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
   var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
@@ -38,7 +36,7 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     if (coolstrap.Fallback.Android) {
       coolstrap.Fallback.Android.buttons();  
     } 
-    coolstrap.Navigation.History.bindHashChange();
+    coolstrap.Navigation.History.setup();
     
   };
 
@@ -83,7 +81,6 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     id = coolstrap.Core.parseUrl(id);
     if (id === '#' + TARGET.BACK) {  
       coolstrap.Navigation.back(container_id);
-      coolstrap.Navigation.History.historyBack();
     } else {
       coolstrap.Navigation.section(id);
     }
@@ -102,7 +99,7 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     var target = ELEMENT.ASIDE + aside_id;  
     var current_aside = coolstrap.dom(ELEMENT.ASIDE + '.' + CLASS.CURRENT).first();
     if (current_aside) {
-      _hideAsideIfNecesary('#' + current_aside.attr(ATTRIBUTE.ID), element);      
+     // _hideAsideIfNecesary('#' + current_aside.attr(ATTRIBUTE.ID), element);      
     }
     coolstrap.Navigation.aside(section_id, aside_id);
   };

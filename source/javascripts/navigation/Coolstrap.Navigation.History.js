@@ -27,6 +27,17 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
     return _history[TARGET.CONTAINER][container_id];
   }
 
+  var _containerStackLevel = function(container_id) {
+    if (container_id){
+      if (!_history[TARGET.CONTAINER][container_id + '_level']) {
+        _history[TARGET.CONTAINER][container_id + '_level'] = {size: 0};
+      }
+      return  _history[TARGET.CONTAINER][container_id + '_level'];
+    } else {
+      return {size: 1}
+    }
+  }
+
 
   /**
   * Create a new element to the browsing history based on the current section id.
@@ -35,9 +46,21 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
   *
   * @param  {string} Id of the section
   */
-  var add = function(section_id, container_id) {
+  var add = function(options) {
+    var section_id = options.section_id;
+    var container_id = options.container_id || null;
+    var replace_state = options.replace_state || false; 
+    var init_container = options.init_container || false;
     var stack = !container_id ? _mainStack() :  _containerStack(container_id);
+    
     stack.push(section_id);  
+    _containerStackLevel(container_id).size += 1;
+    
+    if (replace_state) {
+      _replaceState(section_id, container_id, 'section');
+    } else {
+      _pushState(section_id, container_id, 'section');
+    }
   };
 
 
@@ -62,6 +85,42 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
   var removeLast = function(container_id) {
     var stack = !container_id ? _mainStack() :  _containerStack(container_id);
     stack.length -= 1;
+    //if (container_id && _containerStackLevel(container_id).size > 1) {
+      _containerStackLevel(container_id).size -= 1;
+    //}
+    if (container_id && _containerStackLevel(container_id).size == 0) {
+      var section_id = current(container_id)
+      console.log('replace state')
+      _replaceState(section_id, container_id, 'section');
+      _containerStackLevel(container_id).size = 1;
+    } else {
+      history.back(); //TODO: back or replace  
+    }
+  };
+
+
+  /**
+  * Removes all history on container.
+  *
+  * @method clear
+  */
+  var clear = function(container_id) {
+    console.log(container_id);
+    if (container_id) container_id = container_id.replace('#','');
+    var stack = !container_id ? _mainStack() :  _containerStack(container_id);
+    stack.length -= 1;
+
+    if (container_id){
+      console.info(_containerStackLevel(container_id).size);
+      if (_containerStackLevel(container_id).size <= 0) {
+        console.info('BACK');
+        history.back();          
+      } else {
+        history.go(-1 * _containerStackLevel(container_id).size);
+        console.info('GO ' + -1 * _containerStackLevel(container_id).size);
+      }
+      _containerStackLevel(container_id).size = 0;
+    }
   };
  
 
@@ -81,10 +140,10 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
   *
   * @method pushState
   */
-  var pushState = function(section_id, container_id, type) {
+  var _pushState = function(section_id, container_id, type) {
     var prefix = '#main/';
     if (container_id)
-      prefix = '#aside/';
+      prefix = '#' + container_id + '/';
     history.pushState({state:stackLength(container_id), id:section_id, type: type}, section_id, prefix + section_id.replace('#',''));
   }
 
@@ -93,8 +152,10 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
   *
   * @method pushState
   */
-  var replaceState = function(section_id, container_id, type) {
+  var _replaceState = function(section_id, container_id, type) {
     var prefix = '#main/';
+    if (container_id)
+      prefix = '#' + container_id + '/';
     history.replaceState({state:stackLength(container_id), id:section_id, type: type}, section_id, prefix + section_id.replace('#',''));
   }
 
@@ -103,14 +164,30 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
   *
   * @method historyBack
   */
-  var historyBack = function() {
+  var historyBack = function(container_id) {
     _prevent_hash_change = true;
     history.back();
   }
 
-  var bindHashChange = function() {
+  var setup = function() {
+    window.onpopstate = function(event){
+      /*
+      console.info('*************onpopstate');
+      console.info(event.state);
+      console.info(document.location.hash);
+      console.info(history.length);
+      console.info('*************');
+      */
+    }
     window.onhashchange = function(event){
-      if (!_prevent_hash_change) {
+      /*
+      console.info('*************onhashchange');
+      console.info(event);
+      console.info(document.location.hash);
+      console.info(history.length);
+      console.info('*************');
+      */
+     /* if (!_prevent_hash_change) {
         var to_main = /#main/.test(document.location.hash);
         var from_main = /#main/.test(event.oldURL);
         var to_aside = /#aside/.test(document.location.hash);
@@ -128,7 +205,7 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
         }
 
       }
-      _prevent_hash_change = false;
+      _prevent_hash_change = false;*/
     } 
   };
  
@@ -138,10 +215,9 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
     current: current,
     removeLast: removeLast,
     stackLength: stackLength,
-    pushState: pushState,
-    replaceState: replaceState,
     historyBack: historyBack,
-    bindHashChange: bindHashChange
+    clear: clear,
+    setup: setup
   };
 
 })(COOL);

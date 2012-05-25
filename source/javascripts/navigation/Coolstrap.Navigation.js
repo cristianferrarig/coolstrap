@@ -5,9 +5,7 @@
  * @class Navigation
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
- *
  */
-//TODO: Navigation History between sections in Aside. We can !
 
 COOL.Navigation = (function(coolstrap, undefined) {
 
@@ -16,7 +14,7 @@ COOL.Navigation = (function(coolstrap, undefined) {
   var ELEMENT = coolstrap.Constants.ELEMENT;
   var ERROR = coolstrap.Constants.ERROR;
   var TRIGGER = coolstrap.Constants.TRIGGER;
-  var TRANSITION = coolstrap.Constants.TRANSITION.DURATION
+  var TRANSITION = coolstrap.Constants.TRANSITION;
   var _console = coolstrap.Console; 
 
   /**
@@ -38,8 +36,10 @@ COOL.Navigation = (function(coolstrap, undefined) {
         setTimeout(function(){
           coolstrap.dom(current).removeClass(CLASS.CURRENT)
         }, TRANSITION.DURATION)
-        coolstrap.Navigation.History.add(section_id, container_id);
-        coolstrap.Navigation.History.pushState(section_id, container_id, 'section');
+        coolstrap.Navigation.History.add({
+          section_id: section_id, 
+          container_id: container_id
+        });
       }    
     } else {
       _console.warn('WTF! you are here!');
@@ -83,10 +83,8 @@ COOL.Navigation = (function(coolstrap, undefined) {
       var is_visible = coolstrap.dom(target).hasClass(CLASS.CURRENT);
       if (is_visible) {
         coolstrap.View.Aside.hide(aside_id);
-        coolstrap.Navigation.History.historyBack();
       } else {
         coolstrap.View.Aside.show(aside_id);
-        coolstrap.Navigation.History.pushState(aside_id, aside_id, 'aside');
       }
     }
   };
