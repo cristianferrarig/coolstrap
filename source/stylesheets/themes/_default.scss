@@ -1,8 +1,17 @@
 @import "compass";
 @import "../styles";
 
+//Variables
 $basecolor: #F8F8F8;
 
+
+//Layout
+article {
+  background-color: rgba(255,255,255,1.0);
+} 
+
+
+//Buttons set
 .interfaceButton {
   background-color: darken($basecolor,15);
   border: 1px solid darken($basecolor,20);
@@ -10,61 +19,41 @@ $basecolor: #F8F8F8;
   color: #656A6C !important;
 }
 
-article {
-  background-color: $basecolor;
-}
 
+//Ions set
 header, nav, footer {
-  a:not(.onlyIcon) {
-    @extend .interfaceButton;
-  }
-  i {
-
-  }
+  a:not(.onlyIcon) { @extend .interfaceButton; }
 }
 
 header {
   &#{$isNotVertical} {
-    a:not(.onlyIcon) {
-    }
+    a:not(.onlyIcon) { }
   }
   &#{$isVertical} {
-    a:not(.onlyIcon) {
-      
-    }
+    a:not(.onlyIcon) { }
   }
   &#{$isNotVertical},
   &#{$isVertical} {
-    a:not(.onlyIcon) {
-      
-    }
+    a:not(.onlyIcon) { }
   }
 }
+
 nav,
 footer {
   &#{$isToolbar} {
-    a:not(.onlyIcon) {
-      
-    }
+    a:not(.onlyIcon) { }
   }
   &#{$isNormal} {
-    a:not(.onlyIcon) {
-      
-    }
+    a:not(.onlyIcon) { }
   }
   &#{$isToolbar},
   &#{$isNormal} {
-    a:not(.onlyIcon) {
-
-    }
+    a:not(.onlyIcon) { }
   }
 }
 
 
-
-
-
-
+// Debug icons
 header, nav, footer {
   i {
     @include border-radius(100%);
@@ -77,27 +66,8 @@ header, nav {
   border-bottom: 1px solid darken($basecolor,15);
 }
 
-h1.article-title {
-  margin-left: 10px;
-  line-height: 25px;
-  color: #444;
-}
 
-ul.inset {
-  border: 1px solid #ccc;
-  li:last-child {
-    border-bottom: 0;
-  }
-}
-
-a {
-  
-}
-
-article {
-  background-color: rgba(255,255,255,1.0);
-}
-
+//Tools
 .loader {
   @include border-radius(10px);
   background-color: darken($basecolor,20);
@@ -108,14 +78,18 @@ article {
 }
 
 
+//List styles
+ul.inset {
+  border: 1px solid #ccc;
+  li:last-child  { border-bottom: 0; }
+}
+
 ul {
   color: #666;
   li {
     border-bottom: 1px solid #ccc;
     position: relative;
-    .title {
-      color: #444;
-    }
+    .title { color: #444; }
     .picture {
       background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);
       width: 44px;
@@ -145,7 +119,7 @@ ul {
 }
 
 
-
+//Dialogs
 div[role="dialog"] {
   background-color: darken($basecolor,20);
   a {

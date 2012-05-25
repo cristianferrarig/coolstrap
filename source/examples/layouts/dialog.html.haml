@@ -12,7 +12,6 @@
 				%h2 Pop up demo
 			%a Entrar
 
-		-#%section.current{"data-type" => "popup"}
 		%section.current
 
 			%header
@@ -49,7 +48,7 @@
 			%a Ullamcorper Ridiculus
 			%a Tristique Lorem
 
-		%div{:role => "dialog", "data-type" => "action"}
+		%div.current{:role => "dialog", "data-type" => "action"}
 			%h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
 			.button-group
 				%a Ullamcorper 
@@ -58,7 +57,7 @@
 			.button-group.alignVertical
 				%a Ullamcorper Ridiculus
 				%a Tristique Lorem
-		%div.carretRight.current{:role => "dialog", "data-type" => "popover"}
+		%div{:role => "dialog", "data-type" => "popover"}
 			%ul.inset{"data-type" => "listview"}
 				%li Donec id elit non 
 				%li Donec id el

@@ -62,6 +62,7 @@ div#{$isModal} {
 }
 
 div#{$isPopover} {
+	//TODO Pasar calculos de la posicion de la flecha al JS 
 	position: absolute;
 	max-height: $default-dialog-maxheight;
 	max-width: $default-dialog-maxwidth;
@@ -119,7 +120,7 @@ div#{$isPopover} {
 }
 
 
-//TODO Pasar calculos de la posicion de la fecha al JS 
+
 
 
 
