@@ -41,6 +41,52 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
 
 
   /**
+   * Initializes the Navigation listeners.
+   *
+   * @method setup
+   *
+   */
+  var setup = function() {
+    window.onpopstate = function(event){
+      if (!_prevent_hash_change) {
+        console.info('*************onpopstate');
+        console.info(event.state);
+        console.info(document.location.hash);
+      }
+    }
+    window.onhashchange = function(event){
+      if (!_prevent_hash_change) {
+        console.info('*************onhashchange');
+        console.info(event);
+        console.info(document.location.hash);
+      }
+      _prevent_hash_change = false;
+
+     /* if (!_prevent_hash_change) {
+        var to_main = /#main/.test(document.location.hash);
+        var from_main = /#main/.test(event.oldURL);
+        var to_aside = /#aside/.test(document.location.hash);
+        var from_aside = /#aside/.test(event.oldURL);
+
+        if (to_main && from_main) {
+          coolstrap.Navigation.back()
+        }
+        if (to_aside && from_aside) {
+          console.info(document.location.hash.match(/#aside()/))
+          console.info('back in ASIDE'); //TODO: back in ASIDE
+        }
+        if (to_main && from_aside) {
+          console.info('HIDE aside');  //TODO: HIDE in ASIDE
+        }
+
+      }
+      _prevent_hash_change = false;*/
+    } 
+  };
+
+
+
+  /**
   * Create a new element to the browsing history based on the current section id.
   *
   * @method add
@@ -92,7 +138,7 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
       _replaceState(section_id, container_id, 'section');
       _containerStackLevel(container_id).size = 1;
     } else {
-      history.back();  
+      _back();  
     }
   };
 
@@ -108,9 +154,9 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
     stack.length -= 1;
     if (container_id){
       if (_containerStackLevel(container_id).size <= 0) {
-        history.back();          
+        _back();          
       } else {
-        history.go(-1 * _containerStackLevel(container_id).size);
+        _go(-1 * _containerStackLevel(container_id).size);
       }
       _containerStackLevel(container_id).size = 0;
     }
@@ -128,6 +174,7 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
   }
  
 
+
   /**
   * Use pushState if is possible
   *
@@ -139,68 +186,21 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
       prefix = '#' + container_id + '/';
     history.pushState({state:stackLength(container_id), id:section_id, type: type}, section_id, prefix + section_id.replace('#',''));
   }
-
-  /**
-  * Use PushState if is possible
-  *
-  * @method pushState
-  */
   var _replaceState = function(section_id, container_id, type) {
     var prefix = '#main/';
     if (container_id)
       prefix = '#' + container_id + '/';
     history.replaceState({state:stackLength(container_id), id:section_id, type: type}, section_id, prefix + section_id.replace('#',''));
   }
-
-  /**
-  * history back 
-  *
-  * @method historyBack
-  */
-  var historyBack = function(container_id) {
-    _prevent_hash_change = true;
+  var _back = function(){
+    _prevent_hash_change = true; 
     history.back();
   }
+  var _go = function(position) {
+    _prevent_hash_change = true;
+    history.go(position)
+  }
 
-  var setup = function() {
-    window.onpopstate = function(event){
-      /*
-      console.info('*************onpopstate');
-      console.info(event.state);
-      console.info(document.location.hash);
-      console.info(history.length);
-      console.info('*************');
-      */
-    }
-    window.onhashchange = function(event){
-      /*
-      console.info('*************onhashchange');
-      console.info(event);
-      console.info(document.location.hash);
-      console.info(history.length);
-      console.info('*************');
-      */
-     /* if (!_prevent_hash_change) {
-        var to_main = /#main/.test(document.location.hash);
-        var from_main = /#main/.test(event.oldURL);
-        var to_aside = /#aside/.test(document.location.hash);
-        var from_aside = /#aside/.test(event.oldURL);
-
-        if (to_main && from_main) {
-          coolstrap.Navigation.back()
-        }
-        if (to_aside && from_aside) {
-          console.info(document.location.hash.match(/#aside()/))
-          console.info('back in ASIDE'); //TODO: back in ASIDE
-        }
-        if (to_main && from_aside) {
-          console.info('HIDE aside');  //TODO: HIDE in ASIDE
-        }
-
-      }
-      _prevent_hash_change = false;*/
-    } 
-  };
  
 
   return {
@@ -208,7 +208,6 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
     current: current,
     removeLast: removeLast,
     stackLength: stackLength,
-    historyBack: historyBack,
     clear: clear,
     setup: setup
   };
