@@ -49,7 +49,6 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
         link.addClass(CLASS.CURRENT);
     }
     if (_hideAsideIfNecesary(aside_id, link)) {
-      console.info('yeah one aside need hide')
       setTimeout(function(){
         _selectTarget(link);
       }, TRANSITION.DURATION);
@@ -90,7 +89,6 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     if (id === '#' + TARGET.BACK) {  
       coolstrap.Navigation.back(container_id);
     } else {
-      console.log('now navigate to section ' + id);
       coolstrap.Navigation.section(id);
     }
   };
@@ -114,7 +112,6 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     
     if (hide_aside) {
       setTimeout(function(){
-        console.info('yeah another aside need hide')
         coolstrap.Navigation.aside(section_id, aside_id);
       }, TRANSITION.DURATION);
     } else {
@@ -127,7 +124,6 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     var parent = coolstrap.dom(target_id).parents(ELEMENT.ASIDE).first();
     if (target_id == aside_id) return;
     if (!parent || '#'+ parent.attr(ATTRIBUTE.ID) != aside_id && target_id != '#' + TARGET.BACK) {
-      console.log('Neccesary hide aside ' + aside_id);
       coolstrap.View.Aside.hide(aside_id); 
       return true;
     }

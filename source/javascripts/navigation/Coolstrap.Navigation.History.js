@@ -60,7 +60,6 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
     if (replace_state) {
       _replaceState(section_id, container_id, 'section');
     } else {
-      console.log('pushstate ' + section_id);
       _pushState(section_id, container_id, 'section');
     }
   };
@@ -104,13 +103,10 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
   * @method clear
   */
   var clear = function(container_id) {
-    console.log(container_id);
     if (container_id) container_id = container_id.replace('#','');
     var stack = !container_id ? _mainStack() :  _containerStack(container_id);
     stack.length -= 1;
-
     if (container_id){
-      console.info(_containerStackLevel(container_id).size);
       if (_containerStackLevel(container_id).size <= 0) {
         history.back();          
       } else {
