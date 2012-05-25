@@ -8,7 +8,7 @@
 */
 
 COOL.Navigation.History = (function(coolstrap, undefined) {
-  
+
   var TARGET = coolstrap.Constants.TARGET;
   var DEFAULT_TARGET = TARGET.MAIN;
   var _prevent_hash_change = false;
@@ -60,6 +60,7 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
     if (replace_state) {
       _replaceState(section_id, container_id, 'section');
     } else {
+      console.log('pushstate ' + section_id);
       _pushState(section_id, container_id, 'section');
     }
   };
@@ -89,7 +90,6 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
     _containerStackLevel(container_id).size -= 1;
     if (container_id && _containerStackLevel(container_id).size == 0) {
       var section_id = current(container_id)
-      console.log('replace state')
       _replaceState(section_id, container_id, 'section');
       _containerStackLevel(container_id).size = 1;
     } else {
@@ -112,11 +112,9 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
     if (container_id){
       console.info(_containerStackLevel(container_id).size);
       if (_containerStackLevel(container_id).size <= 0) {
-        console.info('BACK');
         history.back();          
       } else {
         history.go(-1 * _containerStackLevel(container_id).size);
-        console.info('GO ' + -1 * _containerStackLevel(container_id).size);
       }
       _containerStackLevel(container_id).size = 0;
     }

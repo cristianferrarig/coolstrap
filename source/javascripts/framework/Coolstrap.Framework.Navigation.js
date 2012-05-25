@@ -13,8 +13,9 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
   var CLASS = coolstrap.Constants.CLASS;
   var ELEMENT = coolstrap.Constants.ELEMENT;
   var TARGET = coolstrap.Constants.TARGET;
+  var TRANSITION = coolstrap.Constants.TRANSITION;
   var SELECTORS = {
-      HREF_TARGET: 'a[href][data-target]',
+      HREF_TARGET: '[role="main"] a[href][data-target]',
       HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]'
   };
   var _console = coolstrap.Console; 
@@ -47,15 +48,22 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
         coolstrap.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
         link.addClass(CLASS.CURRENT);
     }
-    _hideAsideIfNecesary(aside_id, link);
+    if (_hideAsideIfNecesary(aside_id, link)) {
+      console.info('yeah one aside need hide')
+      setTimeout(function(){
+        _selectTarget(link);
+      }, TRANSITION.DURATION);
+    } else {
+      _selectTarget(link);
+    }
+    
+    event.preventDefault();
   };
 
   var _loadTarget = function(event) {
     var link = coolstrap.dom(this);
     _selectTarget(link);
-
     event.preventDefault();
-     
   };
 
   var _selectTarget = function(link) {
@@ -82,6 +90,7 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     if (id === '#' + TARGET.BACK) {  
       coolstrap.Navigation.back(container_id);
     } else {
+      console.log('now navigate to section ' + id);
       coolstrap.Navigation.section(id);
     }
   };
@@ -98,18 +107,31 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     var aside_id = element.attr(ATTRIBUTE.HREF);
     var target = ELEMENT.ASIDE + aside_id;  
     var current_aside = coolstrap.dom(ELEMENT.ASIDE + '.' + CLASS.CURRENT).first();
+    var hide_aside = false;
     if (current_aside) {
-     // _hideAsideIfNecesary('#' + current_aside.attr(ATTRIBUTE.ID), element);      
+      hide_aside = _hideAsideIfNecesary('#' + current_aside.attr(ATTRIBUTE.ID), element);      
     }
-    coolstrap.Navigation.aside(section_id, aside_id);
+    
+    if (hide_aside) {
+      setTimeout(function(){
+        console.info('yeah another aside need hide')
+        coolstrap.Navigation.aside(section_id, aside_id);
+      }, TRANSITION.DURATION);
+    } else {
+      coolstrap.Navigation.aside(section_id, aside_id);  
+    }
   };
 
   var _hideAsideIfNecesary = function(aside_id, link) {
     var target_id = link.attr(ATTRIBUTE.HREF);
     var parent = coolstrap.dom(target_id).parents(ELEMENT.ASIDE).first();
+    if (target_id == aside_id) return;
     if (!parent || '#'+ parent.attr(ATTRIBUTE.ID) != aside_id && target_id != '#' + TARGET.BACK) {
+      console.log('Neccesary hide aside ' + aside_id);
       coolstrap.View.Aside.hide(aside_id); 
+      return true;
     }
+    return false;
   };
 
   return {
