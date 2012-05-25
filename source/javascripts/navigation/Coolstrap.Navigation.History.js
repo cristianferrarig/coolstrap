@@ -8,6 +8,7 @@
 */
 
 COOL.Navigation.History = (function(coolstrap, undefined) {
+  
   var TARGET = coolstrap.Constants.TARGET;
   var DEFAULT_TARGET = TARGET.MAIN;
   var _prevent_hash_change = false;
@@ -85,16 +86,14 @@ COOL.Navigation.History = (function(coolstrap, undefined) {
   var removeLast = function(container_id) {
     var stack = !container_id ? _mainStack() :  _containerStack(container_id);
     stack.length -= 1;
-    //if (container_id && _containerStackLevel(container_id).size > 1) {
-      _containerStackLevel(container_id).size -= 1;
-    //}
+    _containerStackLevel(container_id).size -= 1;
     if (container_id && _containerStackLevel(container_id).size == 0) {
       var section_id = current(container_id)
       console.log('replace state')
       _replaceState(section_id, container_id, 'section');
       _containerStackLevel(container_id).size = 1;
     } else {
-      history.back(); //TODO: back or replace  
+      history.back();  
     }
   };
 
