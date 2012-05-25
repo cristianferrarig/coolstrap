@@ -81,7 +81,7 @@ COOL.Core = (function(coolstrap, undefined) {
    *
    */
   var toType = function(obj) {
-      return Object.prototype.toString.call(obj).match(/\s([a-z|A-Z]+)/)[1].toLowerCase();
+    return Object.prototype.toString.call(obj).match(/\s([a-z|A-Z]+)/)[1].toLowerCase();
   };
 
 
@@ -206,15 +206,32 @@ COOL.Core = (function(coolstrap, undefined) {
    * @return {string} Url parsed
    */
   var parseUrl = function(href) {
-      var href_hashtag = href.lastIndexOf(HASHTAG_CHARACTER);
-      if (href_hashtag > 0) {
-          href = href.substring(href_hashtag);
-      } else if (href_hashtag === -1) {
-          href = HASHTAG_CHARACTER + href ;
-      }
-      return href;
+    var href_hashtag = href.lastIndexOf(HASHTAG_CHARACTER);
+    if (href_hashtag > 0) {
+        href = href.substring(href_hashtag);
+    } else if (href_hashtag === -1) {
+        href = HASHTAG_CHARACTER + href ;
+    }
+    return href;
   };
 
+  /**
+   * Returns a correct URL without hashtag character
+   *
+   * @method cleanUrl
+   *
+   * @param {string} Url
+   * @return {string} Url parsed
+   */
+  var cleanUrl = function(href) {
+    var href_hashtag = href.lastIndexOf(HASHTAG_CHARACTER);
+    if (href_hashtag >= 0) {
+        href = href.substring(href_hashtag + 1);
+    } 
+    return href;
+  };
+
+  
   /**
    * Returns a Object in a list by a property value
    *
@@ -251,6 +268,7 @@ COOL.Core = (function(coolstrap, undefined) {
       environment: environment,
       orderByProperty: orderByProperty,
       parseUrl: parseUrl,
+      cleanUrl: cleanUrl,
       findByProperty: findByProperty
   };
 

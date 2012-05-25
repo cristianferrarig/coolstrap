@@ -112,10 +112,10 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     
     if (hide_aside) {
       setTimeout(function(){
-        coolstrap.Navigation.aside(section_id, aside_id);
+        coolstrap.Navigation.aside(aside_id);
       }, TRANSITION.DURATION);
     } else {
-      coolstrap.Navigation.aside(section_id, aside_id);  
+      coolstrap.Navigation.aside(aside_id);  
     }
   };
 

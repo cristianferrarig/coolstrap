@@ -7,47 +7,63 @@
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Navigation = (function(coolstrap, undefined) {
+COOL.Navigation = (function(coolstrap) {
 
   var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
   var CLASS = coolstrap.Constants.CLASS;
   var ELEMENT = coolstrap.Constants.ELEMENT;
-  var ERROR = coolstrap.Constants.ERROR;
   var TRIGGER = coolstrap.Constants.TRIGGER;
   var TRANSITION = coolstrap.Constants.TRANSITION;
-  var _console = coolstrap.Console; 
+  var _console = coolstrap.Console;
+
+  var _existsTarget = function(target) {
+    var exists = false;
+    if (coolstrap.dom(target).length > 0) {
+      exists = true;
+    } else {
+      _console.warn('Hey! Target doesnt exists: ' + target);
+    }
+    return exists;
+  };
+
+  var _getHistoryLength = function(container_id) {
+    return coolstrap.Navigation.History.size(container_id);
+  };
+
+  var _getHistoryCurrent = function(container_id) {
+    return coolstrap.Navigation.History.current(container_id);
+  };
 
   /**
    * Navigate to a <section>.
    *
    * @method section
    *
-   * @param {string} Id of the <section>
+   * @param {string} Id of the. <section>
    */
   var section = function(section_id) {
-    var section_id = coolstrap.Core.parseUrl(section_id);
-    var container_id = coolstrap.dom(section_id).parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
+    section_id = coolstrap.Core.parseUrl(section_id);
+    var container_id = coolstrap.dom(section_id)
+      .parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
     var current = _getHistoryCurrent(container_id);
     var target = ELEMENT.SECTION + section_id;
-    if(current != section_id) {
+    if (current !== section_id) {
       if (_existsTarget(target)) {
         coolstrap.dom(current).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
-        coolstrap.dom(target).addClass(CLASS.CURRENT).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
-        setTimeout(function(){
-          coolstrap.dom(current).removeClass(CLASS.CURRENT)
-        }, TRANSITION.DURATION)
+        coolstrap.dom(target).addClass(CLASS.CURRENT).addClass(CLASS.SHOW)
+          .trigger(TRIGGER.LOAD);
+        setTimeout(function() {
+          coolstrap.dom(current).removeClass(CLASS.CURRENT);
+        }, TRANSITION.DURATION);
         coolstrap.Navigation.History.add({
-          section_id: section_id, 
-          container_id: container_id
+          section_id: section_id, container_id: container_id
         });
-      }    
+      }
     } else {
       _console.warn('WTF! you are here!');
     }
-    
   };
 
-  
   /**
    * Displays the <article> in a particular <section>.
    *
@@ -57,14 +73,15 @@ COOL.Navigation = (function(coolstrap, undefined) {
    * @param {string} <article> Id
    */
   var article = function(section_id, article_id) {
-    var section_id = coolstrap.Core.parseUrl(section_id);
-    var article_id = coolstrap.Core.parseUrl(article_id);
-    var target = ELEMENT.SECTION + section_id + ' ' + ELEMENT.ARTICLE + article_id;
+    section_id = coolstrap.Core.parseUrl(section_id);
+    article_id = coolstrap.Core.parseUrl(article_id);
+    var target = ELEMENT.SECTION + section_id + ' ' +
+                  ELEMENT.ARTICLE + article_id;
 
     if (_existsTarget(target)) {
       coolstrap.dom(target).trigger(TRIGGER.LOAD);
       coolstrap.View.Article.show(section_id, article_id);
-    }  
+    }
   };
 
   /**
@@ -72,11 +89,11 @@ COOL.Navigation = (function(coolstrap, undefined) {
    *
    * @method aside
    *
-   * @param {string} <section> Id Not used yet
+   * @param {string} <section> Id Not used yet.
    * @param {string} <aside> Id
    */
-  var aside = function(section_id, aside_id) {
-    var aside_id = coolstrap.Core.parseUrl(aside_id);
+  var aside = function(aside_id) {
+    aside_id = coolstrap.Core.parseUrl(aside_id);
     var target = ELEMENT.ASIDE + aside_id;
 
     if (_existsTarget(target)) {
@@ -88,7 +105,6 @@ COOL.Navigation = (function(coolstrap, undefined) {
       }
     }
   };
-
 
   /**
    * Displays the <dialog>.
@@ -102,48 +118,31 @@ COOL.Navigation = (function(coolstrap, undefined) {
     if (_existsTarget(target)) {
       coolstrap.dom(target).trigger(TRIGGER.LOAD);
       coolstrap.View.Dialog.show(dialog_id);
-    }  
+    }
   };
-
-
 
   /**
    * Return to previous section.
    *
    * @method back
    */
-  var back = function(container_id) { 
+  var back = function(container_id) {
     if (_getHistoryLength(container_id) > 1) {
       var current_section = ELEMENT.SECTION + _getHistoryCurrent(container_id);
-      coolstrap.dom(current_section).removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD);
-      setTimeout(function(){
-        coolstrap.dom(current_section).removeClass(CLASS.CURRENT)
-      }, TRANSITION.DURATION)
+      coolstrap.dom(current_section).
+        removeClass(CLASS.SHOW)
+        .trigger(TRIGGER.UNLOAD);
+      setTimeout(function() {
+        coolstrap.dom(current_section).removeClass(CLASS.CURRENT);
+      }, TRANSITION.DURATION);
       coolstrap.Navigation.History.removeLast(container_id);
-      coolstrap.dom(_getHistoryCurrent(container_id)).addClass(CLASS.CURRENT).removeClass(CLASS.HIDE).addClass(CLASS.SHOW);      
+      coolstrap.dom(_getHistoryCurrent(container_id))
+        .addClass(CLASS.CURRENT)
+        .removeClass(CLASS.HIDE)
+        .addClass(CLASS.SHOW);
     } else {
       _console.warn('Hey! Nothing back');
     }
-  };
-
-  var _existsTarget = function(target) {
-    var exists = false;
-
-    if (coolstrap.dom(target).length > 0) {
-      exists = true;
-    } else {
-      _console.warn('Hey! Target doesnt exists: ' + target);
-    }
-
-    return exists;
-  };
-
-  var _getHistoryLength = function(container_id){
-    return coolstrap.Navigation.History.stackLength(container_id);
-  };
-
-  var _getHistoryCurrent = function(container_id) {
-    return coolstrap.Navigation.History.current(container_id);
   };
 
   return {
@@ -154,4 +153,4 @@ COOL.Navigation = (function(coolstrap, undefined) {
     back: back
   };
 
-})(COOL);
+}(COOL));
