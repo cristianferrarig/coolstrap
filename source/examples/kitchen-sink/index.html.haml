@@ -35,7 +35,35 @@
             %li
               %a{"href" => "#configuration", "data-target" => "aside"}
                 .content
-                  .title Configuration Aside                              
+                  .title Configuration Aside  
+            %li.list-divider Components
+            %li
+              %a{"href" => "#home2", "data-target" => "section"}
+                .content
+                  .title Listview
+                .aside
+                  %i 
+            %li
+              %a{"href" => "#home3", "data-target" => "section"}
+                .content
+                  .title Tabbar
+                .aside
+                  %i    
+            %li
+              %a{"href" => "#home4", "data-target" => "section"}
+                .content
+                  .title Toolbar 
+                .aside
+                  %i      
+            %li
+              %a{"href" => "#", "data-target" => "section"}
+                .content
+                  .title Dialogs
+            %li
+              %a{"href" => "#", "data-target" => "section"}
+                .content
+                  .title Forms
+                                                             
       %article.scrollable#ipsum
         %ul{"data-type" => "listview"}
           %li
@@ -46,12 +74,40 @@
       %header
         %a{"href" => "#back", "data-target" => "section"} Volver
         %hgroup
-          %h1 Coolstrap Sample
+          %h1 COOLSTRAP
+          %h2 Listview Demo
         %a{"href" => "#colaborators", "data-target" => "aside"}
           %i
       %article#demo2
         .scroller
-          %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla  . Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. 
+          = partial "examples/components/listview/simplelist" 
+          = partial "examples/components/listview/complexlist" 
+          = partial "examples/components/listview/complexlistavatar" 
+
+    %section#home3
+      %header
+        %a{"href" => "#back", "data-target" => "section"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Tabbar Demo
+        %a{"href" => "#colaborators", "data-target" => "aside"}
+          %i
+      %article#demo2
+        .scroller 
+          = partial "examples/components/tabbar"
+          
+    %section#home4
+      %header
+        %a{"href" => "#back", "data-target" => "section"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Toolbar Demo
+        %a{"href" => "#colaborators", "data-target" => "aside"}
+          %i
+      %article#demo2
+        .scroller
+          = partial "examples/components/toolbar"
+
 
   %aside.onLeft#options
     %section#section_options

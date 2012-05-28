@@ -20,7 +20,7 @@ article {
 }
 
 
-//Ions set
+//Icons set
 header, nav, footer {
   a:not(.onlyIcon) { @extend .interfaceButton; }
 }
@@ -60,7 +60,7 @@ header, nav, footer {
     border: 4px solid darken($basecolor,30);
   }
 }
-
+   
 header, nav {
   background-color: darken($basecolor,05);
   border-bottom: 1px solid darken($basecolor,15);
