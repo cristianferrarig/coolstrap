@@ -28,13 +28,14 @@ COOL.Framework.Dialogs = (function(coolstrap, undefined) {
     }
   };
 
+
   /**
    * Setup scroller elements
    *
    * @method _initScroller
    */
   var _initDialog = function(element) {
-    coolstrap.View.Scroll.init(element);
+    
   };
 
   return {

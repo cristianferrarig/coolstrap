@@ -33,8 +33,15 @@
               %a{"href" => "#myaction3", "data-target" => "dialog"}
                 even more, open dialog type [action]
             %li
-              %a{"href" => "#mypopover", "data-target" => "dialog"}
-                Open dialog type popover
+              .content
+                %a{"href" => "#mypopover", "data-target" => "dialog", "data-placement" => "onbottom"}
+                  Open dialog type popover on bottom
+                %br
+                %a{"href" => "#mypopover", "data-target" => "dialog", "data-placement" => "ontop"}
+                  Open dialog type popover on top
+                %br
+                %a{"href" => "#mypopover", "data-target" => "dialog", "data-placement" => "onright"}
+                  Open dialog type popover on right
 
     %div#mymodal{:role => "dialog", "data-type" => "modal", "data-transition" => "slideup"}
       %a.close{"href" => "#mymodal", "data-target" => "close"}

@@ -20,10 +20,6 @@ COOL.Constants = {
     DIV: 'div'
   },
 
-  COMMAND: {
-    CLOSE_DIALOG: 'close'
-  },
-
   TARGET: {
     CONTAINER: 'container',
     MAIN: 'main',
@@ -51,7 +47,9 @@ COOL.Constants = {
     TOP: 'ontop',
     BOTTOM: 'onbottom',
     HORIZONTAL: 'horizontal',
-    SCROLLABLE: 'scrollable'
+    SCROLLABLE: 'scrollable',
+    FADE_IN: 'fadeIn',
+    NONE: ''
   },
 
   ATTRIBUTE: {
@@ -82,6 +80,17 @@ COOL.Constants = {
     WARN: 2,
     ERROR: 3,
     NONE: 4
+  },
+
+  DIALOG: {
+    MODAL: 'modal',
+    ALERT: 'alert',
+    ACTION: 'action',
+    POPOVER: 'popover',
+  },
+
+  COMMAND: {
+    CLOSE_DIALOG: 'close'
   },
 
   ERROR: {

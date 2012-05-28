@@ -114,15 +114,17 @@ COOL.Navigation = (function(coolstrap) {
    *
    * @param {string} <dialog> Id
    */
-  var dialog = function(dialog_id, dialog_command) {
+  var dialog = function(dialog_id, options) {
     var target = ELEMENT.DIALOG + dialog_id;
+    var dialog_command;
+    if (typeof options === 'string') { dialog_command = options; }
     if (_existsTarget(target)) {
       if (dialog_command && dialog_command === COMMAND.CLOSE_DIALOG) {
         coolstrap.dom(target).trigger(TRIGGER.UNLOAD);
         coolstrap.View.Dialog.close(dialog_id);
       } else {
         coolstrap.dom(target).trigger(TRIGGER.LOAD);
-        coolstrap.View.Dialog.show(dialog_id);
+        coolstrap.View.Dialog.show(dialog_id, options);
       }
     }
   };
