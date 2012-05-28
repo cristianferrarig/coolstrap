@@ -88,7 +88,7 @@ COOL.Constants = {
     ACTION: 'action',
     POPOVER: 'popover',
   },
-
+  
   COMMAND: {
     CLOSE_DIALOG: 'close'
   },
