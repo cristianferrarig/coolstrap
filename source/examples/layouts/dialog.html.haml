@@ -16,31 +16,53 @@
       %article#dialogs
         .scroller
           %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+          %ul{"data-type" => "listview"}
+            %li
+              %a{"href" => "#mymodal", "data-target" => "dialog"}
+                Open dialog type [modal]
+            %li
+              %a{"href" => "#myalert", "data-target" => "dialog"}
+                Open dialog type [alert]
+            %li
+              %a{"href" => "#myaction", "data-target" => "dialog"}
+                Open dialog type [action]
+            %li
+              %a{"href" => "#myaction2", "data-target" => "dialog"}
+                Open another dialog type [action]
+            %li
+              %a{"href" => "#myaction3", "data-target" => "dialog"}
+                even more, open dialog type [action]
+            %li
+              %a{"href" => "#mypopover", "data-target" => "dialog"}
+                Open dialog type popover
 
     %div#mymodal{:role => "dialog", "data-type" => "modal", "data-transition" => "slideup"}
-      .close x
+      %a.close{"href" => "#mymodal", "data-target" => "close"}
+        x
       %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
-      
 
-    %div{:role => "dialog", "data-type" => "alert"}
+    %div#myalert{:role => "dialog", "data-type" => "alert"}
       %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
       %input{:type => "search", :name => "txt"}
       .button-group
         %a Ullamcorper
-        %a Tristique
+        %a.close{"href" => "#myalert", "data-target" => "close"}
+          Close
 
-    %div{:role => "dialog", "data-type" => "action"}
+    %div#myaction{:role => "dialog", "data-type" => "action"}
       %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
       .button-group
         %a Ullamcorper Ridiculus
-        %a Tristique Lorem
+        %a.close{"href" => "#myaction", "data-target" => "close"}
+          Close
 
-    %div{:role => "dialog", "data-type" => "action"}
+    %div#myaction2{:role => "dialog", "data-type" => "action"}
       %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
       %a Ullamcorper Ridiculus
-      %a Tristique Lorem
+      %a.close{"href" => "#myaction2", "data-target" => "close"}
+        Close
 
-    %div{:role => "dialog", "data-type" => "action"}
+    %div#myaction3{:role => "dialog", "data-type" => "action"}
       %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
       .button-group
         %a Ullamcorper 
@@ -49,11 +71,16 @@
       .button-group.alignVertical
         %a Ullamcorper Ridiculus
         %a Tristique Lorem
-    %div{:role => "dialog", "data-type" => "popover"}
+        %a.close{"href" => "#myaction3", "data-target" => "close"}
+          Close
+    %div#mypopover{:role => "dialog", "data-type" => "popover"}
       %ul.inset{"data-type" => "listview"}
         %li Donec id elit non 
         %li Donec id el
         %li Donec
+        %li 
+          %a.close{"href" => "#mypopover", "data-target" => "close"}
+            Close
  
 
 = content_for :application_js do  

@@ -27,7 +27,12 @@ COOL.Constants = {
   TARGET: {
     CONTAINER: 'container',
     MAIN: 'main',
-    BACK: 'back'
+    SECTION: 'section',
+    ARTICLE: 'article',
+    ASIDE: 'aside',
+    BACK: 'back',
+    DIALOG: 'dialog',
+    CLOSE: 'close'
   },
 
   TRANSITION: {
