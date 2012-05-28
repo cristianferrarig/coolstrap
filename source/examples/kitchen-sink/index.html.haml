@@ -1,68 +1,59 @@
 = content_for :title do
   Coolstrapp Kitchen-sink
+  
 = content_for :application_styles do 
   = stylesheet_link_tag "themes/defaultcolor"
 = content_for :principal do
+  //TODO: @abraham Revisar la posibilidad de eliminar el History en la navegacion
   %div.a{"role" => "main"}
     %section#home
       %header
         %hgroup
           %h1 Coolstrap
           %h2 Kitchen-sink
-      %article#lorem
-        .scrollable
-          %p Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla
-          %ul{"data-type" => "listview"}
-            %li
-              %a{"href" => "#home2", "data-target" => "section"}
-                .content
-                  .title go to home2 section
-                .aside
-                  %i
-            %li
-              %a{"href" => "#ipsum", "data-target" => "article", "title" => "ipsum"}
-                .content
-                  .title change to ipsum article
-            
-            %li
-              %a{"href" => "#options", "data-target" => "aside"}
-                .content
-                  .title Options Aside
-            %li
-              %a{"href" => "#notifications", "data-target" => "aside"}
-                .content
-                  .title Notifications Aside
-            %li
-              %a{"href" => "#configuration", "data-target" => "aside"}
-                .content
-                  .title Configuration Aside  
-            %li.list-divider Components
-            %li
-              %a{"href" => "#home2", "data-target" => "section"}
-                .content
-                  .title Listview
-                .aside
-                  %i 
-            %li
-              %a{"href" => "#home3", "data-target" => "section"}
-                .content
-                  .title Tabbar
-                .aside
-                  %i    
-            %li
-              %a{"href" => "#home4", "data-target" => "section"}
-                .content
-                  .title Toolbar 
-                .aside
-                  %i      
-            %li
-              %a{"href" => "#", "data-target" => "section"}
-                .content
-                  .title Dialogs
-            %li
-              %a{"href" => "#", "data-target" => "section"}
-                .content
-                  .title Forms
+      %article#lorem.scrollable
+        
+        %ul{"data-type" => "listview"}
+           
+          %li.list-divider Components
+          %li
+            %a{"href" => "#simplelist", "data-target" => "section"}
+              .content
+                .title Listview - Simple List
+              .aside
+                %i 
+          %li
+            %a{"href" => "#complexlist1", "data-target" => "section"}
+              .content
+                .title Listview - Complex List
+              .aside
+                %i 
+          %li
+            %a{"href" => "#complexlist2", "data-target" => "section"}
+              .content
+                .title Listview - Complex List With Avatar
+              .aside
+                %i             
+          %li
+            %a{"href" => "#home3", "data-target" => "section"}
+              .content
+                .title Tabbars
+              .aside
+                %i    
+          %li
+            %a{"href" => "#home4", "data-target" => "section"}
+              .content
+                .title Toolbars
+              .aside
+                %i      
+          %li
+            %a{"href" => "#", "data-target" => "section"}
+              .content
+                .title Dialogs
+          %li
+            %a{"href" => "#", "data-target" => "section"}
+              .content
+                .title Forms
                                                              
       %article.scrollable#ipsum
         %ul{"data-type" => "listview"}
@@ -70,43 +61,59 @@
             %a{"href" => "#lorem", "data-target" => "article", "title" => "Coolstrap"}
               .content
                 .title change to lorem article
-    %section#home2
+    
+    %section#simplelist
       %header
-        %a{"href" => "#back", "data-target" => "section"} Volver
+        %a{"href" => "#", "data-target" => "back"} Volver
         %hgroup
           %h1 COOLSTRAP
-          %h2 Listview Demo
-        %a{"href" => "#colaborators", "data-target" => "aside"}
-          %i
-      %article#demo2
-        .scroller
-          = partial "examples/components/listview/simplelist" 
-          = partial "examples/components/listview/complexlist" 
-          = partial "examples/components/listview/complexlistavatar" 
+          %h2 Simple List
+       
+      %article.scrollable
+        = partial "examples/components/listview/simplelist" 
+    
+    %section#complexlist1
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Complex List
+       
+      %article.scrollable
+        = partial "examples/components/listview/complexlist" 
+
+    %section#complexlist2
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Complex List With Avatar
+        
+      %article.scrollable
+        = partial "examples/components/listview/complexlistavatar"
+
 
     %section#home3
       %header
-        %a{"href" => "#back", "data-target" => "section"} Volver
+        %a{"href" => "#", "data-target" => "back"} Volver
         %hgroup
           %h1 COOLSTRAP
           %h2 Tabbar Demo
         %a{"href" => "#colaborators", "data-target" => "aside"}
           %i
-      %article#demo2
-        .scroller 
-          = partial "examples/components/tabbar"
+      %article.scrollable
+        = partial "examples/components/tabbar"
           
     %section#home4
       %header
-        %a{"href" => "#back", "data-target" => "section"} Volver
+        %a{"href" => "#", "data-target" => "back"} Volver
         %hgroup
           %h1 COOLSTRAP
           %h2 Toolbar Demo
         %a{"href" => "#colaborators", "data-target" => "aside"}
           %i
-      %article#demo2
-        .scroller
-          = partial "examples/components/toolbar"
+      %article.scrollable
+        = partial "examples/components/toolbar"
 
 
   %aside.onLeft#options

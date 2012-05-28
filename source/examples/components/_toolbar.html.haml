@@ -1,4 +1,7 @@
 
+%h1 Ancho 100%
+%p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+%h2 Buttons text and icon
 %nav{"data-type" => "toolbar"}
 	.control-group.autoWidth
 		%a
@@ -10,24 +13,58 @@
 		%a
 			%span boton 3
 			%i
-
+%h2 Buttons only text
 %nav{"data-type" => "toolbar"}
 	.control-group.autoWidth
 		%a boton 1
 		%a boton 2
 		%a boton 3
 		%a boton 4
+%h2 Buttons only icon
+%nav{"data-type" => "toolbar"}
+	.control-group.autoWidth
+		%a <i></i>
+		%a <i></i>
+		%a <i></i>
+		%a <i></i>
 
+%h1 Navs con Control Group
+%p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+%h2 Control-group only text
 %nav{"data-type" => "toolbar"}
 	.control-group
 		%a nombre 1
 		%a nombre 3
 		%a nombre 4
+%h2 Control-group only icon
+%nav{"data-type" => "toolbar"}
+	.control-group
+		%a <i></i>
+		%a <i></i>
+		%a <i></i>
+%h2 Control-group text and icon
+%nav{"data-type" => "toolbar"}
+	.control-group
+		%a
+			%i
+			%span boton 4
+		%a
+			%i
+			%span boton 4
+		%a
+			%span boton 4
+			%i		
 
+%h1 Navs con Searchbar
+%p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+%h2 Searchbar 100%
+%nav{"data-type" => "toolbar", "data-icon" => ""}
+	%input{:type => "search", :name => "txt"}
+%h2 Searchbar with icon
 %nav{"data-type" => "toolbar"}
 	%input{:type => "search", :name => "txt"}
 	%a search
-
+%h2 Searchbar with icon and button
 %nav{"data-type" => "toolbar"}
 	%a.onlyIcon <i></i>
 	%input{:type => "search", :name => "txt"}
@@ -35,27 +72,9 @@
 		%span search
 		%i
 
-%nav{"data-type" => "toolbar", "data-icon" => ""}
-	%input{:type => "search", :name => "txt"}
-
-%nav{"data-type" => "toolbar"}
-	.control-group
-		%a <i></i>
-		%a <i></i>
-		%a <i></i>
-
-%nav{"data-type" => "toolbar"}
-	.control-group
-		%a
-			%i
-			%span boton 4
-		%a
-			%i
-			%span boton 4
-		%a
-			%span boton 4
-			%i
-
+%h1 Botones fijos en los extremos 
+%p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+%h2 Two asides buttons and a control group autowidth with text
 %nav{"data-type" => "toolbar"}
 	%a back
 	.control-group.autoWidth
@@ -64,15 +83,15 @@
 		%a Alt 3
 		%a Alt 4
 	%a next
-
+%h2 Two asides icon buttons and a control group autowidth
 %nav{"data-type" => "toolbar"}
 	%a.onlyIcon <i></i>
 	.control-group.autoWidth
 		%a nombre
 		%a nombre
 		%a nombre
-	%a next
-
+	%a.onlyIcon <i></i>
+%h2 Two asides buttons and a control group autowidth
 %nav{"data-type" => "toolbar"}
 	%a next
 	.flex
@@ -83,7 +102,7 @@
 	%a next
 	.flex
 	%a next
-
+%h2 Two asides buttons and a control group autowidth
 %nav{"data-type" => "toolbar"}
 	%a
 		%i
@@ -96,7 +115,7 @@
 	%a
 		%span boton 2
 		%i
-
+%h2 Two asides buttons and a control group autowidth
 %nav{"data-type" => "toolbar"}
 	%a.onlyIcon <i></i>
 	.flex
@@ -107,7 +126,7 @@
 	%a.onlyIcon <i></i>
 	.flex
 	%a.onlyIcon <i></i>
-
+%h2 Two asides buttons and a control group autowidth
 %nav{"data-type" => "toolbar"}
 	%a back
 	%hgroup
@@ -117,7 +136,7 @@
 	.control-group
 		%a <i></i>
 		%a <i></i>
-
+%h2 Two asides buttons and a control group autowidth
 %nav{"data-type" => "toolbar"}
 	.control-group
 		%a 1
@@ -127,15 +146,14 @@
 		%h1 Rhyboo
 		%h2 The social TV
 	%a back
-	
-
+%h2 Two asides buttons and a control group autowidth
 %nav{"data-type" => "toolbar"}
 	%a back
 	%a <
 	%h1 Rhyboo
 	%a <
 	%a >
-
+%h2 Two asides buttons and a control group autowidth
 %nav{"data-type" => "toolbar"}
 	%a back
 	.content
@@ -143,7 +161,7 @@
 		.loader
 			.progress
 	%a >
-
+%h2 Two asides buttons and a control group autowidth
 %nav{"data-type" => "toolbar"}
 	%a back
 	.content
@@ -151,5 +169,3 @@
 			.progress
 	%a >
 
-
-					

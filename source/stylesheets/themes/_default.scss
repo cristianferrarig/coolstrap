@@ -10,6 +10,24 @@ article {
   background-color: rgba(255,255,255,1.0);
 } 
 
+//Text
+h1 {
+  font-size: 1.2em;
+}
+h2 {
+  font-size: 1em;
+}
+article > h1:not(.list-divider),
+article div > h1:not(.list-divider),
+article > h2:not(.list-divider),
+article div > h2:not(.list-divider) {
+  margin: 0.8em 0 0.95em 10px;
+}
+article > p,
+article div > p {
+  padding: 0 10px;
+}
+
 
 //Buttons set
 .interfaceButton {

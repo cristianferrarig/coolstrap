@@ -56,6 +56,9 @@ textarea[contenteditable] {-webkit-appearance: none;}
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
 
+// Ellipsis for texts larger than the content
+.ellipsis { @include ellipsis;}
+
 
 
 // ==|== print styles ==========================================================
