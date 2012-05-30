@@ -7,31 +7,17 @@
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Framework.Sections = (function(coolstrap, undefined) {
+COOL.Framework.Sections = (function(cool) {
 
-  var ELEMENT = coolstrap.Constants.ELEMENT;
-  var CLASS = coolstrap.Constants.CLASS;
-  var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
-  var _console = coolstrap.Console; 
-
-  /**
-   * Initializes all <section> element of the application
-   *
-   * @method setup
-   */
-  var setup = function() {
-    var sections = coolstrap.dom(ELEMENT.SECTION);
-    var asides = coolstrap.dom(ELEMENT.ASIDE);
-    _initFirstSection(sections);
-    _initAllSections(sections);
-    _initAsideArticles(asides);
-  };
-
+  var ELEMENT = cool.Constants.ELEMENT;
+  var CLASS = cool.Constants.CLASS;
+  var ATTRIBUTE = cool.Constants.ATTRIBUTE;
+  
   var _initFirstSection = function(sections) {
     var first_section = sections.first();
     var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
     first_section.addClass(CLASS.CURRENT);
-    coolstrap.Navigation.History.add({
+    cool.Navigation.History.add({
       section_id: first_section_id, 
       replace_state: true
     });
@@ -39,7 +25,7 @@ COOL.Framework.Sections = (function(coolstrap, undefined) {
 
   var _initAllSections = function(sections) {
     for (var i = 0, len = sections.length; i < len; i++) {
-      var section = coolstrap.dom(sections[i]);
+      var section = cool.dom(sections[i]);
       _initArticles(section);
     }
   };
@@ -54,9 +40,23 @@ COOL.Framework.Sections = (function(coolstrap, undefined) {
 
   var _initAsideArticles = function(asides) {
     for (var i = 0, len = asides.length; i < len; i++) {
-      var aside = coolstrap.dom(asides[i]);
+      var aside = cool.dom(asides[i]);
       _initArticles(aside);
     }
+  };
+
+
+  /**
+   * Initializes all <section> element of the application
+   *
+   * @method setup
+   */
+  var setup = function() {
+    var sections = cool.dom(ELEMENT.SECTION);
+    var asides = cool.dom(ELEMENT.ASIDE);
+    _initFirstSection(sections);
+    _initAllSections(sections);
+    _initAsideArticles(asides);
   };
 
   return {

@@ -9,11 +9,11 @@
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.View.Scroll = (function(coolstrap, undefined) {
+COOL.View.Scroll = (function(cool) {
 
-  var CLASS = coolstrap.Constants.CLASS;
-  var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
-  var ERROR = coolstrap.Constants.ERROR;
+  var CLASS = cool.Constants.CLASS;
+  var ATTRIBUTE = cool.Constants.ATTRIBUTE;
+  var ERROR = cool.Constants.ERROR;
   var EXCLUDE_ELEMENT = 'p'; 
   var DEFAULT_PROPERTIES = {
       hScroll: false,
@@ -46,7 +46,7 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
     }
     if (element.children().length > 1 || element.children().length == 0) {
       var inner_html = element.html();
-      var inner_element = coolstrap.dom('<div class="scroll_container"></div>');
+      var inner_element = cool.dom('<div class="scroll_container"></div>');
       inner_element.append(inner_html);
       element.html(inner_element);
     }  
@@ -54,7 +54,7 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
     if (scroll_id) {
       _render(scroll_id, properties);
     } else {
-      coolstrap.Console.log(ERROR.CREATE_SCROLL);
+      cool.Console.log(ERROR.CREATE_SCROLL);
     }
   };
 
@@ -135,7 +135,7 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
   var last = function(id) {
     var scroll =  SCROLLS[id];
     if (scroll) {
-      var element = coolstrap.dom('#' + id).first();
+      var element = cool.dom('#' + id).first();
       var content_width = 0;
       var content_height = 0;
 
@@ -149,7 +149,7 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
   };
 
   var _getContainer = function(id) {
-    var scroll = coolstrap.dom('#' + id);
+    var scroll = cool.dom('#' + id);
     var container = scroll.children().first();
 
     if (container.length === 0) {
@@ -166,7 +166,7 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
   };
 
   var _render = function(id, properties) {
-    var scroll = coolstrap.dom('#' + id);
+    var scroll = cool.dom('#' + id);
    
     properties = _mixProperties(scroll, properties);
     _saveScrollInCache(id, properties);
@@ -175,7 +175,7 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
 
   var _needScroll = function(scroll, properties) {
     var element = scroll[0];
-    var is_horizontal = _isHorizontal(coolstrap.dom(element));
+    var is_horizontal = _isHorizontal(cool.dom(element));
 
     if (is_horizontal) {
       return (element.clientWidth < element.scrollWidth);
@@ -198,7 +198,7 @@ COOL.View.Scroll = (function(coolstrap, undefined) {
 
     properties || (properties = {});
     properties[scroll_type] = true;
-    properties = coolstrap.Core.extend(DEFAULT_PROPERTIES, properties);
+    properties = cool.Util.Core.extend(DEFAULT_PROPERTIES, properties);
 
     return properties;
   };

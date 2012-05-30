@@ -7,63 +7,64 @@
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
-  var ATTRIBUTE = coolstrap.Constants.ATTRIBUTE;
-  var CLASS = coolstrap.Constants.CLASS;
-  var ELEMENT = coolstrap.Constants.ELEMENT;
-  var TARGET = coolstrap.Constants.TARGET;
-  var TRANSITION = coolstrap.Constants.TRANSITION;
-  var COMMAND = coolstrap.Constants.COMMAND;
+COOL.Framework.Navigation = (function(cool, window) {
+  
+  var ATTRIBUTE = cool.Constants.ATTRIBUTE;
+  var CLASS = cool.Constants.CLASS;
+  var ELEMENT = cool.Constants.ELEMENT;
+  var TARGET = cool.Constants.TARGET;
+  var TRANSITION = cool.Constants.TRANSITION;
+  var COMMAND = cool.Constants.COMMAND;
   var SELECTORS = {
       HREF_TARGET: '[role="main"] a[href][data-target]',
       HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]'
   };
-  var console = coolstrap.Console;
+  var console = cool.Console;
 
   var _goSection = function(section_id) {
-    section_id = coolstrap.Core.parseUrl(section_id);
-    coolstrap.Navigation.section(section_id);
+    section_id = cool.Util.parseUrl(section_id);
+    cool.Navigation.section(section_id);
   };
 
   var _goArticle = function(element) {
-    var section_id = coolstrap.Navigation.History.current();
+    var section_id = cool.Navigation.History.current();
     var article_id = element.attr(ATTRIBUTE.HREF);
-    coolstrap.Navigation.article(section_id, article_id);
+    cool.Navigation.article(section_id, article_id);
   };
 
   var _goDialog = function(element, close) {
     var dialog_id = element.attr(ATTRIBUTE.HREF);
-    coolstrap.Navigation.dialog(dialog_id, close || { source_element: element });
+    cool.Navigation.dialog(dialog_id, close || { source_element: element });
+  };
+
+  var _hideAsideIfNecesary = function(aside_id, link) {
+    var target_id = link.attr(ATTRIBUTE.HREF);
+    var parent = cool.dom(target_id).parents(ELEMENT.ASIDE).first();
+    if (target_id === aside_id) { return false; }
+    if (!parent || ('#' + parent.attr(ATTRIBUTE.ID) !== aside_id && target_id !== '#' + TARGET.BACK)) {
+      cool.View.Aside.hide(aside_id);
+      return true;
+    }
   };
 
   var _goAside = function(element) {
     var aside_id = element.attr(ATTRIBUTE.HREF);
-    var current_aside = coolstrap.dom(ELEMENT.ASIDE + '.' + CLASS.CURRENT).first();
+    var current_aside = cool.dom(ELEMENT.ASIDE + '.' + CLASS.CURRENT).first();
     var hide_aside = false;
     if (current_aside) {
       hide_aside = _hideAsideIfNecesary('#' + current_aside.attr(ATTRIBUTE.ID), element);
     }
     if (hide_aside) {
       setTimeout(function() {
-        coolstrap.Navigation.aside(aside_id);
+        cool.Navigation.aside(aside_id);
       }, TRANSITION.DURATION);
     } else {
-      coolstrap.Navigation.aside(aside_id);
+      cool.Navigation.aside(aside_id);
     }
   };
 
   var _goBack = function(container_id) {
-    coolstrap.Navigation.back(container_id);
-  };
-
-  var _hideAsideIfNecesary = function(aside_id, link) {
-    var target_id = link.attr(ATTRIBUTE.HREF);
-    var parent = coolstrap.dom(target_id).parents(ELEMENT.ASIDE).first();
-    if (target_id === aside_id) { return false; }
-    if (!parent || ('#' + parent.attr(ATTRIBUTE.ID) !== aside_id && target_id !== '#' + TARGET.BACK)) {
-      coolstrap.View.Aside.hide(aside_id);
-      return true;
-    }
+    cool.Navigation.back(container_id);
   };
 
   var _selectTarget = function(link) {
@@ -92,16 +93,15 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
     }
   };
 
-
   var _loadTargetFromAside = function(event) {
-    var link = coolstrap.dom(this);
+    var link = cool.dom(this);
     var aside_id = '#' + link.parents(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
     var target_type = link.data(ATTRIBUTE.TARGET);
     if (target_type === TARGET.BACK || target_type === TARGET.CLOSE) {
       _selectTarget(link);
     } else {
       if (target_type === TARGET.ARTICLE) {
-        coolstrap.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
+        cool.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
         link.addClass(CLASS.CURRENT);
       }
       if (_hideAsideIfNecesary(aside_id, link)) {
@@ -116,7 +116,7 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
   };
 
   var _loadTarget = function(event) {
-    var link = coolstrap.dom(this);
+    var link = cool.dom(this);
     _selectTarget(link);
     event.preventDefault();
   };
@@ -129,20 +129,20 @@ COOL.Framework.Navigation = (function(coolstrap, window, undefined) {
    */
   var setup = function() {
     if (typeof document.documentElement.ontouchstart !== 'undefined') {
-      coolstrap.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_loadTargetFromAside);
-      coolstrap.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
+      cool.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_loadTargetFromAside);
+      cool.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
     } else {
-      coolstrap.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).click(_loadTargetFromAside);
-      coolstrap.dom(SELECTORS.HREF_TARGET).click(_loadTarget);
+      cool.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).click(_loadTargetFromAside);
+      cool.dom(SELECTORS.HREF_TARGET).click(_loadTarget);
     }
-    if (coolstrap.Fallback.Android) {
-      coolstrap.Fallback.Android.buttons();
+    if (cool.Fallback.Android) {
+      cool.Fallback.Android.buttons();
     }
-    coolstrap.Navigation.History.setup();
+    cool.Navigation.History.setup();
   };
 
   return {
     setup: setup
   };
 
-}(COOL, window));
+})(COOL, window);

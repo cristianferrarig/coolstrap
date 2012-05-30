@@ -86,10 +86,13 @@
   / CoolStrapp Libraries (Development mode)
   = javascript_include_tag "Coolstrap"
   = javascript_include_tag "Coolstrap.App"
-  = javascript_include_tag "Coolstrap.Core"
   = javascript_include_tag "Coolstrap.Console"
   = javascript_include_tag "Coolstrap.Constants"
-  = javascript_include_tag "Coolstrap.Helper"
+  = javascript_include_tag "plugins/Coolstrap.Plugins"
+  = javascript_include_tag "util/Coolstrap.Util"
+  = javascript_include_tag "util/Coolstrap.Util.Core"
+  = javascript_include_tag "util/Coolstrap.Util.Platform"
+  = javascript_include_tag "util/Coolstrap.Util.UI"
   = javascript_include_tag "framework/Coolstrap.Framework.Sections"
   = javascript_include_tag "framework/Coolstrap.Framework.Articles"
   = javascript_include_tag "framework/Coolstrap.Framework.Navigation"
@@ -100,5 +103,6 @@
   = javascript_include_tag "view/Coolstrap.View.Scroll"
   = javascript_include_tag "view/Coolstrap.View.Dialog"
   = javascript_include_tag "fallback/Coolstrap.Fallback.Android"
+  = javascript_include_tag "fallback/Coolstrap.Fallback.iOS"
   = yield_content(:application_js)
   -#%script{:src => "https://getfirebug.com/firebug-lite-beta.js", :type => "text/javascript"}

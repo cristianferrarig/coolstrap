@@ -6,46 +6,36 @@
 * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
 */
 
-COOL.Navigation.History = (function(coolstrap, document, window) {
+COOL.Navigation.History = (function(cool, document, window) {
 
-  var TARGET = coolstrap.Constants.TARGET;
-  var prevent_hash_change = false;
-  var historyStack = {
+  var TARGET = cool.Constants.TARGET;
+  var STACK = {
     main: [],
     container: {}
   };
-  var console = coolstrap.Console;
+  var prevent_hash_change = false;
+  var console = cool.Console;
 
   var _mainStack = function() {
-    return historyStack[TARGET.MAIN];
+    return STACK[TARGET.MAIN];
   };
 
   var _containerStack = function(container_id) {
-    if (!historyStack[TARGET.CONTAINER][container_id]) {
-      historyStack[TARGET.CONTAINER][container_id] = [];
+    if (!STACK[TARGET.CONTAINER][container_id]) {
+      STACK[TARGET.CONTAINER][container_id] = [];
     }
-    return historyStack[TARGET.CONTAINER][container_id];
+    return STACK[TARGET.CONTAINER][container_id];
   };
 
   var _containerStackLevel = function(container_id) {
     if (container_id) {
-      if (!historyStack[TARGET.CONTAINER][container_id + '_level']) {
-        historyStack[TARGET.CONTAINER][container_id + '_level'] = {size: 0};
+      if (!STACK[TARGET.CONTAINER][container_id + '_level']) {
+        STACK[TARGET.CONTAINER][container_id + '_level'] = {size: 0};
       }
-      return historyStack[TARGET.CONTAINER][container_id + '_level'];
+      return STACK[TARGET.CONTAINER][container_id + '_level'];
     } else {
       return {size: 1};
     }
-  };
-
-  /**
-  * Returns lenght of history stack
-  * 
-  * @method size
-  */
-  var size = function(container_id) {
-    var stack = !container_id ? _mainStack() : _containerStack(container_id);
-    return stack.length;
   };
 
   /**
@@ -53,24 +43,22 @@ COOL.Navigation.History = (function(coolstrap, document, window) {
   *
   * @method pushState
   */
-  var _pushState = function(section_id, container_id, type) {
+  var _pushState = function(section_id, container_id) {
     var prefix = '#main/';
     if (container_id) { prefix = '#' + container_id + '/';}
     window.history.pushState({
       state: size(container_id),
-      id: section_id,
-      type: type
-    }, section_id, prefix + coolstrap.Core.cleanUrl(section_id));
+      id: section_id 
+    }, section_id, prefix + cool.Util.cleanUrl(section_id));
   };
 
-  var _replaceState = function(section_id, container_id, type) {
+  var _replaceState = function(section_id, container_id) {
     var prefix = '#main/';
     if (container_id) { prefix = '#' + container_id + '/'; }
     window.history.replaceState({
       state: size(container_id),
-      id: section_id,
-      type: type
-    }, section_id, prefix + coolstrap.Core.cleanUrl(section_id));
+      id: section_id 
+    }, section_id, prefix + cool.Util.cleanUrl(section_id));
   };
 
   var _back = function() {
@@ -98,7 +86,7 @@ COOL.Navigation.History = (function(coolstrap, document, window) {
       var to_aside = /#aside/.test(document.location.hash);
       var from_aside = /#aside/.test(event.oldURL);
       if (to_main && from_main) {
-         console.info('coolstrap.Navigation.back()');
+         console.info('cool.Navigation.back()');
       }
       if (to_aside && from_aside) {
         console.info('back in ASIDE');
@@ -137,9 +125,9 @@ COOL.Navigation.History = (function(coolstrap, document, window) {
     stack.push(section_id);
     _containerStackLevel(container_id).size += 1;
     if (replace_state) {
-      _replaceState(section_id, container_id, 'section');
+      _replaceState(section_id, container_id);
     } else {
-      _pushState(section_id, container_id, 'section');
+      _pushState(section_id, container_id);
     }
   };
 
@@ -168,14 +156,23 @@ COOL.Navigation.History = (function(coolstrap, document, window) {
     _containerStackLevel(container_id).size -= 1;
     if (container_id && _containerStackLevel(container_id).size === 0) {
       var section_id = current(container_id);
-      _replaceState(section_id, container_id, 'section');
+      _replaceState(section_id, container_id);
       _containerStackLevel(container_id).size = 1;
     } else {
       _back();
     }
   };
-
-
+ 
+  /**
+  * Returns lenght of history stack
+  * 
+  * @method size
+  */
+  var size = function(container_id) {
+    var stack = !container_id ? _mainStack() : _containerStack(container_id);
+    return stack.length;
+  };
+  
   /**
   * Removes all history on container.
   *
@@ -183,7 +180,7 @@ COOL.Navigation.History = (function(coolstrap, document, window) {
   */
   var clear = function(container_id) {
     console.info('clear' + container_id);
-    if (container_id) { container_id = coolstrap.Core.cleanUrl(container_id); }
+    if (container_id) { container_id = cool.Util.cleanUrl(container_id); }
     var stack = !container_id ? _mainStack() : _containerStack(container_id);
     stack.length -= 1;
     if (container_id) {
@@ -205,4 +202,4 @@ COOL.Navigation.History = (function(coolstrap, document, window) {
     setup: setup
   };
 
-}(COOL, document, window));
+})(COOL, document, window);

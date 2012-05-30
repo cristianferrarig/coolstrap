@@ -4,11 +4,23 @@
  * @namespace COOL.Framework
  * @class Articles
  *
-* @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
+ * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Framework.Articles = (function(coolstrap, undefined) {
-  var SCROLLABLE_CLASS = coolstrap.Constants.CLASS.SCROLLABLE;
+COOL.Framework.Articles = (function(cool) {
+  var SCROLLABLE_CLASS = cool.Constants.CLASS.SCROLLABLE;
+  
+  var _initElement = function(selector, callback) {
+    var found_elements = cool.dom(selector);
+    for (var i = 0, len = found_elements.length; i < len; i++) {
+      var element = cool.dom(found_elements[i]);
+      cool.Util.Core.execute(callback, element);
+    }
+  };
+
+  var _initScroller = function(element) {
+    cool.View.Scroll.init(element);
+  };
 
   /**
    * Setup the elements of an article
@@ -17,23 +29,6 @@ COOL.Framework.Articles = (function(coolstrap, undefined) {
    */
   var setup = function() {
     _initElement('.' + SCROLLABLE_CLASS, _initScroller);
-  };
-
-  var _initElement = function(selector, callback) {
-    var found_elements = coolstrap.dom(selector);
-    for (var i = 0, len = found_elements.length; i < len; i++) {
-      var element = coolstrap.dom(found_elements[i]);
-      coolstrap.Core.execute(callback, element);
-    }
-  };
-
-  /**
-   * Setup scroller elements
-   *
-   * @method _initScroller
-   */
-  var _initScroller = function(element) {
-    coolstrap.View.Scroll.init(element);
   };
 
   return {

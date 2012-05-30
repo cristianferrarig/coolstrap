@@ -9,35 +9,32 @@
  * 
  */
 
-COOL.App = (function(coolstrap, undefined) {
+COOL.App = (function(cool) {
 
   var default_config = {
     id: 1,
     name: 'coolstrap',
-    version: 0.9,
-    icon: '',
     log_level: -1
   }; 
 
   var _setupFramework = function(){
-    coolstrap.Framework.Sections.setup(); 
-    coolstrap.Framework.Articles.setup();  
-    coolstrap.Framework.Navigation.setup(); 
+    cool.Framework.Sections.setup(); 
+    cool.Framework.Articles.setup();  
+    cool.Framework.Navigation.setup(); 
   }; 
 
   var init = function(app_config) {
-      default_config = coolstrap.Core.extend(default_config, app_config);      
-      _setupFramework();
+    default_config = cool.Util.Core.extend(default_config, app_config);      
+    _setupFramework();
   };
 
   var get = function(property) {
-      return default_config[property];
+    return default_config[property];
   };
   
- 
   return {
-      init: init,
-      get: get 
+    init: init,
+    get: get 
   };
 
 })(COOL);

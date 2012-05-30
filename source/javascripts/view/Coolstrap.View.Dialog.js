@@ -7,21 +7,21 @@
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.View.Dialog = (function(coolstrap) {
+COOL.View.Dialog = (function(cool) {
 
-  var ELEMENT = coolstrap.Constants.ELEMENT;
-  var CLASS = coolstrap.Constants.CLASS;
-  var DIALOG = coolstrap.Constants.DIALOG;
+  var ELEMENT = cool.Constants.ELEMENT;
+  var CLASS = cool.Constants.CLASS;
+  var DIALOG = cool.Constants.DIALOG;
   var DIALOG_CARRET = {
     TOP: 'carretTop',
     LEFT: 'carretTop',
     RIGHT: 'carretRight',
     BOTTOM: 'carretTop'
   };
-  var console = coolstrap.Console;
+  var console = cool.Console;
 
   var _getPosition = function(element) {
-    return coolstrap.dom.extend({}, (element.offset()), {
+    return cool.dom.extend({}, (element.offset()), {
       width: element[0].offsetWidth,
       height: element[0].offsetHeight
     });
@@ -86,7 +86,7 @@ COOL.View.Dialog = (function(coolstrap) {
    * @method show
    */
   var show = function(dialog_id, options) {
-    var dialog = coolstrap.dom(ELEMENT.DIALOG + dialog_id);
+    var dialog = cool.dom(ELEMENT.DIALOG + dialog_id);
     var dialog_type = dialog.data('type');
     options = options || {};
     switch (dialog_type) {
@@ -112,7 +112,7 @@ COOL.View.Dialog = (function(coolstrap) {
    * @method show
    */
   var close = function(dialog_id) {
-    var dialog = coolstrap.dom(ELEMENT.DIALOG + dialog_id);
+    var dialog = cool.dom(ELEMENT.DIALOG + dialog_id);
     dialog.removeClass(CLASS.CURRENT);
   };
 
@@ -121,4 +121,4 @@ COOL.View.Dialog = (function(coolstrap) {
     close: close
   };
 
-}(COOL));
+})(COOL);
