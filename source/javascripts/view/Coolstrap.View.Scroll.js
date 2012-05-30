@@ -15,6 +15,7 @@ COOL.View.Scroll = (function(cool) {
   var ATTRIBUTE = cool.Constants.ATTRIBUTE;
   var ERROR = cool.Constants.ERROR;
   var EXCLUDE_ELEMENT = 'p'; 
+
   var DEFAULT_PROPERTIES = {
       hScroll: false,
       vScroll: false,
@@ -28,6 +29,14 @@ COOL.View.Scroll = (function(cool) {
   var SCROLLS = {}; 
   var SCROLL_TIMEFRAME = 250;
   var NOID_COUNTER = 0
+
+  var _preventEditInputs = function(e) {
+    var target = e.target;
+    while (target.nodeType != 1) target = target.parentNode;
+
+    if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA')
+      e.preventDefault();
+  };
 
   /**
    * Creates a new iScroll element.
@@ -195,11 +204,12 @@ COOL.View.Scroll = (function(cool) {
 
   var _mixProperties = function(scroll, properties) {
     var scroll_type = _isHorizontal(scroll) ? 'hScroll' : 'vScroll';
-
     properties || (properties = {});
     properties[scroll_type] = true;
     properties = cool.Util.Core.extend(DEFAULT_PROPERTIES, properties);
-
+    properties = cool.Util.Core.extend(properties, {
+      onBeforeScrollStart: _preventEditInputs
+    });
     return properties;
   };
 
