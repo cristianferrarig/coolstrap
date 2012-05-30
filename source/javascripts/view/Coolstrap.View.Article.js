@@ -48,16 +48,16 @@ COOL.View.Article = (function(coolstrap, undefined) {
   var _showContainer = function(section_id, article_id) {
     var section_articles = section_id + ' ' + ELEMENT.ARTICLE + '.' + CLASS.CURRENT;
     var current_active_article_id = '#' + coolstrap.dom(section_articles).attr(ATTRIBUTE.ID);
-    
+
     coolstrap.dom(section_articles).removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
     _fallbackAndroidInputs(current_active_article_id, false);
     coolstrap.dom(article_id).addClass(CLASS.CURRENT);
     _fallbackAndroidInputs(article_id, true);
   };
 
-  var _fallbackAndroidInputs = function(article_id, enable){
+  var _fallbackAndroidInputs = function(article_id, enable) {
     if (coolstrap.Fallback.Android) {
-      coolstrap.Fallback.Android.inputs(article_id, enable);  
+      coolstrap.Fallback.Android.inputs(article_id, enable);
     }
   };
 

@@ -6,7 +6,7 @@
 /[if IEMobile 7 ]>  <html lang="en" class="no-js iem7">
 -# Consider adding a manifest.appcache: h5bp.com/d/Offline
 -# Conditional comment for mobile ie7 blogs.msdn.com/b/iemobile/
-<!--[if (gt IEMobile 7)|!(IEMobile)|(gt IE 8)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)|(gt IE 8)|!(IE)]><!--> <html lang="en" debug="true" class="no-js"> <!--<![endif]-->
 %head
   %meta{:charset => "UTF-8"}
   %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1"}
@@ -101,3 +101,4 @@
   = javascript_include_tag "view/Coolstrap.View.Dialog"
   = javascript_include_tag "fallback/Coolstrap.Fallback.Android"
   = yield_content(:application_js)
+  -#%script{:src => "https://getfirebug.com/firebug-lite-beta.js", :type => "text/javascript"}

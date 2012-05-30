@@ -22,7 +22,7 @@ COOL.View.Dialog = (function(coolstrap) {
 
   var _getPosition = function(element) {
     return coolstrap.dom.extend({}, (element.offset()), {
-      width: element[0].offsetWidth, 
+      width: element[0].offsetWidth,
       height: element[0].offsetHeight
     });
   };
@@ -53,7 +53,7 @@ COOL.View.Dialog = (function(coolstrap) {
         dialog_pos;
 
     if (source_element) {
-      options.placement = options.placement || source_element.data('placement');
+      options.placement = options.placement || source_element.data('placement');
       options.animation = options.animation || source_element.data('animation');
     } else {
       console.warn('WTF! you must set a source_element');
@@ -84,12 +84,12 @@ COOL.View.Dialog = (function(coolstrap) {
    * Show dialog
    *
    * @method show
-   */ 
+   */
   var show = function(dialog_id, options) {
     var dialog = coolstrap.dom(ELEMENT.DIALOG + dialog_id);
     var dialog_type = dialog.data('type');
     options = options || {};
-    switch(dialog_type) {
+    switch (dialog_type) {
       case DIALOG.MODAL:
         _prepareModal(dialog, options);
         break;

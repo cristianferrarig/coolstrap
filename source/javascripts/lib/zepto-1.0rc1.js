@@ -885,10 +885,12 @@ window.Zepto = Zepto
   function normalizeEvent(name) { return eventPrefix ? eventPrefix + name : downcase(name) }
 
   $.each(vendors, function(vendor, event){
-    if (testEl.style[vendor + 'TransitionProperty'] !== undefined) {
-      prefix = '-' + downcase(vendor) + '-'
-      eventPrefix = event
-      return false
+    if (testEl && testEl.style) { 
+      if (testEl.style[vendor + 'TransitionProperty'] !== undefined) {
+        prefix = '-' + downcase(vendor) + '-'
+        eventPrefix = event
+        return false
+      }
     }
   })
 

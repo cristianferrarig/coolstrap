@@ -15,5 +15,5 @@ var App = (function(coolstrap, undefined) {
  
   };
 
-})(COOL);
+}(COOL));
 
