@@ -12,7 +12,7 @@ article {
 
 //Text
 h1 {
-  font-size: 1.2em;
+  font-size: 14px;
 }
 h2 {
   font-size: 1.08em;
@@ -25,14 +25,6 @@ article > h2:not(.list-divider),
 article div > h2:not(.list-divider){
   margin: 0.75em 0 0.75em 10px;
   color: #444;
-  /*&:before {
-    content: "* ";
-    line-height: 1em;
-    font-size: 1.4em;
-    vertical-align: middle;
-    color: #666;
-    font-family: serif;
-  }*/
 }
 article > p,
 article div > p {
@@ -106,12 +98,11 @@ header, nav {
     background-color: darken($basecolor,10);
   }
 }
-article pre {
-  margin: 12px 0 20px 10px;
-  color: #777;
-}
-span.color {
-  color: red;
+article pre { margin: 12px 0 20px 10px; }
+
+span.code, article pre {
+  font-family: monospace, serif;
+  color: #a7b;
 }
 
 
