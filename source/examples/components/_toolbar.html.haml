@@ -1,10 +1,12 @@
 //TODO: Arreglar el ingles de tarzan usado por Felipe
+%h1 TOOLBARS
+%p 
+	Cualquier tipo de barra con herramientas que quieras hacer con Coolstrap debe estar construido con la etiqueta &lt;nav&gt; a la que se le agrega el atributo data-type="toolbar" para que se comporte como tal y se diferencie de un tabbar, por ejemplo.
 %h1 
-	1. Navs with a 
+	1. Navs con un
 	%span.color .control-group 
-	centered
-%p This alternative is to mantain the .control-group centered. Each button adjust it width depending to it contain. To do this, you have to wrap the buttons with a &lt;div&gt; classed .control-group
-%h2 Control-group text and icon
+	centrado
+%p Para agregar un grupo de botones unidos y que permanezca centrado en la barra sin importar el ancho del viewport, estos deben estar encerrados en una etiqueta &lt;div&gt; con la clase .control-group 
 %nav{"data-type" => "toolbar"}
 	.control-group
 		%a
