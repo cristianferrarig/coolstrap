@@ -15,17 +15,29 @@ h1 {
   font-size: 1.2em;
 }
 h2 {
-  font-size: 1em;
+  font-size: 1.08em;
 }
 article > h1:not(.list-divider),
-article div > h1:not(.list-divider),
-article > h2:not(.list-divider),
-article div > h2:not(.list-divider) {
+article div > h1:not(.list-divider) {
   margin: 0.8em 0 0.95em 10px;
+}
+article > h2:not(.list-divider),
+article div > h2:not(.list-divider){
+  margin: 0.75em 0 0.75em 10px;
+  color: #444;
+  /*&:before {
+    content: "* ";
+    line-height: 1em;
+    font-size: 1.4em;
+    vertical-align: middle;
+    color: #666;
+    font-family: serif;
+  }*/
 }
 article > p,
 article div > p {
   padding: 0 10px;
+  color: #4a4a4a;
 }
 
 
@@ -94,6 +106,13 @@ header, nav {
     background-color: darken($basecolor,10);
   }
 }
+article pre {
+  margin: 12px 0 20px 10px;
+  color: #777;
+}
+span.color {
+  color: red;
+}
 
 
 //List styles
@@ -104,6 +123,9 @@ ul.inset {
 
 ul {
   color: #666;
+  a {
+    color: #666;
+  }
   li {
     border-bottom: 1px solid #ccc;
     position: relative;

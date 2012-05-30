@@ -1,47 +1,9 @@
-
-%h1 Ancho 100%
-%p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-%h2 Buttons text and icon
-%nav{"data-type" => "toolbar"}
-	.control-group.autoWidth
-		%a
-			%i
-			%span boton 1
-		%a
-			%i
-			%span boton 2
-		%a
-			%span boton 3
-			%i
-%h2 Buttons only text
-%nav{"data-type" => "toolbar"}
-	.control-group.autoWidth
-		%a boton 1
-		%a boton 2
-		%a boton 3
-		%a boton 4
-%h2 Buttons only icon
-%nav{"data-type" => "toolbar"}
-	.control-group.autoWidth
-		%a <i></i>
-		%a <i></i>
-		%a <i></i>
-		%a <i></i>
-
-%h1 Navs con Control Group
-%p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-%h2 Control-group only text
-%nav{"data-type" => "toolbar"}
-	.control-group
-		%a nombre 1
-		%a nombre 3
-		%a nombre 4
-%h2 Control-group only icon
-%nav{"data-type" => "toolbar"}
-	.control-group
-		%a <i></i>
-		%a <i></i>
-		%a <i></i>
+//TODO: Arreglar el ingles de tarzan usado por Felipe
+%h1 
+	1. Navs with a 
+	%span.color .control-group 
+	centered
+%p This alternative is to mantain the .control-group centered. Each button adjust it width depending to it contain. To do this, you have to wrap the buttons with a &lt;div&gt; classed .control-group
 %h2 Control-group text and icon
 %nav{"data-type" => "toolbar"}
 	.control-group
@@ -53,17 +15,142 @@
 			%span boton 4
 		%a
 			%span boton 4
-			%i		
+			%i	
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group">
+			    <a>
+			      <i></i>
+			      <span>button</span>
+			    </a>
+			  </div>  
+			</nav>    				
 
-%h1 Navs con Searchbar
-%p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+%h2 Control-group only text
+%nav{"data-type" => "toolbar"}
+	.control-group
+		%a nombre 1
+		%a nombre 3
+		%a nombre 4
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group">
+			    <a>
+			      <span>button</span>
+			    </a>
+			  </div>  
+			</nav>    					
+%h2 Control-group only icon
+%nav{"data-type" => "toolbar"}
+	.control-group
+		%a <i></i>
+		%a <i></i>
+		%a <i></i>
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group">
+			    <a>
+			      <i></i>
+			    </a>
+			  </div>  
+			</nav>    					
+
+
+
+%h1 
+	2. Nav with a 
+	%span.color .control-group 
+	and 
+	%span.color .autoWidth
+%p In this case the navbar expands its width to the 100% width of the viewport, dividing the space in equals parts for each button automatically. To do this, you have to wrap the buttons with a &lt;div&gt; classed .control-group and .autoWidth
+%h2 Buttons text and icon
+%nav{"data-type" => "toolbar"}
+	.control-group.autoWidth
+		%a
+			%i
+			%span button 1
+		%a
+			%i
+			%span button 2
+		%a
+			%span button 3
+			%i
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group autoWidth">
+			    <a>
+			      <i></i>
+			      <span>button</span>
+			    </a>
+			  </div>  
+			</nav>    
+	
+%h2 Buttons only text
+%nav{"data-type" => "toolbar"}
+	.control-group.autoWidth
+		%a button 1
+		%a button 2
+		%a button 3
+		%a button 4
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group autoWidth">
+			    <a>
+			      <span>button</span>
+			    </a>
+			  </div>  
+			</nav>    		
+%h2 Buttons only icon
+%nav{"data-type" => "toolbar"}
+	.control-group.autoWidth
+		%a <i></i>
+		%a <i></i>
+		%a <i></i>
+		%a <i></i>
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group autoWidth">
+			    <a>
+			      <i></i>
+			    </a>
+			  </div>  
+			</nav>   		
+
+
+%h1 3. Navs with Searchbar
+%p To create a searchbar you have to insert the &lt;input&gt; insithe the nav and automatically adjusts the width. Even if you insert buttons and icons the distribution is homogeneous.  
 %h2 Searchbar 100%
 %nav{"data-type" => "toolbar", "data-icon" => ""}
 	%input{:type => "search", :name => "txt"}
-%h2 Searchbar with icon
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <input type="search">
+			</nav>   		
+%h2 Searchbar with a button
 %nav{"data-type" => "toolbar"}
 	%input{:type => "search", :name => "txt"}
 	%a search
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <input type="search">
+			  <a>search</a>
+			</nav>  
 %h2 Searchbar with icon and button
 %nav{"data-type" => "toolbar"}
 	%a.onlyIcon <i></i>
@@ -71,51 +158,144 @@
 	%a
 		%span search
 		%i
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>  
+			  <input type="search"/ >
+			  <a>
+			    <span></span>
+			    <i></i>
+			  </a>  
+			</nav> 		
 
-%h1 Botones fijos en los extremos 
-%p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-%h2 Two asides buttons and a control group autowidth with text
+%h1 4. Buttons on the sides
+%p In many ocations a mobile aplication, need fixed elements on the sides. Those must have a flexible element between them. It could be a .control-group, &lt;hgroup&gt;, a .content, etc. If you want an empty space you have tu add a flexible empty &lt;div&gt; with the class .flex or .content
+%nav{"data-type" => "toolbar"}
+	%a back
+	.flex
+	%a next
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a>back</a>
+			  <div class="flex"></div>
+			  <a>next</a>
+			</nav> 
+%h2
+	Two  
+	%span.color &lt;a&gt buttons
+	on the sides and a 
+	%span.color .autoWidth .control-group 						
 %nav{"data-type" => "toolbar"}
 	%a back
 	.control-group.autoWidth
-		%a Alt 1
-		%a Alt 2
-		%a Alt 3
-		%a Alt 4
-	%a next
-%h2 Two asides icon buttons and a control group autowidth
+		%a button 1
+		%a button 2
+		%a button 3
+	%a next	
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group autoWidth">
+			    <a>button 1</a>
+			    <a>button 2</a>
+			    <a>button 3</a>
+			  <div/>
+			</nav> 	
+%h2 
+	Icons on the sides and a 
+	%span.color .control-group
+	centered.
+%p 
+	In this case we can see how the buttons on the sides with icons works at the same way than the buttons with text. The only diference is the .onlyIcon class added to the &lt;a&gt; buttons.
+	Is important add .flex divs arround the control group to maintain fixed on the sides de butons without have to put the .autoWidth class on the .control-group
 %nav{"data-type" => "toolbar"}
 	%a.onlyIcon <i></i>
-	.control-group.autoWidth
-		%a nombre
-		%a nombre
-		%a nombre
+	.flex
+	.control-group
+		%a button 1
+		%a button 2
+		%a button 3
+	.flex	
 	%a.onlyIcon <i></i>
-%h2 Two asides buttons and a control group autowidth
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="flex"><div/>
+			  <div class="control-group">
+			    <a>button 1</a>
+			    <a>button 2</a>
+			    <a>button 3</a>
+			  <div/>
+			  <div class="flex"><div/>
+			</nav> 		
+%h2 
+	Butons evenly distributed and separated by 
+	%span.color .flex 
+	classed 
+	%span.color &lt;divs&gt;
 %nav{"data-type" => "toolbar"}
-	%a next
+	%a back
+	.flex
+	%a button 1
+	.flex
+	%a button 2
+	.flex
+	%a button 3
 	.flex
 	%a next
-	.flex
-	%a next
-	.flex
-	%a next
-	.flex
-	%a next
-%h2 Two asides buttons and a control group autowidth
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a>button 1</a>
+			  <div class="flex"><div/>
+			  <a>button 1</a>
+			  <div class="flex"><div/>
+			  <a>button 1</a>
+			  <div class="flex"><div/>
+			  <a>button 1</a>
+			  <div class="flex"><div/>
+			  <a>button 1</a>
+			</nav> 			
 %nav{"data-type" => "toolbar"}
 	%a
 		%i
-		%span boton 2
+		%span button 1
 	.flex
 	%a
 		%i
-		%span boton 2
+		%span button 2
 	.flex
 	%a
-		%span boton 2
+		%span button 3
 		%i
-%h2 Two asides buttons and a control group autowidth
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a>
+			    <i></i>
+			    <span>button 1</span>
+			  </a>
+			  <div class="flex"><div/>
+			  <a>
+			    <i></i>
+			    <span>button 2</span>
+			  </a>
+			  <div class="flex"><div/>
+			  <a>
+			    <i></i>
+			    <span>button 3</span>
+			  </a>
+			</nav> 					
 %nav{"data-type" => "toolbar"}
 	%a.onlyIcon <i></i>
 	.flex
@@ -124,36 +304,68 @@
 	%a.onlyIcon <i></i>
 	.flex
 	%a.onlyIcon <i></i>
-	.flex
-	%a.onlyIcon <i></i>
-%h2 Two asides buttons and a control group autowidth
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>
+			  <div class="flex"><div/>
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>
+			  <div class="flex"><div/>
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>
+			  <div class="flex"><div/>
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>
+			</nav> 			
+%h2 
+	Buttons on the sides, a 
+	%span.color .control-group
+	and a
+	%span.color &lt;hgroup&gt
+	centered
+%p 
+	This is a sample of how you can combine many options and get good results. Checkout the simple marckup and try your combinations.	
+	Is important to use the right tags, like &lt;i&gt for the icons. If you need a group of text or a title use &lt;hgroup&gt or &lt;h1&gt respectively. Those tags have a flexible role that maintain the balanced layout.
 %nav{"data-type" => "toolbar"}
 	%a back
 	%hgroup
 		%h1 Rhyboo
 		%h2 The social TV
-	%a back
 	.control-group
 		%a <i></i>
 		%a <i></i>
-%h2 Two asides buttons and a control group autowidth
-%nav{"data-type" => "toolbar"}
-	.control-group
-		%a 1
-		%a 2
 	%a back
-	%hgroup
-		%h1 Rhyboo
-		%h2 The social TV
-	%a back
-%h2 Two asides buttons and a control group autowidth
-%nav{"data-type" => "toolbar"}
-	%a back
-	%a <
-	%h1 Rhyboo
-	%a <
-	%a >
-%h2 Two asides buttons and a control group autowidth
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a>back</a>
+			  <hgroup></hgroup>
+			    <h1>Rhyboo</h1>
+			    <h2>The social TV</h2>
+			  </hgroup>
+			  <div class="control-group">
+			    <a>
+			      <i></i>
+			    <a/>
+			    <a>
+			      <i></i>
+			    <a/>
+			  </div> 
+			  <a>next</a> 
+%h2 
+	Butons on the sides and a
+	%span.color .content
+	with text and a 
+	%span.color .loader 
+	bar.
 %nav{"data-type" => "toolbar"}
 	%a back
 	.content
@@ -161,11 +373,48 @@
 		.loader
 			.progress
 	%a >
-%h2 Two asides buttons and a control group autowidth
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">	
+			  <a>back</a>
+			  <div class="content">
+			    <h1>Descargando 1 de 5</h1>
+			    <div class="loader">
+			      <div class="progress"></div>
+			    </div>
+			  </div>
+			</nav> 
+			
+%nav{"data-type" => "toolbar"}
+	%a{:href => "index.html"}
+		%i.cancel
+		%span cancel
+	%h1 Edit Contact
+	%a{:href => "index.html"}
+		%i.save
+		%span save
+
+
+
+
+%h2 Two buttons on the sides and a loader bar
 %nav{"data-type" => "toolbar"}
 	%a back
 	.content
 		.loader
 			.progress
 	%a >
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">	
+			  <a>back</a>
+			  <div class="content">
+			    <div class="loader">
+			      <div class="progress"></div>
+			    </div>
+			  </div>
+			</nav>  
+
 
