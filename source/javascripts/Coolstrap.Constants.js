@@ -1,6 +1,5 @@
 /**
  * Coolstrapp Global Constants
- * Inspired by LungoJs
  * 
  * @namespace COOL
  * @class Constants
@@ -46,6 +45,7 @@ COOL.Constants = {
     LEFT: 'onleft',
     TOP: 'ontop',
     BOTTOM: 'onbottom',
+    CENTER: 'oncenter',
     HORIZONTAL: 'horizontal',
     SCROLLABLE: 'scrollable',
     FADE_IN: 'fadeIn',

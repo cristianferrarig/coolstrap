@@ -24,3 +24,40 @@
 	@include translate3d();
 	@include single-transition();
 }
+
+
+@mixin setTransform($type) {
+	-webkit-animation-duration: 250ms;
+	
+	@if $type == bounceIn {
+	    -webkit-animation-name: bounceIn;
+	}
+
+	@else if $type == bounceOut {
+		-webkit-animation-name: bounceOut;
+	}
+}
+
+@-webkit-keyframes bounceIn {
+    0% {
+        opacity: 0.3;
+        -webkit-transform: scale(0);
+    }
+   
+    100% {
+    	opacity: 1;
+        -webkit-transform: scale(1);
+    }
+}
+
+@-webkit-keyframes bounceOut {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(.3);
+    }   
+}
+

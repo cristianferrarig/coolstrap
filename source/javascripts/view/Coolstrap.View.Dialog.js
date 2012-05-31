@@ -12,6 +12,7 @@ COOL.View.Dialog = (function(cool) {
   var ELEMENT = cool.Constants.ELEMENT;
   var CLASS = cool.Constants.CLASS;
   var DIALOG = cool.Constants.DIALOG;
+  var TRANSITION = cool.Constants.TRANSITION;
   var DIALOG_CARRET = {
     TOP: 'carretTop',
     LEFT: 'carretTop',
@@ -27,7 +28,7 @@ COOL.View.Dialog = (function(cool) {
     });
   };
 
-  var _getPositionCenter = function(source_pos, dialog_width, dialog_height, placement) {
+  var _getPositionFromSource = function(source_pos, dialog_width, dialog_height, placement) {
     var dialog_pos;
     switch (placement) {
       case CLASS.BOTTOM:
@@ -48,6 +49,21 @@ COOL.View.Dialog = (function(cool) {
     return dialog_pos;
   };
 
+  var _getPositionCenterOnScreen = function(source_size) {
+    var dialog_pos;
+    var environment = cool.Util.Platform.environment();
+    var screen_size = environment.screen;
+    dialog_pos = {
+      top: screen_size.height/2 - source_size.height/2, 
+      left: screen_size.width/2 - source_size.width/2,
+      'margin-left': 0
+    };
+    if (dialog_pos.left < 0) { dialog_pos.left = 0; }
+    if (dialog_pos.top < 0) { dialog_pos.top = 0; }
+    
+    return dialog_pos;
+  };
+
   var _preparePopover = function(dialog, options) {
     var source_element = options.source_element,
         dialog_pos;
@@ -63,12 +79,13 @@ COOL.View.Dialog = (function(cool) {
     if (options.animation) {
       dialog.addClass(CLASS.FADE_IN);
     }
-    dialog_pos = _getPositionCenter(_getPosition(source_element), dialog[0].offsetWidth, dialog[0].offsetHeight, options.placement);
+    dialog_pos = _getPositionFromSource(_getPosition(source_element), dialog[0].offsetWidth, dialog[0].offsetHeight, options.placement);
     dialog.css(dialog_pos).addClass(options.placement);
   };
 
   var _prepareAlert = function(dialog, options) {
-
+    var dialog_pos = _getPositionCenterOnScreen(_getPosition(dialog));
+    dialog.css(dialog_pos);
   };
 
   var _prepareModal = function(dialog, options) {
@@ -103,7 +120,7 @@ COOL.View.Dialog = (function(cool) {
         _preparePopover(dialog, options);
         break;
     }
-    dialog.addClass(CLASS.CURRENT);
+    dialog.removeClass(CLASS.HIDE).addClass(CLASS.CURRENT).addClass(CLASS.SHOW);
   };
 
   /**
@@ -113,7 +130,22 @@ COOL.View.Dialog = (function(cool) {
    */
   var close = function(dialog_id) {
     var dialog = cool.dom(ELEMENT.DIALOG + dialog_id);
-    dialog.removeClass(CLASS.CURRENT);
+    var dialog_type = dialog.data('type');
+    var dialog_animation = dialog.data('transition');
+    if (dialog_type === DIALOG.ACTION) {
+      dialog_animation = dialog_animation || 'slideUp';
+    }
+    if (dialog_type === DIALOG.MODAL) {
+      dialog_animation = dialog_animation || 'bounceOut';
+    }
+    dialog.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);  
+    if (!dialog_animation) {
+      dialog.removeClass(CLASS.CURRENT);
+    } else { 
+      setTimeout(function() {
+        dialog.removeClass(CLASS.CURRENT);
+      }, TRANSITION.DURATION);  
+    }   
   };
 
   return {

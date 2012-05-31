@@ -23,3 +23,29 @@ section {
 }
 
 
+div#{$isDialog} {
+
+  &#{$isAction} {
+    @include setTransition();
+    @include setTransition(top, 100%);  
+    &.show { 
+      @include setTransition(top, 0%);
+    }
+    &.hide { 
+      @include setTransition(top, 100%);  
+    }
+  }
+
+  &#{$isModal} {
+    -webkit-animation-duration: 0ms;
+    &.show { 
+      @include setTransform(bounceIn);
+    }
+    &.hide { 
+      @include setTransform(bounceOut);
+    }
+  }
+
+}
+
+
