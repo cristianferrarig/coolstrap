@@ -46,7 +46,7 @@ COOL.View.Dialog = (function(cool) {
   var _getPositionCenterOnScreen = function(source_size) {
     var dialog_pos;
     var update = true;
-    var environment = cool.Util.Platform.environment(update);
+    var environment = cool.Util.Platform.reloadEnvironment();
     var screen_size = environment.screen;
     dialog_pos = {
       top: screen_size.height/2 - source_size.height/2, 

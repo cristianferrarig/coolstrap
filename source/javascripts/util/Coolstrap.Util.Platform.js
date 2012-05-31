@@ -77,6 +77,14 @@ COOL.Util.Platform = (function(cool) {
     return _current_environment;
   };
 
+  /** 
+  * Reload  current environment
+  *
+  * @method reloadEnvironment
+  */
+  var reloadEnvironment = function() {
+    return environment(true);
+  };
 
   /** 
   * Detect if browser is online
@@ -90,7 +98,8 @@ COOL.Util.Platform = (function(cool) {
   return {
     isMobile: isMobile,
     environment: environment,
-    isOnline: isOnline
+    isOnline: isOnline,
+    reloadEnvironment: reloadEnvironment
   };
 
 })(COOL);
