@@ -72,8 +72,8 @@ COOL.Util.Platform = (function(cool) {
   *
   * @method environment
   */
-  var environment = function() {
-    _current_environment = _current_environment || _detectEnvironment();
+  var environment = function(reload_environment) {
+    _current_environment = reload_environment ?  _detectEnvironment() : _current_environment || _detectEnvironment();
     return _current_environment;
   };
 

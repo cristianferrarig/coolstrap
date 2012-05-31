@@ -45,7 +45,8 @@ COOL.View.Dialog = (function(cool) {
 
   var _getPositionCenterOnScreen = function(source_size) {
     var dialog_pos;
-    var environment = cool.Util.Platform.environment();
+    var update = true;
+    var environment = cool.Util.Platform.environment(update);
     var screen_size = environment.screen;
     dialog_pos = {
       top: screen_size.height/2 - source_size.height/2, 
@@ -73,15 +74,23 @@ COOL.View.Dialog = (function(cool) {
     if (options.animation) {
       dialog.addClass(CLASS.FADE_IN);
     }
-    dialog_pos = _getPositionFromSource(_getPosition(source_element), dialog[0].offsetWidth, dialog[0].offsetHeight, options.placement);
     dialog.removeClass();
+
+    dialog_pos = _getPositionFromSource(_getPosition(source_element), dialog[0].offsetWidth, dialog[0].offsetHeight, options.placement);
     dialog.css(dialog_pos).addClass(options.placement);
+
 
   };
 
   var _prepareAlert = function(dialog, options) {
-    var dialog_pos = _getPositionCenterOnScreen(_getPosition(dialog));
-    dialog.css(dialog_pos);
+    var set_alert_position = function() {
+      var dialog_pos = _getPositionCenterOnScreen(_getPosition(dialog));
+      dialog.css(dialog_pos);
+    };
+    set_alert_position();
+    cool.dom(window).on('resize', function(){
+      set_alert_position();
+    });
   };
 
   var _prepareModal = function(dialog, options) {
