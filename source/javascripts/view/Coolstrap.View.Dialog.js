@@ -13,12 +13,6 @@ COOL.View.Dialog = (function(cool) {
   var CLASS = cool.Constants.CLASS;
   var DIALOG = cool.Constants.DIALOG;
   var TRANSITION = cool.Constants.TRANSITION;
-  var DIALOG_CARRET = {
-    TOP: 'carretTop',
-    LEFT: 'carretTop',
-    RIGHT: 'carretRight',
-    BOTTOM: 'carretTop'
-  };
   var console = cool.Console;
 
   var _getPosition = function(element) {
@@ -80,7 +74,9 @@ COOL.View.Dialog = (function(cool) {
       dialog.addClass(CLASS.FADE_IN);
     }
     dialog_pos = _getPositionFromSource(_getPosition(source_element), dialog[0].offsetWidth, dialog[0].offsetHeight, options.placement);
+    dialog.removeClass();
     dialog.css(dialog_pos).addClass(options.placement);
+
   };
 
   var _prepareAlert = function(dialog, options) {
