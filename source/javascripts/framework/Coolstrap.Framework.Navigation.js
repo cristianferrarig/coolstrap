@@ -135,9 +135,9 @@ COOLSTRAP.Framework.Navigation = (function(cool, window) {
       cool.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).click(_loadTargetFromAside);
       cool.dom(SELECTORS.HREF_TARGET).click(_loadTarget);
     }
-    if (cool.Fallback.Android) {
-      cool.Fallback.Android.buttons();
-    }
+    
+    cool.Fallback.Android.buttons();
+    
     cool.Navigate.History.setup();
   };
 

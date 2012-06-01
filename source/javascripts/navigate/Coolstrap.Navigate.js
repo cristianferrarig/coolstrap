@@ -158,7 +158,7 @@ COOLSTRAP.Navigate = (function(cool) {
    * 
    * @method toURL
    */
-  var toURL = function(url, options) {
+  var URL = function(url, options) {
     options = options || {};
     options.new_window = options.new_window || false;
     if (options.new_window) {
@@ -174,7 +174,7 @@ COOLSTRAP.Navigate = (function(cool) {
     aside: aside,
     dialog: dialog,
     back: back,
-    toURL: toURL
+    URL: URL
   };
 
 })(COOLSTRAP);

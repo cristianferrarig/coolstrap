@@ -29,8 +29,8 @@ COOLSTRAP.Fallback.Android = ((cool) ->
   buttons = ->
     environment = cool.Util.Platform.environment()
     if environment.isMobile and environment.os.name is "android"
-      cool.dom(document.body).on "touchstart", ".button", _addClassActive
-      cool.dom(document.body).on "touchend", ".button", _removeClassActive
+      cool.dom(document.body).on "touchstart", "a", _addClassActive
+      cool.dom(document.body).on "touchend", "a", _removeClassActive
 
   ###
   #   disable input elements
