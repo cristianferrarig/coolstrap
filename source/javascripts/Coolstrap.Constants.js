@@ -1,14 +1,14 @@
 /**
  * Coolstrapp Global Constants
  * 
- * @namespace COOL
+ * @namespace COOLSTRAP
  * @class Constants
  * 
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  * 
  */
 
-COOL.Constants = {
+COOLSTRAP.Constants = {
 
   ELEMENT: {
     SECTION: 'section',

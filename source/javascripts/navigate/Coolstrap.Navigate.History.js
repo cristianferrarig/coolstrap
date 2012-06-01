@@ -1,12 +1,12 @@
 /**
 * Stores the stack of displayed <sections>
-* @namespace COOL.Navigation
+* @namespace COOLSTRAP.Navigate
 * @class History
 *
 * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
 */
 
-COOL.Navigation.History = (function(cool, document, window) {
+COOLSTRAP.Navigate.History = (function(cool, document, window) {
 
   var TARGET = cool.Constants.TARGET;
   var STACK = {
@@ -86,7 +86,7 @@ COOL.Navigation.History = (function(cool, document, window) {
       var to_aside = /#aside/.test(document.location.hash);
       var from_aside = /#aside/.test(event.oldURL);
       if (to_main && from_main) {
-         console.info('cool.Navigation.back()');
+         console.info('cool.Navigate.back()');
       }
       if (to_aside && from_aside) {
         console.info('back in ASIDE');
@@ -202,4 +202,4 @@ COOL.Navigation.History = (function(cool, document, window) {
     setup: setup
   };
 
-})(COOL, document, window);
+})(COOLSTRAP, document, window);

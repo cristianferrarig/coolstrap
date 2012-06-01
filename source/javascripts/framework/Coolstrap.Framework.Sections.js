@@ -1,13 +1,13 @@
 /**
  * Initialize all  <section> elements
  *
- * @namespace COOL.Framework
+ * @namespace COOLSTRAP.Framework
  * @class Sections
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Framework.Sections = (function(cool) {
+COOLSTRAP.Framework.Sections = (function(cool) {
 
   var ELEMENT = cool.Constants.ELEMENT;
   var CLASS = cool.Constants.CLASS;
@@ -17,7 +17,7 @@ COOL.Framework.Sections = (function(cool) {
     var first_section = sections.first();
     var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
     first_section.addClass(CLASS.CURRENT);
-    cool.Navigation.History.add({
+    cool.Navigate.History.add({
       section_id: first_section_id, 
       replace_state: true
     });
@@ -63,4 +63,4 @@ COOL.Framework.Sections = (function(cool) {
     setup: setup
   };
 
-})(COOL);
+})(COOLSTRAP);

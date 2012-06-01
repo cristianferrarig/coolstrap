@@ -1,13 +1,13 @@
 /**
  * Initialize all <article> element in sections
  *
- * @namespace COOL.Framework
+ * @namespace COOLSTRAP.Framework
  * @class Articles
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Framework.Articles = (function(cool) {
+COOLSTRAP.Framework.Articles = (function(cool) {
   var SCROLLABLE_CLASS = cool.Constants.CLASS.SCROLLABLE;
   
   var _initElement = function(selector, callback) {
@@ -35,4 +35,4 @@ COOL.Framework.Articles = (function(cool) {
     setup: setup
   };
 
-})(COOL);
+})(COOLSTRAP);

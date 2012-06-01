@@ -1,14 +1,14 @@
 /**
  * Coolstrap Core functions
  * 
- * @namespace COOL.Util
+ * @namespace COOLSTRAP.Util
  * @class Core
  * 
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  * Inspired by LungoJS
  */
 
-COOL.Util.Core = (function(cool) {
+COOLSTRAP.Util.Core = (function(cool) {
   
   var _toArray = function(obj) {
     return Array.prototype.slice.call(obj, 0);
@@ -33,21 +33,6 @@ COOL.Util.Core = (function(cool) {
     }
   };
 
-  /**
-   * Creates a new function that, when called, itself calls this function in
-   * the context of the provided this value, with a given sequence of arguments
-   * preceding any provided when the new function was called.
-   *
-   * @method bind
-   *
-   * @param {object} object to which the 'this' can refer in the new function when the new function is called.
-   * @param {Function} method A function object.
-   */
-  var bind = function(object, method) {
-    return function() {
-      return method.apply(object, _toArray(arguments));
-    };
-  };
 
   /**
    * Mix two objects
@@ -70,8 +55,7 @@ COOL.Util.Core = (function(cool) {
 
   return {
     execute: execute,
-    bind: bind,
     extend: extend
   };
 
-})(COOL);
+})(COOLSTRAP);

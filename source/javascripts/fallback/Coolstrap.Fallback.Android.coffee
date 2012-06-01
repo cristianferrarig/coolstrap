@@ -2,13 +2,13 @@
 # Fallback to Android unexpected behaviors.
 # Android Sucks!
 #
-# @namespace COOL.Fallback
+# @namespace COOLSTRAP.Fallback
 # @class Android
 #
 # @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
 ###
 
-COOL.Fallback.Android = ((cool) ->
+COOLSTRAP.Fallback.Android = ((cool) ->
   CLASS = cool.Constants.CLASS
   _enableElement = (element) ->
     element.removeAttr "disabled"
@@ -50,4 +50,4 @@ COOL.Fallback.Android = ((cool) ->
 
   buttons: buttons
   inputs: inputs
-)(COOL)
+)(COOLSTRAP)

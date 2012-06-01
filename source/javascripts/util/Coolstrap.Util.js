@@ -1,13 +1,13 @@
 /**
  * Coolstrapp Utils functions
  * 
- * @namespace COOL
+ * @namespace COOLSTRAP
  * @class Util
  * 
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Util = (function(cool) {
+COOLSTRAP.Util = (function(cool) {
    
   /**
    * Returns a correct URL using hashtag character
@@ -22,7 +22,7 @@ COOL.Util = (function(cool) {
     if (href_hashtag > 0) {
       href = href.substring(href_hashtag);
     } else if (href_hashtag === -1) {
-      href = CHAR.HASHTAG + href ;
+      href = '#' + href ;
     }
     return href;
   };
@@ -48,4 +48,4 @@ COOL.Util = (function(cool) {
     cleanUrl: cleanUrl
   };
 
-})(COOL);
+})(COOLSTRAP);

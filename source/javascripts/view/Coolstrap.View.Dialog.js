@@ -1,13 +1,13 @@
 /**
  * Initialize the <dialog> layout
  *
- * @namespace COOL.View
+ * @namespace COOLSTRAP.View
  * @class Dialog
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.View.Dialog = (function(cool) {
+COOLSTRAP.View.Dialog = (function(cool) {
 
   var ELEMENT = cool.Constants.ELEMENT;
   var CLASS = cool.Constants.CLASS;
@@ -158,4 +158,4 @@ COOL.View.Dialog = (function(cool) {
     close: close
   };
 
-})(COOL);
+})(COOLSTRAP);

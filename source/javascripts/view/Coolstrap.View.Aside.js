@@ -1,13 +1,13 @@
 /**
  * Initialize the <Aisde> layout
  *
- * @namespace COOL.View
+ * @namespace COOLSTRAP.View
  * @class Aside
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.View.Aside = (function(cool) {
+COOLSTRAP.View.Aside = (function(cool) {
 
   var ELEMENT = cool.Constants.ELEMENT;
   var CLASS = cool.Constants.CLASS;
@@ -40,7 +40,7 @@ COOL.View.Aside = (function(cool) {
     var section_id = '#' + section_to_show.attr(ATTRIBUTE.ID);
     section_to_show.addClass(CLASS.CURRENT);
 
-    cool.Navigation.History.add({
+    cool.Navigate.History.add({
       section_id: section_id,
       container_id: aside_id,
       init_container: true
@@ -65,7 +65,7 @@ COOL.View.Aside = (function(cool) {
         cool.dom(current_aside).removeClass(CLASS.CURRENT);
     }, TRANSITION.DURATION);
 
-    cool.Navigation.History.clear(aside_id);
+    cool.Navigate.History.clear(aside_id);
   };
 
   var _classFromAside = function(aside) {
@@ -78,4 +78,4 @@ COOL.View.Aside = (function(cool) {
       hide: hide
   };
 
-})(COOL);
+})(COOLSTRAP);

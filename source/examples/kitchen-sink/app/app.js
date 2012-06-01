@@ -1,9 +1,9 @@
 
-var logger = COOL.Console;
+var logger = COOLSTRAP.Console;
 
-var App = (function(coolstrap, undefined) {
+var App = (function(cool) {
   
-  coolstrap.App.init({
+  cool.App.init({
     name: 'Kitchen Sink',
     version: '1.0',
     resources: {
@@ -15,5 +15,5 @@ var App = (function(coolstrap, undefined) {
  
   };
 
-}(COOL));
+})(COOLSTRAP);
 

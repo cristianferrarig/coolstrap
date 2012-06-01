@@ -1,14 +1,14 @@
 /**
  * Initialize all div[role=dialog] element 
  *
- * @namespace COOL.Framework
+ * @namespace COOLSTRAP.Framework
  * @class Dialogs
  *
 * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Framework.Dialogs = (function(cool) {
-  var ELEMENT = COOL.Constants.ELEMENT;
+COOLSTRAP.Framework.Dialogs = (function(cool) {
+  var ELEMENT = COOLSTRAP.Constants.ELEMENT;
 
   var _initElement = function(selector, callback) {
     var found_elements = cool.dom(selector);
@@ -36,4 +36,4 @@ COOL.Framework.Dialogs = (function(cool) {
     setup: setup
   };
 
-})(COOL);
+})(COOLSTRAP);

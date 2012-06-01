@@ -2,17 +2,16 @@
  * Coolstrapp Application
  * Inspired by LungoJs
  * 
- * @namespace COOL
+ * @namespace COOLSTRAP
  * @class App
  * 
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  * 
  */
 
-COOL.App = (function(cool) {
-
-  var default_config = {
-    id: 1,
+COOLSTRAP.App = (function(cool) {
+  var _sessionId;
+  var _launchOptions = {
     name: 'coolstrap',
     log_level: -1
   }; 
@@ -23,18 +22,20 @@ COOL.App = (function(cool) {
     cool.Framework.Navigation.setup(); 
   }; 
 
-  var init = function(app_config) {
-    default_config = cool.Util.Core.extend(default_config, app_config);      
+  var _generateSID = function(){
+    _sessionId = '123456'
+  }
+
+  var init = function(launch_options) {
+    _launchOptions = cool.Util.Core.extend(_launchOptions, launch_options);      
     _setupFramework();
+    _generateSID();
   };
 
-  var get = function(property) {
-    return default_config[property];
-  };
-  
   return {
     init: init,
-    get: get 
+    launchOptions: _launchOptions,
+    sessionId: _sessionId
   };
 
-})(COOL);
+})(COOLSTRAP);

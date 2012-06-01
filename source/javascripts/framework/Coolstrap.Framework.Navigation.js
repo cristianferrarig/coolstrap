@@ -1,13 +1,13 @@
 /**
  * Initialize the events for manage navigation
  *
- * @namespace COOL.Framework
+ * @namespace COOLSTRAP.Framework
  * @class Navigation
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Framework.Navigation = (function(cool, window) {
+COOLSTRAP.Framework.Navigation = (function(cool, window) {
   
   var ATTRIBUTE = cool.Constants.ATTRIBUTE;
   var CLASS = cool.Constants.CLASS;
@@ -23,18 +23,18 @@ COOL.Framework.Navigation = (function(cool, window) {
 
   var _goSection = function(section_id) {
     section_id = cool.Util.parseUrl(section_id);
-    cool.Navigation.section(section_id);
+    cool.Navigate.section(section_id);
   };
 
   var _goArticle = function(element) {
-    var section_id = cool.Navigation.History.current();
+    var section_id = cool.Navigate.History.current();
     var article_id = element.attr(ATTRIBUTE.HREF);
-    cool.Navigation.article(section_id, article_id);
+    cool.Navigate.article(section_id, article_id);
   };
 
   var _goDialog = function(element, close) {
     var dialog_id = element.attr(ATTRIBUTE.HREF);
-    cool.Navigation.dialog(dialog_id, close || { source_element: element });
+    cool.Navigate.dialog(dialog_id, close || { source_element: element });
   };
 
   var _hideAsideIfNecesary = function(aside_id, link) {
@@ -56,15 +56,15 @@ COOL.Framework.Navigation = (function(cool, window) {
     }
     if (hide_aside) {
       setTimeout(function() {
-        cool.Navigation.aside(aside_id);
+        cool.Navigate.aside(aside_id);
       }, TRANSITION.DURATION);
     } else {
-      cool.Navigation.aside(aside_id);
+      cool.Navigate.aside(aside_id);
     }
   };
 
   var _goBack = function(container_id) {
-    cool.Navigation.back(container_id);
+    cool.Navigate.back(container_id);
   };
 
   var _selectTarget = function(link) {
@@ -138,11 +138,11 @@ COOL.Framework.Navigation = (function(cool, window) {
     if (cool.Fallback.Android) {
       cool.Fallback.Android.buttons();
     }
-    cool.Navigation.History.setup();
+    cool.Navigate.History.setup();
   };
 
   return {
     setup: setup
   };
 
-})(COOL, window);
+})(COOLSTRAP, window);

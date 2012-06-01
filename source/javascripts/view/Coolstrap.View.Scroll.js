@@ -2,14 +2,14 @@
  * Wrapper of the third library iScroll
  * Inspired by LungoJS
  *
- * @namespace COOL.View
+ * @namespace COOLSTRAP.View
  * @class Scroll
  * @requires iScroll
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.View.Scroll = (function(cool) {
+COOLSTRAP.View.Scroll = (function(cool) {
 
   var CLASS = cool.Constants.CLASS;
   var ATTRIBUTE = cool.Constants.ATTRIBUTE;
@@ -227,4 +227,4 @@ COOL.View.Scroll = (function(cool) {
       last: last
   };
 
-})(COOL);
+})(COOLSTRAP);

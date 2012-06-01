@@ -1,8 +1,8 @@
-App.Events = (function(coolstrap, undefined) {
+App.Events = (function(cool) {
 
   $(document).ready(function() {
  
   });
  
 
-})(COOL);
+})(COOLSTRAP);

@@ -1,7 +1,7 @@
 /**
  * Coolstrapp Plugins
  * 
- * @namespace COOL
+ * @namespace COOLSTRAP
  * @class Plugins
  * 
  * @author Cristian Ferrari <cristianferrarig@gmail.com> || @energettico
@@ -9,7 +9,7 @@
  * 
  */
 
-COOL.Plugins = (function(coolstrap, document) {
+COOLSTRAP.Plugins = (function(cool, document) {
 
   var hadTouchEvent = false;
 
@@ -18,7 +18,7 @@ COOL.Plugins = (function(coolstrap, document) {
   * fastButton is used to make instant responsive buttons, 
   * 300ms faster to be exact.
   *
-  * new COOL.Plugins.fastButton(document.getElementById('myBtn'), function() { // do something });
+  * new COOLSTRAP.Plugins.fastButton(document.getElementById('myBtn'), function() { // do something });
   *
   * Inspired by MBP
   * https://github.com/h5bp/mobile-boilerplate/blob/master/js/helper.js
@@ -187,4 +187,4 @@ COOL.Plugins = (function(coolstrap, document) {
     fastButton: fastButton
   }
 
-})(COOL, document);
+})(COOLSTRAP, document);

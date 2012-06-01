@@ -1,13 +1,13 @@
 ###
 # Fallback to iOS unexpected behaviors.
 #
-# @namespace COOL.Fallback
+# @namespace COOLSTRAP.Fallback
 # @class iOS
 #
 # @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
 ###
 
-COOL.Fallback.iOS = ((cool, document) ->
+COOLSTRAP.Fallback.iOS = ((cool, document) ->
   VIEWPORT_META = document.querySelector and document.querySelector("meta[name=\"viewport\"]")
 
   ###
@@ -26,4 +26,4 @@ COOL.Fallback.iOS = ((cool, document) ->
       document.addEventListener "gesturestart", _gestureStart, false
 
   scaleFix: scaleFix
-)(COOL, document)
+)(COOLSTRAP, document)

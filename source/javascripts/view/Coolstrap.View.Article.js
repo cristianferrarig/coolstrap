@@ -2,14 +2,14 @@
  * Initialize the <articles> layout of a certain <section>
  * Inspired by LungoJS
  *
- * @namespace COOL.View
+ * @namespace COOLSTRAP.View
  * @class Article
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
 
-COOL.View.Article = (function(cool) {
+COOLSTRAP.View.Article = (function(cool) {
 
   var ELEMENT = cool.Constants.ELEMENT;
   var CLASS = cool.Constants.CLASS;
@@ -56,4 +56,4 @@ COOL.View.Article = (function(cool) {
     show: show
   };
 
-})(COOL);
+})(COOLSTRAP);

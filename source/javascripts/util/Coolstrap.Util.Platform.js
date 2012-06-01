@@ -1,14 +1,14 @@
 /**
  * Coolstrap Platform functions
  * 
- * @namespace COOL.Util
+ * @namespace COOLSTRAP.Util
  * @class Platform
  * 
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  * Inspired by LungoJS
  */
 
-COOL.Util.Platform = (function(cool) {
+COOLSTRAP.Util.Platform = (function(cool) {
 
   var SUPPORTED_OS = {
     android: /(Android)\s+([\d.]+)/,
@@ -102,4 +102,4 @@ COOL.Util.Platform = (function(cool) {
     reloadEnvironment: reloadEnvironment
   };
 
-})(COOL);
+})(COOLSTRAP);

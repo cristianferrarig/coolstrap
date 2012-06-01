@@ -1,24 +1,24 @@
 /**
  * Console Management
  *
- * @namespace COOL
+ * @namespace COOLSTRAP
  * @class Console
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Console = (function(cool) {
+COOLSTRAP.Console = (function(cool) {
 
   /**
    * Console system to display messages when you are in debug mode.
    *
    * @method _log
    *
-   * @param {number} Level based COOL.Constants.LOG_LEVEL
+   * @param {number} Level based COOLSTRAP.Constants.LOG_LEVEL
    * @param {string} Message to show in console
    */
   var _log = function(level, message) {
-    var default_level = cool.App.get('log_level') || 0;
+    var default_level = cool.App.launchOptions['log_level'] || 0;
     var l = cool.Constants.LOG_LEVEL;
     if (!cool.Util.Platform.isMobile()) {
       if (level >= default_level) {
@@ -53,4 +53,4 @@ COOL.Console = (function(cool) {
     }, 
   };
 
-})(COOL);
+})(COOLSTRAP);

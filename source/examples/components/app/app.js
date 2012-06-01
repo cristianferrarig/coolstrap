@@ -1,6 +1,6 @@
-var App = (function(coolstrap, undefined) {
+var App = (function(cool) {
 
-  coolstrap.App.init({
+  cool.App.init({
     name: 'Kitchen Sink',
     version: '1.0',
     resources: {
@@ -9,7 +9,7 @@ var App = (function(coolstrap, undefined) {
   });
 
   var _getEnvironmentFromHelper = (function() {
-    var environment = coolstrap.Util.Platform.environment();
+    var environment = cool.Util.Platform.environment();
     if (environment.isMobile) {
       console.log('Your phone is ' + environment.os.name + ' (' + environment.os.version + ')');
     }
@@ -19,4 +19,4 @@ var App = (function(coolstrap, undefined) {
 
   };
 
-})(COOL);
+})(COOLSTRAP);

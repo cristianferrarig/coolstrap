@@ -1,13 +1,13 @@
 /**
  * Handles the <sections> , <articles> and <asides> to show
  *
- * @namespace COOL
- * @class Navigation
+ * @namespace COOLSTRAP
+ * @class Navigate
  *
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  */
 
-COOL.Navigation = (function(cool) {
+COOLSTRAP.Navigate = (function(cool) {
 
   var ATTRIBUTE = cool.Constants.ATTRIBUTE;
   var CLASS = cool.Constants.CLASS;
@@ -28,11 +28,11 @@ COOL.Navigation = (function(cool) {
   };
 
   var _getHistoryLength = function(container_id) {
-    return cool.Navigation.History.size(container_id);
+    return cool.Navigate.History.size(container_id);
   };
 
   var _getHistoryCurrent = function(container_id) {
-    return cool.Navigation.History.current(container_id);
+    return cool.Navigate.History.current(container_id);
   };
 
   /**
@@ -56,7 +56,7 @@ COOL.Navigation = (function(cool) {
         setTimeout(function() {
           cool.dom(current).removeClass(CLASS.CURRENT);
         }, TRANSITION.DURATION);
-        cool.Navigation.History.add({
+        cool.Navigate.History.add({
           section_id: section_id, container_id: container_id
         });
       }
@@ -143,7 +143,7 @@ COOL.Navigation = (function(cool) {
       setTimeout(function() {
         cool.dom(current_section).removeClass(CLASS.CURRENT);
       }, TRANSITION.DURATION);
-      cool.Navigation.History.removeLast(container_id);
+      cool.Navigate.History.removeLast(container_id);
       cool.dom(_getHistoryCurrent(container_id))
         .addClass(CLASS.CURRENT)
         .removeClass(CLASS.HIDE)
@@ -153,12 +153,28 @@ COOL.Navigation = (function(cool) {
     }
   };
 
+  /**
+   * Open an URL
+   * 
+   * @method toURL
+   */
+  var toURL = function(url, options) {
+    options = options || {};
+    options.new_window = options.new_window || false;
+    if (options.new_window) {
+      window.open(url);
+    } else {
+      //TODO: implement Dialog-Modal on the fly
+    }
+  };
+  
   return {
     section: section,
     article: article,
     aside: aside,
     dialog: dialog,
-    back: back
+    back: back,
+    toURL: toURL
   };
 
-})(COOL);
+})(COOLSTRAP);

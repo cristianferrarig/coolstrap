@@ -1,17 +1,17 @@
 /**
  * Coolstrap UI Utils functions
  * 
- * @namespace COOL.Util
+ * @namespace COOLSTRAP.Util
  * @class UI
  * 
  * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
  *
  */
 
-COOL.Util.UI = (function(cool) {
+COOLSTRAP.Util.UI = (function(cool) {
   var VIEWPORT_META = document.querySelector && document.querySelector('meta[name="viewport"]');
   
-  /**
+  /**  
   * Normalized hide address bar for iOS & Android
   * (c) Scott Jehl, scottjehl.com
   * MIT License
@@ -92,7 +92,6 @@ COOL.Util.UI = (function(cool) {
   *
   * https://github.com/h5bp/mobile-boilerplate/pull/108
   */
-
   var preventZoom = function () {
     var formFields = document.querySelectorAll('input, select, textarea'),
         contentString = 'width=device-width,initial-scale=1,maximum-scale=',
@@ -115,4 +114,4 @@ COOL.Util.UI = (function(cool) {
     preventZoom: preventZoom
   };
 
-})(COOL);
+})(COOLSTRAP);
