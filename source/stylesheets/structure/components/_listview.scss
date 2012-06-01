@@ -76,7 +76,10 @@ ul[data-type="listview"] {
     @include inline-block;
   }
   
-  
+  input {
+    @include box-flex(1);
+    display: block;
+  }
 
 } // UL
 

@@ -78,7 +78,40 @@
 
 
 
+//Forms
 
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="email"],
+input[type="search"], 
+input[type="number"], 
+input[type="tel"] {
+  height: $default-header-button;
+}
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+
+
+form {
+  .content {
+    @include setFlexibleBox(horizontal,stretch, stretch);
+    padding: $default-interface-spacing;
+    .aside {
+      @include setFlexibleBox(vertical,stretch,center);
+      width: 30%;
+      text-align: right;
+      padding-right: $default-interface-spacing * 2;
+    }
+    input {
+      @include box-flex(1);
+      display: block;
+    }
+  }
+}
 
 
 
@@ -116,7 +149,7 @@ footer#{$isToolbar} {
     width: 16px;
     height: 16px;
     margin: -2px 5px 0 0;
-    TOTO: delete, it's only for debug
+    //TODO: delete, it's only for debug
     @include border-radius(100%);
     border: 3px solid #666;
   }
@@ -125,3 +158,13 @@ footer#{$isToolbar} {
 
 
 */
+
+
+
+
+
+
+
+
+
+

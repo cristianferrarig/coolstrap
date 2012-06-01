@@ -166,6 +166,14 @@ div#{$isModal} {
   }
 }
 
+//Forms
+
+form {
+  .content {
+    border-bottom: 1px solid #999;
+    background-color: rgba(0,0,0,.1);
+  }
+}
 
 
 
