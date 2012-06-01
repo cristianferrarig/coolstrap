@@ -266,6 +266,8 @@ textarea {
 	margin: 0;
 	vertical-align: baseline;
 	*vertical-align: middle;
+	border: 0 none;
+	outline: none;
 }
 
 // 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)

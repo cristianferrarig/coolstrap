@@ -1,6 +1,9 @@
 = content_for :title do
 	Tabbars markup
 
+= content_for :application_styles do 
+	= stylesheet_link_tag "themes/defaultcolor"
+	
 = content_for :principal do
 
 	%div.a{"role" => "main"}

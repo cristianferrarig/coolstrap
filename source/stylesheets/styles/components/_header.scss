@@ -1,15 +1,72 @@
 @import "../utilities";
 
 
-@mixin header($color: $default-header-color, $style: $default-header-color) {
-  
-  @if $style == linear {
-    @include background(linear-gradient(top left, #333, #0c0));
-  }
-  @else if $style == shiny {
+@mixin bar($style, $first-color, $last-color: false) {
+  background-color: $first-color;
+  border-bottom: 1px solid darken($first-color,20%);
 
+  @if $style == linear {
+    @if $last-color == false {
+      @include background-image($style-lineargradient-default);
+    }
+    @else {
+      @include background-image(linear-gradient($first-color, $last-color));
+    }
   }
+
+  @else if $style == shiny  {
+    @if $last-color == false {
+      @include background-image($style-lineargradient-shiny);
+    }
+    @else {
+      @include background-image(
+        $style-lineargradient-shiny,
+        linear-gradient($first-color,$last-color)
+      );
+    }
+  }
+
+  @else if $style == glass {
+    @if $last-color == false {
+      @include background-image(
+        $style-lineargradient-glass
+      );
+    }
+    /*@if $last-color == false {
+      @include background-image(
+        linear-gradient(
+          $first-color,
+          darken($first-color, 10%) 40%,
+          darken($first-color, 10%) 70%,
+          darken($first-color, 5%)
+        )
+      );
+    }*/
+    @else {
+      @include background-image(
+        $style-lineargradient-glass,
+        linear-gradient($first-color,$last-color)
+      );
+    }
+    /*@else {
+      @include background-image(
+        linear-gradient(
+          $first-color,
+          lighten($last-color, 5%) 40%,
+          $last-color 60%,
+          darken($first-color, 10%)
+        )
+      );
+    }*/
+  }
+  
   @else if $style == radial {
-    @include background(radial-gradient(#c00, #fff 100px));
+    @if $last-color == false {
+      @include background(radial-gradient($first-color, darken($first-color, 10%)))
+    }
+    @else {
+      @include background(radial-gradient($first-color, $last-color));
+    }
   }
+
 }

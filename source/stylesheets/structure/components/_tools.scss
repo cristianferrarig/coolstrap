@@ -29,6 +29,7 @@
 }
 
 .control-group {
+  @include box-align(stretch);
   a {
     margin: 0 !important;
   }

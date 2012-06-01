@@ -1,0 +1,101 @@
+@import "../utilities";
+
+@function text-contrast($_txtcolor, $_light: #FFF, $_dark: #000) {
+  $_dark-color: lightness($_txtcolor) < lightness(gray);
+  @return if($_dark-color, $_light, $_dark);
+}
+
+
+
+@mixin button-text($_bgcolor,$_txtcolor: #FFF) {
+  background-color: $_bgcolor;
+  * { color: $_txtcolor; }
+  @include text-shadow($style-text-shadow);
+}
+
+
+@mixin button($_style: default, $_bgcolor: transparent, $_border: $style-border-color) {
+  border: 1px solid $_border;
+  //@include box-sizing(content-box);
+  //@include background-clip(border-box);
+
+  @if $_style == debug {
+    @include button-text($_bgcolor);
+    @include background-image($style-lineargradient-default);
+    @include box-shadow(
+      $style-innershadow-blur-top,
+      $style-outerhighlight-solid-bottom
+    );
+  }
+
+  @if $_style == default {
+    @include button-text($_bgcolor);
+    @include background-image($style-lineargradient-default);
+    @include box-shadow(
+      $style-innershadow-blur-top,
+      $style-outerhighlight-solid-bottom
+    );
+  }
+
+  @else if $_style == bevel {
+    @include button-text($_bgcolor);
+    @include background-image($style-lineargradient-default);
+    @include box-shadow(
+      $style-innerhighlight-solid-top,
+      $style-innerhighlight-blur-top,
+      $style-outerhighlight-solid-bottom
+    );
+  }
+
+  @else if $_style == shiny {
+    @include button-text($_bgcolor);
+    @include background-image($style-lineargradient-shiny);
+    @include box-shadow(
+      $style-innershadow-blur-top,
+      $style-outerhighlight-solid-bottom
+    );
+  }
+
+  @else if $_style == glass {
+    @include button-text($_bgcolor);
+    @include background-image($style-lineargradient-glass);
+    @include box-shadow(
+      $style-innerhighlight-solid
+    );
+  }
+
+  @else if $_style == inset {
+    border: 2px solid $_border;
+    @include button-text($_bgcolor);
+    @include background-image($style-lineargradient-default);
+    @include box-shadow(
+      $style-innerhighlight-solid-top,
+      $style-innerhighlight-blur-top
+    );
+  }
+
+  @else if $_style == draft {
+    @include button-text($_bgcolor);
+    @include background-image($style-lineargradient-default);
+    @include box-shadow(
+      0 0 5px 1px rgba(#000,.2) inset,
+      $style-outerhighlight-solid
+    );
+  }
+
+  @else if $_style == keyboard {
+    border-width: 0px;
+    @include button-text(#FFF,#333);
+    @include text-shadow(0 1px 0 rgba(#FFF,.6));
+    @include background-image(linear-gradient(
+      rgba(#000,.0),
+      rgba(#000,.3)
+    ));
+    @include box-shadow(
+      $style-outershadow-blur-bottom,
+      $style-innerhighlight-solid-bottom
+    );
+  }
+
+}
+

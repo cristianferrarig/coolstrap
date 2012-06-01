@@ -85,6 +85,10 @@ header#{$isNotVertical} {
   a {
     padding:     0 $default-interface-spacing;
   }
+  .control-group {
+    height:        $default-header-button;
+    a { height: auto !important; }
+  }
 }
 header#{$isVertical} {
   i           { @include square($default-header-vertical-icon); }
@@ -123,6 +127,10 @@ footer {
       padding:     0 $default-interface-spacing;
       // TODO: si tiene un <i> dentro del a tiene que cambiar display:block; por display:box;
       //display:       block;
+    }
+    .control-group {
+      height:        $default-navbar-button;
+      a { height: auto !important; }
     }
   }
   &#{$isTabbar} {
