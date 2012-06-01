@@ -37,24 +37,37 @@ $theme-border-radius: 5px;
 header, nav {
   > a:not(.onlyIcon),
   .control-group {
-    @include button(draft,rgba(#000,.1),rgba(#000,.4));
-    //@include button(glass,#005C99);
-    //@include button(shiny,#A6E22E);
-    //background-repeat: no-repeat;
+    @include button(default,rgba(#000,.2),rgba(#000,.4));
   }
   > a:not(.onlyIcon) {
     @include border-radius($theme-border-radius);
+    &.is-active {
+      background-color: rgba(#000,.5);
+      @include background-clip(padding-box);
+      @include box-shadow(
+        $style-innershadow-glow-top,
+        $style-innershadow-blur-top
+      );
+      border-color: rgba(#000,.7);
+    }
   }
   .control-group {
     @include border-radius($theme-border-radius);
     a {
       @include border-radius(0);
-      border-right: 1px solid rgba(#000,.2);
-      font-weight: bold;
-      //background-color: green;
+      border-right: 1px solid rgba(#000,.3);
+      font-weight: bold;  
 
       &:first-child { @include border-left-radius($theme-border-radius); }
       &:last-child  { @include border-right-radius($theme-border-radius); border-right-width: 0; }
+      &.is-active {
+        background-color: rgba(#000,.3);
+        @include background-clip(padding-box);
+        @include box-shadow(
+          $style-innershadow-blur-left,
+          $style-innershadow-blur-right
+        );
+      }
     }
   }
 }

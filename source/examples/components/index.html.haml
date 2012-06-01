@@ -10,7 +10,7 @@
 		%header
 			%a.onlyIcon <i></i>
 			.control-group
-				%a
+				%a.is-active
 					%span boton
 				%a
 					%span boton
@@ -40,11 +40,13 @@
 				.control-group
 					%a
 						%span boton
-					%a
+					%a.is-active
 						%span boton
 					%a
 						%span boton
-						
+				%a.is-active
+					%span boton
+	
 			-#%nav{"data-type" => "toolbar"}
 				%input{:type => "search", :name => "txt"}
 				%a search

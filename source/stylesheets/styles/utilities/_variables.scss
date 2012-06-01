@@ -1,42 +1,57 @@
 // Positions
 
-$style-header-color: #383C47 !default;
+$style-header-color:               #383C47 !default;
 
-$style-shadow-color:          rgba(#000,.3);
-$style-highlight-color:       rgba(#FFF,.1);
-$style-border-color:          rgba(#000,.3);
-$style-text-shadow:           0 -1px 0 rgba(#000,.2);
+$style-shadow-color:               rgba(#000,.3);
+$style-highlight-color:            rgba(#FFF,.1);
+$style-border-color:               rgba(#000,.3);
+$style-textshadow-light:            0 -1px 0 rgba(#000,.2);
+$style-textshadow-dark:             0  1px 0 rgba(#FFF,.6);
 
 
-// Shadows
-$style-outershadow-solid:           0  0 0   1px $style-shadow-color;
-$style-outershadow-blur:            0  0 2px 1px $style-shadow-color;
-$style-innershadow-solid:           0  0 0   1px $style-shadow-color inset;
-$style-innershadow-blur:            0  0 2px 1px $style-shadow-color inset;
+// Outer Shadows
+$style-outershadow-solid:           0px  0px 0px 1px $style-shadow-color;
+$style-outershadow-solid-top:       0px -1px 0px 0px $style-shadow-color;
+$style-outershadow-solid-bottom:    0px  1px 0px 0px $style-shadow-color;
 
-$style-outershadow-solid-top:       0 -1px 0   0 $style-shadow-color;
-$style-outershadow-blur-top:        0 -1px 2px 0 $style-shadow-color;
-$style-innershadow-solid-top:       0  1px 0   0 $style-shadow-color inset;
-$style-innershadow-blur-top:        0  1px 2px 0 $style-shadow-color inset;
-$style-outershadow-solid-bottom:    0  1px 0   0 $style-shadow-color;
-$style-outershadow-blur-bottom:     0  1px 2px 0 $style-shadow-color;
-$style-innershadow-solid-bottom:    0 -1px 0   0 $style-shadow-color inset;
-$style-innershadow-blur-bottom:     0 -1px 2px 0 $style-shadow-color inset;
+$style-outershadow-blur:            0px  0px 2px 1px $style-shadow-color;
+$style-outershadow-blur-top:        0px -1px 2px 0px $style-shadow-color;
+$style-outershadow-blur-bottom:     0px  1px 2px 0px $style-shadow-color;
 
-// Highlight
-$style-outerhighlight-solid:        0  0 0   1px $style-highlight-color;
-$style-outerhighlight-blur:         0  0 2px 1px $style-highlight-color;
-$style-innerhighlight-solid:        0  0 0   1px $style-highlight-color inset;
-$style-innerhighlight-blur:         0  0 2px 1px $style-highlight-color inset;
+// Inner Shadows
+$style-innershadow-solid:           0px  0px 0px 1px $style-shadow-color inset;
+$style-innershadow-solid-top:       0px  1px 0px 0px $style-shadow-color inset;
+$style-innershadow-solid-bottom:    0px -1px 0px 0px $style-shadow-color inset;
 
-$style-outerhighlight-solid-top:    0 -1px 0   0 $style-highlight-color;
-$style-outerhighlight-blur-top:     0 -1px 2px 0 $style-highlight-color;
-$style-innerhighlight-solid-top:    0  1px 0   0 $style-highlight-color inset;
-$style-innerhighlight-blur-top:     0  1px 2px 0 $style-highlight-color inset;
-$style-outerhighlight-solid-bottom: 0  1px 0   0 $style-highlight-color;
-$style-outerhighlight-blur-bottom:  0  1px 2px 0 $style-highlight-color;
-$style-innerhighlight-solid-bottom: 0 -1px 0   0 $style-highlight-color inset;
-$style-innerhighlight-blur-bottom:  0 -1px 2px 0 $style-highlight-color inset;
+$style-innershadow-blur:            0px  0px 2px 1px $style-shadow-color inset;
+$style-innershadow-blur-top:        0px  1px 2px 0px $style-shadow-color inset;
+$style-innershadow-blur-bottom:     0px -1px 2px 0px $style-shadow-color inset;
+$style-innershadow-blur-left:      -2px  0px 2px -1px $style-shadow-color inset;
+$style-innershadow-blur-right:      2px  0px 2px -1px $style-shadow-color inset;
+
+$style-innershadow-glow:            0px  0px 5px 1px $style-shadow-color inset;
+$style-innershadow-glow-top:        0px  2px 5px 0px $style-shadow-color inset;
+$style-innershadow-glow-bottom:     0px -1px 5px 0px $style-shadow-color inset;
+
+
+
+// Outer Highlight
+$style-outerhighlight-solid:        0px  0px 0px 1px $style-highlight-color;
+$style-outerhighlight-solid-top:    0px -1px 0px 0px $style-highlight-color;
+$style-outerhighlight-solid-bottom: 0px  1px 0px 0px $style-highlight-color;
+
+$style-outerhighlight-blur:         0px  0px 2px 1px $style-highlight-color;
+$style-outerhighlight-blur-top:     0px -1px 2px 0px $style-highlight-color;
+$style-outerhighlight-blur-bottom:  0px  1px 2px 0px $style-highlight-color;
+
+// Inner Highlight
+$style-innerhighlight-solid:        0px  0px 0px 1px $style-highlight-color inset;
+$style-innerhighlight-solid-top:    0px  1px 0px 0px $style-highlight-color inset;
+$style-innerhighlight-solid-bottom: 0px -1px 0px 0px $style-highlight-color inset;
+
+$style-innerhighlight-blur:         0px  0px 2px 1px $style-highlight-color inset;
+$style-innerhighlight-blur-top:     0px  1px 2px 0px $style-highlight-color inset;
+$style-innerhighlight-blur-bottom:  0px -1px 2px 0px $style-highlight-color inset;
 
 
 $style-lineargradient-default:      linear-gradient(rgba(#000,.0),rgba(#000,.2));

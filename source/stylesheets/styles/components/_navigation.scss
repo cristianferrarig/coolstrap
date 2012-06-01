@@ -10,7 +10,7 @@
 @mixin button-text($_bgcolor,$_txtcolor: #FFF) {
   background-color: $_bgcolor;
   * { color: $_txtcolor; }
-  @include text-shadow($style-text-shadow);
+  @include text-shadow($style-textshadow-light);
 }
 
 
@@ -78,7 +78,7 @@
     @include button-text($_bgcolor);
     @include background-image($style-lineargradient-default);
     @include box-shadow(
-      0 0 5px 1px rgba(#000,.2) inset,
+      $style-innershadow-glow,
       $style-outerhighlight-solid
     );
   }
@@ -86,11 +86,8 @@
   @else if $_style == keyboard {
     border-width: 0px;
     @include button-text(#FFF,#333);
-    @include text-shadow(0 1px 0 rgba(#FFF,.6));
-    @include background-image(linear-gradient(
-      rgba(#000,.0),
-      rgba(#000,.3)
-    ));
+    @include text-shadow($style-textshadow-dark);
+    @include background-image($style-lineargradient-default);
     @include box-shadow(
       $style-outershadow-blur-bottom,
       $style-innerhighlight-solid-bottom
