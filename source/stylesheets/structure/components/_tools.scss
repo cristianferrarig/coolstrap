@@ -89,8 +89,8 @@ input[type="number"],
 input[type="tel"] {
   height: $default-header-button;
 }
-input {
-  width: 100%;
+input,
+textarea {
   border: 1px solid #ccc;
 }
 
@@ -106,10 +106,23 @@ form {
       text-align: right;
       padding-right: $default-interface-spacing * 2;
     }
-    input {
+    .start {
+      @include setFlexibleBox(vertical,stretch,start);
+    }
+    input, textarea {
       @include box-flex(1);
       display: block;
     }
+    label {
+      display: block;
+      margin-bottom: $default-interface-spacing;
+    }
+    textarea {
+      min-height: 80px;
+    }
+  }
+  .content.vertical{
+    @include setFlexibleBox(vertical,stretch, stretch);
   }
 }
 
