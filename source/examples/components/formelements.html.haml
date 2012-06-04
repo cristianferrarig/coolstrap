@@ -25,39 +25,105 @@
 
 
 			%article.scrollable
-				%form
-						
-					%h1 Con porcentajes		
+				%h1 Radio y checkbox
+				%form.inset
 					.content
+						%label 
+							%input{:type => "checkbox"}	
+							Atun palta
+					.content
+						%label 
+							%input{:type => "checkbox"}	
+							Atun palta		
+				
+					.content
+						%label 
+							%input{:type => "radio", :name => "radio"}	
+							Atun palta
+					.content
+						%label 
+							%input{:type => "radio", :name => "radio"}	
+							Atun palta
+
+				%h1 horizontales			
+				%form.inset
+					.content.horizontal
+						%label 
+							Atun palta
+						%input{:type => "radio", :name => "radio"}	
+					.content.horizontal
+						%label 
+							Riquitiqui					
+						%input{:type => "radio", :name => "radio"}	
+					
+
+				%form.inset
+					.content.horizontal
+						%label 
+							Atun palta
+						%input{:type => "checkbox"}	
+					.content.horizontal
+						%label 
+							Atun palta
+						%input{:type => "checkbox"}	
+					.content.horizontal
+						%label 
+							Marque si le gusta la gasolina					
+						.toggle-content
+							%input.toggle-switch{:type => "checkbox", "data-icon1" => "SI", "data-icon2" => "NO"}			
+						
+				
+
+				%h1 Con porcentajes		
+				%form.inset	
+					.content.horizontal
 						.aside Name
 						%input{:type => "text"}	
-					.content
+					.content.horizontal
 						.aside Phone
 						%input{:type => "text"}	
-					.content
+					.content.horizontal
 						.aside Larger Adress
 						%input{:type => "text"}	
-					.content
+					.content.horizontal.start
 						.aside Tomatican con pollo y mermelada de palta
-						%input{:type => "text"}		
+						%input{:type => "text"}
+					.content.horizontal.start
+						.aside Tomatican 
+						%textarea	
+					.content.horizontal
+						.aside Tomatican 
+						%select
+							%option{:value => "option 1"}	option 1					
+							%option{:value => "option 2"}	option 2					
+							%option{:value => "option 3"}	option 3					
+
+
+				%h1 Label encima
+				%form.inset
 					.content
-						.aside.start Tomatican 
-						%textarea					
-
-
-					%h1 Label encima
-					.content.vertical
 						%label Name
 						%input{:type => "text"}	
-					.content.vertical
+					.content
 						%label Phone
 						%input{:type => "text"}	
-					.content.vertical
+					.content
 						%label Atun palta
 						%input{:type => "text"}	
-					.content.vertical
+					.content
 						%label Minicomponente
-						%textarea						
+						%textarea	
+
+					.content
+						%label Tomatican 
+						%select
+							%option{:value => "option 1"}	option 1					
+							%option{:value => "option 2"}	option 2					
+							%option{:value => "option 3"}	option 3	
+
+				
+
+													
 
 				
 

@@ -171,6 +171,12 @@ div#{$isModal} {
 form {
   .content {
     background-color: rgba(0,0,0,.1);
+    border-bottom: 1px solid #ccc;
+  }
+  input,
+  textarea,
+  select {
+    border: 1px solid #ccc;
   }
 }
 

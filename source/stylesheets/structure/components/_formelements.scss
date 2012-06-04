@@ -1,0 +1,53 @@
+//Forms
+
+form {
+  //TODO: tratar de reemplazar tanto input type por el not:checkbox y radio. Por algun motivo esa solucion no esta funcionando
+  input[type="text"],
+  input[type="password"],
+  input[type="url"],
+  input[type="email"],
+  input[type="search"], 
+  input[type="number"], 
+  input[type="tel"],
+  select {
+    height: $default-header-button;
+    padding: 0 $default-interface-spacing;
+  }
+  .content {
+    @include setFlexibleBox(vertical,stretch, center);
+    min-height: 44px;
+    padding: $default-interface-spacing;
+    .aside {
+      @include setFlexibleBox(vertical,stretch,center);
+      width: 30%;
+      text-align: right;
+      padding-right: $default-interface-spacing * 2;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="email"],
+    input[type="search"], 
+    input[type="number"], 
+    input[type="tel"],
+    textarea, 
+    select {
+      @include box-flex(1);
+      display: block;
+    }
+    label    { @include box-flex(1); }
+    textarea { min-height: 80px; padding: $default-interface-spacing; }
+  }
+  .horizontal { 
+    @include setFlexibleBox(horizontal,center, stretch); 
+    label {
+       @include box-flex(1);
+       display: block;
+    }
+  }
+  .start { @include setFlexibleBox(horizontal,start, stretch); }
+}
+
+
+
