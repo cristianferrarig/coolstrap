@@ -36,7 +36,7 @@ form {
       @include box-flex(1);
       display: block;
     }
-    label    { @include box-flex(1); }
+    label, .slider    { @include box-flex(1); }
     textarea { min-height: 80px; padding: $default-interface-spacing; }
   }
   .horizontal { 
@@ -47,6 +47,7 @@ form {
     }
   }
   .start { @include setFlexibleBox(horizontal,start, stretch); }
+
 }
 
 

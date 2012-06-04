@@ -55,6 +55,31 @@
 }
 
 
+.slider {
+  @include border-radius(1em);
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+  height: 15px;
+  padding: 0;
+  width: 100%;
+  z-index: 0;
+  background-color: #ddd;
+  border: 1px solid #aaa;
+    a {
+      @include border-radius(1em);
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      width: 28px;
+      height: 28px;
+      margin-top: -15px;
+      margin-left: -15px;
+      left: 50%;
+      background-color: #ccc;
+      border: 1px solid #888;
+    }
+}
 
 
 
@@ -123,7 +148,6 @@ footer#{$isToolbar} {
 
 
 */
-
 
 
 
