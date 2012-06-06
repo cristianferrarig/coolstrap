@@ -32,7 +32,7 @@ form {
     input[type="number"], 
     input[type="tel"],
     textarea, 
-    select {
+    select, {
       @include box-flex(1);
       display: block;
     }
@@ -42,8 +42,11 @@ form {
   .horizontal { 
     @include setFlexibleBox(horizontal,center, stretch); 
     label {
-       @include box-flex(1);
-       display: block;
+      @include box-flex(1);
+      display: block;
+    }
+    .slider {
+      @include box-flex(1)
     }
   }
   .start { @include setFlexibleBox(horizontal,start, stretch); }

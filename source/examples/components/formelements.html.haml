@@ -28,9 +28,14 @@
 					
 				%h1 Radio y checkbox
 				%form.inset
-					.content
+					.content.horizontal
+						%p 0:00
 						.slider
-							%a
+							%a.mini
+						%p -30:35	
+					.content.horizontal
+						.slider
+							%a	
 					.content
 						%label 
 							%input{:type => "checkbox"}	
@@ -75,7 +80,7 @@
 						%label 
 							Marque si le gusta la gasolina					
 						.toggle-content
-							%input.toggle-switch{:type => "checkbox", "data-icon1" => "SI", "data-icon2" => "NO"}			
+							%input.toggle-switch{:type => "checkbox", "data-icon1" => "chai", "data-icon2" => "holi"}			
 						
 				
 

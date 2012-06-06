@@ -58,26 +58,25 @@
 .slider {
   @include border-radius(1em);
   position: relative;
-  display: inline-block;
   overflow: visible;
-  height: 15px;
+  height: 8px;
   padding: 0;
-  width: 100%;
   z-index: 0;
-  background-color: #ddd;
-  border: 1px solid #aaa;
     a {
       @include border-radius(1em);
       position: absolute;
       z-index: 1;
       top: 50%;
-      width: 28px;
-      height: 28px;
-      margin-top: -15px;
-      margin-left: -15px;
-      left: 50%;
-      background-color: #ccc;
-      border: 1px solid #888;
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+      margin-left: -8px;
+    }
+    a.mini {
+      width: 14px;
+      height: 14px;
+      margin-top: -7px;
+      margin-left: -7px;
     }
 }
 
@@ -101,7 +100,56 @@
 }
 
 
+//toggle switch
 
+.toggle-content {
+  position: relative;
+  width: 96px;
+  height: $default-header-button;  
+  .toggle-switch {
+    -webkit-appearance:none;    
+    outline: none;
+    width: 96px;
+    height: $default-header-button;  
+    position: relative;
+    border: 0;
+    &:before, &:after {
+      text-align: center;    
+      position: absolute;
+      width: 30px;
+      height: $default-header-button - 2;
+      line-height: $default-header-button;
+      z-index: 1;    
+      top: 1px;    
+      border: 1px solid #888;
+    }
+    &:after {
+      content: attr(data-icon1);
+      left: 1px;
+    }
+    &:before {
+      content: attr(data-icon2);
+      right: 1px;
+      padding-left: 10px;
+    }
+    &:checked:after { 
+      padding-right: 20px;
+    }
+    &:before, &:checked:after {
+      text-indent: 0;
+      background-color: #ccc;
+      width: 70px;
+      z-index: 0;
+    }
+    &:after, &:checked:before {
+      background: #fff;    
+      text-indent: -9999px;
+      z-index: 2;
+      width: 30px;
+    }
+  }
+
+}
 
 
 
@@ -156,77 +204,4 @@ footer#{$isToolbar} {
 
 
 
-//toggle switch
 
-//Checkbox
-.toggle-content {
-  position: relative;
-  width: 96px;
-  height: 32px;  
-  .toggle-switch {
-      -webkit-appearance:none;    
-      outline: none;
-      width: 96px;
-      height: 32px;  
-      cursor: pointer;
-      position: relative;
-      background-color: #333;
-      border: 0;
-  }
-
-  .toggle-switch:before, .toggle-switch:after {
-      font: bold 16px/30px sans-serif;
-      cursor: pointer;
-      text-align: center;    
-      position: absolute;
-      z-index: 1;    
-      width: 32px;
-      height: 30px;
-      top: 1px;    
-      border: 0;
-  }
-
-  .toggle-switch:after {
-      content: attr(data-icon1);
-      left: 1px;
-  }
-
-  .toggle-switch:before {
-      content: attr(data-icon2);
-      right: 1px;
-  }
-
-
-  //checked/unchecked 
-
-  //unchecked 
-  .toggle-switch       { background: #fff; }
-  .toggle-switch:after { background: #fff; }
-
-
-  //checked
-  .toggle-switch:checked:after { background: #39c; }
-
-  //active/inactve
-
-  //Active
-  .toggle-switch:before, .toggle-switch:checked:after {
-      text-indent: 0;
-      background-color: #ccc;
-      width: 70px;
-      z-index: 0;
-  }
-
-  .toggle-switch:before        { padding-left: 10px; }
-  .toggle-switch:checked:after { padding-right: 20px; }
-
-  //Inactive 
-  .toggle-switch:after, .toggle-switch:checked:before {
-      background: #fff;    
-      text-indent: -9999px;
-      z-index: 2;
-      width: 30px;
-      height: 28px;
-      border: 1px solid #888;
-  }
-}
