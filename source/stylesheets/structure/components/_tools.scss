@@ -100,7 +100,77 @@
 }
 
 
-//toggle switch
+.toggle-content {
+  background-color: #666;
+  border: 1px solid #333;
+  height: 32px;
+  width: 80px;
+  position: relative; 
+  input[type="checkbox"] {
+    display: none;
+  }
+  &:before, &:after { line-height: 32px; color: #fff;}
+  &:before {
+    content: "ON";
+    padding-left: 9px;
+  }
+  &:after {
+    content: "OFF";
+    padding-left: 12px;
+  }
+  label {
+    display: block;
+    height: 30px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+  }
+}
+
+
+
+
+
+
+/*
+header#{$isNotVertical},
+nav#{$isToolbar},
+footer#{$isToolbar} {
+  a {
+    font-size: 12px;
+  }
+  > a + a {
+    margin-left: 0px;
+  }
+  input[type="search"] {
+    @include box-flex(1);
+    display: block;
+  }
+  input[type="search"] + a {
+    margin-left: 0 !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+.message {
+  i {
+    @include inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -2px 5px 0 0;
+    //TODO: delete, it's only for debug
+    @include border-radius(100%);
+    border: 3px solid #666;
+  }
+}
 
 .toggle-content {
   position: relative;
@@ -150,50 +220,6 @@
   }
 
 }
-
-
-
-
-/*
-header#{$isNotVertical},
-nav#{$isToolbar},
-footer#{$isToolbar} {
-  a {
-    font-size: 12px;
-  }
-  > a + a {
-    margin-left: 0px;
-  }
-  input[type="search"] {
-    @include box-flex(1);
-    display: block;
-  }
-  input[type="search"] + a {
-    margin-left: 0 !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-.message {
-  i {
-    @include inline-block;
-    width: 16px;
-    height: 16px;
-    margin: -2px 5px 0 0;
-    //TODO: delete, it's only for debug
-    @include border-radius(100%);
-    border: 3px solid #666;
-  }
-}
-
-
 
 */
 
