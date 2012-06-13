@@ -1,0 +1,108 @@
+= content_for :title do
+  Coolstrapp Kitchen-sink
+  
+= content_for :application_styles do 
+  = stylesheet_link_tag "themes/defaultcolor"
+= content_for :principal do
+  
+  %div{"role" => "main"}
+    %section#home
+      %header
+        %a Back
+        %hgroup
+          %h1 App Hibri(gi)das
+          %h2 Continuum - Meetup
+        %a Home  
+      %article#lorem.scrollable
+        
+        %ul.inset{"data-type" => "listview"}
+          %li.list-divider 1. Sexy chiks en Santiago
+        
+          %li 
+            .aside.up
+              .picture.av1
+            .content
+              .nested
+                .title Almendra
+                .aside 27 a&ntilde;os
+              .desc Piloto comercial, experta en toma de fotografias aeras para trazado de mapas y cartas topograficas. 
+            .aside
+              %i 
+          %li 
+            .aside.up
+              .picture.av2
+            .content
+              .nested
+                .title Yadira
+                .aside 23 a&ntilde;os
+              .desc Gimnasta olimpica, experta en argollas y barras paralelas asimetricas
+            .aside
+              %i 
+          %li 
+            .aside.up
+              .picture.av3
+            .content
+              .nested
+                .title Jesenia
+                .aside 30 a&ntilde;os
+              .desc Programadora computacional, experta en ruby on rails (siempre tiene una gema y un test para todo).
+            .aside
+              %i 
+          %li 
+            .aside.up
+              .picture.av4
+            .content
+              .nested
+                .title Kathy
+                .aside 24 a&ntilde;os
+              .desc Veterinaria militar a cargo de la escuela de caballeria e infanteria de Rancagua.
+            .aside
+              %i 
+          %li.list-divider 2. Sexy chicks cerca de Santiago
+          %li 
+            .aside.up
+              .picture.av5
+            .content
+              .nested
+                .title Ninoska
+                .aside 21 a&ntilde;os
+              .desc Modelo de rodillas para comerciales kinesiologicos.
+            .aside
+              %i 
+          %li 
+            .aside.up
+              .picture.av6
+            .content
+              .nested
+                .title Rut
+                .aside 27 a&ntilde;os
+              .desc Soldadora al arco. Soldo el 73% de de las estructuras en el Costanera Center. 
+            .aside
+              %i 
+          %li 
+            .aside.up
+              .picture.av7
+            .content
+              .nested
+                .title Brenda
+                .aside 22 a&ntilde;os
+              .desc Periodista deportiva, comentarista en la cadena de TV Rhyboo.
+            .aside
+              %i 
+          %li 
+            .aside.up
+              .picture.av8
+            .content
+              .nested
+                .title Roberta
+                .aside 23 a&ntilde;os 
+              .desc Empresaria e inventora. Se le atribuyen descubrimientos como el clip forrado en plastico. 
+            .aside
+              %i 
+                          
+
+
+
+= content_for :application_js do  
+  %script{:src => "app/app.js", :type=> "text/javascript"}
+  

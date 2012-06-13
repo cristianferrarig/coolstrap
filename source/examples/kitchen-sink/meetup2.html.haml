@@ -1,0 +1,98 @@
+= content_for :title do
+  Coolstrapp Kitchen-sink
+  
+= content_for :application_styles do 
+  = stylesheet_link_tag "themes/defaultcolor"
+= content_for :principal do
+  
+  %div{"role" => "main"}
+    %section#home
+      %header
+        %a Back
+        %hgroup
+          %h1 App Hibri(gi)das
+          %h2 Continuum - Meetup
+        %a Home  
+      %article#lorem.scrollable
+        
+        %ul.inset{"data-type" => "listview"}
+          %li.list-divider Parrillada 12 personas
+          %li
+            .content
+              %p 2 Bolsas de carbon.
+            .aside
+              %i
+          %li
+            .content
+              %p 24 Chorizos Pincheira.
+            .aside
+              %i
+          %li
+            .content
+              %p 18 Piezas de pan batido.
+            .aside
+              %i
+          %li
+            .content
+              %p 2.5kg de lomo vetado.
+            .aside
+              %i
+          %li
+            .content
+              %p 1 Costillar de cerdo.
+            .aside
+              %i
+          %li
+            .content
+              %p 4 Cebollas.
+            .aside
+              %i    
+          %li
+            .content
+              %p 5 Tomates.
+            .aside
+              %i 
+          %li
+            .content
+              %p Cilantro.
+            .aside
+              %i 
+          %li
+            .content
+              %p 24 Papas medianas.
+            .aside
+              %i  
+          %li
+            .content
+              %p 1lt de mayonesa.
+            .aside
+              %i   
+          %li.list-divider Para tomar
+          %li
+            .content
+              %p 15lts De pipe&ntilde;o de las Pipas de Einstein.
+            .aside
+              %i  
+          %li
+            .content
+              %p 4 Casatas de 2lts de helado de pi&ntilde;a Chamonix.
+            .aside
+              %i  
+          %li
+            .content
+              %p 1 Botella de granadina.
+            .aside
+              %i  
+          %li
+            .content
+              %p 1 Botella de Fernet.
+            .aside
+              %i                                 
+
+                          
+
+
+
+= content_for :application_js do  
+  %script{:src => "app/app.js", :type=> "text/javascript"}
+  
