@@ -1,6 +1,21 @@
 //Forms
 
 form {
+  input[type="text"],
+  input[type="password"],
+  input[type="url"],
+  input[type="email"],
+  input[type="search"], 
+  input[type="number"], 
+  input[type="tel"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="time"],
+  input[type="month"],
+  input[type="week"] {
+    -webkit-appearance: none;
+  }
   //TODO: tratar de reemplazar tanto input type por el not:checkbox y radio. Por algun motivo esa solucion no esta funcionando
   input[type="text"],
   input[type="password"],
@@ -9,9 +24,19 @@ form {
   input[type="search"], 
   input[type="number"], 
   input[type="tel"],
+  input[type="range"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="time"],
+  input[type="month"],
+  input[type="week"],
   select {
     height: $default-header-button;
     padding: 0 $default-interface-spacing;
+  }
+  label {
+    display: block;
   }
   .content {
     @include setFlexibleBox(vertical,stretch, center);
@@ -31,6 +56,12 @@ form {
     input[type="search"], 
     input[type="number"], 
     input[type="tel"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="time"],
+    input[type="month"],
+    input[type="week"],
     textarea, 
     select, {
       @include box-flex(1);
@@ -42,8 +73,14 @@ form {
   .horizontal { 
     @include setFlexibleBox(horizontal,center, stretch); 
     label {
-      @include box-flex(1);
-      display: block;
+      @include box-flex();
+      //display: block;
+      height: $default-header-button;
+      line-height: $default-header-button;
+        input {
+          float: right;
+          height: $default-header-button;
+        }
     }
     .slider {
       @include box-flex(1)

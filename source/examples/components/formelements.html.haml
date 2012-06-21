@@ -28,6 +28,9 @@
 					
 				%h1 Radio y checkbox
 				%form.inset
+					.content
+						%label Date
+						%input{:type => "date"}	
 					.content.horizontal
 						%p 0:00
 						.slider
@@ -58,24 +61,24 @@
 				%form.inset
 					.content.horizontal
 						%label 
+							%input{:type => "radio", :name => "radio"}	
 							Atun palta
-						%input{:type => "radio", :name => "radio"}	
 					.content.horizontal
 						%label 
+							%input{:type => "radio", :name => "radio"}	
 							Riquitiqui					
-						%input{:type => "radio", :name => "radio"}	
 
 					
 
 				%form.inset
 					.content.horizontal
 						%label 
-							Atun palta
-						%input{:type => "checkbox"}	
+							%input{:type => "checkbox"}	
+							Prueba
 					.content.horizontal
 						%label 
+							%input{:type => "checkbox"}	
 							Atun palta
-						%input{:type => "checkbox"}	
 					.content.horizontal
 						%label 
 							Marque si le gusta la gasolina					
@@ -87,6 +90,10 @@
 
 				%h1 Con porcentajes		
 				%form.inset	
+					.content.horizontal
+						.aside 
+							%i
+						%input{:type => "text"}
 					.content.horizontal
 						.aside Name
 						%input{:type => "text"}	
@@ -101,14 +108,17 @@
 						%input{:type => "text"}
 					.content.horizontal.start
 						.aside Tomatican 
-						%textarea	
+						%textarea
+					.content.horizontal
+						.aside Phone
+						.slider
+							%a			
 					.content.horizontal
 						.aside Tomatican 
 						%select
-							%option{:value => "option 1"}	option 1					
-							%option{:value => "option 2"}	option 2					
-							%option{:value => "option 3"}	option 3					
-
+							%option{:value => "option 1"}	option 1
+							%option{:value => "option 2"}	option 2
+							%option{:value => "option 3"}	option 3
 
 				%h1 Label encima
 				%form.inset
@@ -116,11 +126,33 @@
 						%label Name
 						%input{:type => "text"}	
 					.content
-						%label Phone
-						%input{:type => "text"}	
+						%label Date
+						%input{:type => "date"}		
 					.content
-						%label Atun palta
-						%input{:type => "text"}	
+						%label Datetime
+						%input{:type => "datetime"}
+					.content
+						%label Datetime-local
+						%input{:type => "datetime-local"}			
+					.content
+						%label Time
+						%input{:type => "time"}	
+					.content
+						%label Month
+						%input{:type => "month"}
+					.content
+						%label Number
+						%input{:type => "number"}
+					.content
+						%label Tel
+						%input{:type => "tel"}
+					.content
+						%label Url
+						%input{:type => "url"}
+					.content
+						%label Week
+						%input{:type => "week"}						
+						
 					.content
 						%label Minicomponente
 						%textarea	
