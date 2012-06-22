@@ -28,17 +28,15 @@
 					
 				%h1 Radio y checkbox
 				%form.inset
-					.content
-						%label Date
-						%input{:type => "date"}	
+					
 					.content.horizontal
 						%p 0:00
 						.slider
-							%a.mini
+							.progress.mini
 						%p -30:35	
 					.content.horizontal
 						.slider
-							%a	
+							.progress	
 					.content
 						%label 
 							%input{:type => "checkbox"}	
@@ -122,47 +120,57 @@
 
 				%h1 Label encima
 				%form.inset
-					.content
-						%label Name
-						%input{:type => "text"}	
-					.content
-						%label Date
-						%input{:type => "date"}		
-					.content
-						%label Datetime
-						%input{:type => "datetime"}
-					.content
-						%label Datetime-local
-						%input{:type => "datetime-local"}			
-					.content
-						%label Time
-						%input{:type => "time"}	
-					.content
-						%label Month
-						%input{:type => "month"}
-					.content
-						%label Number
-						%input{:type => "number"}
-					.content
-						%label Tel
-						%input{:type => "tel"}
-					.content
-						%label Url
-						%input{:type => "url"}
-					.content
-						%label Week
-						%input{:type => "week"}						
-						
-					.content
-						%label Minicomponente
-						%textarea	
-
-					.content
-						%label Tomatican 
-						%select
-							%option{:value => "option 1"}	option 1					
-							%option{:value => "option 2"}	option 2					
-							%option{:value => "option 3"}	option 3	
+					.content.stack
+						%label 
+							Name
+							%input{:type => "text"}	
+					.content.stack
+						%label 
+							Date
+							%input{:type => "date"}		
+					.content.stack
+						%label 
+							Datetime
+							%input{:type => "datetime"}
+					.content.stack
+						%label 
+							Datetime-local
+							%input{:type => "datetime-local"}			
+					.content.stack
+						%label 
+							Time
+							%input{:type => "time"}	
+					.content.stack
+						%label 
+							Month
+							%input{:type => "month"}
+					.content.stack
+						%label 
+							Number
+							%input{:type => "number"}
+					.content.stack
+						%label 
+							Tel
+							%input{:type => "tel"}
+					.content.stack
+						%label 
+							Url
+							%input{:type => "url"}
+					.content.stack
+						%label 
+							Week
+							%input{:type => "week"}						
+					.content.stack
+						%label 
+							Minicomponente
+							%textarea	
+					.content.stack
+						%label 
+							Tomatican 
+							%select
+								%option{:value => "option 1"}	option 1					
+								%option{:value => "option 2"}	option 2					
+								%option{:value => "option 3"}	option 3	
 
 				
 

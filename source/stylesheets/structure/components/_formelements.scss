@@ -37,18 +37,17 @@ form {
   }
   label {
     display: block;
+    line-height: $default-header-button;
   }
   .content {
     @include setFlexibleBox(vertical,stretch, center);
     min-height: 44px;
     padding: $default-interface-spacing;
     .aside {
-      @include setFlexibleBox(vertical,stretch,center);
       width: 30%;
       text-align: right;
       padding-right: $default-interface-spacing * 2;
     }
-    
     input[type="text"],
     input[type="password"],
     input[type="url"],
@@ -67,27 +66,38 @@ form {
       @include box-flex(1);
       display: block;
     }
-    label, .slider    { @include box-flex(1); }
-    textarea { min-height: 80px; padding: $default-interface-spacing; }
+    label, .slider { @include box-flex(1); }
+    textarea { 
+      padding: $default-interface-spacing; 
+    }
+  }
+  .stack {
+    label {
+      line-height: normal;
+      input, textarea, select { width: 100%; }
+    }
   }
   .horizontal { 
     @include setFlexibleBox(horizontal,center, stretch); 
+    @include clearfix;
     label {
       @include box-flex();
-      //display: block;
+      @include clearfix;
       height: $default-header-button;
       line-height: $default-header-button;
         input {
-          float: right;
           height: $default-header-button;
+          float: right;
         }
+        input[type="radio"], input[type="checkbox"] { margin-right: 1px; }
     }
-    .slider {
-      @include box-flex(1)
+    .slider { @include box-flex(1) }
+    i {
+      display: block;
+      float: right;
     }
   }
   .start { @include setFlexibleBox(horizontal,start, stretch); }
-
 }
 
 
