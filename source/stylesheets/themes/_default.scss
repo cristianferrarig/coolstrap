@@ -179,16 +179,6 @@ form {
     background-color: rgba(0,0,0,.1);
     border-bottom: 1px solid #ccc;
   }
-  .content.horizontal {
-    .aside {
-      i {
-        @include border-radius(100%);
-        height: 20px;
-        width: 20px;
-        border: 4px solid #444;
-      }
-    }
-  }
   input,
   textarea,
   select {

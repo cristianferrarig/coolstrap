@@ -67,6 +67,10 @@ $default-header-size: 44px !default;
 $default-header-button: 30px !default;
 $default-header-icon: 20px !default;
 
+// Landscape Header
+$default-header-landscape-size: 32px !default;
+$default-header-landscape-button: 24px !default;
+
 // Vertical Header
 $default-header-vertical-size: 50px !default;
 $default-header-vertical-button: 40px !default;
@@ -81,7 +85,7 @@ $default-navbar-icon: 20px !default;
 
 // Other Header
 $default-header-extended-size: $default-header-size + $default-navbar-size !default;
-$default-header-landscape-size: 30px !default;
+
 
 // Tabbar
 $default-tabbar-size: 60px !default;
