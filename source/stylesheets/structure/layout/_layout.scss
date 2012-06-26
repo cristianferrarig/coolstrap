@@ -19,12 +19,18 @@ div#{$isMain} {
 section#{$isNotPopup},
 article {
   header#{$isVertical} ~ &     { left: $default-header-vertical-size; bottom: 0; }
-  header#{$isExtended} ~ &     { top: $default-header-extended-size; }
   header#{$isNormal} ~ &       { top: $default-header-size; }
   nav#{$isNotTabbar} ~ &       { top: $default-navbar-size; }
   nav#{$isTabbar} ~ &          { top: $default-tabbar-size; }
   footer#{$isNotTabbar} ~ &    { bottom: $default-navbar-size; }
   footer#{$isTabbar} ~ &       { bottom: $default-tabbar-size; }
+}
+//Landscape top
+@media screen and (orientation:landscape) {
+  section#{$isNotPopup},
+  article {
+    header#{$isNormal} ~ &     { top: $default-header-landscape-size; }
+  }
 }
 
 div#{$isMain},

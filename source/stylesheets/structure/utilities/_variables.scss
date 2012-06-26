@@ -21,7 +21,6 @@ $isNotPopup:     ':not([data-type="popup"])';
 // Header
 $isVertical:     '[data-type="vertical"]';
 $isNotVertical:  ':not([data-type="vertical"])';
-$isExtended:     '[data-type="extended"]';
 $isNotExtended:  ':not([data-type="extended"])';
 
 // Nav & Footer
@@ -82,9 +81,6 @@ $default-header-vertical-icon: 30px !default;
 $default-navbar-size: 44px !default;
 $default-navbar-button: 30px !default;
 $default-navbar-icon: 20px !default;
-
-// Other Header
-$default-header-extended-size: $default-header-size + $default-navbar-size !default;
 
 
 // Tabbar

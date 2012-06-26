@@ -51,6 +51,17 @@ footer {
   
 }
 
+/* title landscape format */
+@media screen and (orientation:landscape) {
+  header#{$isNotVertical} {
+    h1, h2 {
+      @include ellipsis;
+      display: inline
+    }
+  }
+}
+
+
 /* Icon spacing in buttons */
 header#{$isNotVertical},
 nav#{$isNotTabbar},
@@ -79,6 +90,14 @@ header#{$isVertical} {
     width:         $default-header-vertical-button;
     margin:        $default-header-vertical-spacing;
     padding:       $default-header-vertical-spacing;
+  }
+}
+//Landscape buttons
+@media screen and (orientation:landscape) {
+  header#{$isNotVertical} {
+    a, input {
+      height:        $default-header-landscape-button;
+    }
   }
 }
 

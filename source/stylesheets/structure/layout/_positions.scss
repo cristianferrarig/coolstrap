@@ -1,7 +1,6 @@
 
 header {
   &#{$isVertical}        { @include setFixedPosition(left, $default-header-vertical-size); }
-  &#{$isExtended}        { @include setFixedPosition(top, $default-header-size); }
   &#{$isNormal}          { @include setFixedPosition(top, $default-header-size); }
 }
 
@@ -31,11 +30,9 @@ aside {
 }
 
 
-@media only screen 
-and (min-width : 321px) {
+@media screen and (orientation:landscape) {
  
   header {
-    &#{$isExtended}        { @include setFixedPosition(top, $default-header-landscape-size); }
     &#{$isNormal}          { @include setFixedPosition(top, $default-header-landscape-size); }
   }
  
