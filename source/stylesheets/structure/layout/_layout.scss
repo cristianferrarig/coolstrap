@@ -39,7 +39,7 @@ article,
 header,
 footer,
 nav {
-  @include box-sizing(content-box);
+  //@include box-sizing(content-box);
 }
 
 article header,
@@ -56,9 +56,9 @@ article footer {
   }
 }
 
-
+/*
 header {
   padding: 0 1px;
   margin: 0 -1px;
 }
-
+*/

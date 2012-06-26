@@ -6,11 +6,13 @@
 	%div{"role" => "main"}
 		
 		%header
-			%a{:href => "simple.html"} Inicio
+			%a{:href => "simple.html"}
+				%span Inicio
 			%hgroup
 				%h1 COOLSTRAP
 				%h2 Listview Demo
-			%a{:href => "formelements.html"} Forms
+			%a{:href => "formelements.html"}
+				%span Forms
 			
 		%footer
 			%a Button
@@ -21,13 +23,11 @@
 			
 		%section{:id => "home", :class => "current starting"}
 
-			%article{:id => "demo", :class => "current"}
-				
-				.scrollable
+			%article.scrollable{:id => "demo", :class => "current"}
 
-					= partial "examples/components/listview/simplelist" 
-					= partial "examples/components/listview/complexlist" 
-					= partial "examples/components/listview/complexlistavatar"
+				= partial "examples/components/listview/simplelist" 
+				= partial "examples/components/listview/complexlist" 
+				= partial "examples/components/listview/complexlistavatar"
 
  
 

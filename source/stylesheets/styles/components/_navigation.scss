@@ -6,10 +6,10 @@
 }
 
 
-
 @mixin button-text($_bgcolor,$_txtcolor: #FFF) {
   background-color: $_bgcolor;
   * { color: $_txtcolor; }
+  
   @include text-shadow($style-textshadow-light);
 }
 

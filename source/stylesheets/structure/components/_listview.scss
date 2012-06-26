@@ -12,16 +12,16 @@ ul[data-type="listview"] {
     margin: 10px;
   }
 
-  li:not(.list-divider),
-  li:not(.list-divider) > a {
+  li,
+  li > a {
     @include setFlexibleBox(horizontal,stretch, stretch);
     padding: $default-listview-spacing;
   }
-  li:not(.list-divider) > a, {
+  li > a, {
     margin: -($default-listview-spacing);
   }
 
-  li:not(.list-divider) {
+  li {
     > div,
     a > div {
 

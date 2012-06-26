@@ -35,38 +35,51 @@ $theme-border-radius: 5px;
 
 
 header, nav {
+  > a:not(.onlyIcon) {
+    @include border-radius($theme-border-radius);
+  }
+  a:not(.onlyIcon) {
+    @include button(debug,rgba(#000,.2),rgba(#000,.4));
+  }
+  /*
   > a:not(.onlyIcon),
   .control-group {
     @include button(default,rgba(#000,.2),rgba(#000,.4));
   }
-  > a:not(.onlyIcon) {
-    @include border-radius($theme-border-radius);
+  */
+  a:not(.onlyIcon) {
+    //@include border-radius($theme-border-radius);
     &.is-active {
-      background-color: rgba(#000,.5);
+      //background-color: rgba(#000,.5);
+      /*
       @include background-clip(padding-box);
       @include box-shadow(
         $style-innershadow-glow-top,
         $style-innershadow-blur-top
       );
       border-color: rgba(#000,.7);
+      */
     }
   }
   .control-group {
-    @include border-radius($theme-border-radius);
     a {
       @include border-radius(0);
-      border-right: 1px solid rgba(#000,.3);
       font-weight: bold;  
 
       &:first-child { @include border-left-radius($theme-border-radius); }
-      &:last-child  { @include border-right-radius($theme-border-radius); border-right-width: 0; }
+      &:last-child  { @include border-right-radius($theme-border-radius); }
       &.is-active {
-        background-color: rgba(#000,.3);
+        //background-color: rgba(#000,.3);
+        /*
         @include background-clip(padding-box);
         @include box-shadow(
           $style-innershadow-blur-left,
           $style-innershadow-blur-right
         );
+        */
+      }
+      & + a {
+        margin-left: -1px;
       }
     }
   }
@@ -74,7 +87,7 @@ header, nav {
 
 header {
   //@include bar($theme-header-color,$theme-header-color2,$style: linear);
-  @include bar(glass, #222222);
+  @include bar(shiny, #8092AE);
   //background-color: $theme-header-color;
   //@include background-image(linear-gradient(top, rgba(#000,0), rgba(#000,.2))); 
   //@include box-shadow(0 1px 3px 0 rgba(#000,.3));

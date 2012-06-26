@@ -1,10 +1,11 @@
 // Positions
 
-$style-header-color:               #383C47 !default;
+$style-header-color:                #383C47 !default;
 
-$style-shadow-color:               rgba(#000,.3);
-$style-highlight-color:            rgba(#FFF,.1);
-$style-border-color:               rgba(#000,.3);
+$style-shadow-color:                rgba(#000,.3);
+$style-shadow-light:                rgba(#000,.1);
+$style-highlight-color:             rgba(#FFF,.1);
+$style-border-color:                rgba(#000,.3);
 $style-textshadow-light:            0 -1px 0 rgba(#000,.2);
 $style-textshadow-dark:             0  1px 0 rgba(#FFF,.6);
 
@@ -24,10 +25,18 @@ $style-innershadow-solid-top:       0px  1px 0px 0px $style-shadow-color inset;
 $style-innershadow-solid-bottom:    0px -1px 0px 0px $style-shadow-color inset;
 
 $style-innershadow-blur:            0px  0px 2px 1px $style-shadow-color inset;
+$style-innershadow-blur-top:        0px  2px 0px 0px $style-shadow-light inset,  0px  1px 0px 0px $style-shadow-light inset;
+$style-innershadow-blur-bottom:     0px -2px 0px 0px $style-shadow-light inset,  0px -1px 0px 0px $style-shadow-light inset;
+$style-innershadow-blur-left:      -2px  0px 0px 0px $style-shadow-light inset, -1px  0px 0px 0px $style-shadow-light inset;
+$style-innershadow-blur-bottom:     2px  0px 0px 0px $style-shadow-light inset,  1px  0px 0px 0px $style-shadow-light inset;
+
+/*
+$style-innershadow-blur:            0px  0px 2px 1px $style-shadow-color inset;
 $style-innershadow-blur-top:        0px  1px 2px 0px $style-shadow-color inset;
 $style-innershadow-blur-bottom:     0px -1px 2px 0px $style-shadow-color inset;
 $style-innershadow-blur-left:      -2px  0px 2px -1px $style-shadow-color inset;
 $style-innershadow-blur-right:      2px  0px 2px -1px $style-shadow-color inset;
+*/
 
 $style-innershadow-glow:            0px  0px 5px 1px $style-shadow-color inset;
 $style-innershadow-glow-top:        0px  2px 5px 0px $style-shadow-color inset;
@@ -55,7 +64,7 @@ $style-innerhighlight-blur-bottom:  0px -1px 2px 0px $style-highlight-color inse
 
 
 $style-lineargradient-default:      linear-gradient(rgba(#000,.0),rgba(#000,.2));
-$style-lineargradient-shiny:        linear-gradient(rgba(#FFF,.15),rgba(#FFF,.1) 50%,rgba(#FFF,.0) 50%,rgba(#000,.1));
+$style-lineargradient-shiny:        linear-gradient(rgba(#FFF,.25),rgba(#FFF,.1) 50%,rgba(#000,.0) 50%,rgba(#000,.1));
 $style-lineargradient-glass:        linear-gradient(rgba(#FFF,.05),rgba(#000,.1) 40%,rgba(#000,.0) 70%,rgba(#FFF,.05));
 
 

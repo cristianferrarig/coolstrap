@@ -1,8 +1,8 @@
 = content_for :title do
 	Toolbars markup
 
-= content_for :application_styles do 
-	= stylesheet_link_tag "themes/defaultcolor"
+-#= content_for :application_styles do 
+-#	= stylesheet_link_tag "themes/defaultcolor"
 	
 = content_for :principal do
 	%div.a{"role" => "main"}
@@ -51,10 +51,9 @@
 				%input{:type => "search", :name => "txt"}
 				%a search
 
-			%article.current{:id => "demo"}
+			%article.scrollable{:id => "home", :class => "current starting"}
 
-				.scroller
- 
+				= partial "examples/components/listview/simplelist" 
 					
 
 	%aside{"data-type" => "onLeft"}

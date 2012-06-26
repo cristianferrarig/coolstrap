@@ -2,9 +2,7 @@ div#{$isDialog} {
 	@include setFlexibleBox(vertical,stretch,start);
 	@include box-flex(1);
 	text-align: center;
-	&#{$isNotModal} {
-		max-height: $default-dialog-maxheight;
-	}
+
 
 	> * { margin: 0; }
 
@@ -38,11 +36,12 @@ div#{$isAction} {
 
 div#{$isAlert} {
 	width: $default-alert-size;
+	max-width: 90%;
 	padding: $default-alert-spacing;
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -($default-alert-size / 2);
+	//top: 50%;
+	//left: 50%;
+	//margin-left: -($default-alert-size / 2);
 	a { height: $default-alert-button; }
 }
 

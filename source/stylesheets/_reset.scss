@@ -85,12 +85,12 @@ textarea {
 // =============================================================================
 
 a {
-	color: #00e;
+	/*color: #00e;*/
 	text-decoration: none;	
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a:visited { /*color: #551a8b;*/ }
+a:hover { /*color: #06e;*/ }
 a:focus { outline: thin dotted; }
 
 // Improve readability when focused and hovered in all browsers: h5bp.com/h

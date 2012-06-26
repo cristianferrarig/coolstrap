@@ -1,6 +1,13 @@
+
+
+
+
+
 .badge {
   padding: $default-badge-spacing !important;
 }
+
+
 
 
 
@@ -12,10 +19,7 @@
 }
 
 .list-divider {
-  padding: 5px;
-  font-size: 11px;
-  @include background(linear-gradient(top, #d7d7d7, #c6c6c6));
-  color: #444;
+  padding: 5px 10px !important;
   text-transform: uppercase;
 }
 
@@ -31,7 +35,11 @@
 .control-group {
   @include box-align(stretch);
   a {
-    margin: 0 !important;
+    margin: 0px 0px 0px -1px !important;
+    z-index: 0;
+  }
+  a.is-active {
+    z-index: 1;
   }
   &.autoWidth {
     @include box-flex(1);
@@ -172,7 +180,7 @@ footer#{$isToolbar} {
     width: 16px;
     height: 16px;
     margin: -2px 5px 0 0;
-    //TODO: delete, it's only for debug
+    TODO: delete, it's only for debug
     @include border-radius(100%);
     border: 3px solid #666;
   }
