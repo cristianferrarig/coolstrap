@@ -65,10 +65,9 @@
     height: 100%;
     width: 50%;
     z-index: 1;
-    &:after {
-      content: '';
+    .circle {
+      @include border-radius(100%);
       position: absolute;
-      display: block;
       height: 18px;
       width: 18px;
       z-index: 2;
@@ -76,24 +75,17 @@
       right: -10px;
       margin-top: -10px;
       margin-left: -10px;
+      &.mini {
+        width: 14px;
+        height: 14px;
+        right: -10px;
+        margin-top: -8px;
+        margin-left: -8px;
+      }
     }
-  }
-  .mini {
-    &:after {
-      width: 14px;
-      height: 14px;
-      right: -10px;
-      margin-top: -8px;
-      margin-left: -8px;
-    }  
-  }
+  } 
 }
-/*
- 
-    }
     
-
-*/    
 
 .loader {
   width: 220px;

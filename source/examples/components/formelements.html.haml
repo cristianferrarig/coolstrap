@@ -32,11 +32,13 @@
 					.content.horizontal
 						%p 0:00
 						.slider
-							.progress.mini
+							.progress
+								.circle.mini
 						%p -30:35	
 					.content.horizontal
 						.slider
-							.progress	
+							.progress
+								.circle
 					.content
 						%label 
 							%input{:type => "checkbox"}	
@@ -91,7 +93,7 @@
 					.content.horizontal
 						.aside 
 							%i.icon-phone-sign
-						%input{:type => "text"}
+						%input{:type => "tel"}
 					.content.horizontal
 						.aside Name
 						%input{:type => "text"}	
@@ -110,7 +112,8 @@
 					.content.horizontal
 						.aside Phone
 						.slider
-							%a			
+							.progress
+								.circle		
 					.content.horizontal
 						.aside Tomatican 
 						%select

@@ -43,6 +43,11 @@ form {
     @include setFlexibleBox(vertical,stretch, center);
     min-height: 44px;
     padding: $default-interface-spacing;
+    i {
+      @include square($default-tabbar-icon);
+      line-height: $default-tabbar-icon;
+      font-size: $default-tabbar-icon; 
+    }
     .aside {
       width: 30%;
       text-align: right;

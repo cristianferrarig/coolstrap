@@ -27,7 +27,7 @@ ul[data-type="listview"] {
 
       margin-left: $default-listview-spacing;
       &:first-child {
-        margin-left: 0 !important;
+        margin-left: 0;
       }
     }
   }

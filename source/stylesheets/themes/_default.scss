@@ -78,8 +78,8 @@ footer {
 // Debug icons
 header, nav, footer {
   i {
-    @include border-radius(100%);
-    border: 4px solid darken($basecolor,30);
+    //@include border-radius(100%);
+    //border: 4px solid darken($basecolor,30);
   }
 }
    
@@ -123,9 +123,12 @@ ul {
     .title { color: #555; }
     .picture {
       @include border-radius(4px);
-      //background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);
+      background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);
       width: 44px;
       height: 44px;
+    }
+    .stretch {
+      .picture { @include border-radius(0); }
     }
     div {
       i {
@@ -195,7 +198,7 @@ form {
   .progress{
   @include border-radius(1em);
   background-color: blue;
-    &:after {
+    .circle {
       @include border-radius(1em);
       background-color: #ccc;
       border: 1px solid #888;

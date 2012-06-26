@@ -49,8 +49,9 @@ article footer {
 }
 
 .scroll_container {
-  @include clearfix;
+    @include clearfix;
   .inset {
+    @include clearfix;
     margin: $default-content-spacing;
   }
 }
