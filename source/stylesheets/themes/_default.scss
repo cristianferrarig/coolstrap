@@ -171,7 +171,7 @@ ul[data-type="listview"] {
     margin-top: -1px;
     position: relative;
     border-style: solid;
-    border-color:  darken($theme-base-color,10%);
+    border-color: #232; //darken($theme-base-color,10%);
     .title { color: #444; }
     .picture {
       background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);

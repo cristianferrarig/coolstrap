@@ -49,8 +49,7 @@ article footer {
   position: relative !important;
 }
 
-.scroll_container {
-    @include clearfix;
+.scroll_container, .scrollable * {
   .inset {
     @include clearfix;
     margin: $default-content-spacing;

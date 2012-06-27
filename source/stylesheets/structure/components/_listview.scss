@@ -80,6 +80,9 @@ ul[data-type="listview"] {
     @include box-flex(1);
     display: block;
   }
+  .aside {
+    * + i { margin-left: $default-interface-spacing; }
+  }
 
 } // UL
 
