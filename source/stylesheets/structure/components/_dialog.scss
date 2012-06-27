@@ -42,6 +42,7 @@ div#{$isAlert} {
 	//top: 50%;
 	//left: 50%;
 	//margin-left: -($default-alert-size / 2);
+	margin-left: -20px !important;
 	a { height: $default-alert-button; }
 }
 

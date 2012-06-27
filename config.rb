@@ -77,6 +77,7 @@ end
  page "/examples/layouts/*", :layout => "/examples/examples"
  page "/examples/kitchen-sink/*", :layout => "/examples/examples"
  page "/examples/components/*", :layout => "/examples/examples"
+ page "/examples/demo/*", :layout => "/examples/examples"
 # 
 # A path which all have the same layout
 # with_layout :admin do

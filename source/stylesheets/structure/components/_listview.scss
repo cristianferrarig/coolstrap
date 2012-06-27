@@ -23,8 +23,8 @@ ul[data-type="listview"] {
 
   li {
     > div,
-    a > div {
-
+    a > div,
+    .nested > div {
       margin-left: $default-listview-spacing;
       &:first-child {
         margin-left: 0;

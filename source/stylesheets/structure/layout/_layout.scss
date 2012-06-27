@@ -25,6 +25,7 @@ article {
   footer#{$isNotTabbar} ~ &    { bottom: $default-navbar-size; }
   footer#{$isTabbar} ~ &       { bottom: $default-tabbar-size; }
 }
+
 //Landscape top
 @media screen and (orientation:landscape) {
   section#{$isNotPopup},
