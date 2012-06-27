@@ -18,14 +18,14 @@
 %nav{"data-type" => "toolbar"}
 	.control-group
 		%a
-			%i
-			%span boton 4
+			%i.icon-facebook
+			%span Facebook
 		%a
-			%i
-			%span boton 4
+			%i.icon-twitter
+			%span Twitter
 		%a
-			%span boton 4
-			%i	
+			%span Comments
+			%i.icon-comments
 %pre
 	= preserve do
 		:escaped
@@ -57,9 +57,12 @@
 %h2 Botones con íconos
 %nav{"data-type" => "toolbar"}
 	.control-group
-		%a <i></i>
-		%a <i></i>
-		%a <i></i>
+		%a 
+			%i.icon-facebook
+		%a 
+			%i.icon-twitter
+		%a 
+			%i.icon-comments
 %pre
 	= preserve do
 		:escaped
@@ -87,14 +90,14 @@
 %nav{"data-type" => "toolbar"}
 	.control-group.autoWidth
 		%a
-			%i
+			%i.icon-facebook
 			%span button 1
 		%a
-			%i
+			%i.icon-twitter
 			%span button 2
 		%a
 			%span button 3
-			%i
+			%i.icon-comments
 %pre
 	= preserve do
 		:escaped
@@ -127,10 +130,14 @@
 %h2 Botones con íconos
 %nav{"data-type" => "toolbar"}
 	.control-group.autoWidth
-		%a <i></i>
-		%a <i></i>
-		%a <i></i>
-		%a <i></i>
+		%a
+			%i.icon-facebook
+		%a 
+			%i.icon-twitter
+		%a 
+			%i.icon-comments
+		%a
+			%i.icon-linkedin
 %pre		
 	= preserve do
 		:escaped
@@ -172,11 +179,12 @@
 			</nav>  
 %h2 Searchbar con un ícono y un botón
 %nav{"data-type" => "toolbar"}
-	%a.onlyIcon <i></i>
+	%a.onlyIcon 
+		%i.icon-facebook
 	%input{:type => "search", :name => "txt"}
 	%a
 		%span search
-		%i
+		%i.icon-search
 %pre		
 	= preserve do
 		:escaped
@@ -251,7 +259,8 @@
 	%span.code &lt;div class="flex"&gt; 
 	para que siga manteniendo sus propiedades flexibles, tal como se muestra en el ejemplo:
 %nav{"data-type" => "toolbar"}
-	%a.onlyIcon <i></i>
+	%a.onlyIcon
+		%i.icon-facebook
 	.flex
 	.control-group
 		%a button 1
@@ -301,16 +310,16 @@
 			</nav> 			
 %nav{"data-type" => "toolbar"}
 	%a
-		%i
-		%span button 1
+		%i.icon-facebook
+		%span Facebook
 	.flex
 	%a
-		%i
-		%span button 2
+		%i.icon-twitter
+		%span Twitter
 	.flex
 	%a
-		%span button 3
-		%i
+		%span Comments
+		%i.icon-comments
 %pre		
 	= preserve do
 		:escaped
@@ -331,13 +340,17 @@
 			  </a>
 			</nav> 					
 %nav{"data-type" => "toolbar"}
-	%a.onlyIcon <i></i>
+	%a.onlyIcon
+		%i.icon-facebook
 	.flex
-	%a.onlyIcon <i></i>
+	%a.onlyIcon 
+		%i.icon-twitter
 	.flex
-	%a.onlyIcon <i></i>
+	%a.onlyIcon 
+		%i.icon-comments
 	.flex
-	%a.onlyIcon <i></i>
+	%a.onlyIcon 
+		%i.icon-linkedin
 %pre		
 	= preserve do
 		:escaped
@@ -379,8 +392,10 @@
 		%h1 Rhyboo
 		%h2 The social TV
 	.control-group
-		%a <i></i>
-		%a <i></i>
+		%a
+			%i.icon-facebook
+		%a
+			%i.icon-twitter
 	%a back
 %pre
 	= preserve do

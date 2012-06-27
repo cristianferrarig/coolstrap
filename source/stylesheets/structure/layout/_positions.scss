@@ -30,7 +30,7 @@ aside {
 }
 
 
-@media screen and (orientation:landscape) {
+@media only screen and (min-width : 321px) and (max-width : 480px) and (orientation : landscape)  {
  
   header {
     &#{$isNormal}          { @include setFixedPosition(top, $default-header-landscape-size); }

@@ -48,13 +48,15 @@
               .aside
                 %i      
           %li
-            %a{"href" => "#", "data-target" => "section"}
+            %a{"href" => "#formelements", "data-target" => "section"}
               .content
-                .title Dialogs
+                .title Forms Elements
+              .aside
+                %i
           %li
             %a{"href" => "#", "data-target" => "section"}
               .content
-                .title Forms Elements
+                .title Dialogs
           %li
             %a{"href" => "#", "data-target" => "section"}
               .content
@@ -105,7 +107,7 @@
           %h1 COOLSTRAP
           %h2 Tabbar Demo
         %a{"href" => "#colaborators", "data-target" => "aside"}
-          %i
+          %i.icon-twitter
       %article.scrollable
         = partial "examples/components/tabbar"
           
@@ -116,9 +118,20 @@
           %h1 COOLSTRAP
           %h2 Toolbar Demo
         %a{"href" => "#colaborators", "data-target" => "aside"}
-          %i
+          %i.icon-twitter
       %article.scrollable
         = partial "examples/components/toolbar"
+
+    %section#formelements
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Form Elements Demo
+        %a{"href" => "#colaborators", "data-target" => "aside"}
+          %i.icon-twitter
+      %article.scrollable
+        = partial "examples/components/formelements"    
 
 
   %aside.onLeft#options

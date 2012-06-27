@@ -27,7 +27,7 @@ article {
 }
 
 //Landscape top
-@media screen and (orientation:landscape) {
+@media only screen and (min-width : 321px) and (max-width : 480px) and (orientation : landscape)  {
   section#{$isNotPopup},
   article {
     header#{$isNormal} ~ &     { top: $default-header-landscape-size; }
