@@ -54,9 +54,12 @@ footer {
 /* title landscape format */
 @media only screen and (min-width : 321px) and (max-width : 480px) and (orientation : landscape)  {
   header#{$isNotVertical} {
-    h1, h2 {
-      @include ellipsis;
-      display: inline
+    h1 { display: block; }
+    hgroup > {
+      h1, h2 {
+        @include ellipsis;
+        display: inline
+      }
     }
   }
 }
@@ -101,7 +104,7 @@ header#{$isVertical} {
   }
 }
 //Landscape buttons
-@media screen and (orientation:landscape) {
+@media only screen and (min-width : 321px) and (max-width : 480px) and (orientation : landscape) {
   header#{$isNotVertical} {
     a, input {
       height:        $default-header-landscape-button;
