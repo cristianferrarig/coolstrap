@@ -53,17 +53,21 @@ a {
   }
 }
 header {
+  color: lighten($theme-header-color,80%);
   a:not(.onlyIcon) {
     background-color: darken($theme-header-color,5%);
     border: 1px solid darken($theme-header-color,10%);
-    * { color: lighten($theme-header-color,50%); }
+    color: lighten($theme-header-color,80%);
+    * { color: lighten($theme-header-color,80%); }
   }
 }
 nav {
+  color: lighten($theme-header-color,80%);
   a:not(.onlyIcon) {
     background-color: darken($theme-nav-color,5%);
     border: 1px solid darken($theme-nav-color,15%);
-    * { color: lighten($theme-nav-color,50%); }
+    color: lighten($theme-header-color,80%);
+    * { color: lighten($theme-nav-color,80%); }
   }
 }
 footer {
@@ -421,6 +425,18 @@ form {
       border: 1px solid #888;
 
     }
+  }
+}
+
+.loader {
+  @include border-radius(8px);
+  background-color: rgba(black,.4);
+  border: 1px solid rgba(black,.6);
+  padding: 0;
+  .progress {
+    @include border-radius(5px);
+    width: 30%;
+    background-color: #FFF;
   }
 }
 

@@ -30,7 +30,7 @@ var App = (function(cool) {
               <div class="content">\
                 <div class="nested">\
                   <h1>'+twit.from_user_name+'<span>@'+twit.from_user+'</span></h1>\
-                  <span class="meta">'+date.getHours() + ':' +date.getMinutes() +'</span>\
+                  <div class="meta">'+date.getHours() + ':' +date.getMinutes() +'</div>\
               </div>\
               <div class="nested">\
                 <div class="content">\

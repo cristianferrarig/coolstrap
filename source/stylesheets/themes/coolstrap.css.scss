@@ -14,16 +14,43 @@ header {
   background-color: $theme-header-color;
 }
 */
-
+article {
+  background-color: lighten($theme-base-color,80%);
+}
 
 div#{$isMain} {
   @include box-shadow(0 0 8px 3px rgba(0,0,0,0.6));
 }
 
+
+header {
+  i.icon-twitter {
+    font-size: 30px;
+  }
+}
+
+
 footer {
   color: #FFF;
 }
 
+footer#{$isTabbar} {
+  a:not(.onlyIcon) {
+    @include border-radius(0px);
+  }
+  a {
+    margin: 0px;
+    border: 0 none;
+    color: lighten($theme-base-color,50%);
+    * { color: lighten($theme-base-color,50%); }
+    &.is-active {
+      background-color: darken($theme-base-color,1%);
+      border: 0 none;
+      color: lighten($theme-base-color,70%);
+      * { color: lighten($theme-base-color,70%); }
+    }
+  }
+}
 
 aside {
   
@@ -60,8 +87,11 @@ aside {
   }
 
 
-
-
+  header {
+    a.is-active {
+      background-color: #000;
+    }
+  }
 
 
   background-color: #333;
@@ -145,3 +175,26 @@ div#{$isModal} {
   }
 }
 
+
+
+
+
+
+
+
+ul[data-type="listview"] .content > * + * {
+  margin-top: 2px;
+  .meta { color: #999; }
+}
+ul#mail {
+  h1 { font-size: 16px; }
+  h2 { font-weight: normal; }
+  p { color: #999; }
+}
+ul#twits {
+  h1 {
+    span {
+      color: #999;
+    }
+  }
+}

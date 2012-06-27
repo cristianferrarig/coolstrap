@@ -45,9 +45,6 @@ footer {
   a {
     @include setFlexibleBox;
   }
-  a.onlyIcon {
-    padding: 0 !important;
-  }
   
 }
 

@@ -171,10 +171,14 @@
 
 				%nav{"data-type" => "toolbar"}
 					%a back
-					%a <
+					%a
+						%i.icon-chevron-left
 					%h1 Rhyboo
-					%a <
-					%a >
+					.control-group
+						%a
+							%i.icon-caret-down
+						%a
+							%i.icon-caret-up
 
 				%nav{"data-type" => "toolbar"}
 					%a back
@@ -182,14 +186,17 @@
 						%h2 Descargando 1 de 5
 						.loader
 							.progress
-					%a >
+					%a
+						%i.icon-chevron-right
 
 				%nav{"data-type" => "toolbar"}
 					%a back
 					.content
 						.loader
 							.progress
-					%a >
+					%a
+						%i.icon-chevron-right
+
 
 
 				-#%nav{"data-type" => "toolbar"}
