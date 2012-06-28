@@ -1,35 +1,26 @@
 
 
 
-
-
-.badge {
-  padding: $default-badge-spacing !important;
-}
-
-
-
-
-
 .flex {
   @include box-flex(1);
 }
 .fix {
-  //width: ;
+
 }
 
+/* Lists elements */
 .list-divider {
   padding: 5px 10px !important;
   text-transform: uppercase;
 }
+.badge { padding: $default-badge-spacing !important; }
 
+/* Buttons groupers elements */
 .button-group,
 .control-group {
   @include setFlexibleBox;
   @include box-flex(0);
-  a {
-    @include box-flex(1);
-  }
+  a { @include box-flex(1); }
 }
 
 .control-group {
@@ -38,20 +29,14 @@
     margin: 0px 0px 0px -1px !important;
     z-index: 0;
   }
-  a.is-active {
-    z-index: 1;
-  }
-  &.autoWidth {
-    @include box-flex(1);
-  }
+  a.is-active { z-index: 1; }
+  &.autoWidth { @include box-flex(1); }
 }
 
 .button-group {
   a {
     margin-right: $default-content-spacing;
-    &:last-child {
-      margin-right: 0;
-    }
+    &:last-child { margin-right: 0; }
   }
   &.alignVertical {
     @include box-orient(vertical);
@@ -63,7 +48,7 @@
   }
 }
 
-
+/* Progress elements */
 .slider {
   overflow: visible;
   margin: 0 3px;
@@ -92,9 +77,8 @@
         margin-left: -8px;
       }
     }
-  } 
+  }
 }
-    
 
 .loader {
   width: 220px;
@@ -112,13 +96,13 @@
   }
 }
 
-
+/* Form elements */
 .toggle-content {
   background-color: #666;
   border: 1px solid #333;
   height: 32px;
   width: 80px;
-  position: relative; 
+  position: relative;
   input[type="checkbox"] {
     display: none;
   }
@@ -146,6 +130,10 @@
 
 
 
+
+
+
+
 /*
 header#{$isNotVertical},
 nav#{$isToolbar},
@@ -166,13 +154,6 @@ footer#{$isToolbar} {
 }
 
 
-
-
-
-
-
-
-
 .message {
   i {
     @include inline-block;
@@ -184,63 +165,5 @@ footer#{$isToolbar} {
     border: 3px solid #666;
   }
 }
-
-.toggle-content {
-  position: relative;
-  width: 96px;
-  height: $default-header-button;  
-  .toggle-switch {
-    -webkit-appearance:none;    
-    outline: none;
-    width: 96px;
-    height: $default-header-button;  
-    position: relative;
-    border: 0;
-    &:before, &:after {
-      text-align: center;    
-      position: absolute;
-      width: 30px;
-      height: $default-header-button - 2;
-      line-height: $default-header-button;
-      z-index: 1;    
-      top: 1px;    
-      border: 1px solid #888;
-    }
-    &:after {
-      content: attr(data-icon1);
-      left: 1px;
-    }
-    &:before {
-      content: attr(data-icon2);
-      right: 1px;
-      padding-left: 10px;
-    }
-    &:checked:after { 
-      padding-right: 20px;
-    }
-    &:before, &:checked:after {
-      text-indent: 0;
-      background-color: #ccc;
-      width: 70px;
-      z-index: 0;
-    }
-    &:after, &:checked:before {
-      background: #fff;    
-      text-indent: -9999px;
-      z-index: 2;
-      width: 30px;
-    }
-  }
-
-}
-
 */
-
-
-
-
-
-
-
-
 

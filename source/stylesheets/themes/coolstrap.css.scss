@@ -9,23 +9,11 @@ $theme-toolbar-color: #B4BEC5;
 $theme-border-radius: 5px;
 
 $theme-base-color: #333;
-/*
-header {
-  background-color: $theme-header-color;
-}
-*/
+
 
 article {
   background-color: lighten($theme-base-color,80%);
 }
-
-
-header {
-  i.icon-twitter {
-    font-size: 30px;
-  }
-}
-
 
 footer {
   color: #FFF;
@@ -50,7 +38,7 @@ footer#{$isTabbar} {
 }
 
 aside {
-  
+
   nav {
     background-color: darken($theme-base-color,5%);
     border-color: darken($theme-base-color,5%);
@@ -64,7 +52,7 @@ aside {
       * { color: lighten($theme-base-color,0%); }
     }
   }
-  
+
 
   nav#{$isTabbar} {
     margin-top: -5px;
@@ -147,7 +135,7 @@ aside {
 
 
 
-//Dialogs
+/* Dialogs */
 div[role="dialog"] {
   color: #CCC;
   background-color: darken($theme-base-color,60%);

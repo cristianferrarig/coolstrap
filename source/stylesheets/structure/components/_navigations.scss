@@ -42,9 +42,7 @@ footer {
 
   i  { display: block; }
 
-  a {
-    @include setFlexibleBox;
-  }
+  a  { @include setFlexibleBox; }
 
 }
 
@@ -74,19 +72,19 @@ footer#{$isNotTabbar} {
 header#{$isNotVertical} {
   i {
     @include square($default-header-icon);
-    line-height: $default-header-icon;
-    font-size: $default-header-icon;
+    line-height:    $default-header-icon;
+    font-size:      $default-header-icon;
   }
   /* Format fot buttons and input for non vertical header */
   a, input {
-    height:        $default-header-button;
-    margin:      0 $default-interface-spacing;
+    height:         $default-header-button;
+    margin:      0  $default-interface-spacing;
   }
   a {
-    padding:     0 $default-interface-spacing;
+    padding:     0  $default-interface-spacing;
   }
   .control-group {
-    height:        $default-header-button;
+    height:         $default-header-button;
     a { height: auto !important; }
   }
 }
@@ -113,8 +111,8 @@ nav,
 footer {
   i {
     @include square($default-navbar-icon);
-    line-height: $default-navbar-icon;
-    font-size: $default-navbar-icon;
+    line-height:    $default-navbar-icon;
+    font-size:      $default-navbar-icon;
   }
   //.onlyIcon i { @include square($default-navbar-button); }
   &#{$isToolbar} {
@@ -134,8 +132,8 @@ footer {
   &#{$isTabbar} {
     i {
       @include square($default-tabbar-icon);
-      line-height: $default-tabbar-icon;
-      font-size: $default-tabbar-icon;
+      line-height:    $default-tabbar-icon;
+      font-size:      $default-tabbar-icon;
     }
     /* Vertical align for elements in tabbar */
     a { @include box-orient(vertical); }
@@ -149,11 +147,9 @@ footer {
   }
 }
 
-
 .titleOnLeft {
-  * {
-    @include box-ordinal-group(2);
-  }
+  * { @include box-ordinal-group(2); }
+
   > h1, hgroup, .content {
     @include box-ordinal-group(1);
     @include box-align(start);

@@ -1,17 +1,9 @@
 @import "../utilities";
 
-//Lists  structural
-
-
 ul[data-type="listview"] {
   list-style-type: none;
   margin: 0;
   padding: 0;
-
-  &.inset {
-    margin: 10px;
-  }
-
   li,
   li > a {
     @include setFlexibleBox(horizontal,stretch, stretch);
@@ -38,44 +30,21 @@ ul[data-type="listview"] {
   .nested {
     @include setFlexibleBox;
   }
-  .vertical {
-    @include setFlexibleBox(vertical,center,center);
-    i, span {
-
-      display: block;
-    }
-    * + * {
-      margin-top: 7px;
-    }
-  }
-  .up {
-    @include box-pack(start);
-  }
-  .stretch {
-    margin-top: -($default-listview-spacing);
-    margin-bottom: -($default-listview-spacing);
-    &:first-child { margin-left: -($default-listview-spacing) !important; }
-  }
-
   .content {
     * {
-      margin: 0;
-      padding: 0;
+      margin:   0;
+      padding:  0;
     }
     > * + * {
       margin-top: 7px;
     }
   }
-
   .content,
   .nested > *:first-child,
   li > a {
     @include box-flex(1);
   }
-  i {
-    @include inline-block;
-  }
-  
+  i { @include inline-block; }
   input {
     @include box-flex(1);
     display: block;
@@ -84,6 +53,24 @@ ul[data-type="listview"] {
     * + i { margin-left: $default-interface-spacing; }
   }
 
-} // UL
+  &.inset {
+    margin: 10px;
+  }
+  .up { @include box-pack(start); }
+  .stretch {
+    margin-top:     -($default-listview-spacing);
+    margin-bottom:  -($default-listview-spacing);
+    &:first-child { margin-left: -($default-listview-spacing) !important; }
+  }
+  .vertical {
+    @include setFlexibleBox(vertical,center,center);
+    i, span {
+      display: block;
+    }
+    * + * {
+      margin-top: 7px;
+    }
+  }
+}
 
 

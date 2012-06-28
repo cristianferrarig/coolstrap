@@ -29,7 +29,7 @@ div#{$isAction} {
 	position: absolute;
 	padding: $default-action-spacing;
 	a { height: $default-action-button; }
-	&.onTop    { top: 0; }
+	&.onTop    		{ top: 0; }
 	&:not(.onTop) { bottom: 0; }
 }
 
@@ -38,19 +38,15 @@ div#{$isAlert} {
 	max-width: 90%;
 	padding: $default-alert-spacing;
 	position: absolute;
-	//top: 50%;
-	//left: 50%;
-	//margin-left: -($default-alert-size / 2);
-	margin-left: -20px !important;
 	a { height: $default-alert-button; }
 }
 
 div#{$isModal} {
 	position: absolute;
-	top: $default-modal-spacing;
+	top: 		$default-modal-spacing;
 	bottom: $default-modal-spacing;
-	left: $default-modal-spacing;
-	right: $default-modal-spacing;
+	left: 	$default-modal-spacing;
+	right: 	$default-modal-spacing;
 	.close {
 		position: absolute;
 		top: -10px;
@@ -64,7 +60,7 @@ div#{$isPopover} {
 	//TODO Pasar calculos de la posicion de la flecha al JS
 	position: absolute;
 	max-height: $default-dialog-maxheight;
-	max-width: $default-dialog-maxwidth;
+	max-width: 	$default-dialog-maxwidth;
 
 	$carret-front-size:     $default-popover-arrow;
 	$carret-back-size:      $default-popover-arrow + $default-popover-border;

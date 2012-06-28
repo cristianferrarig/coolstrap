@@ -1,12 +1,11 @@
-//Forms
 
 form {
   input[type="text"],
   input[type="password"],
   input[type="url"],
   input[type="email"],
-  input[type="search"], 
-  input[type="number"], 
+  input[type="search"],
+  input[type="number"],
   input[type="tel"],
   input[type="date"],
   input[type="datetime"],
@@ -21,8 +20,8 @@ form {
   input[type="password"],
   input[type="url"],
   input[type="email"],
-  input[type="search"], 
-  input[type="number"], 
+  input[type="search"],
+  input[type="number"],
   input[type="tel"],
   input[type="range"],
   input[type="date"],
@@ -32,12 +31,12 @@ form {
   input[type="month"],
   input[type="week"],
   select {
-    height: $default-header-button;
-    padding: 0 $default-interface-spacing;
+    height:  $default-header-button;
+    padding: 0  $default-interface-spacing;
   }
   label {
-    display: block;
-    line-height: $default-header-button;
+    display:      block;
+    line-height:  $default-header-button;
   }
   .content {
     @include setFlexibleBox(vertical,stretch, center);
@@ -45,8 +44,8 @@ form {
     padding: $default-interface-spacing;
     i {
       @include square($default-tabbar-icon);
-      line-height: $default-tabbar-icon;
-      font-size: $default-tabbar-icon; 
+      line-height:  $default-tabbar-icon;
+      font-size:    $default-tabbar-icon;
     }
     .aside {
       width: 30%;
@@ -57,8 +56,8 @@ form {
     input[type="password"],
     input[type="url"],
     input[type="email"],
-    input[type="search"], 
-    input[type="number"], 
+    input[type="search"],
+    input[type="number"],
     input[type="tel"],
     input[type="date"],
     input[type="datetime"],
@@ -66,14 +65,14 @@ form {
     input[type="time"],
     input[type="month"],
     input[type="week"],
-    textarea, 
+    textarea,
     select, {
       @include box-flex(1);
       display: block;
     }
     label, .slider { @include box-flex(1); }
-    textarea { 
-      padding: $default-interface-spacing; 
+    textarea {
+      padding: $default-interface-spacing;
     }
   }
   .stack {
@@ -82,24 +81,24 @@ form {
       input, textarea, select { width: 100%; }
     }
   }
-  .horizontal { 
-    @include setFlexibleBox(horizontal,center, stretch); 
+  .horizontal {
+    @include setFlexibleBox(horizontal,center, stretch);
     @include clearfix;
     label {
       @include box-flex();
       @include clearfix;
-      height: $default-header-button;
-      line-height: $default-header-button;
+      height:       $default-header-button;
+      line-height:  $default-header-button;
         input {
-          height: $default-header-button;
-          float: right;
+          height:   $default-header-button;
+          float:    right;
         }
         input[type="radio"], input[type="checkbox"] { margin-right: 1px; }
     }
     .slider { @include box-flex(1) }
     i {
-      display: block;
-      float: right;
+      display:  block;
+      float:    right;
     }
   }
   .start { @include setFlexibleBox(horizontal,start, stretch); }
