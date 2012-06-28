@@ -1,284 +1,285 @@
 = content_for :title do
-	Toolbars markup
+  Toolbars markup
 
 = content_for :application_styles do 
-	= stylesheet_link_tag "themes/defaultcolor"
-	
+  = stylesheet_link_tag "themes/coolstrap"
+  %link{:href => "assets/stylesheets/customtheme.css", :rel => "stylesheet", :type => "text/css"}
+  
 = content_for :principal do
-	%div.a{"role" => "main"}
+  %div.a{"role" => "main"}
 
-		%header
-			%a.onlyIcon <i></i>
-			.flex
-			.control-group
-				%a
-					%i.icon-facebook
-					%span facebook
-				%a
-					%i.icon-twitter
-					%span twitter
-				%a
-					%span comments
-					%i.icon-comments
-			.flex
-			%a Entrar
+    %header
+      %a.onlyIcon <i></i>
+      .flex
+      .control-group
+        %a
+          %i.icon-facebook
+          %span facebook
+        %a
+          %i.icon-twitter
+          %span twitter
+        %a
+          %span comments
+          %i.icon-comments
+      .flex
+      %a Entrar
 
-		%section
-			%header
-				%input{:type => "search", :name => "txt"}
-				%a search
+    %section
+      %header
+        %input{:type => "search", :name => "txt"}
+        %a search
 
-			%article.scrollable{:id => "demo"}
+      %article.scrollable{:id => "demo"}
 
-				%nav{"data-type" => "toolbar"}
-					.control-group.autoWidth
-						%a
-							%i.icon-facebook
-							%span facebook
-						%a
-							%i.icon-twitter
-							%span twitter
-						%a
-							%span comments
-							%i.icon-comments
+        %nav{"data-type" => "toolbar"}
+          .control-group.autoWidth
+            %a
+              %i.icon-facebook
+              %span facebook
+            %a
+              %i.icon-twitter
+              %span twitter
+            %a
+              %span comments
+              %i.icon-comments
 
-				%nav{"data-type" => "toolbar"}
-					.control-group.autoWidth
-						%a boton 1
-						%a boton 2
-						%a boton 3
-						%a boton 4
+        %nav{"data-type" => "toolbar"}
+          .control-group.autoWidth
+            %a boton 1
+            %a boton 2
+            %a boton 3
+            %a boton 4
 
-				%nav{"data-type" => "toolbar"}
-					.control-group
-						%a nombre 1
-						%a nombre 3
-						%a nombre 4
+        %nav{"data-type" => "toolbar"}
+          .control-group
+            %a nombre 1
+            %a nombre 3
+            %a nombre 4
 
-				%nav{"data-type" => "toolbar"}
-					%input{:type => "search", :name => "txt"}
-					%a
-						%i.icon-search
+        %nav{"data-type" => "toolbar"}
+          %input{:type => "search", :name => "txt"}
+          %a
+            %i.icon-search
 
-				%nav{"data-type" => "toolbar"}
-					%a.onlyIcon 
-						%i.icon-facebook
-					%input{:type => "search", :name => "txt"}
-					%a
-						%span search
-						%i.icon-search
+        %nav{"data-type" => "toolbar"}
+          %a.onlyIcon 
+            %i.icon-facebook
+          %input{:type => "search", :name => "txt"}
+          %a
+            %span search
+            %i.icon-search
 
-				%nav{"data-type" => "toolbar", "data-icon" => ""}
-					%input{:type => "search", :name => "txt"}
+        %nav{"data-type" => "toolbar", "data-icon" => ""}
+          %input{:type => "search", :name => "txt"}
 
-				%nav{"data-type" => "toolbar"}
-					.control-group
-						%a 
-							%i.icon-facebook
-						%a 
-							%i.icon-twitter
-						%a 
-							%i.icon-comments
-				
-				%nav{"data-type" => "toolbar"}
-					.control-group
-						%a
-							%i.icon-facebook
-							%span facebook
-						%a
-							%i.icon-twitter
-							%span twitter
-						%a
-							%span comments
-							%i.icon-comments
+        %nav{"data-type" => "toolbar"}
+          .control-group
+            %a 
+              %i.icon-facebook
+            %a 
+              %i.icon-twitter
+            %a 
+              %i.icon-comments
+        
+        %nav{"data-type" => "toolbar"}
+          .control-group
+            %a
+              %i.icon-facebook
+              %span facebook
+            %a
+              %i.icon-twitter
+              %span twitter
+            %a
+              %span comments
+              %i.icon-comments
 
-				%nav{"data-type" => "toolbar"}
-					%a back
-					.control-group.autoWidth
-						%a Alt 1
-						%a Alt 2
-						%a Alt 3
-						%a Alt 4
-					%a next
+        %nav{"data-type" => "toolbar"}
+          %a back
+          .control-group.autoWidth
+            %a Alt 1
+            %a Alt 2
+            %a Alt 3
+            %a Alt 4
+          %a next
 
-				%nav{"data-type" => "toolbar"}
-					%a.onlyIcon <i></i>
-					.control-group.autoWidth
-						%a nombre
-						%a nombre
-						%a nombre
-					%a next
+        %nav{"data-type" => "toolbar"}
+          %a.onlyIcon <i></i>
+          .control-group.autoWidth
+            %a nombre
+            %a nombre
+            %a nombre
+          %a next
 
-				%nav{"data-type" => "toolbar"}
-					%a next
-					.flex
-					%a next
-					.flex
-					%a next
-					.flex
-					%a next
-					.flex
-					%a next
+        %nav{"data-type" => "toolbar"}
+          %a next
+          .flex
+          %a next
+          .flex
+          %a next
+          .flex
+          %a next
+          .flex
+          %a next
 
-				%nav{"data-type" => "toolbar"}
-					%a
-						%i.icon-facebook
-						%span facebook
-					.flex
-					%a
-						%i.icon-twitter
-						%span twitter
-					.flex
-					%a
-						%span comments
-						%i.icon-comments
+        %nav{"data-type" => "toolbar"}
+          %a
+            %i.icon-facebook
+            %span facebook
+          .flex
+          %a
+            %i.icon-twitter
+            %span twitter
+          .flex
+          %a
+            %span comments
+            %i.icon-comments
 
-				%nav{"data-type" => "toolbar"}
-					%a.onlyIcon
-						%i.icon-facebook
-					.flex
-					%a.onlyIcon 
-						%i.icon-twitter
-					.flex
-					%a.onlyIcon 
-						%i.icon-comments
-					.flex
-					%a.onlyIcon 
-						%i.icon-linkedin
+        %nav{"data-type" => "toolbar"}
+          %a.onlyIcon
+            %i.icon-facebook
+          .flex
+          %a.onlyIcon 
+            %i.icon-twitter
+          .flex
+          %a.onlyIcon 
+            %i.icon-comments
+          .flex
+          %a.onlyIcon 
+            %i.icon-linkedin
 
-				%nav{"data-type" => "toolbar"}
-					%a back
-					%hgroup
-						%h1 Rhyboo
-						%h2 The social TV
-					%a back
-					.control-group
-						%a 
-							%i.icon-facebook
-						%a 
-							%i.icon-twitter
+        %nav{"data-type" => "toolbar"}
+          %a back
+          %hgroup
+            %h1 Rhyboo
+            %h2 The social TV
+          %a back
+          .control-group
+            %a 
+              %i.icon-facebook
+            %a 
+              %i.icon-twitter
 
-				%nav{"data-type" => "toolbar"}
-					.control-group
-						%a 1
-						%a 2
-					%a back
-					%hgroup
-						%h1 Rhyboo
-						%h2 The social TV
-					%a back
-					
+        %nav{"data-type" => "toolbar"}
+          .control-group
+            %a 1
+            %a 2
+          %a back
+          %hgroup
+            %h1 Rhyboo
+            %h2 The social TV
+          %a back
+          
 
-				%nav{"data-type" => "toolbar"}
-					%a back
-					%a
-						%i.icon-chevron-left
-					%h1 Rhyboo
-					.control-group
-						%a
-							%i.icon-caret-down
-						%a
-							%i.icon-caret-up
+        %nav{"data-type" => "toolbar"}
+          %a back
+          %a
+            %i.icon-chevron-left
+          %h1 Rhyboo
+          .control-group
+            %a
+              %i.icon-caret-down
+            %a
+              %i.icon-caret-up
 
-				%nav{"data-type" => "toolbar"}
-					%a back
-					.content
-						%h2 Descargando 1 de 5
-						.loader
-							.progress
-					%a
-						%i.icon-chevron-right
+        %nav{"data-type" => "toolbar"}
+          %a back
+          .content
+            %h2 Descargando 1 de 5
+            .loader
+              .progress
+          %a
+            %i.icon-chevron-right
 
-				%nav{"data-type" => "toolbar"}
-					%a back
-					.content
-						.loader
-							.progress
-					%a
-						%i.icon-chevron-right
+        %nav{"data-type" => "toolbar"}
+          %a back
+          .content
+            .loader
+              .progress
+          %a
+            %i.icon-chevron-right
 
 
 
-				-#%nav{"data-type" => "toolbar"}
-					%a Boton 1
-					%a Boton 2
-					%a Boton 3
-					%a Boton 4
-					%a Boton 5
+        -#%nav{"data-type" => "toolbar"}
+          %a Boton 1
+          %a Boton 2
+          %a Boton 3
+          %a Boton 4
+          %a Boton 5
 
-				-#%nav{"data-type" => "toolbar"}
-					%input{:type => "search", :name => "txt"}
-					%a search
+        -#%nav{"data-type" => "toolbar"}
+          %input{:type => "search", :name => "txt"}
+          %a search
 
-				-#%nav{"data-type" => "toolbar"}
-					%a d
-					.flex
-					.content
-						.controlgroup
-							%a nombre 1
-							%a nombre 2
-					.flex
-					%a h
+        -#%nav{"data-type" => "toolbar"}
+          %a d
+          .flex
+          .content
+            .controlgroup
+              %a nombre 1
+              %a nombre 2
+          .flex
+          %a h
 
-				-#%nav{"data-type" => "toolbar"}
-					%a d
-					.flex
-					.content
-						%h1 Texto
-					.flex
-					%a h
+        -#%nav{"data-type" => "toolbar"}
+          %a d
+          .flex
+          .content
+            %h1 Texto
+          .flex
+          %a h
 
-				-#%nav{"data-type" => "toolbar"}
-					%a d
-					.content
-						%ul
-							%li
-								%a 1
-							%li
-								%a 2
-							%li
-								%a 3
-					%a h
+        -#%nav{"data-type" => "toolbar"}
+          %a d
+          .content
+            %ul
+              %li
+                %a 1
+              %li
+                %a 2
+              %li
+                %a 3
+          %a h
 
-				-#%nav{"data-type" => "toolbar"}
-					%a d
-					.flex
-					%a 1
-					.flex
-					%a 2
-					.flex
-					%a 3
-					.flex
-					%a h
+        -#%nav{"data-type" => "toolbar"}
+          %a d
+          .flex
+          %a 1
+          .flex
+          %a 2
+          .flex
+          %a 3
+          .flex
+          %a h
 
-				-#%nav{"data-type" => "toolbar"}
-					%a d
-					.flex
-					.message
-						Actualizado 03-05-12 16:58
-					.flex
-					%a h
+        -#%nav{"data-type" => "toolbar"}
+          %a d
+          .flex
+          .message
+            Actualizado 03-05-12 16:58
+          .flex
+          %a h
 
-				-#%nav{"data-type" => "toolbar"}
-					%a d
-					.flex
-					.message
-						%i
-						Comprobando correo...
-					.flex
-					%a h
+        -#%nav{"data-type" => "toolbar"}
+          %a d
+          .flex
+          .message
+            %i
+            Comprobando correo...
+          .flex
+          %a h
 
-				-#%nav{"data-type" => "toolbar"}
-					%input{:type => "search", :name => "txt"}
-					
+        -#%nav{"data-type" => "toolbar"}
+          %input{:type => "search", :name => "txt"}
+          
 
-	%aside{"data-type" => "onLeft"}
+  %aside{"data-type" => "onLeft"}
 
-	%aside{"data-type" => "onRight"}
+  %aside{"data-type" => "onRight"}
 
-	%aside{"data-type" => "onTop"}
+  %aside{"data-type" => "onTop"}
 
-	%aside{"data-type" => "onBottom"}
+  %aside{"data-type" => "onBottom"}
 = content_for :application_js do  
-	%script{:src => "app/app.js", :type=> "text/javascript"}
-	%script{:src => "app/events.js", :type=> "text/javascript"}	
+  %script{:src => "app/app.js", :type=> "text/javascript"}
+  %script{:src => "app/events.js", :type=> "text/javascript"}  

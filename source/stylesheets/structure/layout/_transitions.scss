@@ -7,43 +7,27 @@ div#{$isMain} {
   body.showasideonBottom & { @include setTransition(bottom, $default-aside-bottom-size); }
 }
 
-
 section {
   @include setTransition();
   @include setTransition(left, 100%);
-  &:first-of-type {
-    @include setTransition(left, 0%);
-  }
-  &.show { 
-    @include setTransition(left, 0%);
-  }
-  &.hide { 
-    @include setTransition(left, -100%);
-  }
+
+  &:first-of-type { @include setTransition(left, 0%); }
+  &.show          { @include setTransition(left, 0%); }
+  &.hide          { @include setTransition(left, -100%); }
 }
 
-
 div#{$isDialog} {
+  @include setTransition();
 
   &#{$isAction} {
-    @include setTransition();
-    @include setTransition(top, 100%);  
-    &.show { 
-      @include setTransition(top, 0%);
-    }
-    &.hide { 
-      @include setTransition(top, 100%);  
-    }
+    @include setTransition(top, 100%);
+    &.show { @include setTransition(top, 0%); }
+    &.hide { @include setTransition(top, 100%); }
   }
 
   &#{$isModal} {
-    -webkit-animation-duration: 0ms;
-    &.show { 
-      @include setTransform(bounceIn);
-    }
-    &.hide { 
-      @include setTransform(bounceOut);
-    }
+    &.show { @include setTransform(bounceIn,0ms); }
+    &.hide { @include setTransform(bounceOut,0ms); }
   }
 
 }

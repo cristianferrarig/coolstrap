@@ -26,13 +26,13 @@
 }
 
 
-@mixin setTransform($type) {
-	-webkit-animation-duration: 250ms;
-	
+// FIX ME: @Cristian: optimizar setTransition mixin
+@mixin setTransform($type,$duration: $default-transition-duration) {
+	-webkit-animation-duration: $duration;
+
 	@if $type == bounceIn {
 	    -webkit-animation-name: bounceIn;
 	}
-
 	@else if $type == bounceOut {
 		-webkit-animation-name: bounceOut;
 	}
@@ -43,7 +43,7 @@
         opacity: 0.3;
         -webkit-transform: scale(0);
     }
-   
+
     100% {
     	opacity: 1;
         -webkit-transform: scale(1);
@@ -54,10 +54,10 @@
     0% {
         -webkit-transform: scale(1);
     }
-    
+
     100% {
         opacity: 0;
         -webkit-transform: scale(.3);
-    }   
+    }
 }
 

@@ -1,8 +1,9 @@
 = content_for :title do
 	Toolbars markup
 
--#= content_for :application_styles do 
--#	= stylesheet_link_tag "themes/defaultcolor"
+= content_for :application_styles do 
+  = stylesheet_link_tag "themes/coolstrap"
+  %link{:href => "assets/stylesheets/customtheme.css", :rel => "stylesheet", :type => "text/css"}
 	
 = content_for :principal do
 	%div.a{"role" => "main"}

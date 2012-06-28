@@ -1,6 +1,4 @@
 @import "compass";
-@import "../styles";
-
 
 //Variables
 $theme-header-color: #444;
@@ -8,7 +6,6 @@ $theme-nav-color: #888;
 $theme-footer-color: #444;
 $theme-base-color: #F8F8F8;
 $theme-border-radius: 5px;
-
 
 //Layout
 article {
@@ -127,42 +124,7 @@ ul {
 }
 
 
-/*
-ul {
-  color: #666;
 
-  li {
-    border-bottom: 1px solid #ccc;
-    position: relative;
-    .title { color: #444; }
-    .picture {
-      background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);
-      width: 44px;
-      height: 44px;
-    }
-    div {
-      i {
-        background-image: image-url('arrow-list.png');
-        width: 16px;
-        height: 16px;
-      }
-    }
-    &:not(.list-divider):active {
-      @include background(linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.05)));
-    }
-  }
-  .title:not(.nested),
-  .title.nested .content {
-    font-weight: bold;
-    font-size: 14px;
-  }
-  .badge {
-    @include border-radius(5px);
-    background-color: darken($theme-base-color,20);
-    font-size: 11px;
-  }
-}
-*/
 
 
 ul[data-type="listview"] {
@@ -175,7 +137,7 @@ ul[data-type="listview"] {
     margin-top: -1px;
     position: relative;
     border-style: solid;
-    border-color: #232; //darken($theme-base-color,10%);
+    border-color: darken($theme-base-color,10%);
     .title { color: #444; }
     .picture {
       background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);
@@ -184,13 +146,6 @@ ul[data-type="listview"] {
       &.small {
         width: 30px;
         height: 30px;
-      }
-    }
-    div {
-      i:not('class') {
-        background-image: image-url('arrow-list.png');
-        width: 16px;
-        height: 16px;
       }
     }
     &.is-active {
@@ -202,14 +157,6 @@ ul[data-type="listview"] {
       border-color: darken($theme-base-color,40%);
     }
   }
-  /*
-  .title:not(.nested),
-  .title.nested .content {
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  */
 
   &:not(.inset) {
     li { border-width: 1px 0; }
@@ -238,146 +185,6 @@ ul[data-type="listview"] {
 
 
 
-
-
-
-/*
-article > h1:not(.list-divider),
-article div > h1:not(.list-divider) {
-  margin: 0.8em 0 0.95em 10px;
-}
-article > h2:not(.list-divider),
-article div > h2:not(.list-divider){
-  margin: 0.75em 0 0.75em 10px;
-  color: #444;
-}
-article > p,
-article div > p {
-  padding: 0 10px;
-  color: #4a4a4a;
-}
-
-
-//Buttons set
-.interfaceButton {
-  background-color: darken($theme-base-color,15);
-  border: 1px solid darken($theme-base-color,20);
-  font-weight: bold;
-  color: #656A6C !important;
-}
-
-
-//Icons set
-header, nav, footer {
-  a:not(.onlyIcon) { @extend .interfaceButton; }
-}
-
-header {
-  &#{$isNotVertical} {
-    a:not(.onlyIcon) { }
-  }
-  &#{$isVertical} {
-    a:not(.onlyIcon) { }
-  }
-  &#{$isNotVertical},
-  &#{$isVertical} {
-    a:not(.onlyIcon) { }
-  }
-}
-
-nav,
-footer {
-  &#{$isToolbar} {
-    a:not(.onlyIcon) { }
-  }
-  &#{$isNormal} {
-    a:not(.onlyIcon) { }
-  }
-  &#{$isToolbar},
-  &#{$isNormal} {
-    a:not(.onlyIcon) { }
-  }
-}
-
-
-   
-header, nav {
-  background-color: darken($theme-base-color,05);
-  border-bottom: 1px solid darken($theme-base-color,15);
-}
-
-
-//Tools
-.loader {
-  @include border-radius(10px);
-  background-color: darken($theme-base-color,20);
-  .progress {
-    @include border-radius(10px);
-    background-color: darken($theme-base-color,10);
-  }
-}
-article pre { margin: 12px 0 20px 10px; }
-
-span.code, article pre {
-  font-family: monospace, serif;
-  color: #a7b;
-}
-
-
-//List styles
-ul.inset {
-  border: 1px solid #ccc;
-  li:last-child  { border-bottom: 0; }
-}
-
-ul {
-  color: #666;
-  a {
-    color: #666;
-  }
-  li {
-    border-bottom: 1px solid #ccc;
-    position: relative;
-    .title { color: #555; }
-    .picture {
-      @include border-radius(4px);
-      background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);
-      width: 44px;
-      height: 44px;
-    }
-    .stretch {
-      .picture { @include border-radius(0); }
-    }
-    div {
-      i {
-        background-image: image-url('arrow-list.png');
-        width: 16px;
-        height: 16px;
-      }
-    }
-    &:not(.list-divider):active {
-      @include background(linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,.05)));
-    }
-  }
-  .title:not(.nested),
-  .title.nested .content {
-    font-weight: bold;
-    font-size: 14px;
-  }
-  .badge {
-    @include border-radius(5px);
-    background-color: darken($basecolor,20);
-    font-size: 11px;
-  }
-  .nested .aside {
-    color: #999;
-  }
-}
-.list-divider {
-  font-weight: bold;
-}
-
-*/
 
 
 //Dialogs
@@ -410,8 +217,9 @@ form {
   }
 }
 
-//Sliders
 
+
+//Sliders
 .slider {
   @include border-radius(1em);
   background-color: #ddd;

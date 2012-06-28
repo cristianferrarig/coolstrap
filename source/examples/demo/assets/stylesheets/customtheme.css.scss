@@ -1,64 +1,19 @@
 @import "compass";
-@import "styles";
-  
-header {
-  @include background(linear-gradient(top, #E23E2C, #B72A19)); 
-  border-bottom: 1px solid #ddd;
-  color: #fff;
-  h2 {
-  	font-weight: normal;
-  }
-  a:not(.onlyIcon) {
-    $button-color: darkn(#E23E2C, 10%);
-    $button-shadow: darken(#E23E2C, 8%);
-    @include background(linear-gradient(top, #E23E2C, #942114));
-    @include box-shadow(
-      0 0 0 0 $button-shadow inset,
-      0 0 0 1px rgba($button-shadow,.3) inset,
-      0 1px 0 0 rgba(#FFF,.1));
-    @include border-radius(3px);
-    border: 1px solid #7E1C11;
-    color: #fff !important;
-    &:hover {
-      @include background(linear-gradient(top, #AB2617, #7E1C11));
-      color: #ddd;
-    }
-    &:visited {
-      color: #fff;
+
+
+ul[data-type="listview"] .content > * + * {
+  margin-top: 2px;
+  .meta { color: #999; }
+}
+ul#mail {
+  h1 { font-size: 16px; }
+  h2 { font-weight: normal; }
+  p { color: #999; }
+}
+ul#twitterlist {
+  h1 {
+    span {
+      color: #999;
     }
   }
 }
- 
-aside header {
-	color: #ccc;
-  @include background(linear-gradient(top, #3B3B3B, #222222)); 
-  a:not(.onlyIcon) {
-    $button-color: darkn(#3B3B3B, 10%);
-    $button-shadow: darken(#3B3B3B, 8%);
-    @include background(linear-gradient(top, #4D4D4D, #2E2E2E));
-    @include box-shadow(
-      0 0 0 0 $button-shadow inset,
-      0 0 0 1px rgba($button-shadow,.3) inset,
-      0 1px 0 0 rgba(#FFF,.1));
-    border: 1px solid #262626;
-    color: #ccc !important;
-    &:hover {
-      @include background(linear-gradient(top, #3B3B3B, #2E2E2E));
-    }
-  }
-}
-
-i.menuIcon {
- 
-}
-
-article {
-  background-color: rgba(255,255,255,1.0);
-}
-
-div[role="main"] {
-  -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);  
-}
-
-
- 

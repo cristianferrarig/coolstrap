@@ -1,4 +1,3 @@
-
 // Layers
 aside,
 section#{$isNotPopup},
@@ -16,24 +15,22 @@ section#{$isPopup} {
   }
 }
 
-.overlay {
-  z-index: $default-layer-overalay;
-  &.inner {
-    z-index: $default-layer-overalay-inner;
-  }
-}
-
-
-div#{$isDialog} {
-  z-index: $default-layer-dialog;
-}
-
-
 header, 
 footer,
 section > nav,
 div#{$isMain} {
   z-index: $default-layer-front;
+}
+
+div#{$isDialog} {
+  z-index: $default-layer-dialog;
+}
+
+.overlay {
+  z-index: $default-layer-overalay;
+  &.inner {
+    z-index: $default-layer-overalay-inner;
+  }
 }
 
 
@@ -45,33 +42,15 @@ div#{$isDialog} {
   -webkit-backface-visibility: hidden;
   visibility: hidden;
 }
-
   
-div#{$isMain} section.current {
+div#{$isMain},
+div#{$isDialog}.current,
+aside.current {
   visibility: visible;
-  article.current {
+  section.current {
     visibility: visible;
-  }
-}
-
-div#{$isDialog}.current {
-  visibility: visible;
-}
-
-aside {
-  section {
-    visibility: hidden; 
-    article {
-      visibility: hidden; 
-    } 
-  }
-  &.current {
-    visibility: visible; 
-    section.current {
-      visibility: visible; 
-      article.current {
-        visibility: visible;
-      } 
+    article.current {
+      visibility: visible;
     }
   }
 }

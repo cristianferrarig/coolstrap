@@ -3,7 +3,6 @@ div#{$isDialog} {
 	@include box-flex(1);
 	text-align: center;
 
-
 	> * { margin: 0; }
 
 	> a, div, input	 { @include box-flex(1); }
@@ -62,7 +61,7 @@ div#{$isModal} {
 }
 
 div#{$isPopover} {
-	//TODO Pasar calculos de la posicion de la flecha al JS 
+	//TODO Pasar calculos de la posicion de la flecha al JS
 	position: absolute;
 	max-height: $default-dialog-maxheight;
 	max-width: $default-dialog-maxwidth;
@@ -79,7 +78,7 @@ div#{$isPopover} {
 		display: block;
 		position: absolute;
 		border-style: solid;
-		border-color: transparent; 
+		border-color: transparent;
 		width: 0;
 		height: 0;
 	}
@@ -98,6 +97,7 @@ div#{$isPopover} {
 	&.onleft,
 	&.onright {
 		&:after  { top: 50%; margin-top:   -($carret-front-size); }
+
 		&:before { top: 50%; margin-top:   -($carret-back-size);  }
 	}
 

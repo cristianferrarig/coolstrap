@@ -1,6 +1,8 @@
 = content_for :title do
   Coolstrapp Kitchen-sink
-= content_for :application_styles do 
+  
+= content_for :application_styles do
+  = stylesheet_link_tag "themes/coolstrap"
   %link{:href => "assets/stylesheets/customtheme.css", :rel => "stylesheet", :type => "text/css"}
 
 = content_for :principal do

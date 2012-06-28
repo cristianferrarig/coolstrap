@@ -45,7 +45,7 @@ footer {
   a {
     @include setFlexibleBox;
   }
-  
+
 }
 
 /* title landscape format */
@@ -72,10 +72,10 @@ footer#{$isNotTabbar} {
 
 
 header#{$isNotVertical} {
-  i { 
-    @include square($default-header-icon); 
+  i {
+    @include square($default-header-icon);
     line-height: $default-header-icon;
-    font-size: $default-header-icon; 
+    font-size: $default-header-icon;
   }
   /* Format fot buttons and input for non vertical header */
   a, input {
@@ -111,10 +111,10 @@ header#{$isVertical} {
 
 nav,
 footer {
-  i { 
+  i {
     @include square($default-navbar-icon);
     line-height: $default-navbar-icon;
-    font-size: $default-navbar-icon; 
+    font-size: $default-navbar-icon;
   }
   //.onlyIcon i { @include square($default-navbar-button); }
   &#{$isToolbar} {
@@ -125,8 +125,6 @@ footer {
     }
     a {
       padding:     0 $default-interface-spacing;
-      // TODO: si tiene un <i> dentro del a tiene que cambiar display:block; por display:box;
-      //display:       block;
     }
     .control-group {
       height:        $default-navbar-button;
@@ -134,10 +132,10 @@ footer {
     }
   }
   &#{$isTabbar} {
-    i { 
+    i {
       @include square($default-tabbar-icon);
       line-height: $default-tabbar-icon;
-      font-size: $default-tabbar-icon; 
+      font-size: $default-tabbar-icon;
     }
     /* Vertical align for elements in tabbar */
     a { @include box-orient(vertical); }
@@ -158,7 +156,7 @@ footer {
   }
   > h1, hgroup, .content {
     @include box-ordinal-group(1);
-    @include box-align(start); 
+    @include box-align(start);
     padding-left: $default-interface-spacing;
     text-align: left;
   }
@@ -174,7 +172,7 @@ footer {
   h1, h2, li, a {
     @include ellipsis;
   }
-  
+
   > .title {
     width: 100%;
   }
@@ -192,7 +190,7 @@ footer {
       }
     }
   }
-  
+
 }
 */
 

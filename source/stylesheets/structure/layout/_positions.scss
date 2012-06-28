@@ -18,9 +18,8 @@ footer {
   &#{$isNormal}         { @include setFixedPosition(bottom, $default-navbar-size); }
 }
 
-header#{$isVertical} ~ footer {
-  display: none;
-}
+// Remove footer on vertical header mode
+header#{$isVertical} ~ footer { display: none; }
 
 aside {
   &#{$isOnTop}         { @include setFixedPosition(top, $default-aside-top-size); }
@@ -30,10 +29,10 @@ aside {
 }
 
 
-@media only screen and (min-width : 321px) and (max-width : 480px) and (orientation : landscape)  {
- 
-  header {
-    &#{$isNormal}          { @include setFixedPosition(top, $default-header-landscape-size); }
-  }
- 
+// Landscape smartphone optimization
+@media only screen
+  and (min-width : 321px)
+  and (max-width : 480px)
+  and (orientation : landscape)  {
+  header#{$isNormal}  { @include setFixedPosition(top, $default-header-landscape-size); }
 }

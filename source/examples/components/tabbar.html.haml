@@ -1,156 +1,156 @@
 = content_for :title do
-	Tabbars markup
+  Tabbars markup
 
 = content_for :application_styles do 
-	= stylesheet_link_tag "themes/defaultcolor"
-	
+  = stylesheet_link_tag "themes/coolstrap"
+  %link{:href => "assets/stylesheets/customtheme.css", :rel => "stylesheet", :type => "text/css"}
+  
 = content_for :principal do
+  %div.a{"role" => "main"}
 
-	%div.a{"role" => "main"}
+    %header
+      %a Volver
+      %hgroup
+        %h1 COOLSTRAP
+        %h2 Tabbar
+      %a
+        %span twitter
+        %i.icon-twitter
+        
+    %footer{"data-type" => "tabbar"}
+      %a
+        %i.icon-facebook
+        FACEBOOK
+      %a
+        %i.icon-twitter
+        TWITTER
+      %a
+        %i.icon-comments
+        COMMENTS
+      %a
+        %i.icon-linkedin
+        LINKEDIN
 
-		%header
-			%a Volver
-			%hgroup
-				%h1 COOLSTRAP
-				%h2 Tabbar
-			%a
-				%span twitter
-				%i.icon-twitter
-				
-		%footer{"data-type" => "tabbar"}
-			%a
-				%i.icon-facebook
-				FACEBOOK
-			%a
-				%i.icon-twitter
-				TWITTER
-			%a
-				%i.icon-comments
-				COMMENTS
-			%a
-				%i.icon-linkedin
-				LINKEDIN
+    %section
 
-		%section
+      %nav
+        %a Boton 1
+        %a Boton 2
+        %a Boton 3
+        %a Boton 4
+        %a Boton 5
 
-			%nav
-				%a Boton 1
-				%a Boton 2
-				%a Boton 3
-				%a Boton 4
-				%a Boton 5
+      %article.scrollable
+          
+        %nav
+          %a
+            %i.icon-facebook
+            %span FACEBOOK
+          %a
+            %i.icon-twitter
+            %span TWITTER
+          %a
+            %span COMMENTS
+            %i.icon-comments
+          %a
+            %span LINKEDIN
+            %i.icon-linkedin
 
-			%article.scrollable
-					
-				%nav
-					%a
-						%i.icon-facebook
-						%span FACEBOOK
-					%a
-						%i.icon-twitter
-						%span TWITTER
-					%a
-						%span COMMENTS
-						%i.icon-comments
-					%a
-						%span LINKEDIN
-						%i.icon-linkedin
+        %h2.list-divider Tabbar with ul only text
+        %nav{"data-type" => "tabbar"}
+          %ul
+            %li
+              %a Boton 1
+            %li
+              %a Boton 2
+            %li
+              %a Boton 3
+            %li
+              %a Boton 4
+            %li
+              %a Boton 5
 
-				%h2.list-divider Tabbar with ul only text
-				%nav{"data-type" => "tabbar"}
-					%ul
-						%li
-							%a Boton 1
-						%li
-							%a Boton 2
-						%li
-							%a Boton 3
-						%li
-							%a Boton 4
-						%li
-							%a Boton 5
+        %h2.list-divider Tabbar without ul only text
+        %nav{"data-type" => "tabbar"}
+          %a Boton 1
+          %a Boton 2
+          %a Boton 3
+          %a Boton 4
+          %a Boton 5
 
-				%h2.list-divider Tabbar without ul only text
-				%nav{"data-type" => "tabbar"}
-					%a Boton 1
-					%a Boton 2
-					%a Boton 3
-					%a Boton 4
-					%a Boton 5
+        %h2.list-divider Tabbar with ul only icon
+        %nav{"data-type" => "tabbar"}
+          %ul
+            %li
+              %a
+                %i.icon-facebook
+            %li
+              %a
+                %i.icon-twitter
+            %li
+              %a
+                %i.icon-comments
+            %li
+              %a
+                %i.icon-linkedin
+            
+        %h2.list-divider Tabbar without ul with icon
+        %nav{"data-type" => "tabbar"}
+          %a
+            %i.icon-facebook
+          %a
+            %i.icon-twitter
+          %a
+            %i.icon-comments
+          %a
+            %i.icon-linkedin
+          
 
-				%h2.list-divider Tabbar with ul only icon
-				%nav{"data-type" => "tabbar"}
-					%ul
-						%li
-							%a
-								%i.icon-facebook
-						%li
-							%a
-								%i.icon-twitter
-						%li
-							%a
-								%i.icon-comments
-						%li
-							%a
-								%i.icon-linkedin
-						
-				%h2.list-divider Tabbar without ul with icon
-				%nav{"data-type" => "tabbar"}
-					%a
-						%i.icon-facebook
-					%a
-						%i.icon-twitter
-					%a
-						%i.icon-comments
-					%a
-						%i.icon-linkedin
-					
+        %h2.list-divider Tabbar with ul with icon
+        %nav{"data-type" => "tabbar"}
+          %ul
+            %li
+              %a
+                %i.icon-facebook
+                FACEBOOK
+            %li
+              %a
+                %i.icon-twitter
+                TWITTER
+            %li
+              %a
+                %i.icon-comments
+                COMMENTS
+            %li
+              %a
+                %i.icon-linkedin
+                LINKEDIN
+            
 
-				%h2.list-divider Tabbar with ul with icon
-				%nav{"data-type" => "tabbar"}
-					%ul
-						%li
-							%a
-								%i.icon-facebook
-								FACEBOOK
-						%li
-							%a
-								%i.icon-twitter
-								TWITTER
-						%li
-							%a
-								%i.icon-comments
-								COMMENTS
-						%li
-							%a
-								%i.icon-linkedin
-								LINKEDIN
-						
+        %h2.list-divider Tabbar without ul with icon
+        %nav{"data-type" => "tabbar"}
+          %a
+            %i.icon-facebook
+            FACEBOOK
+          %a
+            %i.icon-twitter
+            TWITTER
+          %a
+            %i.icon-comments
+            COMMENTS
+          %a
+            %i.icon-linkedin
+            LINKEDIN
+          
+          
 
-				%h2.list-divider Tabbar without ul with icon
-				%nav{"data-type" => "tabbar"}
-					%a
-						%i.icon-facebook
-						FACEBOOK
-					%a
-						%i.icon-twitter
-						TWITTER
-					%a
-						%i.icon-comments
-						COMMENTS
-					%a
-						%i.icon-linkedin
-						LINKEDIN
-					
-					
+  %aside{"data-type" => "onLeft"}
 
-	%aside{"data-type" => "onLeft"}
+  %aside{"data-type" => "onRight"}
 
-	%aside{"data-type" => "onRight"}
+  %aside{"data-type" => "onTop"}
 
-	%aside{"data-type" => "onTop"}
-
-	%aside{"data-type" => "onBottom"}
+  %aside{"data-type" => "onBottom"}
 = content_for :application_js do  
-	%script{:src => "app/app.js", :type=> "text/javascript"}
-	%script{:src => "app/events.js", :type=> "text/javascript"}	
+  %script{:src => "app/app.js", :type=> "text/javascript"}
+  %script{:src => "app/events.js", :type=> "text/javascript"}  

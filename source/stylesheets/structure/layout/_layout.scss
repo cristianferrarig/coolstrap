@@ -1,3 +1,4 @@
+//FIXME: @Cristian: quita clases .onleft y .onright de este lugar
 .onleft   { float: left; }
 .onright  { float: right; }
 
@@ -19,19 +20,11 @@ div#{$isMain} {
 section#{$isNotPopup},
 article {
   header#{$isVertical} ~ &     { left: $default-header-vertical-size; bottom: 0; }
-  header#{$isNormal} ~ &       { top: $default-header-size; }
-  nav#{$isNotTabbar} ~ &       { top: $default-navbar-size; }
-  nav#{$isTabbar} ~ &          { top: $default-tabbar-size; }
+  header#{$isNormal} ~ &       { top:  $default-header-size; }
+  nav#{$isNotTabbar} ~ &       { top:  $default-navbar-size; }
+  nav#{$isTabbar} ~ &          { top:  $default-tabbar-size; }
   footer#{$isNotTabbar} ~ &    { bottom: $default-navbar-size; }
   footer#{$isTabbar} ~ &       { bottom: $default-tabbar-size; }
-}
-
-//Landscape top
-@media only screen and (min-width : 321px) and (max-width : 480px) and (orientation : landscape)  {
-  section#{$isNotPopup},
-  article {
-    header#{$isNormal} ~ &     { top: $default-header-landscape-size; }
-  }
 }
 
 div#{$isMain},
@@ -43,22 +36,27 @@ nav {
   //@include box-sizing(content-box);
 }
 
-article header,
-article nav,
-article footer {
-  position: relative !important;
+article {
+  header, nav, footer {
+    position: relative !important;
+  }
 }
 
-.scroll_container, .scrollable * {
+.scroll_container, .scrollable > * {
+  @include clearfix;
   .inset {
-    @include clearfix;
+    //@include clearfix;
     margin: $default-content-spacing;
   }
 }
 
-/*
-header {
-  padding: 0 1px;
-  margin: 0 -1px;
+// Landscape smartphone optimization
+@media only screen
+and(min-width : 321px)
+and (max-width : 480px)
+and (orientation : landscape)  {
+  section#{$isNotPopup},
+  article {
+    header#{$isNormal} ~ &     { top: $default-header-landscape-size; }
+  }
 }
-*/
