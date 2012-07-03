@@ -20,24 +20,24 @@ set :default_encoding, 'utf-8'
 
 configure :build do
   activate :compass
-  
+
   #activate :minify_css
   #activate :minify_javascript
-  
+
   # Use relative URLs
   activate :relative_assets
-  
+
   # Enable cache buster
   # activate :cache_buster
- 
+
   # Compress PNGs after build
   # First: gem install middleman-smusher
   # require "middleman-smusher"
   # activate :smusher
-  
+
   # Or use a different image path
   #set :http_path, "./"
-  
+
 
 end
 
@@ -69,16 +69,17 @@ end
 ###
 
 # Per-page layout changes:
-# 
+#
 # With no layout
 # page "/path/to/file.html", :layout => false
-# 
+#
 # With alternative layout
  page "/examples/layouts/*", :layout => "/examples/examples"
  page "/examples/kitchen-sink/*", :layout => "/examples/examples"
  page "/examples/components/*", :layout => "/examples/examples"
  page "/examples/demo/*", :layout => "/examples/examples"
-# 
+ page "/examples/rhyboo/*", :layout => "/examples/examples"
+#
 # A path which all have the same layout
 # with_layout :admin do
 #   page "/admin/*"

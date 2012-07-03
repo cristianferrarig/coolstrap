@@ -1,5 +1,5 @@
 
-form {
+form, .form {
   input[type="text"],
   input[type="password"],
   input[type="url"],
@@ -75,6 +75,7 @@ form {
       padding: $default-interface-spacing;
     }
   }
+
   .stack {
     label {
       line-height: normal;
@@ -101,8 +102,26 @@ form {
       float:    right;
     }
   }
+  li .content.horizontal {
+    padding: 0 !important;
+  }
   .start { @include setFlexibleBox(horizontal,start, stretch); }
 }
-
+.horizontal {
+  @include setFlexibleBox(horizontal,center, stretch);
+  @include clearfix;
+  label {
+    @include box-flex();
+    @include clearfix;
+      input {
+        float:    right;
+        height: 20px;
+      }
+      input[type="radio"], input[type="checkbox"] {
+        @include box-flex();
+        margin-right: 1px;
+      }
+  }
+}
 
 
