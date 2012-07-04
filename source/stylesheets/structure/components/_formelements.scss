@@ -1,35 +1,9 @@
 
-form, .form {
-  input[type="text"],
-  input[type="password"],
-  input[type="url"],
-  input[type="email"],
-  input[type="search"],
-  input[type="number"],
-  input[type="tel"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="time"],
-  input[type="month"],
-  input[type="week"] {
+form {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
     -webkit-appearance: none;
   }
-  //TODO: tratar de reemplazar tanto input type por el not:checkbox y radio. Por algun motivo esa solucion no esta funcionando
-  input[type="text"],
-  input[type="password"],
-  input[type="url"],
-  input[type="email"],
-  input[type="search"],
-  input[type="number"],
-  input[type="tel"],
-  input[type="range"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="time"],
-  input[type="month"],
-  input[type="week"],
+  input:not([type="checkbox"]):not([type="radio"]),
   select {
     height:  $default-header-button;
     padding: 0  $default-interface-spacing;
@@ -52,19 +26,7 @@ form, .form {
       text-align: right;
       padding-right: $default-interface-spacing * 2;
     }
-    input[type="text"],
-    input[type="password"],
-    input[type="url"],
-    input[type="email"],
-    input[type="search"],
-    input[type="number"],
-    input[type="tel"],
-    input[type="date"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="time"],
-    input[type="month"],
-    input[type="week"],
+    input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
     textarea,
     select, {
       @include box-flex(1);
@@ -113,14 +75,14 @@ form, .form {
   label {
     @include box-flex();
     @include clearfix;
-      input {
-        float:    right;
-        height: 20px;
-      }
-      input[type="radio"], input[type="checkbox"] {
-        @include box-flex();
-        margin-right: 1px;
-      }
+    input {
+      float:  right;
+      height: 20px;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      @include box-flex();
+      margin-right: 1px;
+    }
   }
 }
 
