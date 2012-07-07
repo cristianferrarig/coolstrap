@@ -1,35 +1,41 @@
 # Coolstrap
+
 ### HTML5/CSS3 Mobile Framework
 
 ## Develop coolest mobile applications
-- Responsive design without javascript
-- iOS / Android support
-- Powerfull API
-- Zepto and Jquery compatible
+  - Responsive design without javascript
+  - iOS / Android support
+  - Powerfull API
+  - Zepto and Jquery compatible
 
 [Source](https://github.com/rhyboo/coolstrap) is available on Github.
 
 ## Do you want to develop Coolstrap?
+
 ### Prerequisites
-- Install Ruby 1.9.2
-- Install [bundler](http://gembundler.com/)
+  - Install Ruby 1.9.2 or 1.9.3
+  - Install [bundler](http://gembundler.com/)
 
 ### Installation of middleman
-- $ bundle install
+  - $ bundle install
 
 If you need more information about middleman, please visit [Middleman documentation](http://http://middlemanapp.com/guides/getting-started)
 
 ### Test
-- $ middleman server
-- for better results test applicacion in webkit based navigator.
-- visit [http://localhost:4567/index.html](http://localhost:4567/index.html) to see samples
+  - $ middleman server
+  - for better results test applicacion in webkit based navigator.
+  - visit [http://localhost:4567/index.html](http://localhost:4567/index.html) to see samples
 
 ### Deploy
-- $ middleman build
-Then you can see in <build> directory:
-- Coolstrap Framework: coolstrap-js/coolstrap-0.1.js
-- Coolstrap Framework Packed with Zepto and iScroll: coolstrap-js/coolstrap-0.1.packed.js
+  - $ middleman build
+  Then you can see in <build> directory:
+  - Coolstrap Framework: coolstrap-js/coolstrap-0.1.js
+  - Coolstrap Framework Packed with Zepto and iScroll: coolstrap-js/coolstrap-0.1.packed.js
 
+### Documentation 
+#### generation for js with docco ( [docco repo](http://jashkenas.github.com/docco/) )
+  + sudo npm install docco
+  + docco source/assets/javascripts/**/*.coffee
 
 ## Do you want to use Coolstrap?
 ### coming soon...
