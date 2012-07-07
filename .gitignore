@@ -40,7 +40,8 @@ intermediate
 publish
 .idea
 
-Gemfile.lock
+.lock
+
 # build script local files
 # build/buildinfo.properties
 # build/config/buildinfo.properties
