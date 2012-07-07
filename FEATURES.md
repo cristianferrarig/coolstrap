@@ -23,3 +23,7 @@
 - iOS 4.2+ position fixed
 
 ### Your feedback is IMPORTANT
+
+##maybe
+  + coolstrap gem for:
+    + app generators
