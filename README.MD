@@ -1,3 +1,45 @@
-# Proposed features
-- Button to change automatically when you tap
-- Horizontal scrolling toolbars and tabbars
+# Coolstrap
+### HTML5/CSS3 Mobile Framework
+
+## Develop coolest mobile applications
+- Responsive design without javascript
+- iOS / Android support
+- Powerfull API
+- Zepto and Jquery compatible
+
+[Source](https://github.com/rhyboo/coolstrap) is available on Github.
+
+## Do you want to develop Coolstrap?
+### Prerequisites
+- Install Ruby 1.9.2
+- Install [bundler](http://gembundler.com/)
+
+### Installation of middleman
+- $ bundle install
+
+If you need more information about middleman, please visit [Middleman documentation](http://http://middlemanapp.com/guides/getting-started)
+
+### Test
+- $ middleman server
+- visit [http://localhost:4567/index.html](http://localhost:4567/index.html) to see samples
+
+### Deploy
+- $ middleman build
+Then you can see in <build> directory:
+- Coolstrap Framework: coolstrap-js/coolstrap-0.1.js
+- Coolstrap Framework Packed with Zepto and iScroll: coolstrap-js/coolstrap-0.1.packed.js
+
+
+## Do you want to use Coolstrap?
+### coming soon...
+
+
+## Credits
+Created by [Cristian Ferrari](http://twitter.com/energetico).
+Co-Authors [Abraham Barrera](http://twitter.com/abraham_barrera) and
+[Felipe Funes](http://twitter.com/nifoQue).
+
+Copyright (c) 2012 by Rhyboo.
+
+## Licensing Options
+See LICENSE.txt for license.

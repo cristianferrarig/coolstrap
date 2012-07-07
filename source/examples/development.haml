@@ -61,7 +61,35 @@
   -# All JavaScript at the bottom, except this Modernizr build.
   -# Modernizr enables HTML5 elements & feature detects for optimal performance.
   = javascript_include_tag "lib/modernizr-2.5.3"
+
 %body
+
   = yield_content(:principal)
-  = javascript_include_tag "coolstrap-0.1.packed"
+
+  / Third parties dependencies
+  = javascript_include_tag "lib/zepto-1.0rc1"
+  = javascript_include_tag "lib/iscroll"
+
+  / CoolStrapp Libraries (Development mode)
+  = javascript_include_tag "Coolstrap"
+  = javascript_include_tag "Coolstrap.App"
+  = javascript_include_tag "Coolstrap.Console"
+  = javascript_include_tag "Coolstrap.Constants"
+  = javascript_include_tag "plugins/Coolstrap.Plugins"
+  = javascript_include_tag "util/Coolstrap.Util"
+  = javascript_include_tag "util/Coolstrap.Util.Core"
+  = javascript_include_tag "util/Coolstrap.Util.Platform"
+  = javascript_include_tag "util/Coolstrap.Util.UI"
+  = javascript_include_tag "framework/Coolstrap.Framework.Sections"
+  = javascript_include_tag "framework/Coolstrap.Framework.Articles"
+  = javascript_include_tag "framework/Coolstrap.Framework.Navigation"
+  = javascript_include_tag "navigate/Coolstrap.Navigate"
+  = javascript_include_tag "navigate/Coolstrap.Navigate.History"
+  = javascript_include_tag "view/Coolstrap.View.Article"
+  = javascript_include_tag "view/Coolstrap.View.Aside"
+  = javascript_include_tag "view/Coolstrap.View.Scroll"
+  = javascript_include_tag "view/Coolstrap.View.Dialog"
+  = javascript_include_tag "fallback/Coolstrap.Fallback.Android"
+  = javascript_include_tag "fallback/Coolstrap.Fallback.iOS"
   = yield_content(:application_js)
+  -#%script{:src => "https://getfirebug.com/firebug-lite-beta.js", :type => "text/javascript"}

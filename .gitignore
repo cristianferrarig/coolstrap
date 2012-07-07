@@ -38,9 +38,9 @@ dwsync.xml
 .CVS
 intermediate
 publish
-build
 .idea
 
+Gemfile.lock
 # build script local files
 # build/buildinfo.properties
 # build/config/buildinfo.properties

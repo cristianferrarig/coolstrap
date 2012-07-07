@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> >      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> >         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> >         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if IEMobile 7 ]> >  <html lang="en" class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)|(gt IE 8)|!(IE)]><!--> <html lang="en" debug="true" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset='UTF-8' />
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+  <title>Listview Demo</title>
+  <meta content='Coolstrapp Framework' name='description' />
+  <meta content='Cristian Ferrari (@energettico) - Abraham Barrera (@abraham_barrera)' name='author' />
+  <meta content='true' name='HandheldFriendly' />
+  <meta content='320' name='MobileOptimized' />
+  <meta content='telephone=no' name='format-detection' />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta content='yes' name='apple-mobile-web-app-capable' />
+  <meta content='black' name='apple-mobile-web-app-status-bar-style' />
+  <script type='text/javascript'>
+    //<![CDATA[
+(function(){var a,b,c=window.devicePixelRatio;navigator.platform==="iPad"?(a=c===2?"assets/images/startup/tablet-portrait@2x.png":"assets/images/startup/tablet-portrait.png",b=c===2?"assets/images/startup/tablet-landscape@2x.png":"assets/images/startup/tablet-landscape.png",document.write("")):(a=c===2?"assets/images/startup/smatphone@2x.png":"assets/images/startup/smatphone.png",document.write(""))})()
+//]]>
+  </script>
+  <script type='text/javascript'>
+    //<![CDATA[
+(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")
+//]]>
+  </script>
+  <meta content='on' http-equiv='cleartype' />
+  <link href="../../stylesheets/coolstrap.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/themes/coolstrap.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='assets/stylesheets/customtheme.css' rel='stylesheet' type='text/css' />
+  <script src="../../coolstrap-js/lib/modernizr-2.5.3.js" type="text/javascript"></script>
+</head>
+<body>
+  <div role='main'>
+    <header>
+      <a href='simple.html'>
+        <span>Inicio</span>
+      </a>
+      <hgroup>
+        <h1>COOLSTRAP</h1>
+        <h2>Listview Demo</h2>
+      </hgroup>
+      <a href='formelements.html'>
+        <span>Forms</span>
+      </a>
+    </header>
+    <footer>
+      <a>Button</a>
+      <a>Button</a>
+      <a>Button</a>
+      <a>Button</a>
+      <a>Button</a>
+    </footer>
+    <section class='current starting' id='home'>
+      <article class='scrollable current' id='demo'>
+        <ul data-type='listview'>
+          <li class='list-divider'>1. Simple</li>
+          <li>
+            <h1>Gloria</h1>
+          </li>
+          <li>
+            <h1>Monserrat</h1>
+          </li>
+          <li>
+            <h1>Valeria</h1>
+          </li>
+          <li class='list-divider' id='divider1'>2. Simple with arrow</li>
+          <li>
+            <div class='content'>
+              <p>Curabitur blandit tempus porttitor.Curabitur blandit tempus porttitor.</p>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='content'>
+              <p>Second Item.</p>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='content'>
+              <p>Third Item.</p>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li class='list-divider'>3. Simple with arrow meta and counters</li>
+          <li>
+            <div class='content'>
+              <p>Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac.</p>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li class='is-active'>
+            <div class='content'>
+              <p>Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac.</p>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='content'>
+              <p>Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac.</p>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li class='list-divider'>4. Simple with arrow meta and counters</li>
+          <li class='is-active'>
+            <div class='content'>
+              <h1>
+                First Item.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span>4m ago</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='content'>
+              <h1>
+                Second Item.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span>2h ago</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='content'>
+              <h1 class='ellipsis'>
+                This is a very long text to prove the great ellipsis implemented here.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span class='badge'>66</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='content'>
+              <h1>
+                Second Item.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span class='badge'>3</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li class='list-divider'>5. Simple with strech picture.</li>
+          <li>
+            <div class='aside stretch'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <h1>
+                First Item.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span class='badge'>15</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='aside stretch'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <h1>
+                Second Item.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span class='badge'>0</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='aside stretch'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <h1>
+                Thirtd Item.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span class='badge'>1</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li class='list-divider'>6. Simple with magin picture.</li>
+          <li>
+            <div class='aside'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <h1>
+                First Item.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span class='badge'>3</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='aside'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <h1>
+                Second Item.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span class='badge'>23</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='aside'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <h1>
+                Third Item.
+              </h1>
+            </div>
+            <div class='aside'>
+              <span class='badge'>64</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li class='list-divider'>7. Simple with diferent order.</li>
+          <li>
+            <div class='aside'>
+              <span class='badge'>2</span>
+            </div>
+            <div class='content'>
+              <h1 class='ellipsis'>
+                Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+              </h1>
+            </div>
+            <div class='aside stretch'>
+              <div class='picture'></div>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='aside'>
+              <span class='badge'>7</span>
+            </div>
+            <div class='content'>
+              <h1 class='ellipsis'>
+                Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+              </h1>
+            </div>
+            <div class='aside stretch'>
+              <div class='picture'></div>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='aside'>
+              <span class='badge'>8</span>
+            </div>
+            <div class='content'>
+              <h1 class='ellipsis'>
+                Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+              </h1>
+            </div>
+            <div class='aside stretch'>
+              <div class='picture'></div>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+        </ul>
+        <div>
+          <ul class='inset' data-type='listview'>
+            <li class='list-divider'>1. Title and description widht avatar</li>
+            <li>
+              <div class='aside up'>
+                <div class='picture'></div>
+              </div>
+              <div class='content'>
+                <h1>First Item</h1>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+              </div>
+            </li>
+            <li class='list-divider'>2. Title and description with arrow and avatar</li>
+            <li>
+              <div class='aside up'>
+                <div class='picture'></div>
+              </div>
+              <div class='content'>
+                <h1>First Item</h1>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+              </div>
+              <div class='aside'>
+                <i class='icon-chevron-right'></i>
+              </div>
+            </li>
+            <li class='list-divider'>3. Title and description with meta and avatar</li>
+            <li>
+              <div class='aside up'>
+                <div class='picture'></div>
+              </div>
+              <div class='content'>
+                <div class='nested'>
+                  <h1>First Item</h1>
+                  <div class='aside'>4 days ago</div>
+                </div>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+              </div>
+            </li>
+            <li class='list-divider'>4. Title and description with meta, arrow and avatar 1</li>
+            <li>
+              <div class='aside up'>
+                <div class='picture'></div>
+              </div>
+              <div class='content'>
+                <div class='nested'>
+                  <h1>First Item</h1>
+                  <div class='aside'>4 days ago</div>
+                </div>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+              </div>
+              <div class='aside'>
+                <i class='icon-chevron-right'></i>
+              </div>
+            </li>
+            <li class='list-divider'>5. Title and description with meta, arrow and avatar 2</li>
+            <li>
+              <div class='aside up'>
+                <div class='picture'></div>
+              </div>
+              <div class='content'>
+                <div class='nested'>
+                  <h1>Firs Item</h1>
+                  <div class='aside'>12:00am</div>
+                </div>
+                <div class='nested'>
+                  <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                  <div class='aside'>
+                    <i class='icon-chevron-right'></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class='list-divider'>6. Title and description with meta, counter, arrow and avatar</li>
+            <li>
+              <div class='aside up'>
+                <div class='picture'></div>
+              </div>
+              <div class='content'>
+                <div class='nested'>
+                  <h1>First Item</h1>
+                  <div class='aside'>4 days ago</div>
+                </div>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+              </div>
+              <div class='aside'>
+                <span class='badge'>4</span>
+                <i class='icon-chevron-right'></i>
+              </div>
+            </li>
+            <li class='list-divider'>6. Title and description with double meta, arrow and avatar</li>
+            <li>
+              <div class='aside up'>
+                <div class='picture'></div>
+              </div>
+              <div class='content'>
+                <div class='nested'>
+                  <h1>
+                    Jason Newsted
+                  </h1>
+                  <div class='aside'>
+                    Facebook friend
+                  </div>
+                </div>
+                <div class='nested'>
+                  <p>
+                    Bass Guitar
+                  </p>
+                  <div class='aside'>
+                    1st/June/2012
+                  </div>
+                </div>
+              </div>
+              <div class='aside'>
+                <i class='icon-chevron-right'></i>
+              </div>
+            </li>
+            <li>
+              <div class='aside up'>
+                <div class='picture'></div>
+              </div>
+              <div class='content'>
+                <div class='nested'>
+                  <h1>
+                    Jason Newsted
+                  </h1>
+                  <div class='aside'>
+                    Facebook friend
+                  </div>
+                </div>
+                <div class='nested'>
+                  <p>
+                    Bass Guitar
+                  </p>
+                  <div class='aside'>
+                    1st/June/2012
+                  </div>
+                </div>
+              </div>
+              <div class='aside vertical'>
+                <span class='badge'>24</span>
+                <span class='badge'>213</span>
+              </div>
+              <div class='aside'>
+                <i class='icon-chevron-right'></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <ul class='inset' data-type='listview'>
+          <li class='list-divider'>1. Title and description widht avatar</li>
+          <li>
+            <div class='aside up'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <h1>First Item</h1>
+              <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+            </div>
+          </li>
+          <li class='list-divider'>2. Title and description with arrow and avatar</li>
+          <li>
+            <div class='aside up'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <h1>First Item</h1>
+              <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li class='list-divider'>3. Title and description with meta and avatar</li>
+          <li>
+            <div class='aside up'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <div class='nested'>
+                <h1>First Item</h1>
+                <div class='aside'>4 days ago</div>
+              </div>
+              <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+            </div>
+          </li>
+          <li class='list-divider'>4. Title and description with meta, arrow and avatar 1</li>
+          <li>
+            <div class='aside up'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <div class='nested'>
+                <h1>First Item</h1>
+                <div class='aside'>4 days ago</div>
+              </div>
+              <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li class='list-divider'>5. Title and description with meta, arrow and avatar 2</li>
+          <li>
+            <div class='aside up'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <div class='nested'>
+                <h1>Firs Item</h1>
+                <div class='aside'>12:00am</div>
+              </div>
+              <div class='nested'>
+                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                <div class='aside'>
+                  <i class='icon-chevron-right'></i>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class='list-divider'>6. Title and description with meta, counter, arrow and avatar</li>
+          <li>
+            <div class='aside up'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <div class='nested'>
+                <h1>First Item</h1>
+                <div class='aside'>4 days ago</div>
+              </div>
+              <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.</p>
+            </div>
+            <div class='aside'>
+              <span class='badge'>4</span>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li class='list-divider'>6. Title and description with double meta, arrow and avatar</li>
+          <li>
+            <div class='aside up'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <div class='nested'>
+                <h1>
+                  Jason Newsted
+                </h1>
+                <div class='aside'>
+                  Facebook friend
+                </div>
+              </div>
+              <div class='nested'>
+                <p>
+                  Bass Guitar
+                </p>
+                <div class='aside'>
+                  1st/June/2012
+                </div>
+              </div>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+          <li>
+            <div class='aside up'>
+              <div class='picture'></div>
+            </div>
+            <div class='content'>
+              <div class='nested'>
+                <h1>
+                  Jason Newsted
+                </h1>
+                <div class='aside'>
+                  Facebook friend
+                </div>
+              </div>
+              <div class='nested'>
+                <p>
+                  Bass Guitar
+                </p>
+                <div class='aside'>
+                  1st/June/2012
+                </div>
+              </div>
+            </div>
+            <div class='aside vertical'>
+              <span class='badge'>24</span>
+              <span class='badge'>213</span>
+            </div>
+            <div class='aside'>
+              <i class='icon-chevron-right'></i>
+            </div>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </div>
+  <script src="../../coolstrap-js/coolstrap-0.1.packed.js" type="text/javascript"></script>
+  <script src='app/app.js' type='text/javascript'></script>
+  <script src='app/events.js' type='text/javascript'></script>
+</body>
