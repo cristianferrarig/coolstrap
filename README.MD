@@ -21,6 +21,7 @@ If you need more information about middleman, please visit [Middleman documentat
 
 ### Test
 - $ middleman server
+- for better results test applicacion in webkit based navigator.
 - visit [http://localhost:4567/index.html](http://localhost:4567/index.html) to see samples
 
 ### Deploy
