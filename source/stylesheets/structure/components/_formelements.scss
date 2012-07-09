@@ -9,8 +9,8 @@ form {
     padding: 0  $default-interface-spacing;
   }
   label {
-    display:      block;
-    line-height:  $default-header-button;
+    display: block;
+    line-height: $default-header-button;
   }
   .content {
     @include setFlexibleBox(vertical,stretch, center);
@@ -60,8 +60,8 @@ form {
     }
     .slider { @include box-flex(1) }
     i {
-      display:  block;
-      float:    right;
+      display: block;
+      float: right;
     }
   }
   li .content.horizontal {
