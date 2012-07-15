@@ -1,3 +1,4 @@
 source "http://rubygems.org"
-gem "coolstrap"
-gem "middleman"
+gem "middleman", "3.0.0"
+gem "middleman-sprockets"
+gem "coolstrap", :git=>"git@bitbucket.org:michelson/coolstrap.git", :branch=>"gem"
