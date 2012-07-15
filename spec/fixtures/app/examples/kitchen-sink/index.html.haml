@@ -1,0 +1,171 @@
+= content_for :title do
+  Coolstrapp Kitchen-sink
+
+= content_for :application_styles do
+  = stylesheet_link_tag "themes/coolstrap"
+  %link{:href => "assets/stylesheets/customtheme.css", :rel => "stylesheet", :type => "text/css"}
+
+= content_for :principal do
+  //TODO: @abraham Revisar la posibilidad de eliminar el History en la navegacion
+  %div{"role" => "main"}
+
+    %section#home
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Kitchen Sink
+
+      %article#lorem.scrollable
+
+        %ul{"data-type" => "listview"}
+
+          %li.list-divider Components
+          %li
+            %a{"href" => "#simplelist", "data-target" => "section"}
+              .content
+                .title Listview - Simple List
+              .aside
+                %i.icon-chevron-right
+          %li
+            %a{"href" => "#complexlist1", "data-target" => "section"}
+              .content
+                .title Listview - Complex List
+              .aside
+                %i.icon-chevron-right
+          %li
+            %a{"href" => "#complexlist2", "data-target" => "section"}
+              .content
+                .title Listview - Complex List With Avatar
+              .aside
+                %i.icon-chevron-right
+          %li
+            %a{"href" => "#tabbars", "data-target" => "section"}
+              .content
+                .title Navs and Tabbars
+              .aside
+                %i.icon-chevron-right
+          %li
+            %a{"href" => "#toolbars", "data-target" => "section"}
+              .content
+                .title Toolbars
+              .aside
+                %i.icon-chevron-right
+          %li
+            %a{"href" => "#formelements", "data-target" => "section"}
+              .content
+                .title Forms Elements
+              .aside
+                %i.icon-chevron-right
+          %li
+            %a{"href" => "#dialogs", "data-target" => "section"}
+              .content
+                .title Dialogs
+          %li
+            %a{"href" => "#buttons", "data-target" => "section"}
+              .content
+                .title Buttons
+
+      %article.scrollable#ipsum
+        %ul{"data-type" => "listview"}
+          %li
+            %a{"href" => "#lorem", "data-target" => "article", "title" => "Coolstrap"}
+              .content
+                .title change to lorem article
+
+    %section#simplelist
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Simple List
+
+      %article.scrollable
+        = partial "examples/components/listview/simplelist"
+
+    %section#complexlist1
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Complex List
+
+      %article.scrollable
+        = partial "examples/components/listview/complexlist"
+
+    %section#complexlist2
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Complex List With Avatar
+
+      %article.scrollable
+        = partial "examples/components/listview/complexlistavatar"
+
+
+    %section#tabbars
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Tabbar Demo
+        %a{"href" => "#colaborators", "data-target" => "aside"}
+          %i.icon-twitter
+      %article.scrollable
+        = partial "examples/components/tabbar"
+
+    %section#toolbars
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Toolbar Demo
+        %a{"href" => "#colaborators", "data-target" => "aside"}
+          %i.icon-twitter
+      %article.scrollable
+        = partial "examples/components/toolbar"
+
+    %section#formelements
+      %header
+        %a{"href" => "#", "data-target" => "back"} Volver
+        %hgroup
+          %h1 COOLSTRAP
+          %h2 Form Elements Demo
+        %a{"href" => "#colaborators", "data-target" => "aside"}
+          %i.icon-twitter
+      %article.scrollable
+        = partial "examples/components/formelements"
+
+
+  %aside.onLeft#options
+    %section#section_options
+      %article.scrollable#options1
+        %ul{"data-type" => "listview"}
+          %li
+            %a{"href" => "#home2", "data-target" => "section", "title" => "seccion 2"}
+              .content
+                .title go to some section section
+              .aside
+                %i
+          %li
+            %a{"href" => "#section_options_second", "data-target" => "section"}
+              .content
+                .title change to private section
+    %section#section_options_second
+      %header
+        %a{"href" => "#back", "data-target" => "section"} Volver
+        %h1 Account
+      %article#options2
+        Logout of this system
+
+  %aside.onRight#colaborators
+    Colaborators
+  %aside.onTop#notifications
+    Notifications
+  %aside.onBottom#configuration
+    Configuration
+
+= content_for :application_js do
+  %script{:src => "app/app.js", :type=> "text/javascript"}
+

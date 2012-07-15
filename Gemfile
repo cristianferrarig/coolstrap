@@ -1,3 +1,4 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 
-gem "middleman"
+# Specify your gem's dependencies in coolstrap.gemspec
+gemspec

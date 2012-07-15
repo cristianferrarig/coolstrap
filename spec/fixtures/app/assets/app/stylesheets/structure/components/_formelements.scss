@@ -1,0 +1,89 @@
+
+form {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
+    -webkit-appearance: none;
+  }
+  input:not([type="checkbox"]):not([type="radio"]),
+  select {
+    height:  $default-header-button;
+    padding: 0  $default-interface-spacing;
+  }
+  label {
+    display:      block;
+    line-height:  $default-header-button;
+  }
+  .content {
+    @include setFlexibleBox(vertical,stretch, center);
+    min-height: 44px;
+    padding: $default-interface-spacing;
+    i {
+      @include square($default-tabbar-icon);
+      line-height:  $default-tabbar-icon;
+      font-size:    $default-tabbar-icon;
+    }
+    .aside {
+      width: 30%;
+      text-align: right;
+      padding-right: $default-interface-spacing * 2;
+    }
+    input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+    textarea,
+    select, {
+      @include box-flex(1);
+      display: block;
+    }
+    label, .slider { @include box-flex(1); }
+    textarea {
+      padding: $default-interface-spacing;
+    }
+  }
+
+  .stack {
+    label {
+      line-height: normal;
+      input, textarea, select { width: 100%; }
+    }
+  }
+  .horizontal {
+    @include setFlexibleBox(horizontal,center, stretch);
+    @include clearfix;
+    label {
+      @include box-flex();
+      @include clearfix;
+      height:       $default-header-button;
+      line-height:  $default-header-button;
+        input {
+          height:   $default-header-button;
+          float:    right;
+        }
+        input[type="radio"], input[type="checkbox"] { margin-right: 1px; }
+    }
+    .slider { @include box-flex(1) }
+    i {
+      display:  block;
+      float:    right;
+    }
+  }
+  li .content.horizontal {
+    padding: 0 !important;
+  }
+  .start { @include setFlexibleBox(horizontal,start, stretch); }
+}
+.horizontal {
+  @include setFlexibleBox(horizontal,center, stretch);
+  @include clearfix;
+  label {
+    @include box-flex();
+    @include clearfix;
+    input {
+      float:  right;
+      height: 20px;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      @include box-flex();
+      margin-right: 1px;
+    }
+  }
+}
+
+

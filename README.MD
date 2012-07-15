@@ -40,6 +40,27 @@ If you need more information about middleman, please visit [Middleman documentat
 ## Do you want to use Coolstrap?
 ### coming soon...
 
+### Contributing
+  + Fork it
+  + Create your feature branch (`git checkout -b my-new-feature`)
+  + Commit your changes (`git commit -am 'Added some feature'`)
+  + Push to the branch (`git push origin my-new-feature`)
+  + Create new Pull Request
+  
+  ## Installation
+
+  Add this line to your application's Gemfile:
+
+      gem 'coolstrap'
+
+  And then execute:
+
+      $ bundle
+
+  Or install it yourself as:
+
+      $ gem install coolstrap
+
 
 ## Credits
 Created by [Cristian Ferrari](http://twitter.com/energetico).
