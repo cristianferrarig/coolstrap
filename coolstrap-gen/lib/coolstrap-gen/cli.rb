@@ -1,4 +1,4 @@
-module Coolstrap::Generator
+module Coolstrap::Gen
   class CLI < Thor
     include Utils
 

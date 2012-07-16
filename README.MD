@@ -40,6 +40,43 @@ If you need more information about middleman, please visit [Middleman documentat
 ## Do you want to use Coolstrap?
 ### coming soon...
 
+## Convenience Helpers
+
+  Coolstrap comes with some convenience helpers methods for header, footer, sections, list_view and more.
+  see: lib/coolstrap-generator/templates/. to see more examples.
+  
+### Some examples
+### Header    
+    = header do
+      = toolbar(:control=>true) do
+        %a= icon(:facebook)
+        %a= icon(:facebook)
+        %a= icon(:comments)
+### Footer & tabbars   
+    = footer do  
+      = tabbar do
+        = link_to "#" do
+          = icon(:facebook)
+### List views  
+    = article(:class=>"scrollable") do
+      = list_view(:class=>"inset") do
+      = list_item(:arrow=>"right")
+      = divider do
+        2. Title and description with arrow and avatar
+    
+    = list_view(:class=>"inset") do 
+      = divider do
+        1. Title and description widht avatar
+      = list_item do
+        ....
+### Dialogs        
+    = dialog(:id=>"mymodal") do
+      = link_to "#mymodal", "data-target" => "close" do
+        = icon :"remove-circle"
+      %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+
+
+
 ### Contributing
   + Fork it
   + Create your feature branch (`git checkout -b my-new-feature`)

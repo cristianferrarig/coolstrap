@@ -1,12 +1,9 @@
+# Depends on both libraries
+require "coolstrap-core"
+require "coolstrap-more"
 
-$:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
-
-require 'rubygems'
-require 'pathname'
-require 'fileutils'
-require 'rbconfig'
+# Make the VERSION string available
+require "coolstrap/version"
 
 module Coolstrap
-  ROOT_PATH = Pathname(__FILE__).dirname.expand_path
-  #autoload  :SPROCKETS_PLUGIN, 'coolstrap/sprockets_plugin.rb'
 end
