@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Coolstrap::VERSION
   gem.add_runtime_dependency("sprockets-plugin")
+  gem.add_runtime_dependency("%q<coolstrap-generator>", ["~> 0.1.4"])
   gem.add_development_dependency(%q<bundler>,         ["~> 1.1.pre.10"])
   gem.add_development_dependency(%q<rspec>,           ["~> 2.6.0"])
   gem.add_development_dependency(%q<middleman>,         ["~> 3.0.0"])

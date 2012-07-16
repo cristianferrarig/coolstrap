@@ -8,5 +8,5 @@ require 'rbconfig'
 
 module Coolstrap
   ROOT_PATH = Pathname(__FILE__).dirname.expand_path
-  autoload  :SPROCKETS_PLUGIN, 'coolstrap/sprockets_plugin.rb'
+  #autoload  :SPROCKETS_PLUGIN, 'coolstrap/sprockets_plugin.rb'
 end

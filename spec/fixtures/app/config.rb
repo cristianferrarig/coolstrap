@@ -7,7 +7,11 @@
 #    :images_dir => 'images', 
 #    :fonts_dir => 'fonts'}
 #end
-#activate :sprockets
+
+require "coolstrap/helpers"
+helpers Coolstrap::Helpers
+activate :helpers
+
 #activate :livereload
 set :images_dir,  "assets/images"
 set :fonts_dir,  "assets/fonts"
