@@ -1,0 +1,31 @@
+-# more on lists in http://
+
+= section({:id=>"<%= name %>"}) do
+  = header do
+    = link_to "Volver", "#", {"data-target" => "back"}
+    
+    = hgroup({:title=>"<%= name %>", :subtitle=>"subtitle"})
+
+  = footer do
+    -#= render_toolbar("some/toolbar")
+  
+  = article({:class=>"scrollable"}) do
+
+    = list_view do 
+    
+      = divider do
+        divider
+
+      = list_item() do
+        normal item
+      
+      = divider(:id=>"divider1") do
+        2. Simple with id 
+               
+      = list_item(:arrow=>"left") do
+        .content
+          %p simple content with left arrow.
+
+      = list_item(:arrow=>"right") do
+        .content
+          %p simple content with right arrow.    

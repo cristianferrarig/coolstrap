@@ -1,0 +1,32 @@
+
+-# more on navs at http://... 
+-# usage partial = partial "views/developers/toolbars/<%= name %>"
+
+-# example 1: search input 
+= toolbar(:auto=>true) do
+  %input{:type => "search", :name => "txt"}
+  %a
+    %i.icon-search
+
+-# example 2: normal toolbar without control
+= toolbar do
+  %a boton 1
+  %a boton 2
+  %a boton 3
+  %a boton 4
+
+-# example 3: control toolbar with autoWidth
+= toolbar(:control=>true, :auto=>true) do
+  %a nombre 1
+  %a nombre 3
+  %a nombre 4
+
+-# example 4: control only, autoWidth false 
+= toolbar(:control=>true) do
+  %a
+    = icon(:facebook)
+  %a
+    = icon(:facebook)
+  %a
+    = icon(:comments)
+

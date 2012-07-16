@@ -1,0 +1,176 @@
+$isNormal:       ':not([data-type])';
+
+
+$isMain:         '[role="main"]';
+
+// Dialog model
+$isDialog:       '[role="dialog"]';
+$isAction:       '[data-type="action"]';
+$isAlert:        '[data-type="alert"]';
+$isPopover:      '[data-type="popover"]';
+$isModal:        '[data-type="modal"]';
+$isNotModal:     ':not([data-type="modal"])';
+
+
+$isTooltip:      '[role="tooltip"]';
+
+// Popup section
+$isPopup:        '[data-type="popup"]';
+$isNotPopup:     ':not([data-type="popup"])';
+
+// Header
+$isVertical:     '[data-type="vertical"]';
+$isNotVertical:  ':not([data-type="vertical"])';
+$isNotExtended:  ':not([data-type="extended"])';
+
+// Nav & Footer
+$isToolbar:      '[data-type="toolbar"]';
+$isNotToolbar:   ':not([data-type="toolbar"])';
+
+$isTabbar:       '[data-type="tabbar"]';
+$isNotTabbar:    ':not([data-type="tabbar"])';
+
+// Positions
+$isOnTop:        '.onTop';
+$isOnBottom:     '.onBottom';
+$isOnLeft:       '.onLeft';
+$isOnRight:      '.onRight';
+
+// Alignment
+$alignTopLeft:   '.onTop';
+$isOnBottom:     '.onBottom';
+$isOnLeft:       '.onLeft';
+$isOnRight:      '.onRight';
+
+// Fixed positions
+$default-fixed-position: false !default;
+$default-fixed-size: 100% !default;
+
+ 
+// Layers positions
+$default-layer-dialog: 600 !default;
+$default-layer-overalay: 500 !default;
+$default-layer-popup: 400 !default;
+$default-layer-front: 300 !default;
+$default-layer-overalay-inner: 200 !default;
+$default-layer-current: 100 !default;
+$default-layer-back: 0 !default;
+
+// Transition for aside
+$default-transition-type: false !default;
+$default-transform-distance: 0 !default;
+
+
+// Header
+$default-header-size: 44px !default;
+$default-header-button: 30px !default;
+$default-header-icon: 20px !default;
+
+// Landscape Header
+$default-header-landscape-size: 32px !default;
+$default-header-landscape-button: 24px !default;
+
+// Vertical Header
+$default-header-vertical-size: 50px !default;
+$default-header-vertical-button: 40px !default;
+$default-header-vertical-spacing: 5px !default;
+$default-header-vertical-icon: 30px !default;
+
+
+// Nav, Footer and Toolbar
+$default-navbar-size: 44px !default;
+$default-navbar-button: 30px !default;
+$default-navbar-icon: 16px !default;
+
+
+// Tabbar
+$default-tabbar-size: 60px !default;
+$default-tabbar-spacing: 5px !default;
+$default-tabbar-icon: 26px !default;
+
+
+// Aside
+$default-aside-left-size: 276px !default;
+$default-aside-right-size: 276px !default;
+$default-aside-top-size: 99px !default;
+$default-aside-bottom-size: 300px !default;
+
+
+
+// Global Dialog
+$default-dialog-maxheight: 400px !default;
+$default-dialog-maxwidth: 300px !default;
+
+// Action Sheet Dialog
+$default-action-spacing: 20px !default;
+$default-action-button: 40px !default;
+
+// Alert Dialog
+$default-alert-size: 280px !default;
+$default-alert-spacing: 10px !default;
+$default-alert-button: 30px !default;
+
+// Modal Dialog
+$default-modal-spacing: 20px !default;
+
+// Popover Dialog
+$default-popover-arrow: 10px !default;
+$default-popover-border: 4px !default;
+
+
+
+
+
+
+$default-interface-spacing: 7px !default;
+$default-content-spacing: 10px !default;
+
+
+
+
+
+// Listview
+$default-listview-spacing: 10px !default;
+
+
+// Badges
+$default-badge-spacing: 3px 5px !default;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Compass Animation
+$default-transition-property : transform;
+$default-transition-duration : 250ms;
+$default-transition-function : ease-out;
+$default-transition-delay    : false;
+
+// Compass box
+// Box orientation [ horizontal | vertical | inline-axis | block-axis | inherit ]
+// Box align [ start | end | center | baseline | stretch ]
+// box pack [ start | end | center | justify ]
+// box-direction [ normal | reverse | inherit ]
+$default-box-flex      : 1;
+$default-box-orient    : horizontal;
+$default-box-align     : center;
+$default-box-pack      : center;
+$default-box-direction : normal;
+
+
+
+
+
+
+
+
+

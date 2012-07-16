@@ -1,0 +1,255 @@
+@import "compass";
+
+//Variables
+$theme-header-color: #444;
+$theme-nav-color: #888;
+$theme-footer-color: #444;
+$theme-base-color: #F8F8F8;
+$theme-border-radius: 5px;
+
+//Layout
+article {
+  background-color: $theme-base-color;
+}
+//Text
+h1 {
+  font-size: 14px;
+}
+h2 {
+  font-size: 1.08em;
+}
+header h1, header h2 {
+}
+
+
+// Bars colors
+header {
+  background-color: $theme-header-color;
+  border-bottom: 1px solid darken($theme-header-color,10%);
+  border-top: 1px solid lighten($theme-header-color,10%);
+  //padding-top: 1px;
+  color: $theme-base-color;
+}
+
+nav {
+  background-color: $theme-nav-color;
+  border-bottom: 1px solid darken($theme-nav-color,10%);
+  padding-top: 1px;
+}
+
+footer {
+  background-color: $theme-footer-color;
+  border-bottom: 1px solid darken($theme-footer-color,10%);
+}
+
+
+// Buttons colors
+a {
+  font-weight: bold;
+  i {
+  }
+}
+header {
+  color: lighten($theme-header-color,80%);
+  a:not(.onlyIcon) {
+    background-color: darken($theme-header-color,5%);
+    border: 1px solid darken($theme-header-color,10%);
+    color: lighten($theme-header-color,80%);
+    * { color: lighten($theme-header-color,80%); }
+  }
+}
+nav {
+  color: lighten($theme-header-color,80%);
+  a:not(.onlyIcon) {
+    background-color: darken($theme-nav-color,5%);
+    border: 1px solid darken($theme-nav-color,15%);
+    color: lighten($theme-header-color,80%);
+    * { color: lighten($theme-nav-color,80%); }
+  }
+}
+footer {
+  a {
+    margin: 3px;
+    * { color: #FFF; }
+    i {  }
+    &.is-active {
+      background-color: #FFF;
+      border: 1px solid darken($theme-footer-color,40%);
+      * { color: $theme-footer-color; }
+      i { border-color: $theme-footer-color; }
+    }
+  }
+}
+
+
+
+
+
+// Border radius
+header,
+nav,
+footer {
+  a:not(.onlyIcon) {
+    @include border-radius($theme-border-radius);
+  }
+}
+header,
+nav,
+footer {
+  .control-group {
+    a {
+      @include border-radius(0);
+      &:first-child { @include border-left-radius($theme-border-radius); }
+      &:last-child  { @include border-right-radius($theme-border-radius); }
+    }
+  }
+}
+
+ul[data-type="listview"].inset {
+  @include border-radius($theme-border-radius);
+  li {
+    &:first-child { @include border-top-radius($theme-border-radius); }
+    &:last-child  { @include border-bottom-radius($theme-border-radius); }
+  }
+}
+
+
+
+
+
+ul {
+  li              { z-index: 1; }
+  li.is-active    { z-index: 2; }
+  li.list-divider { z-index: 3; }
+}
+
+
+
+
+
+ul[data-type="listview"] {
+  color: #666;
+  a {
+    color: #666;
+  }
+  li {
+    background-color: #FFF;
+    margin-top: -1px;
+    position: relative;
+    border-style: solid;
+    border-color: darken($theme-base-color,10%);
+    .title { color: #444; }
+    .picture {
+      background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);
+      width: 44px;
+      height: 44px;
+      &.small {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    &.is-active {
+      background-color: darken($theme-base-color,2%);
+      border-color: darken($theme-base-color,15%);
+    }
+    &.list-divider {
+      background-color: darken($theme-base-color,30%);
+      border-color: darken($theme-base-color,40%);
+    }
+  }
+
+  &:not(.inset) {
+    li { border-width: 1px 0; }
+  }
+  &.inset {
+    li { border-width: 1px; }
+  }
+}
+
+.list-divider {
+  font-size: 11px;
+  color: darken($theme-base-color,60%);
+}
+
+
+
+.badge {
+  li & {
+    @include border-radius($theme-border-radius);
+    background-color: darken($theme-base-color,20);
+    font-size: 11px;
+  }
+}
+
+
+
+
+
+
+
+//Dialogs
+div[role="dialog"] {
+  background-color: darken($theme-base-color,20);
+  a {
+    background-color: #333;
+    color: #FFF;
+  }
+}
+div#{$isModal} {
+  .close {
+    @include border-radius(20px);
+    border: 2px solid #FFF;
+    background: darken($theme-base-color,20);
+  }
+}
+
+//Forms
+
+form {
+  input,
+  textarea,
+  select {
+    border: 1px solid #ccc;
+  }
+  .content {
+    background-color: #eee;
+    border-bottom: 1px solid #bbb;
+  }
+}
+
+
+//Sliders
+.slider {
+  @include border-radius(1em);
+  background-color: #ddd;
+  border: 1px solid #aaa;
+  .progress{
+  @include border-radius(1em);
+  background-color: blue;
+    .circle {
+      @include border-radius(1em);
+      background-color: #ccc;
+      border: 1px solid #888;
+
+    }
+  }
+}
+
+.loader {
+  @include border-radius(8px);
+  background-color: rgba(black,.4);
+  border: 1px solid rgba(black,.6);
+  padding: 0;
+  .progress {
+    @include border-radius(5px);
+    width: 30%;
+    background-color: #FFF;
+  }
+}
+
+
+
+
+
+
+
