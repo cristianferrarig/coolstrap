@@ -1,9 +1,9 @@
 
-module Coolstrap::Generator
+module Coolstrap::Gen
   module Builder
     class Ios
       class << self
-        include ::Coolstrap::Generator::Utils
+        include ::Coolstrap::Gen::Utils
         def build(simulator_version="5.1")
           project_name = "NativeBridgeiOS"
           project_path = "source/native/ios/NativeBridgeiOS.xcodeproj"

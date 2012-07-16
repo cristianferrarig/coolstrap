@@ -1,8 +1,8 @@
-module Coolstrap::Generator
+module Coolstrap::Gen
   module Builder
     class Middleman
       class << self
-        include ::Coolstrap::Generator::Utils
+        include ::Coolstrap::Gen::Utils
         
         def build
           system "middleman build"

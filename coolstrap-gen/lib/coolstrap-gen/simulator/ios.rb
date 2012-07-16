@@ -3,7 +3,7 @@ module Coolstrap::Gen
   module Simulator
     class Ios
       class << self
-        include ::Coolstrap::Generator::Utils
+        include ::Coolstrap::Gen::Utils
         
         def simulate
           # 4.3 simulator: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iOS\ Simulator.app/
