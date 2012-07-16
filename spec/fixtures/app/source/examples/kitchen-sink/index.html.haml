@@ -126,45 +126,7 @@
       %article.scrollable
         = partial "examples/components/toolbar"
 
-    %section#formelements
-      %header
-        %a{"href" => "#", "data-target" => "back"} Volver
-        %hgroup
-          %h1 COOLSTRAP
-          %h2 Form Elements Demo
-        %a{"href" => "#colaborators", "data-target" => "aside"}
-          %i.icon-twitter
-      %article.scrollable
-        = partial "examples/components/formelements"
 
-
-  %aside.onLeft#options
-    %section#section_options
-      %article.scrollable#options1
-        %ul{"data-type" => "listview"}
-          %li
-            %a{"href" => "#home2", "data-target" => "section", "title" => "seccion 2"}
-              .content
-                .title go to some section section
-              .aside
-                %i
-          %li
-            %a{"href" => "#section_options_second", "data-target" => "section"}
-              .content
-                .title change to private section
-    %section#section_options_second
-      %header
-        %a{"href" => "#back", "data-target" => "section"} Volver
-        %h1 Account
-      %article#options2
-        Logout of this system
-
-  %aside.onRight#colaborators
-    Colaborators
-  %aside.onTop#notifications
-    Notifications
-  %aside.onBottom#configuration
-    Configuration
 
 = content_for :application_js do
   %script{:src => "app/app.js", :type=> "text/javascript"}
