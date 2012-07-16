@@ -1,19 +1,18 @@
-require "../../../lib/coolstrap"
-
+#require "coolstrap"
 #compass_config do |config|
 #  config.sass_options = {
 #    :output_style => :nested, 
 #    :images_dir => 'images', 
 #    :fonts_dir => 'fonts'}
 #end
-
+#activate :sprockets
+#activate :livereload
 set :images_dir,  "assets/images"
 set :fonts_dir,  "assets/fonts"
 set :css_dir,  "assets/stylesheets"
 set :js_dir, "assets/javascripts"
 set :markdown, :layout_engine => :haml
 set :default_encoding, 'utf-8'
-activate :sprockets
 
 
 configure :build do

@@ -56,12 +56,12 @@
   %meta{"http-equiv" => "cleartype", :content => "on"}
 
   -# StyleSheets
-  = stylesheet_link_tag "coolstrap"
+  = stylesheet_link_tag "application"
   = yield_content(:application_styles)
   -# All JavaScript at the bottom, except this Modernizr build.
   -# Modernizr enables HTML5 elements & feature detects for optimal performance.
-  = javascript_include_tag "lib/modernizr-2.5.3"
+  = javascript_include_tag "coolstrap/lib/modernizr-2.5.3"
 %body
   = yield_content(:principal)
-  = javascript_include_tag "coolstrap-0.1.packed"
+  = javascript_include_tag "application"
   = yield_content(:application_js)

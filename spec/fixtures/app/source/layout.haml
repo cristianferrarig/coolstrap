@@ -60,15 +60,15 @@
   = yield_content(:application_styles)
   -# All JavaScript at the bottom, except this Modernizr build.
   -# Modernizr enables HTML5 elements & feature detects for optimal performance.
-  = javascript_include_tag "lib/modernizr-2.5.3"
+  = javascript_include_tag "coolstrap/lib/modernizr-2.5.3"
 
 %body
 
   = yield_content(:principal)
 
   / Third parties dependencies
-  = javascript_include_tag "lib/zepto-1.0rc1"
-  = javascript_include_tag "lib/iscroll"
+  = javascript_include_tag "coolstrap/lib/zepto-1.0rc1"
+  = javascript_include_tag "coolstrap/lib/iscroll"
 
   / CoolStrapp Libraries (Development mode)
   = javascript_include_tag "application"

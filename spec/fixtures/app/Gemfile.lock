@@ -1,3 +1,9 @@
+PATH
+  remote: ../../../
+  specs:
+    coolstrap (0.0.1)
+      sprockets-plugin
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -105,6 +111,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coolstrap!
   middleman (= 3.0.0)
-  middleman-sprockets
-  sprockets-plugin
