@@ -103,7 +103,7 @@
 
  clone repo and run
 
-    ➜ rake test
+    ➜ rake spec
 
 
 ### Documentation 
