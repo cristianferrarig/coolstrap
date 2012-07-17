@@ -12,6 +12,20 @@
 .rvmrc
 .dropbox
 
+
+*.sw?
+coverage*
+doc
+rdoc
+pkg
+tmp
+tags
+rerun.txt
+Gemfile.lock
+.bundle
+*.gem
+
+
 Icon?
 
 # OS or Editor folders
