@@ -16,34 +16,56 @@
   - Install Ruby 1.9.2 or 1.9.3
   - Install [bundler](http://gembundler.com/)
 
-### Installation of middleman
-  - $ bundle install
 
-If you need more information about middleman, please visit [Middleman documentation](http://http://middlemanapp.com/guides/getting-started)
 
-### Test
-  - $ middleman server
+## Create Run & build application
+
+## Install the gem
+
+    ➜ gem install coolstrap-gen
+
+### Create a new Project
+
+    ➜ coolstrap new HelloWorld
+    
+  Coolstrap main application lives on top of middleman, 
+  If you need more information about middleman, please visit [Middleman documentation](http://http://middlemanapp.com/guides/getting-started)
+
+### Create views
+
+    ➜ coolstrap s list Developers commiters    
+    
+### Run Server
+
+    ➜ coolstrap server
+    
+  This actually runs a middleman server, that actually runs a thin instance :)
+  You can run with the middleman commands too.
+  
   - for better results test applicacion in webkit based navigator.
   - visit [http://localhost:4567/index.html](http://localhost:4567/index.html) to see samples
-
-### Deploy
-  - $ middleman build
+  
+  
+### Build HTML app
+ 
+    ➜ coolstrap build
+    
   Then you can see in <build> directory:
   - Coolstrap Framework: coolstrap-js/coolstrap-0.1.js
   - Coolstrap Framework Packed with Zepto and iScroll: coolstrap-js/coolstrap-0.1.packed.js
+  - TODO: Build native apps, deploy them to xstore
 
-### Documentation 
-#### generation for js with docco ( [docco repo](http://jashkenas.github.com/docco/) )
-  + sudo npm install docco
-  + docco source/assets/javascripts/**/*.coffee
+### Simulate Apps
 
-## Do you want to use Coolstrap?
-### coming soon...
+    ➜ coolstrap simulate ios  
+    
+  This opens Iphone simulator with you application
 
-## Convenience Helpers
+
+## Convenience Helpers in coolstrap-gen
 
   Coolstrap comes with some convenience helpers methods for header, footer, sections, list_view and more.
-  see: lib/coolstrap-generator/templates/. to see more examples.
+  see: lib/coolstrap-gen/templates/. to see more examples.
   
 ### Some examples
 ### Header    
@@ -77,34 +99,40 @@ If you need more information about middleman, please visit [Middleman documentat
 
 
 
+## Test
+
+ clone repo and run
+
+    ➜ rake test
+
+
+### Documentation 
+#### generation for js with docco ( [docco repo](http://jashkenas.github.com/docco/) )
+  + sudo npm install docco
+  + docco source/assets/javascripts/**/*.coffee
+
 ### Contributing
-  + Fork it
-  + Create your feature branch (`git checkout -b my-new-feature`)
-  + Commit your changes (`git commit -am 'Added some feature'`)
-  + Push to the branch (`git push origin my-new-feature`)
-  + Create new Pull Request
   
-  ## Installation
-
-  Add this line to your application's Gemfile:
-
-      gem 'coolstrap'
-
-  And then execute:
-
-      $ bundle
-
-  Or install it yourself as:
-
-      $ gem install coolstrap
-
+  * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+  * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+  * Fork the project
+  * Start a feature/bugfix branch
+  * Commit and push until you are happy with your contribution
+  * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+  * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so we can cherry-pick around it.
 
 ## Credits
-Created by [Cristian Ferrari](http://twitter.com/energetico).
-Co-Authors [Abraham Barrera](http://twitter.com/abraham_barrera) and
-[Felipe Funes](http://twitter.com/nifoQue).
 
-Copyright (c) 2012 by Rhyboo.
++ Created by [Cristian Ferrari](http://twitter.com/energetico).
++ Co-Authors [Abraham Barrera](http://twitter.com/abraham_barrera) and
++ [Felipe Funes](http://twitter.com/nifoQue).
++ Gem mantainer [Miguel Michelson](http://github.com/michelson)
+
 
 ## Licensing Options
+
+Coolstrap mobile framework is licensed under Apache 2.0 by [Rhyboo](http://needmorecaffeine.com | @needmorecaffeine)
+
 See LICENSE.txt for license.
+Copyright 2012 [Rhyboo](http://needmorecaffeine.com | @needmorecaffeine)
+
