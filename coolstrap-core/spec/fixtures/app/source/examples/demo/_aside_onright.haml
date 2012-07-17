@@ -1,0 +1,66 @@
+%aside.onRight#aside-right
+  %header
+    %h1 Dialogs  
+  
+  %section{ :class => 'scrollable' }
+    %ul{"data-type" => "listview"}
+      %li
+        %a{"href" => "#mymodal", "data-target" => "dialog"}
+          .content Open dialog type [modal]
+          %i.icon-play-circle
+      %li
+        %a{"href" => "#myalert", "data-target" => "dialog"}
+          .content Open dialog type [alert]
+          %i.icon-play-circle
+      %li
+        %a{"href" => "#myaction", "data-target" => "dialog"}
+          .content Open dialog type [action]
+          %i.icon-play-circle
+      %li
+        %a{"href" => "#myaction2", "data-target" => "dialog"}
+          .content Open another dialog type [action]
+          %i.icon-play-circle
+      %li
+        %a{"href" => "#myaction3", "data-target" => "dialog"}
+          .content even more, open dialog type [action]
+          %i.icon-play-circle
+      
+
+  %div#mymodal{:role => "dialog", "data-type" => "modal", "data-transition" => "slideup"}
+    %a.close{"href" => "#mymodal", "data-target" => "close"}
+      %i.icon-remove-circle
+    %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+
+  %div#myalert{:role => "dialog", "data-type" => "alert"}
+    %h1 Cras mattis consectetur purus agnis dis parturient mo.
+    %p Donec id elit non mi porta gravida at eget metus estibulum id ligula porta felis euismod semper.
+    .button-group
+      %a Ullamcorper
+      %a.close{"href" => "#myalert", "data-target" => "close"}
+        Close
+
+  %div#myaction{:role => "dialog", "data-type" => "action"}
+    %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+    .button-group
+      %a Ullamcorper Ridiculus
+      %a.close{"href" => "#myaction", "data-target" => "close"}
+        Close
+
+  %div#myaction2{:role => "dialog", "data-type" => "action"}
+    %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+    %a Ullamcorper Ridiculus
+    %a.close{"href" => "#myaction2", "data-target" => "close"}
+      Close
+
+  %div#myaction3{:role => "dialog", "data-type" => "action"}
+    %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+    .button-group
+      %a Ullamcorper 
+      %a Tristique
+    %p Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+    .button-group.alignVertical
+      %a Ullamcorper Ridiculus
+      %a Tristique Lorem
+      %a.close{"href" => "#myaction3", "data-target" => "close"}
+        Close
+        

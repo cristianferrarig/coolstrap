@@ -1,0 +1,79 @@
+= content_for :title do
+	Direct Access
+
+-#= content_for :application_styles do
+	= stylesheet_link_tag "themes/theme"
+
+= content_for :principal do
+
+	%div{:role => "main"}
+		%header
+			%h1 COOLSTRAP
+
+		%section.current
+
+			.scrollable
+
+				%ul{"data-type" => "listview"}
+					%li.list-divider Examples: Kitchen Sink
+					%li
+						%a{:href => "examples/kitchen-sink/"}
+							.content
+								.title Navigation
+							.aside
+								%i
+
+					%li.list-divider Examples: Components
+					%li
+						%a{:href => "examples/components/listview.html"}
+							.content
+								.title Listview
+							.aside
+								%i
+					%li
+						%a{:href => "examples/components/toolbar.html"}
+							.content
+								.title Toolbar
+							.aside
+								%i
+					%li
+						%a{:href => "examples/components/tabbar.html"}
+							.content
+								.title Tabbar
+							.aside
+								%i
+					%li
+						%a{:href => "examples/components/formelements.html"}
+							.content
+								.title Form elements
+							.aside
+								%i
+
+					%li.list-divider Examples: Layouts
+					%li
+						%a{:href => "examples/layouts/dialog.html"}
+							.content
+								.title Dialog
+							.aside
+								%i
+
+					%li.list-divider Examples: Javascript API
+					%li
+						%a{:href => "examples/kitchen-sink/api.html"}
+							.content
+								.title Navigation Controller
+							.aside
+								%i
+
+
+					%li.list-divider Examples: Demo
+					%li
+						%a{:href => "examples/demo/index.html"}
+							.content
+								.title Demo iOS mail, twitter, facebook aside, aside on top
+							.aside
+								%i
+
+
+
+
