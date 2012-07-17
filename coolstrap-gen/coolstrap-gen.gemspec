@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require File.expand_path("../../lib/coolstrap/version.rb", __FILE__)
+require File.expand_path("../../coolstrap/lib/coolstrap/version.rb", __FILE__)
 #require "coolstrap/version"
 Gem::Specification.new do |s|
   s.name        = "coolstrap-gen"
@@ -26,13 +26,13 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency(%q<nokogiri>,            ["~> 1.4.4"])
   s.add_runtime_dependency(%q<erubis>,              ["~> 2.7.0"])
   s.add_runtime_dependency(%q<rocco>,               ["~> 0.7"])
-  s.add_runtime_dependency(%q<thor>,                ["~> 0.14.6"])
+  s.add_runtime_dependency(%q<thor>,                ["~> 0.15.4"])
   s.add_runtime_dependency(%q<compass>,             ["~> 0.7"])
   s.add_runtime_dependency(%q<session>,             ["~> 3.1"])
-  s.add_runtime_dependency(%q<middleman>,           ["~> 2.0"])
+  s.add_runtime_dependency(%q<middleman>,           ["~> 3.0.0"])
 
   # s.add_development_dependency(%q<bundler>,         ["~> 1.0.14"])
-  s.add_development_dependency(%q<bundler>,         ["~> 1.1.pre.10"])
+  s.add_development_dependency(%q<bundler>,         ["~> 1.1"])
   s.add_development_dependency(%q<rspec>,           ["~> 2.6.0"])
   
 end

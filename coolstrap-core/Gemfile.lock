@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    coolstrap-gen (0.0.1)
+    coolstrap-core (0.0.1)
       coffee-script (~> 2.2.0)
       colored (~> 1.2)
       compass (~> 0.7)
@@ -14,7 +14,7 @@ PATH
       thor (~> 0.15.4)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activesupport (3.2.6)
       i18n (~> 0.6)
@@ -140,5 +140,5 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.1)
-  coolstrap-gen!
+  coolstrap-core!
   rspec (~> 2.6.0)

@@ -21,7 +21,7 @@ module Coolstrap::Gen
     map %w(--version -v) => 'info'
     desc "info", "information about Coolstrap::Generator."
     def info
-      say "Version #{::Coolstrap::Gen::VERSION}"
+      say "Version #{::Coolstrap::VERSION}"
     end
 
     map %(n) => 'new'

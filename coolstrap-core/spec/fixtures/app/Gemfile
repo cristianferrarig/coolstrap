@@ -3,6 +3,6 @@ gem "middleman", "3.0.0"
 #gem "middleman-sprockets", :github=>"middleman/middleman-sprockets"
 #gem "middleman-livereload", :github => "middleman/middleman-livereload"
 #gem "coolstrap", :git=>"git@bitbucket.org:michelson/coolstrap.git", :branch=>"gem"
-gem "coolstrap-core", :path=>"../../../"
+gem "coolstrap-core", :path=>"../../../../coolstrap-core"
 
 

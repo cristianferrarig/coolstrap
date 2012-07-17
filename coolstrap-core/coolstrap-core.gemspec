@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
 
-require File.expand_path("../../lib/coolstrap/version.rb", __FILE__)
+require File.expand_path("../../coolstrap/lib/coolstrap/version.rb", __FILE__)
 #require "coolstrap/version"
 
 Gem::Specification.new do |s|

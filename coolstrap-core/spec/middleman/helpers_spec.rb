@@ -1,7 +1,7 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 require "middleman"
-require "coolstrap-generator/middleman/helpers"
+require "coolstrap-core/helpers"
 
 describe "Middleman Helpers" do
   

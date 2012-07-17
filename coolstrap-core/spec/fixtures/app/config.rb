@@ -8,9 +8,9 @@
 #    :fonts_dir => 'fonts'}
 #end
 
-require "coolstrap-core/helpers"
-helpers Coolstrap::Core::Helpers
-activate :helpers
+#require "coolstrap-core/helpers"
+#helpers Coolstrap::Core::Helpers
+#activate :helpers
 
 #activate :livereload
 set :images_dir,  "assets/images"

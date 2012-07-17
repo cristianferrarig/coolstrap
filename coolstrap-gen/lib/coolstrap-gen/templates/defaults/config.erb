@@ -1,7 +1,8 @@
 #"<%= app_name %>"
 
-require "coolstrap-generator/middleman/helpers"
-
+require "coolstrap-core/helpers"
+helpers Coolstrap::Core::Helpers
+activate :helpers
 
 compass_config do |config|
   config.sass_options = {:output_style => :nested, :images_dir => 'images', :fonts_dir => 'fonts'}
