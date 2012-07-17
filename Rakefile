@@ -14,7 +14,7 @@ coolstrap_gems = %w(coolstrap-core coolstrap-gen coolstrap)
 GEM_PATHS = coolstrap_gems.freeze
 
 def sh_rake(command)
-  sh "#{Gem.ruby} -S rake #{command}", :verbose => true
+  sh "#{Gem.ruby} -S rake #{command} --trace", :verbose => true
 end
 
 def say(text, color=:magenta)
@@ -25,6 +25,7 @@ end
 desc "Run 'install' for all projects"
 task :install do
   GEM_PATHS.each do |dir|
+    puts dir
     Dir.chdir(dir) { sh_rake(:install) }
   end
 end

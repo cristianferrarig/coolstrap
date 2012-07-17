@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = ""
   s.summary     = %q{App Generator for coolstrap mobile framework }
   s.description = %q{Coolstrap-gen is a scaffold generator & static site builder on top of middleman,
-                      and client support for build, simulate & deploy native apps.}
+                      which adds client support for build, simulate & deploy native apps.}
 
   s.rubyforge_project = "coolstrap-gen"
 

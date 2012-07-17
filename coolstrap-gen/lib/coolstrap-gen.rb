@@ -1,6 +1,6 @@
 
 $:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
-require File.expand_path("../../../coolstrap/lib/coolstrap/version.rb", __FILE__)
+#require File.expand_path("../../../coolstrap/lib/coolstrap/version.rb", __FILE__)
 
 require 'rubygems'
 require 'pathname'
@@ -17,7 +17,7 @@ module Coolstrap
     
     ROOT_PATH = Pathname(__FILE__).dirname.expand_path
 
-    autoload  :VERSION,       'coolstrap/version.rb'
+    #autoload  :VERSION,       'coolstrap/version.rb'
     autoload  :CLI,           'coolstrap-gen/cli.rb'
     autoload  :Logger,        "coolstrap-gen/logger.rb"
     autoload  :Utils,         "coolstrap-gen/utils.rb"
