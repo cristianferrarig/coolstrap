@@ -16,10 +16,10 @@
 
   %title= yield_content(:title)
 
-  %meta{:name => "description", :content => "<%= app_name %>"}
+  %meta{:name => "description", :content => "dailyfocus"}
   %meta{:name => "generator", :content => "Coolstrap Framework"}
   
-  %meta{:name => "author", :content=> "<%= app_name %>"}
+  %meta{:name => "author", :content=> "dailyfocus"}
 
   -# Mobile viewport optimization:
   %meta{:name => "HandheldFriendly", :content => "true"}
@@ -60,7 +60,7 @@
   %meta{"http-equiv" => "cleartype", :content => "on"}
 
   -# StyleSheets
-  = stylesheet_link_tag "application"
+  = stylesheet_link_tag "coolstrap/coolstrap"
   = yield_content(:application_styles)
   -# All JavaScript at the bottom, except this Modernizr build.
   -# Modernizr enables HTML5 elements & feature detects for optimal performance.
@@ -75,5 +75,5 @@
   = javascript_include_tag "coolstrap/lib/iscroll"
 
   / CoolStrapp Libraries (Development mode)
-  = javascript_include_tag "application"
+  = javascript_include_tag "coolstrap/coolstrap-0.1"
   = yield_content(:application_js)

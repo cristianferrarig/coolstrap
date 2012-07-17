@@ -1,6 +1,6 @@
 # coding: utf-8
 
-#"<%= app_name %>"
+#"dailyfocus"
 
 require "coolstrap-core/helpers"
 helpers Coolstrap::Core::Helpers

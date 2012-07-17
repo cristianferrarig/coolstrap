@@ -17,7 +17,7 @@
 
 ## Install the gem
 
-    ➜ gem install coolstrap-generator
+    ➜ gem install coolstrap-gen
 
 ### Create a new Project
 
