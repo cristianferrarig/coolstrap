@@ -1,0 +1,39 @@
+<html>
+	<body>
+		I am a web content
+		Send
+    <input type="button" 
+      onclick="javascript:iOSBrdige.runCommand('sayHello', {name: 'iOS'})"
+      value="Say Hello" />
+    <div id="response"> -- </div>
+<script>
+  var iOSBrdige = {
+    callback: function(response) {
+      document.getElementById("response").innerHTML = response.message;
+    },
+
+    runCommand: function(command, options) {
+      var params = '';
+      if (typeof(options) == 'object') {
+        var components = [];
+        for (var name in  options) {
+          if (typeof(name) != 'string') {
+              continue;
+          }
+          components.push(encodeURIComponent(name) + "=" + encodeURIComponent(options[name]));
+        }
+        if (components.length > 0) {
+            params  = '?' + components.join("&");
+        }
+      }
+
+      var iframe = document.createElement("IFRAME");
+      iframe.setAttribute("src", "rhyboo://" + command  + params);
+      document.documentElement.appendChild(iframe);
+      iframe.parentNode.removeChild(iframe);
+      iframe = null;
+    }
+  }
+</script>
+	</body> 
+<html>
