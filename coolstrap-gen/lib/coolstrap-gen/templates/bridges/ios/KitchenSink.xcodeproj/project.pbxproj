@@ -243,7 +243,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KitchenSink/KitchenSink-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/KitchenSink/Classes/\"";
 				INFOPLIST_FILE = "KitchenSink/KitchenSink-Info.plist";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/KitchenSink/Classes/Coolstrap/Vendor/JsCoreEngineiOS\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -258,7 +260,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KitchenSink/KitchenSink-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/KitchenSink/Classes/\"";
 				INFOPLIST_FILE = "KitchenSink/KitchenSink-Info.plist";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/KitchenSink/Classes/Coolstrap/Vendor/JsCoreEngineiOS\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
