@@ -12,6 +12,20 @@
 .rvmrc
 .dropbox
 
+
+*.sw?
+coverage*
+doc
+rdoc
+pkg
+tmp
+tags
+rerun.txt
+Gemfile.lock
+.bundle
+*.gem
+
+
 Icon?
 
 # OS or Editor folders
@@ -45,3 +59,4 @@ publish
 # build script local files
 # build/buildinfo.properties
 # build/config/buildinfo.properties
+pkg

@@ -1,0 +1,19 @@
+@import "compass";
+
+
+ul[data-type="listview"] .content > * + * {
+  margin-top: 2px;
+  .meta { color: #999; }
+}
+ul#mail {
+  h1 { font-size: 16px; }
+  h2 { font-weight: normal; }
+  p { color: #999; }
+}
+ul#twitterlist {
+  h1 {
+    span {
+      color: #999;
+    }
+  }
+}

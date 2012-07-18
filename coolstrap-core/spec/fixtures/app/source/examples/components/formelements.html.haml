@@ -1,0 +1,197 @@
+= content_for :title do
+  Form Elements Demo
+
+= content_for :application_styles do 
+  = stylesheet_link_tag "coolstrap/themes/coolstrap"
+  = stylesheet_link_tag "customtheme"
+
+  
+= content_for :principal do
+  %div.a{"role" => "main"}
+
+    %header
+      %a{:href => "listview.html"} Lists
+      %hgroup
+        %h1 COOLSTRAP
+        %h2 Form Elements Demo
+      %a Entrar
+    %footer
+      %a Button
+      %a Button
+      %a Button
+      %a Button
+      %a Button  
+
+    %section.current
+      %nav{"data-type" => "toolbar"}
+        %input{:type => "text"}
+        %a search
+
+
+      %article.scrollable
+          
+        %h1 Radio y checkbox
+        %form.inset
+          
+          .content.horizontal
+            %p 0:00
+            .slider
+              .progress
+                .circle.mini
+            %p -30:35  
+          .content.horizontal
+            .slider
+              .progress
+                .circle
+          .content
+            %label 
+              %input{:type => "checkbox"}  
+              Atun palta
+          .content
+            %label 
+              %input{:type => "checkbox"}  
+              Atun palta    
+        
+          .content
+            %label 
+              %input{:type => "radio", :name => "radio"}  
+              Atun palta
+          .content
+            %label 
+              %input{:type => "radio", :name => "radio"}  
+              Atun palta
+
+        %h1 horizontales      
+        %form.inset
+          .content.horizontal
+            %label 
+              %input{:type => "radio", :name => "radio"}  
+              Atun palta
+          .content.horizontal
+            %label 
+              %input{:type => "radio", :name => "radio"}  
+              Riquitiqui          
+
+          
+
+        %form.inset
+          .content.horizontal
+            %label 
+              %input{:type => "checkbox"}  
+              Prueba
+          .content.horizontal
+            %label 
+              %input{:type => "checkbox"}  
+              Atun palta
+          .content.horizontal
+            %label 
+              Marque si le gusta la gasolina          
+            .toggle-content
+              %input.toggle-switch{:type => "checkbox"}  
+              %label               
+            
+        
+
+        %h1 Con porcentajes    
+        %form.inset  
+          .content.horizontal
+            .aside 
+              %i.icon-phone-sign
+            %input{:type => "tel"}
+          .content.horizontal
+            .aside Name
+            %input{:type => "text"}  
+          .content.horizontal
+            .aside Phone
+            %input{:type => "text"}  
+          .content.horizontal
+            .aside Larger Adress
+            %input{:type => "text"}  
+          .content.horizontal.start
+            .aside Tomatican con pollo y mermelada de palta
+            %input{:type => "text"}
+          .content.horizontal.start
+            .aside Tomatican 
+            %textarea
+          .content.horizontal
+            .aside Phone
+            .slider
+              .progress
+                .circle    
+          .content.horizontal
+            .aside Tomatican 
+            %select
+              %option{:value => "option 1"}  option 1
+              %option{:value => "option 2"}  option 2
+              %option{:value => "option 3"}  option 3
+
+        %h1 Label encima
+        %form.inset
+          .content.stack
+            %label 
+              Name
+              %input{:type => "text"}  
+          .content.stack
+            %label 
+              Date
+              %input{:type => "date"}    
+          .content.stack
+            %label 
+              Datetime
+              %input{:type => "datetime"}
+          .content.stack
+            %label 
+              Datetime-local
+              %input{:type => "datetime-local"}      
+          .content.stack
+            %label 
+              Time
+              %input{:type => "time"}  
+          .content.stack
+            %label 
+              Month
+              %input{:type => "month"}
+          .content.stack
+            %label 
+              Number
+              %input{:type => "number"}
+          .content.stack
+            %label 
+              Tel
+              %input{:type => "tel"}
+          .content.stack
+            %label 
+              Url
+              %input{:type => "url"}
+          .content.stack
+            %label 
+              Week
+              %input{:type => "week"}            
+          .content.stack
+            %label 
+              Minicomponente
+              %textarea  
+          .content.stack
+            %label 
+              Tomatican 
+              %select
+                %option{:value => "option 1"}  option 1          
+                %option{:value => "option 2"}  option 2          
+                %option{:value => "option 3"}  option 3  
+
+        
+
+                          
+
+        
+
+  %aside{"data-type" => "onLeft"}
+
+  %aside{"data-type" => "onRight"}
+
+  %aside{"data-type" => "onTop"}
+
+  %aside{"data-type" => "onBottom"}
+= content_for :application_js do  
+  %script{:src => "app/app.js", :type=> "text/javascript"}
+  %script{:src => "app/events.js", :type=> "text/javascript"}  

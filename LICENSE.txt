@@ -1,4 +1,4 @@
-Copyright 2012 hyboo (http://needmorecaffeine.com | @needmorecaffeine)
+Copyright 2012 Rhyboo (http://needmorecaffeine.com | @needmorecaffeine)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -1,0 +1,463 @@
+%h1 TOOLBARS
+%p 
+	Cualquier tipo de barra con herramientas que quieras hacer con Coolstrap debe estar construido con la etiqueta 
+	%span.code &lt;nav&gt; 
+	a la que se le agrega el atributo 
+	%span.code data-type="toolbar" 
+	para que se comporte como tal y se diferencie de un nav simple y un tabbar.
+%h1 
+	1. Navs con un grupo de botones centradeos
+	%span.code &lt;div class="control-group autoWith"&gt; 
+%p 
+	Para agregar un grupo de botones unidos y que permanezca centrado en la barra sin importar el ancho del viewport, estos deben estar encerrados en una etiqueta 
+	%span.code &lt;div&gt; 
+	con la clase 
+	%span.code .control-group. 
+	Con este procedimiento cada botón se ajustará al tamaño de su contenido.
+%h2 Botones con ícono y texto
+%nav{"data-type" => "toolbar"}
+	.control-group
+		%a
+			%i.icon-facebook
+			%span Facebook
+		%a
+			%i.icon-twitter
+			%span Twitter
+		%a
+			%span Comments
+			%i.icon-comments
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group">
+			    <a>
+			      <i></i>
+			      <span>button</span>
+			    </a>
+			  </div>  
+			</nav>    				
+
+%h2 Botones de texto
+%nav{"data-type" => "toolbar"}
+	.control-group
+		%a nombre 1
+		%a nombre 3
+		%a nombre 4
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group">
+			    <a>
+			      <span>button</span>
+			    </a>
+			  </div>  
+			</nav>    					
+%h2 Botones con íconos
+%nav{"data-type" => "toolbar"}
+	.control-group
+		%a 
+			%i.icon-facebook
+		%a 
+			%i.icon-twitter
+		%a 
+			%i.icon-comments
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group">
+			    <a>
+			      <i></i>
+			    </a>
+			  </div>  
+			</nav>    					
+
+
+
+%h1 
+	2. Nav con un 
+	%span.code &lt;div class="control-group autoWith"&gt;
+	
+%p 
+	Si queremos que el mismo 
+	%span.code .control-group 
+	se ajuste a todo el ancho del viewport es necesario también agregar la clase 
+	%span.code .autoWidth
+	Con este procedimiento, sin importar el tamano del viewport, el grupo de botones se expanderá a todo el ancho, distribuyendo proporcionalmente el tamaño de los botones según el tamaño del contenido que tenga cada uno.
+%h2 Botones con ícono y texto
+%nav{"data-type" => "toolbar"}
+	.control-group.autoWidth
+		%a
+			%i.icon-facebook
+			%span button 1
+		%a
+			%i.icon-twitter
+			%span button 2
+		%a
+			%span button 3
+			%i.icon-comments
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group autoWidth">
+			    <a>
+			      <i></i>
+			      <span>button</span>
+			    </a>
+			  </div>  
+			</nav>    
+	
+%h2 Botones de texto
+%nav{"data-type" => "toolbar"}
+	.control-group.autoWidth
+		%a button 1
+		%a button 2
+		%a button 3
+		%a button 4
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group autoWidth">
+			    <a>
+			      <span>button</span>
+			    </a>
+			  </div>  
+			</nav>    		
+%h2 Botones con íconos
+%nav{"data-type" => "toolbar"}
+	.control-group.autoWidth
+		%a
+			%i.icon-facebook
+		%a 
+			%i.icon-twitter
+		%a 
+			%i.icon-comments
+		%a
+			%i.icon-linkedin
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group autoWidth">
+			    <a>
+			      <i></i>
+			    </a>
+			  </div>  
+			</nav>   		
+
+
+%h1 3. Navs con un searchbar
+%p 
+	Este proceso es muy sencillo ya que solo basta con con agregar la etiqueta 
+	%span.code &lt;input&gt; 
+	dentro de la etiqueta 
+	%span.code &lt;nav&gt; 
+	ajustándose al ancho total del viewport. Si se quiere agregar un botón, un ícono o cualquier otro elemento, el ancho de la barra de busqueda se ajustará automáticamente a al espacio que le quede, como se muestra en los siguientes ejemplos:
+%h2 Searchbar a todo el ancho
+%nav{"data-type" => "toolbar", "data-icon" => ""}
+	%input{:type => "search", :name => "txt"}
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <input type="search">
+			</nav>   		
+%h2 Searchbar con un boton
+%nav{"data-type" => "toolbar"}
+	%input{:type => "search", :name => "txt"}
+	%a search
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <input type="search">
+			  <a>search</a>
+			</nav>  
+%h2 Searchbar con un ícono y un botón
+%nav{"data-type" => "toolbar"}
+	%a.onlyIcon 
+		%i.icon-facebook
+	%input{:type => "search", :name => "txt"}
+	%a
+		%span search
+		%i.icon-search
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>  
+			  <input type="search"/ >
+			  <a>
+			    <span></span>
+			    <i></i>
+			  </a>  
+			</nav> 		
+
+%h1 4. Botones en los lados
+%p 
+	En muchas ocaciones se requieren botones a los lados de la barra de herramientas, en especial con fines de navegación utilizándose el clásico botón back y next. La fijación de estos a los lados dependerá principalmente del elemento que haya al centro, sin ser necesario utilizar floats en el css. Para este caso, los botones de los lados concervarán su tamaño en relación a su contenido y todo lo que esté al centro utilizará el espacio completo restante sin importar el ancho del viewport. Este elemento del centro puede ser un 
+	%span.code &lt;hgroup&gt;
+	, un 
+	%span.code &lt;div class="control-group autoWith"&gt; 
+	o un 
+	%span.code &lt;div class="flex"&gt; 
+	para dejar el espacio vacío como se muestra en el siguiente ejemplo:
+%nav{"data-type" => "toolbar"}
+	%a back
+	.flex
+	%a next
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a>back</a>
+			  <div class="flex"></div>
+			  <a>next</a>
+			</nav> 
+%h2
+	Dos botones 
+	%span.code &lt;a&gt 
+	a los lados y un
+	%span.code &lt;div class="control-group autoWith"&gt; 
+	al centro		
+%nav{"data-type" => "toolbar"}
+	%a back
+	.control-group.autoWidth
+		%a button 1
+		%a button 2
+		%a button 3
+	%a next	
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="control-group autoWidth">
+			    <a>button 1</a>
+			    <a>button 2</a>
+			    <a>button 3</a>
+			  <div/>
+			</nav> 	
+%h2 
+	Iconos a los lados y un
+	%span.code &lt;div class="control-group"&gt; 
+	centered.
+%p 
+	Acá podemos apreciar como podemos utilizar botones que sólo contengan ícono en los lados agregándole la clase 
+	%span.code .onlyIcon 
+	a la etiqueta 
+	%span.code &lt;a&gt; 
+	que los envuelve.
+	Para que el 
+	%span.code .control-group 
+	se mantenga centrado sin expandirse a todo el ancho del viewport es necesario que esté rodeado por un 
+	%span.code &lt;div class="flex"&gt; 
+	para que siga manteniendo sus propiedades flexibles, tal como se muestra en el ejemplo:
+%nav{"data-type" => "toolbar"}
+	%a.onlyIcon
+		%i.icon-facebook
+	.flex
+	.control-group
+		%a button 1
+		%a button 2
+		%a button 3
+	.flex	
+	%a.onlyIcon <i></i>
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <div class="flex"><div/>
+			  <div class="control-group">
+			    <a>button 1</a>
+			    <a>button 2</a>
+			    <a>button 3</a>
+			  <div/>
+			  <div class="flex"><div/>
+			</nav> 		
+%h2 
+	Botones separados proporcionalmente según el tamaño de su contenido con 
+	%span.code &lt;div class="flex"&gt;
+	entre ellos
+%nav{"data-type" => "toolbar"}
+	%a back
+	.flex
+	%a button 1
+	.flex
+	%a button 2
+	.flex
+	%a button 3
+	.flex
+	%a next
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a>button 1</a>
+			  <div class="flex"><div/>
+			  <a>button 1</a>
+			  <div class="flex"><div/>
+			  <a>button 1</a>
+			  <div class="flex"><div/>
+			  <a>button 1</a>
+			  <div class="flex"><div/>
+			  <a>button 1</a>
+			</nav> 			
+%nav{"data-type" => "toolbar"}
+	%a
+		%i.icon-facebook
+		%span Facebook
+	.flex
+	%a
+		%i.icon-twitter
+		%span Twitter
+	.flex
+	%a
+		%span Comments
+		%i.icon-comments
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a>
+			    <i></i>
+			    <span>button 1</span>
+			  </a>
+			  <div class="flex"><div/>
+			  <a>
+			    <i></i>
+			    <span>button 2</span>
+			  </a>
+			  <div class="flex"><div/>
+			  <a>
+			    <i></i>
+			    <span>button 3</span>
+			  </a>
+			</nav> 					
+%nav{"data-type" => "toolbar"}
+	%a.onlyIcon
+		%i.icon-facebook
+	.flex
+	%a.onlyIcon 
+		%i.icon-twitter
+	.flex
+	%a.onlyIcon 
+		%i.icon-comments
+	.flex
+	%a.onlyIcon 
+		%i.icon-linkedin
+%pre		
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>
+			  <div class="flex"><div/>
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>
+			  <div class="flex"><div/>
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>
+			  <div class="flex"><div/>
+			  <a class="onlyIcon">
+			    <i></i>
+			  </a>
+			</nav> 			
+%h2 
+	Botones a los lados con un 
+	%span.code &lt;div class="control-group"&gt;
+	y un 
+	%span.code &lt;hgroup&gt
+	centrado
+%p 
+	Este es un ejemplo de cómo puedes combinar muchas opciones y seguir obteniendo buenos resultados en el orden de los elementos. Fíjate en lo sencillo del marckup y prueba tus opciones para tu aplicación.	
+	Es importante usar las etiquetas correctas, como por ejemplo 
+	%span.code &lt;i&gt 
+	para los iconos. Si necesitas un grupo de textos o un título utilizas 
+	%span.code &lt;hgroup&gt 
+	o 
+	%span.code &lt;h1&gt 
+	respectivamente. Estas últimas dos tienen la propiedad de ser elásticas y centrar su contenido para conservar el layout de los elementos de una manera coherente para la aplicación en diseño.
+%nav{"data-type" => "toolbar"}
+	%a back
+	%hgroup
+		%h1 Rhyboo
+		%h2 The social TV
+	.control-group
+		%a
+			%i.icon-facebook
+		%a
+			%i.icon-twitter
+	%a back
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">
+			  <a>back</a>
+			  <hgroup></hgroup>
+			    <h1>Rhyboo</h1>
+			    <h2>The social TV</h2>
+			  </hgroup>
+			  <div class="control-group">
+			    <a>
+			      <i></i>
+			    <a/>
+			    <a>
+			      <i></i>
+			    <a/>
+			  </div> 
+			  <a>next</a> 
+%h2 
+	Botones en los lados y un
+	%span.code &lt;div class="control-group"&gt;
+	con texto y un
+	%span.code &lt;div class="loader"&gt;
+	que contiene una barra de progreso.
+%nav{"data-type" => "toolbar"}
+	%a back
+	.content
+		%h2 Descargando 1 de 5
+		.loader
+			.progress
+	%a >
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">	
+			  <a>back</a>
+			  <div class="content">
+			    <h1>Descargando 1 de 5</h1>
+			    <div class="loader">
+			      <div class="progress"></div>
+			    </div>
+			  </div>
+			</nav> 
+
+%h2 Dos botones a los lados y una barra de progreso
+%nav{"data-type" => "toolbar"}
+	%a back
+	.content
+		.loader
+			.progress
+	%a >
+%pre
+	= preserve do
+		:escaped
+			<nav data-type="toolbar">	
+			  <a>back</a>
+			  <div class="content">
+			    <div class="loader">
+			      <div class="progress"></div>
+			    </div>
+			  </div>
+			</nav>  
+
+

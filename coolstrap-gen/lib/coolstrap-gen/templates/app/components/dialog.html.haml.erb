@@ -1,0 +1,36 @@
+-# more on dialogs soon:
+
+-# more on dialogs at http://... 
+-# usage partial = partial "views/dialogs/<%= name %>"
+
+-# modal example 
+-# call it with link_to "alert", "#mymodal", "data-target" => "dialog"
+= dialog(:id=>"mymodal") do
+  = link_to "#mymodal", "data-target" => "close" do
+    = icon :"remove-circle"
+  %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+
+
+-# alert example
+-# call it with link_to "alert", "#myalert", "data-target" => "dialog"
+= dialog(:id=>"myalert", :type=>"alert" ) do
+  %h1 Cras mattis consectetur purus agnis dis parturient mo.
+  %p Donec id elit non mi porta gravida at eget metus estibulum id ligula porta felis euismod semper.
+  .button-group
+    %a Ullamcorper
+    = link_to "Close", "#myalert", {"data-target" => "close", :class=>"close"}
+
+-# action example
+-# call it with link_to "alert", "#myaction", "data-target" => "dialog"
+= dialog(:id=>"myaction", :type=>"action" ) do
+  %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+  .button-group
+    %a Ullamcorper 
+    %a Tristique
+  %p Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
+  .button-group.alignVertical
+    %a Ullamcorper Ridiculus
+    %a Tristique Lorem
+    = link_to "Close", "#myaction", {"data-target" => "close", :class=>"close"}
+
+      

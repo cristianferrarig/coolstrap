@@ -1,0 +1,130 @@
+
+					
+%h1 Radio y checkbox
+%form.inset
+	
+	.content
+		%label 
+			%input{:type => "checkbox"}	
+			Utilizar HTML
+	.content
+		%label 
+			%input{:type => "checkbox"}	
+			Utilizar CSS	
+
+	.content
+		%label 
+			%input{:type => "radio", :name => "radio"}	
+			Usar Coolstrap
+	.content
+		%label 
+			%input{:type => "radio", :name => "radio"}	
+			No usar Coolstrap
+
+%h1 horizontales			
+%form.inset
+	.content.horizontal
+		%label 
+			%input{:type => "radio", :name => "radio"}	
+			Cantar Lambada
+	.content.horizontal
+		%label 
+			%input{:type => "radio", :name => "radio"}	
+			Cantar Cueca				
+
+	
+
+%form.inset
+	.content.horizontal
+		%label 
+			%input{:type => "checkbox"}	
+			Bailar Rock and Roll
+	.content.horizontal
+		%label 
+			%input{:type => "checkbox"}	
+			Bailar Samba
+	
+		
+
+
+%h1 Con porcentajes		
+%form.inset	
+	
+	.content.horizontal
+		.aside Name
+		%input{:type => "text"}	
+	.content.horizontal
+		.aside 
+			%i.icon-phone-sign
+		%input{:type => "tel"}
+	.content.horizontal
+		.aside Larger Adress
+		%input{:type => "text"}	
+	.content.horizontal.start
+		.aside Label mas extensa que su contenedor
+		%input{:type => "text"}
+	.content.horizontal.start
+		.aside Descripcion
+		%textarea
+	.content.horizontal
+		.aside Dia para entrenar carrera
+		%select
+			%option{:value => "option 1"}	Lunes
+			%option{:value => "option 2"}	Miercoles
+			%option{:value => "option 3"}	Viernes
+
+%h1 Label encima
+%form.inset
+	.content.stack
+		%label 
+			Name
+			%input{:type => "text"}	
+	.content.stack
+		%label 
+			Date
+			%input{:type => "date"}		
+	.content.stack
+		%label 
+			Datetime
+			%input{:type => "datetime"}
+	.content.stack
+		%label 
+			Datetime-local
+			%input{:type => "datetime-local"}			
+	.content.stack
+		%label 
+			Time
+			%input{:type => "time"}	
+	.content.stack
+		%label 
+			Month
+			%input{:type => "month"}
+	.content.stack
+		%label 
+			Number
+			%input{:type => "number"}
+	.content.stack
+		%label 
+			Tel
+			%input{:type => "tel"}
+	.content.stack
+		%label 
+			Url
+			%input{:type => "url"}
+	.content.stack
+		%label 
+			Week
+			%input{:type => "week"}						
+	.content.stack
+		%label 
+			Descripcion
+			%textarea	
+	.content.stack
+		%label 
+			Escoja su dia libre
+			%select
+				%option{:value => "option 1"}	Martes					
+				%option{:value => "option 2"}	Jueves					
+				%option{:value => "option 3"}	Sabado	
+
+	
