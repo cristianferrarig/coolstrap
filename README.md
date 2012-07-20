@@ -3,12 +3,16 @@
 ### HTML5/CSS3 Mobile Framework
 
 ## Develop coolest mobile applications
-  - Responsive design without javascript
-  - iOS / Android support
-  - Powerfull API
-  - Zepto and Jquery compatible
+  - Responsive design without javascript.
+  - iOS / Android support for hybrid integration.
+  - Powerfull API.
+  - Zepto and Jquery compatible.
 
 [Source](https://github.com/rhyboo/coolstrap) is available on Github.
+
+## DISCLAIMER:
+  
+  [Coolstrap](https://github.com/rhyboo/coolstrap) isn't production ready, so the project should be treated like that until we release an stable version.
 
 ## Coolstrap usage
 
@@ -43,81 +47,24 @@
   - for better results test applicacion in webkit based navigator.
   - visit [http://localhost:4567/index.html](http://localhost:4567/index.html) to see samples
 
-
-
 ### Build HTML app
 
     ➜ coolstrap build
 
   Then you can see in <build> directory:
+    
   - Coolstrap Framework: coolstrap-js/coolstrap-0.1.js
   - Coolstrap Framework Packed with Zepto and iScroll: coolstrap-js/coolstrap-0.1.packed.js
-  - TODO: Build native apps, deploy them to xstore
 
 ### Simulate Apps
 
     ➜ coolstrap simulate ios
 
-  This opens Iphone simulator with you application
-
-
-## Convenience Helpers in coolstrap-gen
-
-  Coolstrap comes with some convenience helpers methods for header, footer, sections, list_view and more.
-  see: lib/coolstrap-gen/templates/. to see more examples.
-
-### Some examples
-### Header
-    = header do
-      = toolbar(:control=>true) do
-        %a= icon(:facebook)
-        %a= icon(:facebook)
-        %a= icon(:comments)
-### Footer & tabbars
-    = footer do
-      = tabbar do
-        = link_to "#" do
-          = icon(:facebook)
-### List views
-    = article(:class=>"scrollable") do
-      = list_view(:class=>"inset") do
-      = list_item(:arrow=>"right")
-      = divider do
-        2. Title and description with arrow and avatar
-
-    = list_view(:class=>"inset") do
-      = divider do
-        1. Title and description widht avatar
-      = list_item do
-        ....
-### Dialogs
-    = dialog(:id=>"mymodal") do
-      = link_to "#mymodal", "data-target" => "close" do
-        = icon :"remove-circle"
-      %h1 Cras mattis consectetur purus sit amet fermentumm agnis dis parturient mo.
-
-
-## Do you want to develop Coolstrap?
-
-* clone repo
-* install gems
-
-  $ cd coolstrap-core
-  $ bundle install
-  $ cd ../coolstrap-gen
-    bundle install
-  $ cd ..
-  $ gem install yard
-  $ rake install
-
-### Test
-  ➜ rake spec
-
+  This buidls ios app & opens Iphone simulator with you application. Android support is on the way.
 
 ### Documentation
-#### generation for js with docco ( [docco repo](http://jashkenas.github.com/docco/) )
-  + sudo npm install docco
-  + docco source/assets/javascripts/**/*.coffee
+
+  > [See our wiki](https://github.com/rhyboo/coolstrap/wiki/_pages) for more information on how to test, develop and more.
 
 ### Contributing
 

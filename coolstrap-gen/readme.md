@@ -1,12 +1,6 @@
-# CoolsTrap Generator
+# Coolstrap Generator
 
 ### An app generator for rapid HTML5 mobile development with [Coolstrap](https://github.com/rhyboo/coolstrap) framework.
-
-## DISCLAIMER:
-  
-  [Coolstrap](https://github.com/rhyboo/coolstrap) is in alpha development phase, so the project should be treated like that until coolstrap team generates a stable version of the framework.
-  
-  so... coolstrap-generator is in early development too...
   
   
 ## Requirements
