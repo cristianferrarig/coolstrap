@@ -2,11 +2,11 @@ require 'session'
 module Coolstrap
   module Gen
     module Generate
-      class Project
+      class Project < Thor
+        
         class << self
           attr_accessor :project_name, :device_platform, :app_id
           include ::Coolstrap::Gen::Utils
-
           # Coolstrap::Generator::Generate::Project.create('demo', 'org.codewranglers.demo', 'ipad')
           def create(name, id, platform='iphone')
             @project_name    = name
@@ -78,7 +78,23 @@ module Coolstrap
 
           end
 
+          def source_root
+            File.dirname(__FILE__)
+          end
+          
         end
+      
+        map %(n) => 'new'
+        desc "project new <name> ", "generates a new Coolstrap project."
+        long_desc "Generates a new Coolstrap project. See 'coolstrap help new' for more information.
+                  \n\nExample:
+                  \n\ncoolstrap project new demo ==> Creates a new project skeleton."
+        def new(name, device_id='org.mycompany.demo', platform='iphone')
+          if yes?("You are about to generate a Coolstrap Project, Are you ready ??")
+            ::Coolstrap::Gen::Generate::Project.create(name, device_id, platform)
+          end
+        end
+      
       end
     end
   end

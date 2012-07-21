@@ -1,6 +1,6 @@
 module Coolstrap::Gen
   module Generate
-    class View
+    class View < Thor
       class << self
         include ::Coolstrap::Gen::Utils
 
@@ -8,7 +8,6 @@ module Coolstrap::Gen
           create_view_template(name, context)
         end
         
-
         def create_view_template(name, context)
           log "Creating #{name} view using a template."      
           view_directory = "source/views"
@@ -53,6 +52,26 @@ module Coolstrap::Gen
         end
 
       end
+    
+      map %w(s) => 'scaffold'
+      desc "scaffold <list/complexlist/tabbar/toolbar/dialog> <domain> <name>", "generate a scaffold for Coolstrap elements."
+      def scaffold(cs_type, domain, name)
+        ::Coolstrap::Gen::Generate::View.create(name, { 
+          :domain   => domain, 
+          :cs_type  => cs_type, 
+          :name     => name })
+      end
+
+      map %w(g) => 'generate'
+      #TODO: models, bridges
+      desc "generate <view> <name>", "generate a view"
+      def generate(type, name)
+        case 
+        when type =~ /view/i
+          ::Coolstrap::Gen::Generate::View.create(name)
+        end
+      end
+    
     end
   end
 end

@@ -1,7 +1,7 @@
 require 'session'
 module Coolstrap::Gen
   module Simulator
-    class Ios
+    class Ios < Thor
       class << self
         include ::Coolstrap::Gen::Utils
 
@@ -19,6 +19,21 @@ module Coolstrap::Gen
         end
 
       end
+    
+    
+      map %w(sim) => 'simulate'
+      desc "simulate ", "launch ios/android simulator"
+      long_desc "Launch IOS or Android simulator.
+                \n\nExample:
+                \n\ncoolstrap simulate ios ==> launch iphone simulator"
+      def ios(simulator_version="5.1")
+        system "echo ::== COOLSTRAP SIMULATOR =="
+        ::Coolstrap::Gen::Builder::Ios.build(simulator_version)
+        ::Coolstrap::Gen::Simulator::Ios.simulate
+          #system "echo you must pass ios or android to coolstrap simulate command."
+      end
+    
+      # def android, o en otro archivo (simulator/android)??
     end
   end
 end

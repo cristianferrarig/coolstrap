@@ -1,3 +1,4 @@
+require "thor/group"
 module Coolstrap::Gen
   class CLI < Thor
     include Utils
@@ -22,35 +23,7 @@ module Coolstrap::Gen
     map %w(--version -v) => 'info'
     desc "info", "information about Coolstrap::Generator."
     def info
-      #say "Version #{::Coolstrap::VERSION}"
-    end
-
-    map %(n) => 'new'
-    desc "new <name> ", "generates a new Coolstrap project."
-    long_desc "Generates a new Coolstrap project. See 'coolstrap help new' for more information.
-              \n\nExample:
-              \n\ncoolstrap new demo ==> Creates a new project skeleton."
-    def new(name, device_id='org.mycompany.demo', platform='iphone')
-      ::Coolstrap::Gen::Generate::Project.create(name, device_id, platform)
-    end
-    
-    map %w(s) => 'scaffold'
-    desc "scaffold <list/complexlist/tabbar/toolbar/dialog> <domain> <name>", "generate a scaffold for Coolstrap elements."
-    def scaffold(cs_type, domain, name)
-      ::Coolstrap::Gen::Generate::View.create(name, { 
-        :domain   => domain, 
-        :cs_type  => cs_type, 
-        :name     => name })
-    end
-
-    map %w(g) => 'generate'
-    #TODO: models, bridges
-    desc "generate <view> <name>", "generate a view"
-    def generate(type, name)
-      case 
-      when type =~ /view/i
-        ::Coolstrap::Gen::Generate::View.create(name)
-      end
+      say "Version #{::Coolstrap::VERSION}"
     end
 
     map %w(r) => 'server'
@@ -68,7 +41,10 @@ module Coolstrap::Gen
               \n\ncoolstrap build ios 5.1 ==> build iphone app with sdk 5.1.
               \n\ncoolstrap build mm ==> build middleman static files.
               \n\ncoolstrap build ==> build middleman & IOS."
-              
+        
+    #method_option :attributes, :type => :hash, :default => {}, :required => true          
+    #method_options :type => "all"
+    #method_options :ver => "5.1"
     def build(type="", ver="5.1")
       system "echo ::== COOLSTRAP BUILD =="
       case type
@@ -82,25 +58,10 @@ module Coolstrap::Gen
       end
     end
     
+    register Coolstrap::Gen::Simulator::Ios, :simulate, "simulator", "ios simulator"
+    register Coolstrap::Gen::Generate::Project, :project, "project", "project generator"
+    register Coolstrap::Gen::Generate::View, :view, "view", "view generator"
     
-    map %w(sim) => 'simulate'
-    desc "simulate ", "launch ios/android simulator"
-    long_desc "Launch IOS or Android simulator.
-              \n\nExample:
-              \n\ncoolstrap simulate ios ==> launch iphone simulator"
-    
-    def simulate(type="")
-      system "echo ::== COOLSTRAP SIMULATOR =="
-      case type
-      when "ios"
-        ::Coolstrap::Gen::Builder::Ios.build
-        ::Coolstrap::Gen::Simulator::Ios.simulate
-      #when "android"
-      # ::Coolstrap::Gen::Simulator::Android.simulate
-      else
-        system "echo you must pass ios or android to coolstrap simulate command."
-      end
-    end
     
   end
 end
