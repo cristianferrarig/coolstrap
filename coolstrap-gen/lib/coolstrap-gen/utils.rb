@@ -44,7 +44,6 @@ module Coolstrap::Gen
       end
     end
 
-
     def create_with_template(name, template_location, contents={})
       template    = templates("#{template_location}.erb")
       eruby       = Erubis::Eruby.new(File.read(template))

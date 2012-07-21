@@ -1,6 +1,7 @@
 module Coolstrap::Gen
   class CLI < Thor
     include Utils
+    include Thor::Actions
 
     STATUS_TYPES = {:success          => 0,
                     :general_error    => 1,

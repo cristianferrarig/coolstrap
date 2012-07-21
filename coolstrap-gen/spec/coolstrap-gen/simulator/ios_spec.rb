@@ -7,10 +7,12 @@ describe "Creating of a view file" do
   
   context "Creating a view file and its spec" do
     before(:each) do
-      puts system("cd dailyfocus && coolstrap build ios; coolstrap simulate ios")
+      # uncoment if you want to tests this
+      #system("cd dailyfocus && coolstrap build ios; coolstrap simulate ios")
     end
     
     it "should have created the ios build directory" do
+      pending
       File.directory?("dailyfocus/source/native/ios/build").should be_true
     end
 
