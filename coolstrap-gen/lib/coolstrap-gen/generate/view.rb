@@ -3,6 +3,7 @@ module Coolstrap::Gen
     class View < Thor
       class << self
         include ::Coolstrap::Gen::Utils
+        
 
         def create(name, context={})
           create_view_template(name, context)
@@ -20,6 +21,7 @@ module Coolstrap::Gen
           when  'complexlist'
             log("HINT: to use lists call them with href '##{name}' & data-target = 'section', and add the partial in index.html.haml ")
             template  = templates("app/components/listview/_complexlistavatar.html.haml.erb")
+          
           when  'tabbar'
             view_directory = "source/views/tabbars"
             log("HINT: put partial in some header or footer element' ")
@@ -32,6 +34,8 @@ module Coolstrap::Gen
             view_directory = "source/views/dialogs"
             log("HINT: put partial in index.html.haml, see comments' ")
             template  = templates("app/components/dialog.html.haml.erb")
+          
+          
           else
             log("HINT: to use lists call them with href '##{name}' & data-target = 'section', and add the partial in index.html.haml ")
             template  = templates("app/components/listview/_complexlistavatar.html.haml.erb")

@@ -27,7 +27,7 @@ module Coolstrap::Gen
                 \n\nExample:
                 \n\ncoolstrap simulate ios ==> launch iphone simulator"
       def ios(simulator_version="5.1")
-        system "echo ::== COOLSTRAP SIMULATOR =="
+        system "echo ::== COOLSTRAP SIMULATOR ==::"
         ::Coolstrap::Gen::Builder::Ios.build(simulator_version)
         ::Coolstrap::Gen::Simulator::Ios.simulate
           #system "echo you must pass ios or android to coolstrap simulate command."
