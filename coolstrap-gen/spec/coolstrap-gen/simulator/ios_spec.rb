@@ -12,7 +12,7 @@ describe "Creating of a view file" do
     end
     
     it "should have created the ios build directory" do
-      pending
+      pending("uncomment this test torun it , xcode required")
       File.directory?("dailyfocus/source/native/ios/build").should be_true
     end
 
