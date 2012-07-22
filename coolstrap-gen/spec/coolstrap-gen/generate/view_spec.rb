@@ -12,6 +12,7 @@ describe "Creating of a view file" do
     
     it "should have created the view within the source/views directory" do
       File.exists?("dailyfocus/source/views/_user.haml").should be_true
+      File.exists?("dailyfocus/spec/views/user_spec.coffee").should be_true
     end
     
     it "should have created the view coffee-script within the spec/views directory" do
@@ -27,17 +28,18 @@ describe "Creating of a view file" do
     
     it "should have created the view within the source/views directory" do
       File.exists?("dailyfocus/source/views/user/_collection.haml").should be_true
-      File.exists?("dailyfocus/spec/views/user/collection_spec.rb").should be_true
+      File.exists?("dailyfocus/spec/views/user/collection_spec.coffee").should be_true
     end
   end
   
   context "Creating a scaffold file and its spec" do
     before(:each) do
-      system("cd dailyfocus && bundle exec coolstrap view s complexlist User complexcollection")
+      system("cd dailyfocus && bundle exec coolstrap view s complexlist User commiters")
     end
     
     it "should have created the view within the source/views directory" do
-      File.exists?("dailyfocus/source/views/user/_complexcollection.haml").should be_true
+      File.exists?("dailyfocus/source/views/user/_commiters.haml").should be_true
+      File.exists?("dailyfocus/spec/views/user/commiters_spec.coffee").should be_true
     end
   end
   
@@ -48,6 +50,7 @@ describe "Creating of a view file" do
     
     it "should have created the view within the source/views/tabbars directory" do
       File.exists?("dailyfocus/source/views/tabbars/user/_menu.haml").should be_true
+      File.exists?("dailyfocus/spec/views/tabbars/user/menu_spec.coffee").should be_true
     end
   end
   
@@ -58,6 +61,7 @@ describe "Creating of a view file" do
     
     it "should have created the view within the source/views/toolbars directory" do
       File.exists?("dailyfocus/source/views/toolbars/user/_menu.haml").should be_true
+      File.exists?("dailyfocus/spec/views/toolbars/user/menu_spec.coffee").should be_true
     end
   end
   
@@ -68,10 +72,12 @@ describe "Creating of a view file" do
     
     it "should have created the view within the source/views/dialogs directory" do
       File.exists?("dailyfocus/source/views/dialogs/user/_menu.haml").should be_true
+      File.exists?("dailyfocus/spec/views/dialogs/user/menu_spec.coffee").should be_true
     end
   end
   
   after(:all) do
     remove_directories('dailyfocus', 'app', 'spec/views')
   end
+
 end

@@ -4,10 +4,10 @@ module Coolstrap::Gen
       
       include Thor::Actions
             
-      attr_accessor :name
+      attr_accessor :name, :model
       
       def self.source_root
-         ::Coolstrap::Gen.root.join('coolstrap-gen/templates')
+        ::Coolstrap::Gen.root.join('coolstrap-gen/templates')
       end
     
       no_tasks {
@@ -18,6 +18,7 @@ module Coolstrap::Gen
           @context = context
           @name = name
           self.name = @name
+          self.model = @context[:cs_type]
           @context.merge!(:name => @name)
           #log "#{context.inspect}"
           case @context[:cs_type]
@@ -59,7 +60,7 @@ module Coolstrap::Gen
         
         def create_complexlist
           view_directory = "views"
-          log("HINT: to use lists call them with href '##{@name}' & data-target = 'section', and add the partial in index.html.haml ")
+          #log("HINT: to use lists call them with href '##{@name}' & data-target = 'section', and add the partial in index.html.haml ")
           template  = templates("app/components/listview/_complexlistavatar.html.haml.erb")
           generate_files(view_directory, template)
         end
@@ -67,16 +68,37 @@ module Coolstrap::Gen
         def create_list
           #if yes? "hum"
           view_directory = "views"
-          log("HINT: to use lists call them with href '##{@name}' & data-target = 'section', and add the partial in index.html.haml ")
+          #log("HINT: to use lists call them with href '##{@name}' & data-target = 'section', and add the partial in index.html.haml ")
           tmp  = "app/components/listview/_simplelist.html.haml.erb"
           generate_files(view_directory, tmp)
+          
+          section_tmp  = "app/components/section.haml.erb"
+          section_destination = "source/#{view_directory}/_#{(@context[:domain] || '').downcase}.haml"
+          
+          template( section_tmp, section_destination )
+          
+          ## add section link to home
+          home_tmp = "source/#{view_directory}/_home.haml"
+          insert_into_file home_tmp, :after => "= list_view(:id=>\"someid\") do" do
+            tmp = templates("app/components/section_link.haml.erb")
+            contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
+          end
+          
+          # remove default 
+          
+          gsub_file home_tmp, /Run -> coolstrap s view <model> <collection>/, :green do |match|
+            #match << ""
+            ""
+          end
+          
         end
         
         def generate_files(view_directory, template)
+          spec_template = templates("specs/app_spec.coffee.erb")
           template_destination = "source/#{view_directory}/#{(@context[:domain] || '').downcase}/_#{@name}.haml"
-          spec_destination = "spec/#{view_directory}/#{(@context[:domain] || '').downcase}/#{@name}_spec.rb"
+          spec_destination = "spec/#{view_directory}/#{(@context[:domain] || '').downcase}/#{@name}_spec.coffee"
           template( template, template_destination )
-          template( template, spec_destination )
+          template( spec_template, spec_destination )
         end
         
         def create(name, context={})

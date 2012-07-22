@@ -24,6 +24,7 @@ rerun.txt
 Gemfile.lock
 .bundle
 *.gem
+dailyfocus
 
 
 Icon?

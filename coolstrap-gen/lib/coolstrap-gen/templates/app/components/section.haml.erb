@@ -1,0 +1,11 @@
+= section({:id=>"<%= name %>"}) do
+  = header do
+    = link_to "volver", "#", "data-target" => "back"
+    
+    = hgroup(:title=>"<%= name %>", :subtitle=>"subtitle")
+    
+  = footer do
+    -#= render_toolbar("some/toolbar")
+    
+    
+  = partial "views/<%=model%>/<%=name%>"
