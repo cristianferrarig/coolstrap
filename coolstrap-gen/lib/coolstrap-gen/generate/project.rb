@@ -90,9 +90,9 @@ module Coolstrap
                   \n\nExample:
                   \n\ncoolstrap project new demo ==> Creates a new project skeleton."
         def new(name, device_id='org.mycompany.demo', platform='iphone')
-          if yes?("You are about to generate a Coolstrap Project, Are you ready ??")
+          #if yes?("You are about to generate a Coolstrap Project, Are you ready ??")
             ::Coolstrap::Gen::Generate::Project.create(name, device_id, platform)
-          end
+          #end
         end
       
       end

@@ -2,7 +2,7 @@ module Coolstrap::Gen
   module Utils
     include Thor::Actions
     
-    def source_root
+    def self.source_root
        File.dirname(__FILE__)
     end
     

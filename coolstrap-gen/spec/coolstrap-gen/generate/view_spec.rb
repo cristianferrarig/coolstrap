@@ -27,6 +27,7 @@ describe "Creating of a view file" do
     
     it "should have created the view within the source/views directory" do
       File.exists?("dailyfocus/source/views/user/_collection.haml").should be_true
+      File.exists?("dailyfocus/spec/views/user/collection_spec.rb").should be_true
     end
   end
   

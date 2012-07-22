@@ -1,4 +1,5 @@
 require "thor/group"
+#require "coolstrap"
 module Coolstrap::Gen
   class CLI < Thor
     include Utils
@@ -23,7 +24,7 @@ module Coolstrap::Gen
     map %w(--version -v) => 'info'
     desc "info", "information about Coolstrap::Generator."
     def info
-      say "Version #{::Coolstrap::VERSION}"
+      say "Version #{Coolstrap::VERSION}"
     end
 
     map %w(r) => 'server'
