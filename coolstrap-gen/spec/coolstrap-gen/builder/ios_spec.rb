@@ -11,7 +11,7 @@ describe "Creating of a view file" do
     end
     
     it "should have created the ios build directory" do
-      File.directory?("dailyfocus/source/native/ios/build").should be_true
+      File.directory?("dailyfocus/native/ios/build").should be_true
     end
 
   end

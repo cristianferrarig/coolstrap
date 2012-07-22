@@ -6,7 +6,7 @@ module Coolstrap::Gen
         include ::Coolstrap::Gen::Utils
         def build(simulator_version="5.1")
           project_name = "KitchenSink"
-          project_path = "source/native/ios/KitchenSink.xcodeproj"
+          project_path = "native/ios/KitchenSink.xcodeproj"
           sdk = "iphonesimulator#{simulator_version}"
           system "xcodebuild -project '#{project_path}' -target '#{project_name}' -sdk '#{sdk}' -configuration Release" # Debug clean build
         end

@@ -31,8 +31,8 @@ describe "Creating of a new Coolstrap Project" do
       File.directory?("dailyfocus/tmp").should be_true
     end
 
-    it "should have a source/native/ios directory" do
-      File.directory?("dailyfocus/source/native").should be_true
+    it "should have a native/ios directory" do
+      File.directory?("dailyfocus/native").should be_true
     end
   end
 

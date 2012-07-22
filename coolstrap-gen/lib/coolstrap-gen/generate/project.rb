@@ -60,7 +60,7 @@ module Coolstrap
                                "source/assets/stylesheets",
                                "source/assets/javascripts",
                                "source/views",
-                               "source/models", "source/native")
+                               "source/models", "native")
           end
 
           def remove_old_files
@@ -74,7 +74,7 @@ module Coolstrap
 
           def copy_bridges
             ## for now raw cp, Todo: erb
-            FileUtils.cp_r(templates("bridges/."), location.join("source/native") )
+            FileUtils.cp_r(templates("bridges/."), location.join("native") )
 
           end
 
