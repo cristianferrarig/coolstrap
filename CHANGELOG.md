@@ -2,7 +2,7 @@
 
 + 22/jul/2012
   + refactor to generators cli, inherit from thor.
-  + list generation separated in section & list. 
+  + list generation separated in section and article partials. 
   + section link added in home template with view generator.
   + moving native proyect folder into project root path.
 + 19/jul/2012
