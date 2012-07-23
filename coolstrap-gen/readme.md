@@ -30,8 +30,8 @@
 
 ### Create your tabbars & toolbars
 
-    ➜ coolstrap s tabbar Developers watchers
-    ➜ coolstrap s toolbar Developers watchers
+    ➜ coolstrap view s tabbar Developers watchers
+    ➜ coolstrap view s toolbar Developers watchers
     
   Those lines generates partials in views/tabbars & views/toolbars.
   
