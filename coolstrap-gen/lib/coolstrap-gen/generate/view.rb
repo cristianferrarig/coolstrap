@@ -73,7 +73,7 @@ module Coolstrap::Gen
           generate_files(view_directory, tmp)
           
           section_tmp  = "app/components/section.haml.erb"
-          section_destination = "source/#{view_directory}/_#{(@context[:domain] || '').downcase}.haml"
+          section_destination = "source/#{view_directory}/_#{@model}.haml"
           
           template( section_tmp, section_destination )
           
@@ -83,15 +83,27 @@ module Coolstrap::Gen
             tmp = templates("app/components/section_link.haml.erb")
             contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
           end
-          # add partial to index
+          
+          # add partial in resource path
+          #resource_path = "source/#{view_directory}/_#{model}.haml"
+          #insert_into_file index_tmp, :after => '= partial "views/home"' do
+          #  tmp = templates("app/components/partial_for_index.haml.erb")
+          #  contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
+          #end
+          
+          
+          # add partial to index just after partial views/home
           index_tmp = "source/index.html.haml"
-          insert_into_file index_tmp, :after => '= partial "views/home"' do
-            tmp = templates("app/components/partial.haml.erb")
-            contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
+          
+          unless File.read(location.join(index_tmp)).include?("views/#{@model}")
+            insert_into_file index_tmp, :after => '= partial "views/home"' do
+              tmp = templates("app/components/partial_for_index.haml.erb")
+              contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
+            end
           end
           
           
-          # remove default 
+          # remove default message
           # gsub_file home_tmp, /#\s*(Run -> coolstrap s view <model> <collection>)/, '\1'
           #  gsub_file home_tmp, /Run -> coolstrap s view <model> <collection>/, :green do |match|
             #match << ""
