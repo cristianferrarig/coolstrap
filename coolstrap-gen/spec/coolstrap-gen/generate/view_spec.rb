@@ -11,6 +11,7 @@ describe "Creating of a view file" do
     end
     
     it "should have created the view within the source/views directory" do
+      pending
       File.exists?("dailyfocus/source/views/_user.haml").should be_true
       File.exists?("dailyfocus/spec/views/user_spec.coffee").should be_true
     end
