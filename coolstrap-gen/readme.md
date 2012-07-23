@@ -15,19 +15,18 @@
 
 ### Create a new Project
 
-    ➜ coolstrap new HelloWorld
+    ➜ coolstrap project new HelloWorld
 
 ### Create your views
 
-    ➜ coolstrap s list Developers commiters
-    ➜ coolstrap s list Developers watchers
-    
-  When the view is created you must to include the generated partial in views/index.html.haml.
-   
-  Then, to show the view you just have to call the section with something like this in your views/_home.haml:
-  
-    %a{"href" => "#commiters", "data-target" => "section"}
-  
+    ➜ coolstrap view s list Developers commiters
+    ➜ coolstrap view s list Developers watchers
+
+## Run it, et voilà
+
+    ➜ coolstrap r # or coolstrap server
+
+  This command will run an instance of middleman server, since is middleman you can also start the server with 'middleman server' command
 
 ### Create your tabbars & toolbars
 
@@ -37,12 +36,6 @@
   Those lines generates partials in views/tabbars & views/toolbars.
   
   To use Tabbars or Toolbars you need to call the partials in the views, for example in a header or footer elements.  
-  
-## Run it 
-
-    ➜ coolstrap r # or coolstrap server
-    
-  This command will run an instance of middleman server, since is middleman you can also start the server with 'middleman server' command
 
 ## Build it
 

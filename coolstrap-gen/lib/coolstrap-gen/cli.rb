@@ -1,5 +1,5 @@
 require "thor/group"
-#require "coolstrap"
+require "coolstrap"
 module Coolstrap::Gen
   class CLI < Thor
     include Utils

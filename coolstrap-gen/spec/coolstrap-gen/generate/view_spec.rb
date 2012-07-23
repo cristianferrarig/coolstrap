@@ -16,10 +16,6 @@ describe "Creating of a view file" do
       File.exists?("dailyfocus/spec/views/user_spec.coffee").should be_true
     end
     
-    it "should have created the view coffee-script within the spec/views directory" do
-      pending
-      # File.exists?("spec/views/user_spec.coffee").should be_true
-    end
   end
   
   context "Creating a scaffold file and its spec" do
@@ -78,7 +74,7 @@ describe "Creating of a view file" do
   end
   
   after(:all) do
-    #remove_directories('dailyfocus', 'app', 'spec/views')
+    remove_directories('dailyfocus', 'app', 'spec/views')
   end
 
 end
