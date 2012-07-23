@@ -19,7 +19,7 @@ module Coolstrap::Gen
           @name = name
           self.name = @name
           self.model = (@context[:domain] || '').downcase
-          @context.merge!(:name => @name)
+          @context.merge!(:name => @name) 
           #log "#{context.inspect}"
           case @context[:cs_type]
           when  'list'
@@ -72,6 +72,17 @@ module Coolstrap::Gen
         
           generate_files(view_directory, tmp)
           
+          # add section in resource path, it run first to check if it exists previously to append content
+          resource_path = "source/#{view_directory}/_#{model}.haml"
+          if File.exists?(location.join(resource_path))
+            append_to_file resource_path do
+              tmp = templates("app/components/section.haml.erb")
+              @context.merge!(:model => @model)
+              contents = Erubis::Eruby.new(File.read(tmp)).result(@context)
+              "#{contents}"
+            end
+          end
+          
           section_tmp  = "app/components/section.haml.erb"
           section_destination = "source/#{view_directory}/_#{@model}.haml"
           
@@ -83,13 +94,6 @@ module Coolstrap::Gen
             tmp = templates("app/components/section_link.haml.erb")
             contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
           end
-          
-          # add partial in resource path
-          #resource_path = "source/#{view_directory}/_#{model}.haml"
-          #insert_into_file index_tmp, :after => '= partial "views/home"' do
-          #  tmp = templates("app/components/partial_for_index.haml.erb")
-          #  contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
-          #end
           
           
           # add partial to index just after partial views/home
