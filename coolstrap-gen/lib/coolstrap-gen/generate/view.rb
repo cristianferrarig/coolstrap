@@ -14,7 +14,15 @@ module Coolstrap::Gen
         include ::Coolstrap::Gen::Utils
         
         def create_view_template(name, context)
-          log "Creating #{name} view using a template."      
+           
+          unless File.exists?(location.join("coolstrap.yml"))  
+            error "It seems that you are not inside in a coolstrap project" 
+            log "run 'coolstrap project new MyApp' to create one." 
+            return 
+          end
+           
+          log "Creating #{name} view using a template." 
+          
           @context = context
           @name = name
           self.name = @name
@@ -22,19 +30,19 @@ module Coolstrap::Gen
           @context.merge!(:name => @name) 
           #log "#{context.inspect}"
           case @context[:cs_type]
-          when  'list'
-            create_list
-          when  'complexlist'
-            create_list("complex")
-          when  'tabbar'
-            create_tabbar
-          when  'toolbar'
-            create_toolbar
-          when  'dialog'
-            create_dialog
-          else
-            log "you didn't pass correct parameters use coolstrap view s <model> <collection>"
-          end
+            when  'list'
+              create_list
+            when  'complexlist'
+              create_list("complex")
+            when  'tabbar'
+              create_tabbar
+            when  'toolbar'
+              create_toolbar
+            when  'dialog'
+              create_dialog
+            else
+              log "you didn't pass correct parameters use coolstrap view s <model> <collection>"
+            end
         end
         
         def create_dialog
@@ -100,7 +108,7 @@ module Coolstrap::Gen
           # add partial to index just after partial views/home
           index_tmp = "source/index.html.haml"
           
-          unless File.read(location.join(index_tmp)).include?("views/#{@model}")
+          unless File.read(location.join(index_tmp)).include?("partial \"views/#{@model}\"")
             insert_into_file index_tmp, :after => '= partial "views/home"' do
               tmp = templates("app/components/partial_for_index.haml.erb")
               contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
@@ -132,7 +140,7 @@ module Coolstrap::Gen
       }
     
       map %w(s) => 'scaffold'
-      desc "scaffold <list/complexlist/tabbar/toolbar/dialog> <domain> <name>", "generate a scaffold for Coolstrap elements."
+      desc "view scaffold <list/complexlist/tabbar/toolbar/dialog> <domain> <name>", "generate a scaffold for Coolstrap elements."
       def scaffold(cs_type, domain, name)
         create(name, { 
           :domain   => domain, 

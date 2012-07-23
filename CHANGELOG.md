@@ -5,6 +5,8 @@
   + list generation separated in section and article partials. 
   + section link added in home template with view generator.
   + moving native proyect folder into project root path.
+  + generate coolstrap.yml file.
+  + raise error msg when call scaffold cmd outside coolstrap project.
 + 19/jul/2012
   + adding new ios native bridge with Coolstrap (xcode) framework.
   + centralized rake/gemfile file for gem testing & deployment.
