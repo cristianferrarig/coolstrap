@@ -18,14 +18,14 @@ module Coolstrap::Gen
           @context = context
           @name = name
           self.name = @name
-          self.model = @context[:cs_type]
+          self.model = (@context[:domain] || '').downcase
           @context.merge!(:name => @name)
           #log "#{context.inspect}"
           case @context[:cs_type]
           when  'list'
             create_list
           when  'complexlist'
-            create_complexlist
+            create_list("complex")
           when  'tabbar'
             create_tabbar
           when  'toolbar'
@@ -33,7 +33,7 @@ module Coolstrap::Gen
           when  'dialog'
             create_dialog
           else
-            create_complexlist
+            log "you didn't pass correct parameters use coolstrap view s <model> <collection>"
           end
         end
         
@@ -58,18 +58,18 @@ module Coolstrap::Gen
           generate_files(view_directory, template)
         end
         
-        def create_complexlist
-          view_directory = "views"
-          #log("HINT: to use lists call them with href '##{@name}' & data-target = 'section', and add the partial in index.html.haml ")
-          template  = templates("app/components/listview/_complexlistavatar.html.haml.erb")
-          generate_files(view_directory, template)
-        end
-        
-        def create_list
+        def create_list(style="simple")
           #if yes? "hum"
           view_directory = "views"
           #log("HINT: to use lists call them with href '##{@name}' & data-target = 'section', and add the partial in index.html.haml ")
-          tmp  = "app/components/listview/_simplelist.html.haml.erb"
+          
+          case style
+          when "simple"
+            tmp  = "app/components/listview/_simplelist.html.haml.erb"
+          when "complex"
+            tmp  = "app/components/listview/_complexlistavatar.html.haml.erb"
+          end
+        
           generate_files(view_directory, tmp)
           
           section_tmp  = "app/components/section.haml.erb"
@@ -83,13 +83,20 @@ module Coolstrap::Gen
             tmp = templates("app/components/section_link.haml.erb")
             contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
           end
+          # add partial to index
+          index_tmp = "source/index.html.haml"
+          insert_into_file index_tmp, :after => '= partial "views/home"' do
+            tmp = templates("app/components/partial.haml.erb")
+            contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
+          end
+          
           
           # remove default 
-          
-          gsub_file home_tmp, /Run -> coolstrap s view <model> <collection>/, :green do |match|
+          # gsub_file home_tmp, /#\s*(Run -> coolstrap s view <model> <collection>)/, '\1'
+          #  gsub_file home_tmp, /Run -> coolstrap s view <model> <collection>/, :green do |match|
             #match << ""
-            ""
-          end
+          #   ""
+          #  end
           
         end
         
