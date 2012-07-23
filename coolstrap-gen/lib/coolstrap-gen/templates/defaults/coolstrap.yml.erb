@@ -1,0 +1,15 @@
+# Coolstrap main configuration file
+
+
+defaults: &defaults
+  app_name: <%= app_name %>
+      
+production:
+  <<: *defaults
+    
+development:
+  <<: *defaults
+  
+test:
+  <<: *defaults
+  test_suite: jasmine 

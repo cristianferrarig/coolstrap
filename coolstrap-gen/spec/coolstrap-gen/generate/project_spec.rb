@@ -53,6 +53,10 @@ describe "Creating of a new Coolstrap Project" do
     it "should have created the Gemfile" do
       File.exists?("dailyfocus/Gemfile").should be_true
     end
+    
+    it "should have created coolstrap config file" do
+      File.exists?("dailyfocus/coolstrap.yml").should be_true
+    end
   end
 
   context "Inside the source directory" do

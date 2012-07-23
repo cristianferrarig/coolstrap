@@ -36,6 +36,7 @@ module Coolstrap
             create_with_template('.gitignore', 'defaults/gitignore', full_app_hash)
             create_with_template('Gemfile', 'defaults/Gemfile', full_app_hash)
             create_with_template('LICENSE', 'defaults/LICENSE', full_app_hash)
+            create_with_template('coolstrap.yml', 'defaults/coolstrap.yml', full_app_hash)
 
             create_with_template('config.rb', 'defaults/config', full_app_hash)
             default_templates = ['Readme.mkd']

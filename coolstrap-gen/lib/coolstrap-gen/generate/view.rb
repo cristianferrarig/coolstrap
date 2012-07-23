@@ -90,7 +90,8 @@ module Coolstrap::Gen
           
           ## add section link to home
           home_tmp = "source/#{view_directory}/_home.haml"
-          insert_into_file home_tmp, :after => "= list_view(:id=>\"someid\") do" do
+          #insert_into_file home_tmp, :after => "= list_view(:id=>\"someid\") do" do
+          append_to_file home_tmp do
             tmp = templates("app/components/section_link.haml.erb")
             contents  = Erubis::Eruby.new(File.read(tmp)).result(@context)
           end
