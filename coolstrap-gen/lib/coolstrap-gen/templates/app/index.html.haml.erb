@@ -7,20 +7,14 @@
 
 = content_for :principal do
   %div{"role" => "main"}
-
-    = partial "views/home"
     
-    -# Put collection partials here
-    -#= partial "views/domain/collection"
-
-    -# Put dialogs here
-    -#= render_dialog("users/alerts")
+    -# load your sections here
+    = partial "views/home"
 
   = partial "views/shared/aside_onleft"
   = partial "views/shared/aside_onright"
   = partial "views/shared/aside_ontop"
   = partial "views/shared/aside_onbottom"
-
 
 
 = content_for :application_js do

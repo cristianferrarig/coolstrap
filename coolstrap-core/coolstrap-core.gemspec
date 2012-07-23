@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Coolstrap::VERSION
   s.authors     = ["Cristian Ferrari",  "Abraham Barrera", "Felipe Funes"]
   s.email       = ["cristianferrari@gmail.com"]
-  s.homepage    = ""
+  s.homepage      = "http://www.getcoolstrap.com"
   s.summary     = %q{App main styles & javascripts }
   s.description = %q{App main styles & javascripts }
 

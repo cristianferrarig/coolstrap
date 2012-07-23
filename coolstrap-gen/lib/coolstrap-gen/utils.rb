@@ -1,6 +1,11 @@
 module Coolstrap::Gen
   module Utils
-
+    include Thor::Actions
+    
+    def self.source_root
+       File.dirname(__FILE__)
+    end
+    
     def create_new_file(name, file=nil)
       log "Creating #{name}"
       contents = file.nil? ? '' : File.read(file)
@@ -44,7 +49,6 @@ module Coolstrap::Gen
       end
     end
 
-
     def create_with_template(name, template_location, contents={})
       template    = templates("#{template_location}.erb")
       eruby       = Erubis::Eruby.new(File.read(template))
@@ -54,7 +58,6 @@ module Coolstrap::Gen
     def templates(path)
       ::Coolstrap::Gen.root.join('coolstrap-gen/templates').join(path)
     end
-
 
     def log(msg)
       ::Coolstrap::Gen::Logger.report(msg)

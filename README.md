@@ -24,28 +24,27 @@
 
 ## Install the gem
 
-    ➜ gem install coolstrap-gen
+    ➜ gem install coolstrap
 
 ### Create a new Project
 
-    ➜ coolstrap new HelloWorld
+    ➜ coolstrap project new HelloWorld
 
   Coolstrap main application lives on top of middleman,
   If you need more information about middleman, please visit [Middleman documentation](http://http://middlemanapp.com/guides/getting-started)
 
 ### Create views
 
-    ➜ coolstrap s list Developers commiters
+    ➜ coolstrap view s list Developers commiters
 
-### Run Server
+## Run it, et voilà
 
-    ➜ coolstrap server
+    ➜ coolstrap r # or coolstrap server
 
-  This actually runs a middleman server, that actually runs a thin instance :)
-  You can run with the middleman commands too.
+  This command will run an instance of middleman server, since is middleman you can also start the server with 'middleman server' command
 
   - for better results test applicacion in webkit based navigator.
-  - visit [http://localhost:4567/index.html](http://localhost:4567/index.html) to see samples
+  - visit [http://localhost:4567/index.html](http://localhost:4567) to see samples
 
 ### Build HTML app
 

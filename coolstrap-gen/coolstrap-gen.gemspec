@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Coolstrap::VERSION
   s.authors     = ["Miguel Michelson"]
   s.email       = ["miguelmichelson@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "http://www.getcoolstrap.com"
   s.summary     = %q{App Generator for coolstrap mobile framework }
   s.description = %q{Coolstrap-gen is a scaffold generator & static site builder on top of middleman,
                       which adds client support for build, simulate & deploy native apps.}

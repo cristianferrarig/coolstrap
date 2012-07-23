@@ -24,6 +24,9 @@ rerun.txt
 Gemfile.lock
 .bundle
 *.gem
+dailyfocus
+coolstrap-gen/lib/coolstrap-gen/templates/bridges/ios/KitchenSink.xcodeproj/project.xcworkspace/xcuserdata/
+coolstrap-gen/lib/coolstrap-gen/templates/bridges/ios/KitchenSink.xcodeproj/xcuserdata/
 
 
 Icon?
