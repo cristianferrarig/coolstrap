@@ -1,5 +1,11 @@
 @import "../utilities";
 
+ul {
+  li              { z-index: 1; }
+  li.is-active    { z-index: 2; }
+  li.list-divider { z-index: 3; }
+}
+
 ul[data-type="listview"] {
   list-style-type: none;
   margin: 0;
@@ -49,9 +55,11 @@ ul[data-type="listview"] {
     @include box-flex(1);
     display: block;
   }
+  /*
   .aside {
     * + i { margin-left: $default-interface-spacing; }
   }
+  */
 
   &.inset {
     margin: 10px;

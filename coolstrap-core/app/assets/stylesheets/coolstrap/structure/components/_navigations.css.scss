@@ -88,6 +88,18 @@ header#{$isNotVertical} {
     a { height: auto !important; }
   }
 }
+
+header.fullButtons {
+  a {
+    height: $default-header-size;
+    padding: 0 $default-interface-spacing * 2;
+    margin: 0;
+  }
+  > a + a {
+    border-left: 0 !important;
+  }
+}
+
 header#{$isVertical} {
   i           { @include square($default-header-vertical-icon); }
   //.onlyIcon i { @include square($default-header-vertical-button); }

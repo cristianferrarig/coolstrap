@@ -18,7 +18,7 @@
 
   %meta{:name => "description", :content => "<%= app_name %>"}
   %meta{:name => "generator", :content => "Coolstrap Framework"}
-  
+
   %meta{:name => "author", :content=> "<%= app_name %>"}
 
   -# Mobile viewport optimization:
@@ -26,7 +26,7 @@
   %meta{:name => "MobileOptimized", :content => "320"}
   %meta{:name => "format-detection", :content => "telephone=no"}
   %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
-  
+
   -# iOS web app, delete if not needed:
   %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
   %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black"}
@@ -34,11 +34,11 @@
     (function () {
       var p, l, r = window.devicePixelRatio;
       if (navigator.platform === "iPad") {
-          p = r === 2 ? "startup/tablet-portrait@2x.png" : "startup/tablet-portrait.png";
-          l = r === 2 ? "startup/tablet-landscape@2x.png" : "startup/tablet-landscape.png";
+          p = r === 2 ? "assets/images/startup/tablet-portrait@2x.png" : "startup/tablet-portrait.png";
+          l = r === 2 ? "assets/images/startup/tablet-landscape@2x.png" : "startup/tablet-landscape.png";
           document.write('');
       } else {
-          p = r === 2 ? "startup/smatphone@2x.png" : "startup/smatphone.png";
+          p = r === 2 ? "assets/images/startup/smatphone@2x.png" : "startup/smatphone.png";
           document.write('');
       }
     })()
@@ -55,7 +55,7 @@
         }, !1)
       }
     })(document, window.navigator, "standalone")
-    
+
   -# Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading:
   %meta{"http-equiv" => "cleartype", :content => "on"}
 

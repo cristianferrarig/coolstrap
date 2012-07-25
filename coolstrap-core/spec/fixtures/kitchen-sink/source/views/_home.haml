@@ -1,0 +1,26 @@
+= section({:id=>"home"}) do
+
+  = header({ :class => "fullButtons" }) do
+    = link_to "#aside-left" , "data-target" => "aside" do
+      = icon :reorder
+
+    %h1 kitchen-sink
+
+    = link_to "#first-page", "data-target" => "section" do
+      = icon :home
+
+    = link_to "#aside-top", "data-target" => "aside" do
+      = icon :search
+
+  = footer({ "data-type" => "toolbar" }) do
+    %a.onlyIcon
+      = icon(:refresh)
+    .content
+      %h2
+        Generated at:
+        = Time.now
+    = link_to "#aside-right", "data-target" => "aside", :class=>"onlyIcon" do
+      = icon(:edit)
+
+  = partial "views/home/navigation"
+

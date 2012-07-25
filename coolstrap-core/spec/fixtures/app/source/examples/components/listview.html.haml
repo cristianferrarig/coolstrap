@@ -1,14 +1,14 @@
 = content_for :title do
   Listview Demo
 
-= content_for :application_styles do 
+= content_for :application_styles do
   = stylesheet_link_tag "coolstrap/themes/coolstrap"
   = stylesheet_link_tag "customtheme"
 
-  
+
 = content_for :principal do
   %div{"role" => "main"}
-    
+
     %header
       %a{:href => "simple.html"}
         %span Inicio
@@ -17,38 +17,29 @@
         %h2 Listview Demo
       %a{:href => "formelements.html"}
         %span Forms
-      
+
     %footer
       %a Button
       %a Button
       %a Button
       %a Button
       %a Button
-      
+
     %section{:id => "home", :class => "current starting"}
 
       %article{:id => "demo", :class => "scrollable current"}
 
-        = partial "examples/components/listview/simplelist" 
-        = partial "examples/components/listview/complexlist" 
+        -#= partial "examples/components/listview/simplelist"
+        -#= partial "examples/components/listview/complexlist"
         = partial "examples/components/listview/complexlistavatar"
 
- 
 
-= content_for :application_js do  
+
+= content_for :application_js do
   %script{:src => "app/app.js", :type=> "text/javascript"}
   %script{:src => "app/events.js", :type=> "text/javascript"}
 
 
-            
-
-                                    
-
-          
-
-
-            
-                    
 
 
 
@@ -94,5 +85,14 @@
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
 
