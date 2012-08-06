@@ -14,7 +14,7 @@ COOLSTRAP.View.Section = ((cool) ->
   CLASS = cool.Constants.CLASS
   ATTRIBUTE = cool.Constants.ATTRIBUTE
   TRIGGER = cool.Constants.TRIGGER
-  SELECTORS = NAVIGATION_ITEM: "a[href][data-target=\"article\"]"
+  SELECTORS = NAVIGATION_ITEM: "a[href][data-target=\"section\"]"
   
   _showContainer = (section_id) ->
     section_id = cool.Util.parseUrl(section_id)
