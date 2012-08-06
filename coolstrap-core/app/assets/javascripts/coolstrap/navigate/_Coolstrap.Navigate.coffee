@@ -31,19 +31,12 @@ COOLSTRAP.Navigate = ((cool) ->
 
   section = (section_id) ->
     section_id = cool.Util.parseUrl(section_id)
+    target = ELEMENT.SECTION + section_id    
     container_id = cool.dom(section_id).parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID)
     current = _getHistoryCurrent(container_id)
-    target = ELEMENT.SECTION + section_id
     if current isnt section_id
       if _existsTarget(target)
-        cool.dom(current).removeClass(CLASS.SHOW).addClass CLASS.HIDE
-        cool.dom(target).addClass(CLASS.CURRENT).addClass(CLASS.SHOW).trigger TRIGGER.LOAD
-        setTimeout (->
-          cool.dom(current).removeClass CLASS.CURRENT
-        ), TRANSITION.DURATION
-        cool.Navigate.History.add
-          section_id: section_id
-          container_id: container_id
+        cool.View.Section.show section_id
     else
       _console.warn "WTF! you are here!"
 
