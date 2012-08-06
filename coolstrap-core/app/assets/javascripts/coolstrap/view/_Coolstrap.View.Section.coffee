@@ -20,7 +20,7 @@ COOLSTRAP.View.Section = ((cool) ->
     section_id = cool.Util.parseUrl(section_id)
     target = ELEMENT.SECTION + section_id    
     container_id = cool.dom(section_id).parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID)
-    current = _getHistoryCurrent(container_id)
+    current = cool.Navigate.History.current container_id #_getHistoryCurrent(container_id)
     cool.dom(current).removeClass(CLASS.SHOW).addClass CLASS.HIDE
     cool.dom(target).addClass(CLASS.CURRENT).addClass(CLASS.SHOW).trigger TRIGGER.LOAD
     setTimeout (->
