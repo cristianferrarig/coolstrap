@@ -26,6 +26,9 @@ COOLSTRAP.View.Section = ((cool) ->
     setTimeout (->
       cool.dom(current).removeClass CLASS.CURRENT
     ), TRANSITION.DURATION
+    cool.Navigate.History.add
+      section_id: section_id
+      container_id: container_id
           
   ###
      * Show section
