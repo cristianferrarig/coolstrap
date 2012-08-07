@@ -20,7 +20,8 @@ COOLSTRAP.App = ((cool) ->
   _setupFramework = ->
     cool.Framework.Sections.setup()
     cool.Framework.Articles.setup()
-    cool.Framework.Navigation.setup()
+    Backbone.history.start({pushState: true})
+    #cool.Framework.Navigation.setup()
   
   # generate session id
   _generateSID = ->
