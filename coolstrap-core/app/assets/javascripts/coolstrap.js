@@ -16,5 +16,6 @@
 //=  require "coolstrap/view/_Coolstrap.View.Aside"
 //=  require "coolstrap/view/_Coolstrap.View.Scroll"
 //=  require "coolstrap/view/_Coolstrap.View.Dialog"
+//=  require "coolstrap/view/_Coolstrap.View.Section"
 //=  require "coolstrap/fallback/_Coolstrap.Fallback.Android"
 //=  require "coolstrap/fallback/_Coolstrap.Fallback.iOS"
