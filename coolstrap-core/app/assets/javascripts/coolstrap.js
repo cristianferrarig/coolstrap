@@ -1,3 +1,6 @@
+//= require  "coolstrap/lib/json2"
+//= require  "coolstrap/lib/underscore"
+//= require  "coolstrap/lib/backbone"
 //=  require "coolstrap/_Coolstrap"
 //=  require "coolstrap/_Coolstrap.App"
 //=  require "coolstrap/_Coolstrap.Console"
