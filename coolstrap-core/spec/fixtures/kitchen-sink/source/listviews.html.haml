@@ -1,0 +1,178 @@
+= content_for :title do
+  Coolstrapp Kitchen-sink
+
+= content_for :application_styles do
+  = stylesheet_link_tag "customtheme.css"
+
+= content_for :principal do
+  %div{"role" => "main"}
+
+    // SECTION --------------------------------
+    = section({:id=>"home"}) do
+      = header do
+        = link_to "#aside-left" , "data-target" => "aside" do
+          = icon :reorder
+
+        %h1 kitchen-sink
+
+        = link_to "#first-page", "data-target" => "section" do
+          = icon :home
+
+        = link_to "#aside-top", "data-target" => "aside" do
+          = icon :search
+
+      = article({ :id => "first-page", :class => "scrollable" }) do
+
+        %div{ :class => "scrollable" }
+
+          %ul.inset{"data-type" => "listview"}
+
+            %li
+              %h1 Gloria
+
+            %li
+              %div.content
+                %p Second Item.
+              %div
+                %i.icon-chevron-right
+
+            %li
+              %div.content
+                %h1 First Item.
+              %div
+                %span 4m ago
+                %i.icon-chevron-right
+
+            %li
+              %div.stretch
+                .picture
+              %div.content
+                %h1 First Item.
+              %div
+                %span.badge 15
+                %i.icon-chevron-right
+
+            %li
+              %div
+                .picture
+              %div.content
+                %h1 First Item.
+              %div
+                %span.badge 3
+                %i.icon-chevron-right
+
+            %li
+              %div
+                %span.badge 2
+              %div.content
+                %h1.ellipsis
+                  Rit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+              %div.stretch
+                .picture
+              %div
+                %i.icon-chevron-right
+
+
+            %li.list-divider 1. Title and description widht avatar
+            %li
+              %div.up
+                .picture
+              %div.content
+                %h1 First Item
+                %p.ellipsis Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+
+            %li.list-divider 2. Title and description with arrow and avatar
+            %li
+              %div.up
+                .picture
+              %div.content
+                %h1 First Item
+                %p Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+              %div
+                %i.icon-chevron-right
+
+            %li.list-divider 3. Title and description with meta and avatar
+            %li
+              %div.up
+                .picture
+              %div.content
+                %div
+                  %h1.flex First Item
+                  %span 4 days ago
+                %p Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+
+            %li.list-divider 4. Title and description with meta, arrow and avatar 1
+            %li
+              %div.up
+                .picture
+              %div.content
+                %div
+                  %h1.flex First Item
+                  %span 4 days ago
+                %p Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+              %div
+                %i.icon-chevron-right
+
+            %li.list-divider 5. Title and description with meta, arrow and avatar 2
+            %li
+              %div.up
+                .picture
+              .content
+                %div
+                  %h1.flex First Item
+                  %span 12:00am
+                %div
+                  %p.flex Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                  %div
+                    %i.icon-chevron-right
+
+            %li.list-divider 6. Title and description with meta, counter, arrow and avatar
+            %li
+              %div.up
+                .picture
+              .content
+                %div
+                  %h1.flex First Item
+                  %span 4 days ago
+                %p Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+              %div
+                %span.badge 4
+                %i.icon-chevron-right
+
+            %li.list-divider 6. Title and description with double meta, arrow and avatar
+            %li
+              %div.up
+                .picture
+              .content
+                %div
+                  %h1.flex Jason Newsted
+                  %span Facebook friend
+                %div
+                  %h1.flex Bass Guitar
+                  %span 1st/June/2012
+              %div
+                %i.icon-chevron-right
+
+            %li
+              %div.up
+                .picture
+              .content
+                %div
+                  %h1.flex Jason Newsted
+                  %span Facebook friend
+                %div
+                  %h1.flex Bass Guitar
+                  %span 1st/June/2012
+              %div.vertical
+                %span.badge 24
+                %span.badge 213
+              %div
+                %i.icon-chevron-right
+
+  = partial "views/shared/aside_onleft"
+  = partial "views/shared/aside_onright"
+  = partial "views/shared/aside_ontop"
+  = partial "views/shared/aside_onbottom"
+
+= content_for :application_js do
+  = javascript_include_tag "app.js"

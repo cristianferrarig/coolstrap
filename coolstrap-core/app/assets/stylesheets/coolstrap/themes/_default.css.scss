@@ -1,4 +1,5 @@
 @import "compass";
+@import "../structure/utilities/variables";
 
 //Variables
 $theme-base-color: #ECEEF1;
@@ -26,8 +27,11 @@ header {
   }
 }
 footer {
-  background-color: $theme-header-color;
-  border-top: 1px solid darken($theme-header-color,5%);
+  background-color: $theme-footer-color;
+  border-top: 1px solid darken($theme-footer-color,5%);
+  a#{$isActive} {
+    background-color: darken($theme-footer-color,5%);
+  }
 }
 nav {
   background-color: $theme-nav-color;
@@ -53,7 +57,6 @@ ul[data-type="listview"] {
   }
   li {
     background-color: #FFF;
-    margin-top: -1px;
     position: relative;
     border-style: solid;
     border-color: darken($theme-base-color,15%);
@@ -71,6 +74,7 @@ ul[data-type="listview"] {
       background-color: darken($theme-base-color,2%);
       border-color: darken($theme-base-color,15%);
     }
+    & + li { margin-top: -1px; }
     /*
     &.list-divider {
       background-color: darken($theme-base-color,30%);

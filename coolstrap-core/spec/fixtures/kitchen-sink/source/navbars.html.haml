@@ -1,0 +1,180 @@
+= content_for :title do
+  Coolstrapp Kitchen-sink
+
+= content_for :application_styles do
+  = stylesheet_link_tag "customtheme.css"
+
+= content_for :principal do
+  %div{"role" => "main"}
+
+    %nav{ "data-type" => "tabbar" }
+      %a.active Nav tabbar
+      %a
+        %i.icon-twitter
+        %span Boton
+      %a Boton
+      %a Boton
+
+    = footer({ "data-type" => "tabbar" }) do
+      %a.active Footer tabbar
+      %a
+        %i.icon-twitter
+        %span Boton
+      %a Boton
+      %a Boton
+
+    // SECTION --------------------------------
+    = section({:id=>"home"}) do
+      = header do
+        = link_to "#aside-left" , "data-target" => "aside" do
+          = icon :reorder
+
+        %h1 kitchen-sink
+
+        = link_to "#first-page", "data-target" => "section" do
+          = icon :home
+
+        = link_to "#aside-top", "data-target" => "aside" do
+          = icon :search
+
+      %nav{ "data-type" => "toolbar" }
+        %a.active Nav toolbar
+        %a
+          %i.icon-twitter
+          %span Boton
+        %a Boton
+        %a Boton
+
+      = footer({ "data-type" => "toolbar" }) do
+        %a.active Footer toolbar
+        %a
+          %i.icon-twitter
+          %span Boton
+        %a Boton
+        %a Boton
+
+      = article({ :id => "first-page", :class => "scrollable" }) do
+
+        %nav{ "data-type" => "navbar" }
+          %a.active Nav navbar
+          %a
+            %i.icon-twitter
+            %span Boton
+          %a Boton
+          %a Boton
+
+        = footer({ "data-type" => "navbar" }) do
+          %a.active Footer navbar
+          %a
+            %i.icon-twitter
+            %span Boton
+          %a Boton
+          %a Boton
+
+        %div{ :class => "scrollable" }
+
+          = list_view({ :id => "someid", :class => "inset" }) do
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+            = list_item do
+              = link_to "#collection" , "data-target" => "section" do
+                .content
+                  .title Example Link - run "coolstrap s list [Domain] [collection]"
+                .aside
+                  = icon :"chevron-right"
+
+
+
+
+
+    -# Put collection partials here
+    -#= partial "views/domain/collection"
+
+    -# Put dialogs here
+    -#= render_dialog("users/alerts")
+
+  = partial "views/shared/aside_onleft"
+  = partial "views/shared/aside_onright"
+  = partial "views/shared/aside_ontop"
+  = partial "views/shared/aside_onbottom"
+
+
+
+= content_for :application_js do
+  = javascript_include_tag "app.js"

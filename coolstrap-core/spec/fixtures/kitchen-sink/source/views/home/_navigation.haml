@@ -1,5 +1,12 @@
 = article({ :id => 'first-page', :class => 'scrollable' }) do
 
+  %nav
+    %a boton
+    %a boton
+    %a boton
+    %a boton
+    %a boton
+
   = list_view({ :id => "someid", :class => "inset" }) do
     = list_item do
       = link_to "#collection" , "data-target" => "section" do

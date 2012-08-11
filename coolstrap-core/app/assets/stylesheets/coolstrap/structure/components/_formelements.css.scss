@@ -5,26 +5,26 @@ form {
   }
   input:not([type="checkbox"]):not([type="radio"]),
   select {
-    height:  $default-header-button;
-    padding: 0  $default-interface-spacing;
+    height:  $coolstrap-header-button;
+    padding: 0  $coolstrap-interface-spacing;
   }
   label {
     display: block;
-    line-height: $default-header-button;
+    line-height: $coolstrap-header-button;
   }
   .content {
     @include setFlexibleBox(vertical,stretch, center);
     min-height: 44px;
-    padding: $default-interface-spacing;
+    padding: $coolstrap-interface-spacing;
     i {
-      @include square($default-tabbar-icon);
-      line-height:  $default-tabbar-icon;
-      font-size:    $default-tabbar-icon;
+      @include square($coolstrap-tabbar-icon);
+      line-height:  $coolstrap-tabbar-icon;
+      font-size:    $coolstrap-tabbar-icon;
     }
     .aside {
       width: 30%;
       text-align: right;
-      padding-right: $default-interface-spacing * 2;
+      padding-right: $coolstrap-interface-spacing * 2;
     }
     input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
     textarea,
@@ -34,7 +34,7 @@ form {
     }
     label, .slider { @include box-flex(1); }
     textarea {
-      padding: $default-interface-spacing;
+      padding: $coolstrap-interface-spacing;
     }
   }
 
@@ -50,10 +50,10 @@ form {
     label {
       @include box-flex();
       @include clearfix;
-      height:       $default-header-button;
-      line-height:  $default-header-button;
+      height:       $coolstrap-header-button;
+      line-height:  $coolstrap-header-button;
         input {
-          height:   $default-header-button;
+          height:   $coolstrap-header-button;
           float:    right;
         }
         input[type="radio"], input[type="checkbox"] { margin-right: 1px; }

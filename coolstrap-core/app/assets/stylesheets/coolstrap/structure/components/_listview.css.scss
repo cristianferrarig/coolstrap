@@ -10,32 +10,37 @@ ul[data-type="listview"] {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  li,
-  li > a {
-    @include setFlexibleBox(horizontal,stretch, stretch);
-    padding: $default-listview-spacing;
+
+  // DEBUG
+  /*
+  li * {
+    @include box-shadow(0 0 0 1px rgba(black,.3) inset);
+    background-color: rgba(black,.15);
   }
-  li > a, {
-    margin: -($default-listview-spacing);
+  */
+
+  li, li > a,
+  .content > div {
+    @include setFlexibleBox(horizontal,stretch,stretch);
   }
 
+  li, li > a { padding:  $coolstrap-listview-spacing; }
+  li > a     { margin: -($coolstrap-listview-spacing); }
+
   li {
-    > div,
-    a > div,
-    .nested > div {
-      margin-left: $default-listview-spacing;
-      &:first-child {
-        margin-left: 0;
-      }
+    > div, a > div,
+    .content > div > * {
+      margin-left: $coolstrap-listview-spacing;
+      &:first-child { margin-left: 0; }
     }
   }
 
-  div {
-    @include setFlexibleBox(vertical,stretch,center);
-  }
-  .nested {
-    @include setFlexibleBox;
-  }
+  // Box flex for blocks in list element
+  div { @include setFlexibleBox(vertical,stretch,center); }
+
+  // Box flex for inner blocks in list element
+  .content > div { @include setFlexibleBox(horizontal,center,center); }
+
   .content {
     * {
       margin:   0;
@@ -45,30 +50,34 @@ ul[data-type="listview"] {
       margin-top: 7px;
     }
   }
-  .content,
-  .nested > *:first-child,
-  li > a {
-    @include box-flex(1);
-  }
+
+
+  li > a, .content, .flex { @include box-flex(1); }
+
   i { @include inline-block; }
   input {
     @include box-flex(1);
     display: block;
   }
+
   /*
   .aside {
-    * + i { margin-left: $default-interface-spacing; }
+    * + i { margin-left: $coolstrap-interface-spacing; }
   }
   */
 
   &.inset {
     margin: 10px;
   }
+
   .up { @include box-pack(start); }
   .stretch {
-    margin-top:     -($default-listview-spacing);
-    margin-bottom:  -($default-listview-spacing);
-    &:first-child { margin-left: -($default-listview-spacing) !important; }
+    margin-top:     -($coolstrap-listview-spacing);
+    margin-bottom:  -($coolstrap-listview-spacing);
+    &:first-child { margin-left: -($coolstrap-listview-spacing) !important; }
+  }
+  .ellipsis {
+    @include ellipsis;
   }
   .vertical {
     @include setFlexibleBox(vertical,center,center);
@@ -79,6 +88,7 @@ ul[data-type="listview"] {
       margin-top: 7px;
     }
   }
+
 }
 
 

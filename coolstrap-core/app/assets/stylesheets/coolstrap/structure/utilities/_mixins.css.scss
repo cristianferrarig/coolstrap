@@ -1,4 +1,4 @@
-@mixin setFixedPosition($position: $default-fixed-position, $size: $default-fixed-size) {
+@mixin setFixedPosition($position: $coolstrap-fixed-position, $size: $coolstrap-fixed-size) {
 	@if $position == top {
 		width: 100%;
 		height: $size;

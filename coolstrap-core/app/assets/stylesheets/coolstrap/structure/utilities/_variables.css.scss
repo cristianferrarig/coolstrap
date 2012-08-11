@@ -1,4 +1,53 @@
-$isNormal:       ':not([data-type])';
+
+$isActive:       '.active';
+$isDisable:      '.disable';
+
+
+$isNotType:      ':not([data-type])';
+
+// Header
+$isVertical:     '[data-type="vertical"]';
+$isNotVertical:  ':not([data-type="vertical"])';
+$isNotExtended:  ':not([data-type="extended"])';
+
+// Tabbar (Nav & Footer, no have tag of this type default)
+$isTabbar:       '[data-type="tabbar"]';
+$isNotTabbar:    ':not([data-type="tabbar"])';
+
+// Toolbar (Nav, Footer tag is Toolbar by default)
+$isToolbar:      '[data-type="toolbar"]';
+$isNotToolbar:   ':not([data-type="toolbar"])';
+
+// Navbar (Footer, Nav tag is Navbar by default)
+$isNavbar:       '[data-type="navbar"]';
+$isNotNavbar:    ':not([data-type="navbar"])';
+
+// Header
+$coolstrap-header-size:    44px !default;
+$coolstrap-header-button:  30px !default;
+$coolstrap-header-icon:    20px !default;
+
+// Tabbar
+// Not have button size, this have automatic size
+$coolstrap-tabbar-size:    50px !default;
+$coolstrap-tabbar-icon:    24px !default;
+
+// Toolbar
+$coolstrap-toolbar-size:   44px !default;
+$coolstrap-toolbar-button: 30px !default;
+$coolstrap-toolbar-icon:   16px !default;
+
+// Navbar
+// Not have button size, this have automatic size
+$coolstrap-navbar-size:    34px !default;
+$coolstrap-navbar-icon:    16px !default;
+
+
+
+
+
+
+
 
 
 $isMain:         '[role="main"]';
@@ -18,17 +67,20 @@ $isTooltip:      '[role="tooltip"]';
 $isPopup:        '[data-type="popup"]';
 $isNotPopup:     ':not([data-type="popup"])';
 
-// Header
-$isVertical:     '[data-type="vertical"]';
-$isNotVertical:  ':not([data-type="vertical"])';
-$isNotExtended:  ':not([data-type="extended"])';
 
-// Nav & Footer
-$isToolbar:      '[data-type="toolbar"]';
-$isNotToolbar:   ':not([data-type="toolbar"])';
 
-$isTabbar:       '[data-type="tabbar"]';
-$isNotTabbar:    ':not([data-type="tabbar"])';
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Positions
 $isOnTop:        '.onTop';
@@ -42,99 +94,105 @@ $isOnBottom:     '.onBottom';
 $isOnLeft:       '.onLeft';
 $isOnRight:      '.onRight';
 
-// Fixed positions
-$default-fixed-position: false !default;
-$default-fixed-size: 100% !default;
 
+
+
+
+
+
+
+
+
+
+
+
+
+// Fixed positions for layout
+// used in header, nav, footer, section, article and aside
+$coolstrap-fixed-position: false !default;
+$coolstrap-fixed-size: 100% !default;
 
 // Layers positions
-$default-layer-dialog: 600 !default;
-$default-layer-overalay: 500 !default;
-$default-layer-popup: 400 !default;
-$default-layer-front: 300 !default;
-$default-layer-overalay-inner: 200 !default;
-$default-layer-current: 100 !default;
-$default-layer-back: 0 !default;
+$coolstrap-layer-dialog: 600 !default;
+$coolstrap-layer-overalay: 500 !default;
+$coolstrap-layer-popup: 400 !default;
+$coolstrap-layer-front: 300 !default;
+$coolstrap-layer-overalay-inner: 200 !default;
+$coolstrap-layer-current: 100 !default;
+$coolstrap-layer-back: 0 !default;
 
-// Transition for aside
-$default-transition-type: false !default;
-$default-transform-distance: 0 !default;
+// Main transition for show aside
+$coolstrap-transform-direction: false !default;
+$coolstrap-transform-distance: 0 !default;
 
 
-// Header
-$default-header-size: 44px !default;
-$default-header-button: 30px !default;
-$default-header-icon: 20px !default;
+
 
 // Landscape Header
-$default-header-landscape-size: 32px !default;
-$default-header-landscape-button: 24px !default;
+$coolstrap-header-landscape-size: 32px !default;
+$coolstrap-header-landscape-button: 24px !default;
 
 // Vertical Header
-$default-header-vertical-size: 50px !default;
-$default-header-vertical-button: 40px !default;
-$default-header-vertical-spacing: 5px !default;
-$default-header-vertical-icon: 30px !default;
+$coolstrap-header-vertical-size: 50px !default;
+$coolstrap-header-vertical-button: 40px !default;
+$coolstrap-header-vertical-spacing: 5px !default;
+$coolstrap-header-vertical-icon: 30px !default;
 
 
-// Nav, Footer and Toolbar
-$default-navbar-size: 44px !default;
-$default-navbar-button: 30px !default;
-$default-navbar-icon: 16px !default;
-
-
-// Tabbar
-$default-tabbar-size: 60px !default;
-$default-tabbar-spacing: 5px !default;
-$default-tabbar-icon: 26px !default;
 
 
 // Aside
-$default-aside-left-size: 276px !default;
-$default-aside-right-size: 276px !default;
-$default-aside-top-size: 99px !default;
-$default-aside-bottom-size: 300px !default;
+$coolstrap-aside-left-size: 276px !default;
+$coolstrap-aside-right-size: 276px !default;
+$coolstrap-aside-top-size: 99px !default;
+$coolstrap-aside-bottom-size: 300px !default;
+
+
+
+
+
+
 
 
 
 // Global Dialog
-$default-dialog-maxheight: 400px !default;
-$default-dialog-maxwidth: 300px !default;
+$coolstrap-dialog-maxheight: 400px !default;
+$coolstrap-dialog-maxwidth: 300px !default;
 
 // Action Sheet Dialog
-$default-action-spacing: 20px !default;
-$default-action-button: 40px !default;
+$coolstrap-action-spacing: 20px !default;
+$coolstrap-action-button: 40px !default;
 
 // Alert Dialog
-$default-alert-size: 280px !default;
-$default-alert-spacing: 10px !default;
-$default-alert-button: 30px !default;
+$coolstrap-alert-size: 280px !default;
+$coolstrap-alert-spacing: 10px !default;
+$coolstrap-alert-button: 30px !default;
 
 // Modal Dialog
-$default-modal-spacing: 20px !default;
+$coolstrap-modal-spacing: 20px !default;
 
 // Popover Dialog
-$default-popover-arrow: 10px !default;
-$default-popover-border: 4px !default;
+$coolstrap-popover-arrow: 10px !default;
+$coolstrap-popover-border: 4px !default;
 
 
 
 
 
 
-$default-interface-spacing: 7px !default;
-$default-content-spacing: 10px !default;
+$coolstrap-interface-spacing: 7px !default;
+$coolstrap-content-spacing: 10px !default;
 
 
 
 
 
 // Listview
-$default-listview-spacing: 10px !default;
+$coolstrap-listview-spacing: 10px !default;
 
 
 // Badges
-$default-badge-spacing: 3px 5px !default;
+$coolstrap-badge-spacing: 3px 5px !default;
 
 
 

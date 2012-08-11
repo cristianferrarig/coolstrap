@@ -13,7 +13,7 @@
   padding: 5px 10px !important;
   text-transform: uppercase;
 }
-.badge { padding: $default-badge-spacing !important; }
+.badge { padding: $coolstrap-badge-spacing !important; }
 
 /* Buttons groupers elements */
 .button-group,
@@ -35,7 +35,7 @@
 
 .button-group {
   a {
-    margin-right: $default-content-spacing;
+    margin-right: $coolstrap-content-spacing;
     &:last-child { margin-right: 0; }
   }
   &.alignVertical {
@@ -43,7 +43,7 @@
     @include box-align(stretch);
     a:not(:last-child) {
       margin-right: 0;
-      margin-bottom: $default-content-spacing;
+      margin-bottom: $coolstrap-content-spacing;
     }
   }
 }
