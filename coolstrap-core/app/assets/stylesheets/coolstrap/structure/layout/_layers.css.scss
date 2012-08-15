@@ -1,57 +1,45 @@
+/**
+ * Layer sistem for general layout and components
+ *
+ * General: @main, @aside, @section and @article
+ * Bars: @header, @nav and @footer
+ * Misc: @dialog and @overlay
+ *
+ * @author Cristian Ferrari <cristianferrarig@gmail.com> || @energettico
+ */
+
+
 // Layers
 aside,
 section#{$isNotPopup},
 article {
-  z-index: $default-layer-back;
+  z-index: $coolstrap-layer-back;
   &.current {
-    z-index: $default-layer-current;
+    z-index: $coolstrap-layer-current;
   }
 }
 
 section#{$isPopup} {
-  z-index: $default-layer-back;
+  z-index: $coolstrap-layer-back;
   &.current {
-    z-index: $default-layer-popup;
+    z-index: $coolstrap-layer-popup;
   }
 }
 
-header, 
+header,
 footer,
 section > nav,
 div#{$isMain} {
-  z-index: $default-layer-front;
+  z-index: $coolstrap-layer-front;
 }
 
 div#{$isDialog} {
-  z-index: $default-layer-dialog;
+  z-index: $coolstrap-layer-dialog;
 }
 
 .overlay {
-  z-index: $default-layer-overalay;
+  z-index: $coolstrap-layer-overalay;
   &.inner {
-    z-index: $default-layer-overalay-inner;
+    z-index: $coolstrap-layer-overalay-inner;
   }
 }
-
-
-// Visibility
-aside,
-section,
-article,
-div#{$isDialog} {
-  -webkit-backface-visibility: hidden;
-  visibility: hidden;
-}
-  
-div#{$isMain},
-div#{$isDialog}.current,
-aside.current {
-  visibility: visible;
-  section.current {
-    visibility: visible;
-    article.current {
-      visibility: visible;
-    }
-  }
-}
-

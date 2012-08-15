@@ -1,4 +1,7 @@
-@mixin setFixedPosition($position: $default-fixed-position, $size: $default-fixed-size) {
+@mixin setFixedPosition(
+	$position: $coolstrap-fixed-position,
+	$size:     $coolstrap-fixed-size)
+{
 	@if $position == top {
 		width: 100%;
 		height: $size;
@@ -31,7 +34,12 @@
 	bottom: 0px;
 }
 
-@mixin setFlexibleBox($orient: $default-box-orient, $align: $default-box-align, $pack: $default-box-pack, $direction: $default-box-direction) {
+@mixin setFlexibleBox(
+	$orient:    $default-box-orient,
+	$align:     $default-box-align,
+	$pack:      $default-box-pack,
+	$direction: $default-box-direction)
+{
 	@include display-box;
 	@include box-orient($orient);
 	@include box-align($align);

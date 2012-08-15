@@ -1,3 +1,12 @@
+/**
+ * Layout structure
+ *
+ * @main, @aside, @section and @article
+ *
+ * @author Cristian Ferrari <cristianferrarig@gmail.com> || @energettico
+ */
+
+
 //FIXME: @Cristian: quita clases .onleft y .onright de este lugar
 .onleft   { float: left; }
 .onright  { float: right; }
@@ -19,13 +28,24 @@ div#{$isMain} {
 
 section#{$isNotPopup},
 article {
-  header#{$isVertical} ~ &     { left: $default-header-vertical-size; bottom: 0; }
-  header#{$isNormal} ~ &       { top:  $default-header-size; }
-  nav#{$isNotTabbar} ~ &       { top:  $default-navbar-size; }
-  nav#{$isTabbar} ~ &          { top:  $default-tabbar-size; }
-  footer#{$isNotTabbar} ~ &    { bottom: $default-navbar-size; }
-  footer#{$isTabbar} ~ &       { bottom: $default-tabbar-size; }
+  header#{$isNotType} ~ &      { top:  $coolstrap-header-size; }
+
+  nav#{$isNotType} ~ &,
+  nav#{$isNavbar} ~ &          { top:  $coolstrap-navbar-size; }
+  nav#{$isToolbar} ~ &         { top:  $coolstrap-toolbar-size; }
+  nav#{$isTabbar} ~ &          { top:  $coolstrap-tabbar-size; }
+
+  header + nav#{$isNotType} ~ &,
+  header + nav#{$isNavbar} ~ &  { top: $coolstrap-header-size + $coolstrap-navbar-size; }
+  header + nav#{$isToolbar} ~ & { top: $coolstrap-header-size + $coolstrap-toolbar-size; }
+  header + nav#{$isTabbar} ~ &  { top: $coolstrap-header-size + $coolstrap-tabbar-size; }
+
+  footer#{$isNotType} ~ &,
+  footer#{$isToolbar} ~ &      { bottom: $coolstrap-toolbar-size; }
+  footer#{$isTabbar} ~ &       { bottom: $coolstrap-tabbar-size; }
+  footer#{$isNavbar} ~ &       { bottom: $coolstrap-navbar-size; }
 }
+
 
 div#{$isMain},
 section,
@@ -36,27 +56,12 @@ nav {
   //@include box-sizing(content-box);
 }
 
-article {
-  header, nav, footer {
-    position: relative !important;
-  }
-}
 
 .scroll_container, .scrollable > * {
   @include clearfix;
   .inset {
     //@include clearfix;
-    margin: $default-content-spacing;
+    margin: $coolstrap-content-spacing;
   }
 }
 
-// Landscape smartphone optimization
-@media only screen
-and(min-width : 321px)
-and (max-width : 480px)
-and (orientation : landscape)  {
-  section#{$isNotPopup},
-  article {
-    header#{$isNormal} ~ &     { top: $default-header-landscape-size; }
-  }
-}

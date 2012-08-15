@@ -1,10 +1,10 @@
 ###
- * Initialize all div[role=dialog] element 
+ * Initialize all div[role=dialog] element
  *
  * @namespace COOLSTRAP.Framework
  * @class Dialogs
  *
-* @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
+ * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
 ###
 
 COOLSTRAP.Framework.Dialogs = ((cool) ->

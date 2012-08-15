@@ -1,11 +1,107 @@
 @import "compass";
+@import "../structure/utilities/variables";
 
 //Variables
-$theme-header-color: #444;
-$theme-nav-color: #888;
-$theme-footer-color: #444;
-$theme-base-color: #F8F8F8;
+$theme-base-color: #ECEEF1;
+
+$theme-section-color: #DEE0E3;
+$theme-header-color: #2B2F38;
+$theme-footer-color: $theme-header-color;
+$theme-nav-color: $theme-base-color;
+
+
 $theme-border-radius: 5px;
+$theme-lineargradient: linear-gradient(rgba(#FFF,.2),rgba(#FFF,.0));
+
+
+
+section {
+  background-color: $theme-section-color;
+}
+header {
+  background-color: $theme-header-color;
+  border-bottom: 1px solid darken($theme-header-color,5%);
+  a:not(.onlyIcon) {
+    background-color: darken($theme-header-color,2%);
+    border: 1px solid darken($theme-header-color,5%);
+  }
+}
+footer {
+  background-color: $theme-footer-color;
+  border-top: 1px solid darken($theme-footer-color,5%);
+  a#{$isActive} {
+    background-color: darken($theme-footer-color,5%);
+  }
+}
+nav {
+  background-color: $theme-nav-color;
+  border-bottom: 1px solid darken($theme-nav-color,15%);
+}
+
+header,
+footer {
+  color: #FFF;
+  a { color: #FFF; }
+}
+ul[data-type="listview"].inset {
+  @include border-radius($theme-border-radius);
+  li {
+    &:first-child { @include border-top-radius($theme-border-radius); }
+    &:last-child  { @include border-bottom-radius($theme-border-radius); }
+  }
+}
+ul[data-type="listview"] {
+  color: #666;
+  a {
+    color: #666;
+  }
+  li {
+    background-color: #FFF;
+    position: relative;
+    border-style: solid;
+    border-color: darken($theme-base-color,15%);
+    .title { color: #444; }
+    .picture {
+      background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);
+      width: 44px;
+      height: 44px;
+      &.small {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    &.is-active {
+      background-color: darken($theme-base-color,2%);
+      border-color: darken($theme-base-color,15%);
+    }
+    & + li { margin-top: -1px; }
+    /*
+    &.list-divider {
+      background-color: darken($theme-base-color,30%);
+      border-color: darken($theme-base-color,40%);
+    }
+    */
+  }
+
+  &:not(.inset) {
+    li { border-width: 1px 0; }
+  }
+  &.inset {
+    li { border-width: 1px; }
+  }
+}
+
+
+
+
+
+
+
+/*
+@mixin gradient-bar($color) {
+
+}
+
 
 //Layout
 article {
@@ -25,7 +121,7 @@ header h1, header h2 {
 // Bars colors
 header {
   background-color: $theme-header-color;
-  border-bottom: 1px solid darken($theme-header-color,10%);
+  @include background-image($theme-lineargradient);
   border-top: 1px solid lighten($theme-header-color,10%);
   //padding-top: 1px;
   color: $theme-base-color;
@@ -33,7 +129,8 @@ header {
 
 nav {
   background-color: $theme-nav-color;
-  border-bottom: 1px solid darken($theme-nav-color,10%);
+  @include background-image($theme-lineargradient);
+  border-bottom: 1px solid darken($theme-nav-color,5%);
   padding-top: 1px;
 }
 
@@ -105,66 +202,19 @@ footer {
   }
 }
 
-ul[data-type="listview"].inset {
-  @include border-radius($theme-border-radius);
-  li {
-    &:first-child { @include border-top-radius($theme-border-radius); }
-    &:last-child  { @include border-bottom-radius($theme-border-radius); }
-  }
-}
 
 
 
 
 
-ul {
-  li              { z-index: 1; }
-  li.is-active    { z-index: 2; }
-  li.list-divider { z-index: 3; }
-}
 
 
 
 
 
-ul[data-type="listview"] {
-  color: #666;
-  a {
-    color: #666;
-  }
-  li {
-    background-color: #FFF;
-    margin-top: -1px;
-    position: relative;
-    border-style: solid;
-    border-color: darken($theme-base-color,10%);
-    .title { color: #444; }
-    .picture {
-      background-image: url(https://si0.twimg.com/profile_images/2090403606/abf2c68e837d11e19e4a12313813ffc0_7_normal.jpg);
-      width: 44px;
-      height: 44px;
-      &.small {
-        width: 30px;
-        height: 30px;
-      }
-    }
-    &.is-active {
-      background-color: darken($theme-base-color,2%);
-      border-color: darken($theme-base-color,15%);
-    }
-    &.list-divider {
-      background-color: darken($theme-base-color,30%);
-      border-color: darken($theme-base-color,40%);
-    }
-  }
 
-  &:not(.inset) {
-    li { border-width: 1px 0; }
-  }
-  &.inset {
-    li { border-width: 1px; }
-  }
-}
+
+
 
 .list-divider {
   font-size: 11px;
@@ -249,7 +299,7 @@ form {
 
 
 
-
+*/
 
 
 

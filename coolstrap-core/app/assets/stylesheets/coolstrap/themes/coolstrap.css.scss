@@ -1,6 +1,8 @@
 @import "compass";
 @import "../structure/utilities/_variables";
 
+/*
+
 $theme-header-color: #009AFF;
 $theme-header-color2: #225233;
 
@@ -135,7 +137,7 @@ aside {
 
 
 
-/* Dialogs */
+/* Dialogs
 div[role="dialog"] {
   color: #CCC;
   background-color: darken($theme-base-color,60%);
@@ -159,6 +161,6 @@ div#{$isModal} {
     }
   }
 }
-
+*/
 
 

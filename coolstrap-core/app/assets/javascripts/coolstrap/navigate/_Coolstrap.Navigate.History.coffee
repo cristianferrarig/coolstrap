@@ -1,9 +1,9 @@
 ###
-* Stores the stack of displayed <sections>
-* @namespace COOLSTRAP.Navigate
-* @class History
-*
-* @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
+ * Stores the stack of displayed <sections>
+ * @namespace COOLSTRAP.Navigate
+ * @class History
+ *
+ * @author Abraham Barrera <abarrerac@gmail.com> || @abraham_barrera
 ###
 
 COOLSTRAP.Navigate.History = ((cool, document, window) ->
@@ -136,7 +136,7 @@ COOLSTRAP.Navigate.History = ((cool, document, window) ->
       _back()
   ###
     * Returns lenght of history stack
-    * 
+    *
     * @method size
   ###
   size = (container_id) ->

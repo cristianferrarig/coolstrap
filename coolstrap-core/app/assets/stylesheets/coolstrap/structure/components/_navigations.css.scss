@@ -1,42 +1,57 @@
-/*
- * General
+/**
+ * Navigation layout for <header>, <nav> and <footer> and your content
+ *
+ * @header
+ *   not support any [data-type]
+ *
+ * @nav
+ *   have [data-type="navbar"] by default
+ *   and support [data-type="tabbar"] and [data-type="toolbar"]
+ *
+ * @footer
+ *   have [data-type="toolbar"] by default
+ *   and support [data-type="tabbar"] and [data-type="navbar"]
+ *
+ * @author Cristian Ferrari <cristianferrarig@gmail.com> || @energettico
  */
 
+
+// Global header, nav and footer styles
 header,
 nav,
 footer {
 
-  /* box flex and center layout for container */
+  // box flex and center layout for container
   @include setFlexibleBox;
   text-align: center;
 
-  /* reset for item list */
+  // reset for item list
   ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
 
-  /* vertical box flex layout for inner content */
+  // vertical box flex layout for inner content
   .content, > hgroup {
     @include setFlexibleBox(vertical,stretch);
   }
 
-  /* box flex some content */
+  // box flex some content
   .content, > hgroup, > h1, input, ul, li {
     @include box-flex(1);
     display: block;
   }
 
-  /* spacing for content */
+  // spacing for content
   .content, hgroup, .control-group {
-    margin: 0 $default-interface-spacing;
+    margin: 0 $coolstrap-interface-spacing;
   }
   > * + * {
     margin-left: 0 !important;
   }
 
-  /* basic title format */
+  // basic title format
   h1 { font-size: 16px; }
   h2 { font-size: 13px; }
 
@@ -46,22 +61,8 @@ footer {
 
 }
 
-/* title landscape format */
-@media only screen and (min-width : 321px) and (max-width : 480px) and (orientation : landscape)  {
-  header#{$isNotVertical} {
-    h1 { display: block; }
-    hgroup > {
-      h1, h2 {
-        @include ellipsis;
-        display: inline
-      }
-    }
-  }
-}
-
-
-/* Icon spacing in buttons */
-header#{$isNotVertical},
+// Icon spacing in buttons
+header#{$isNotType},
 nav#{$isNotTabbar},
 footer#{$isNotTabbar} {
   i + span { margin-left: 5px; }
@@ -69,95 +70,103 @@ footer#{$isNotTabbar} {
 }
 
 
-header#{$isNotVertical} {
+header#{$isNotType} {
   i {
-    @include square($default-header-icon);
-    line-height:    $default-header-icon;
-    font-size:      $default-header-icon;
+    @include square($coolstrap-header-icon);
+    line-height:    $coolstrap-header-icon;
+    font-size:      $coolstrap-header-icon;
   }
-  /* Format fot buttons and input for non vertical header */
+  // Format fot buttons and input for non vertical header
   a, input {
-    height:         $default-header-button;
-    margin:      0  $default-interface-spacing;
+    height:         $coolstrap-header-button;
+    margin:      0  $coolstrap-interface-spacing;
   }
   a {
-    padding:     0  $default-interface-spacing;
+    padding:     0  $coolstrap-interface-spacing;
   }
   .control-group {
-    height:         $default-header-button;
+    height:         $coolstrap-header-button;
+    a { height: auto !important; }
+  }
+
+  &.fullButtons {
+    a {
+      height: $coolstrap-header-size;
+      padding: 0 $coolstrap-interface-spacing * 2;
+      margin: 0;
+    }
+    > a + a {
+      border-left: 0 !important;
+    }
+  }
+
+  &.titleOnLeft {
+    * { @include box-ordinal-group(2); }
+
+    > h1, hgroup, .content {
+      @include box-ordinal-group(1);
+      @include box-align(start);
+      padding-left: $coolstrap-interface-spacing;
+      text-align: left;
+    }
+  }
+
+}
+
+
+
+// Navbar
+nav#{$isNotType},
+nav#{$isNavbar},
+footer#{$isNavbar} {
+  i {
+    @include square($coolstrap-navbar-icon);
+    line-height:    $coolstrap-navbar-icon;
+    font-size:      $coolstrap-navbar-icon;
+  }
+}
+
+// Toolbar
+nav#{$isToolbar},
+footer#{$isNotType},
+footer#{$isToolbar} {
+  // Format fot buttons and inputs for toolbars
+  a, input {
+    height:        $coolstrap-toolbar-button;
+    margin:      0 $coolstrap-interface-spacing;
+  }
+  a {
+    padding:     0 $coolstrap-interface-spacing;
+  }
+  .control-group {
+    height:        $coolstrap-toolbar-button;
     a { height: auto !important; }
   }
 }
-header#{$isVertical} {
-  i           { @include square($default-header-vertical-icon); }
-  //.onlyIcon i { @include square($default-header-vertical-button); }
-  /* Format fot buttons for vertical header */
-  a {
-    width:         $default-header-vertical-button;
-    margin:        $default-header-vertical-spacing;
-    padding:       $default-header-vertical-spacing;
-  }
-}
-//Landscape buttons
-@media only screen and (min-width : 321px) and (max-width : 480px) and (orientation : landscape) {
-  header#{$isNotVertical} {
-    a, input {
-      height:        $default-header-landscape-button;
-    }
-  }
-}
 
-nav,
-footer {
+// Tabbar
+nav#{$isTabbar},
+footer#{$isTabbar} {
   i {
-    @include square($default-navbar-icon);
-    line-height:    $default-navbar-icon;
-    font-size:      $default-navbar-icon;
+    @include square($coolstrap-tabbar-icon);
+    line-height:    $coolstrap-tabbar-icon;
+    font-size:      $coolstrap-tabbar-icon;
   }
-  //.onlyIcon i { @include square($default-navbar-button); }
-  &#{$isToolbar} {
-    /* Format fot buttons and inputs for toolbars */
-    a, input {
-      height:        $default-navbar-button;
-      margin:      0 $default-interface-spacing;
-    }
-    a {
-      padding:     0 $default-interface-spacing;
-    }
-    .control-group {
-      height:        $default-navbar-button;
-      a { height: auto !important; }
-    }
-  }
-  &#{$isTabbar} {
-    i {
-      @include square($default-tabbar-icon);
-      line-height:    $default-tabbar-icon;
-      font-size:      $default-tabbar-icon;
-    }
-    /* Vertical align for elements in tabbar */
-    a { @include box-orient(vertical); }
-  }
-  /* Format fot buttons and inputs for toolbars */
-  &#{$isTabbar},
-  &#{$isNormal} {
-    @include box-align(stretch);
-    ul, li { @include setFlexibleBox(horizontal, stretch); }
-    a { @include box-flex(1); }
-  }
+  // Vertical align for elements in tabbar
+  a { @include box-orient(vertical); }
 }
 
-.titleOnLeft {
-  * { @include box-ordinal-group(2); }
-
-  > h1, hgroup, .content {
-    @include box-ordinal-group(1);
-    @include box-align(start);
-    padding-left: $default-interface-spacing;
-    text-align: left;
-  }
+// Navbar and Tabbar
+nav#{$isNotType},
+nav#{$isNavbar},
+footer#{$isNavbar},
+nav#{$isTabbar},
+footer#{$isTabbar} {
+  @include setFlexibleBox(horizontal, stretch);
+  // Format fot buttons and inputs for toolbars
+  ul, li { @include setFlexibleBox(horizontal, stretch); }
+  a { @include box-flex(1); }
 }
-
 
 
 
@@ -177,16 +186,18 @@ footer {
     display: block;
     &[data-icon] {
       &:after {
-        @include square($default-navbar-icon);
+        @include square($coolstrap-navbar-icon);
         display: block;
         position: absolute;
         top: 50%;
         left: 0;
-        margin-top: -($default-navbar-icon / 2);
+        margin-top: -($coolstrap-navbar-icon / 2);
       }
     }
   }
 
 }
 */
+
+
 

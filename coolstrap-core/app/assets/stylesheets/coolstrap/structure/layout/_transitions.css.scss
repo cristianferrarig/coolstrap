@@ -1,10 +1,17 @@
+/**
+ * Transitions for
+ * @main, @section and @dialog
+ *
+ * @author Cristian Ferrari <cristianferrarig@gmail.com> || @energettico
+ */
+
 
 div#{$isMain} {
   @include setTransition();
-  body.showasideonLeft &   { @include setTransition(left, $default-aside-left-size); }
-  body.showasideonRight &  { @include setTransition(right, $default-aside-right-size); }
-  body.showasideonTop &    { @include setTransition(top, $default-aside-top-size); }
-  body.showasideonBottom & { @include setTransition(bottom, $default-aside-bottom-size); }
+  body.showasideonLeft &   { @include setTransition(left,   $coolstrap-aside-left-size); }
+  body.showasideonRight &  { @include setTransition(right,  $coolstrap-aside-right-size); }
+  body.showasideonTop &    { @include setTransition(top,    $coolstrap-aside-top-size); }
+  body.showasideonBottom & { @include setTransition(bottom, $coolstrap-aside-bottom-size); }
 }
 
 section {

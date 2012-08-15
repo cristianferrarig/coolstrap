@@ -1,5 +1,5 @@
 
-@mixin setTransition($type: $default-transition-type, $distance: $default-transform-distance) {
+@mixin setTransition($type: $coolstrap-transform-direction, $distance: $coolstrap-transform-distance) {
 	@if $type == false {
 		$default-translate-x : 0;
 		$default-translate-y : 0;

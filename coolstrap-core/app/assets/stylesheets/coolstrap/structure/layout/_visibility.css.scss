@@ -1,0 +1,29 @@
+/**
+ * Visibility behavior for layout for
+ * @aside, @section, @article and @dialog
+ *
+ * @author Cristian Ferrari <cristianferrarig@gmail.com> || @energettico
+ */
+
+
+// Visibility
+aside,
+section,
+article,
+div#{$isDialog} {
+  -webkit-backface-visibility: hidden;
+  visibility: hidden;
+}
+
+div#{$isMain},
+div#{$isDialog}.current,
+aside.current {
+  visibility: visible;
+  section.current {
+    visibility: visible;
+    article.current {
+      visibility: visible;
+    }
+  }
+}
+
