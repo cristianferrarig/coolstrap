@@ -1,0 +1,94 @@
+@import "../utilities";
+
+ul {
+  li              { z-index: 1; }
+  li.is-active    { z-index: 2; }
+  li.list-divider { z-index: 3; }
+}
+
+ul[data-type="listview"] {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  // DEBUG
+  /*
+  li * {
+    @include box-shadow(0 0 0 1px rgba(black,.3) inset);
+    background-color: rgba(black,.15);
+  }
+  */
+
+  li, li > a,
+  .content > div {
+    @include setFlexibleBox(horizontal,stretch,stretch);
+  }
+
+  li, li > a { padding:  $coolstrap-listview-spacing; }
+  li > a     { margin: -($coolstrap-listview-spacing); }
+
+  li {
+    > div, a > div,
+    .content > div > * {
+      margin-left: $coolstrap-listview-spacing;
+      &:first-child { margin-left: 0; }
+    }
+  }
+
+  // Box flex for blocks in list element
+  div { @include setFlexibleBox(vertical,stretch,center); }
+
+  // Box flex for inner blocks in list element
+  .content > div { @include setFlexibleBox(horizontal,center,center); }
+
+  .content {
+    * {
+      margin:   0;
+      padding:  0;
+    }
+    > * + * {
+      margin-top: 7px;
+    }
+  }
+
+
+  li > a, .content, .flex { @include box-flex(1); }
+
+  i { @include inline-block; }
+  input {
+    @include box-flex(1);
+    display: block;
+  }
+
+  /*
+  .aside {
+    * + i { margin-left: $coolstrap-interface-spacing; }
+  }
+  */
+
+  &.inset {
+    margin: 10px;
+  }
+
+  .up { @include box-pack(start); }
+  .stretch {
+    margin-top:     -($coolstrap-listview-spacing);
+    margin-bottom:  -($coolstrap-listview-spacing);
+    &:first-child { margin-left: -($coolstrap-listview-spacing) !important; }
+  }
+  .ellipsis {
+    @include ellipsis;
+  }
+  .vertical {
+    @include setFlexibleBox(vertical,center,center);
+    i, span {
+      display: block;
+    }
+    * + * {
+      margin-top: 7px;
+    }
+  }
+
+}
+
+
