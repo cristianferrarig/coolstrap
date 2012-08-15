@@ -34,20 +34,24 @@ COOLSTRAP.Navigate.History = ((cool, document, window) ->
     * @method pushState
   ###
   _pushState = (section_id, container_id) ->
+    ###
     prefix = "#main/"
     prefix = "#" + container_id + "/"  if container_id
     window.history.pushState
       state: size(container_id)
       id: section_id
     , section_id, prefix + cool.Util.cleanUrl(section_id)
+    ###
 
   _replaceState = (section_id, container_id) ->
+    ###
     prefix = "#main/"
     prefix = "#" + container_id + "/"  if container_id
     window.history.replaceState
       state: size(container_id)
       id: section_id
     , section_id, prefix + cool.Util.cleanUrl(section_id)
+    ###
 
   _back = ->
     prevent_hash_change = true
